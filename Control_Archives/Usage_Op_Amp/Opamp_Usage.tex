@@ -1,0 +1,147 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{Op-Amplifier Arrangements}
+\begin{comment}
+Op amplifier offset from positive and negative terminals: 0.2
+Op amplifier offset from output: 0.2
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator 
+\section{Differential Amplifier}
+\begin{comment}
+to[R = $R_f$] ++(3,0)
+\end{comment}
+\begin{circuitikz}[american, scale=1.0, transform shape]\draw
+(0,0) coordinate (v1) node[above]{$v_1$} node[ocirc]{} %Modular Delete
+to [R=$R_i$] ++(2.5,0) coordinate(JR_i) node[circ]{}
+--++(0,-1.7) coordinate(opinp-)
+--++(0.2,0) node[op amp, anchor=-](opampsubt){}
+(opampsubt.up) --++(0,0.3) node[vcc]{$v_{ss}$}
+(opampsubt.down) --++(0,-0.3) node[vee]{$v_{dd}$}
+(opampsubt.out) -- ++(0.2,0) coordinate(opout) node[circ]{}
+(JR_i) to [R=$R_f$] (JR_i -| opout) -- (opout)
+(opout) --++(1,0) coordinate(posout) node[ocirc]{}
+(opampsubt.+) -- (opampsubt.+ -| opinp-) coordinate(opinp+) 
+-- ++(0,-1.7) node[circ]{} coordinate(JR_d) 
+to[R,l_=$R_f$] (JR_d -| opout) 
+-- (JR_d -| posout) coordinate(negout) node[ocirc]{}
+(JR_d) to [R,l^=$R_i$] (JR_d -| v1) node[ocirc]{} node[above]{$v_2$} %Modular Delete
+(posout) to[open, v=$v_{out}$] (negout) %Modular Delete
+;\end{circuitikz}
+$$v_{out} = \f{R_f}{R_i}(v_2 - v_1)$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Inverting Amplifier}
+\begin{comment}
+\end{comment}
+\begin{circuitikz}[american, scale=1.0, transform shape]\draw
+(0,0) node[ocirc]{} node[above]{$v_{in}$} 
+to[R, l=$R_i$] (2.5,0) coordinate(opneginp) node[circ]{}
+-- ++(0.2,0) node[op amp, anchor=-](opampinv){}
+(opampinv.up) --++(0,0.3) node[vcc]{$v_{ss}$}
+(opampinv.down) --++(0,-0.3) node[vee]{$v_{dd}$}
+(opampinv.out) -- ++(0.2,0) coordinate(invopout) node[circ]{}
+(opneginp) --++ (0,1.7) coordinate(invjunc) to[R,l=$R_f$] (invjunc -| invopout)
+-- (invopout) --++(1,0) node[ocirc]{} node[above]{$v_{out}$}
+(opampinv.+)--++ (-0.5,0) --++ (0,-0.8) node[sground]{}
+;\end{circuitikz}
+$$v_{out} = -\f{R_f}{R_i}v_{in}$$
+%Seperator 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Non-Inverting Amplifier}
+\begin{comment}
+\end{comment}
+\begin{circuitikz}[american, scale=1.0, transform shape]\draw
+(0,0) node[ocirc]{} node[above]{$v_{in}$} 
+--++(2.8,0) node[op amp, noinv input up, anchor=+](noninvop){}
+(noninvop.up) --++(0,0.3) node[vcc]{$v_{ss}$}
+(noninvop.down) --++(0,-0.3) node[vee]{$v_{dd}$}
+(noninvop.out) -- ++(0.2,0) coordinate(noninvopout) node[circ]{}
+(noninvop.-) --++ (-0.2,0) --++ (0,-1.7) coordinate(noninvjunc) node[circ]{}
+to [R,l_=$R_f$] (noninvjunc -| noninvopout) -- (noninvopout)
+--++(1,0) node[ocirc]{} node[above]{$v_{out}$}
+(noninvjunc) to [R,l^=$R_i$] ++(-2.5,0) node[sground]{}
+;\end{circuitikz}
+$$v_{out} = \l(1+\f{R_f}{R_i}\r)v_{in}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Integrating Amplifier}
+\begin{comment}
+\end{comment}
+\begin{circuitikz}[american, scale=1.0, transform shape]\draw
+(0,0) node[ocirc]{} node[above]{$v_{in}$} to [R,l=$R_i$] ++(2.5,0) coordinate(intjunc) node[circ]{} --++ (0.2,0) node[op amp, anchor=-](intop){}
+(intop.up) --++(0,0.3) node[vcc]{$v_{ss}$}
+(intop.down) --++(0,-0.3) node[vee]{$v_{dd}$}
+(intop.out) -- ++(0.2,0) coordinate(intopout) node[circ]{}
+(intjunc)--++ (0,1.9) coordinate(intopupjunc) 
+to [C, l=$C_f$] (intopupjunc -| intopout) -- (intopout)
+--++ (1,0) node[ocirc]{} node[above]{$v_{out}$}
+(intop.+)--++ (-0.5,0) --++ (0,-0.8) node[sground]{}
+;\end{circuitikz}
+$$\f{d}{dt}[v_{out}] = -\l(\f{1}{R_iC_f}\r)v_{in}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Differentiating Amplifier}
+\begin{comment}
+\end{comment}
+\begin{circuitikz}[american, scale=1.0, transform shape]\draw
+(0,0) node[ocirc]{} node[above]{$v_{in}$} to [C,l=$C_i$] ++(2.5,0) coordinate(derivjunc) node[circ]{} --++ (0.2,0) node[op amp, anchor=-](derivop){}
+(derivop.up) --++(0,0.3) node[vcc]{$v_{ss}$}
+(derivop.down) --++(0,-0.3) node[vee]{$v_{dd}$}
+(derivop.out) -- ++(0.2,0) coordinate(derivopout) node[circ]{}
+(derivjunc)--++ (0,1.7) coordinate(derivupjunc) 
+to [R, l=$R_f$] (derivupjunc -| derivopout) -- (derivopout)
+--++ (1,0) node[ocirc]{} node[above]{$v_{out}$}
+(derivop.+)--++ (-0.5,0) --++ (0,-0.8) node[sground]{}
+;\end{circuitikz}
+$$v_{out} = -R_fC_{i}\f{d}{dt}[v_{in}]$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Summing Amplifier}
+\begin{comment}
+\end{comment}
+\begin{circuitikz}[american, scale=1.0, transform shape]\draw
+(0,0) node[ocirc]{} node[above]{$v_1$} coordinate(start) 
+to [R,l=$R_{in1}$] ++(2.5,0) --++(0,-1.5) coordinate(summleftjunc) node[circ]{} 
+(summleftjunc -| start) node[ocirc]{} node[above]{$v_2$} to [R,l=$R_{in2}$] (summleftjunc) --++ (1,0)
+coordinate(summjunc) node[circ]{} --++ (0.2,0) node[op amp, anchor=-](summop){}
+(summleftjunc) --++ (0,-1.7) to [R,l_=$R_{in3}$] ++(-2.5,0) node[ocirc]{} node[above]{$v_3$}
+(summop.up) --++(0,0.3) node[vcc]{$v_{ss}$}
+(summop.down) --++(0,-0.3) node[vee]{$v_{dd}$}
+(summop.out) -- ++(0.2,0) coordinate(summopout) node[circ]{}
+(summjunc)--++ (0,1.7) coordinate(summupjunc) 
+to [R, l=$R_f$] (summupjunc -| summopout) -- (summopout)
+--++ (1,0) node[ocirc]{} node[above]{$v_{out}$}
+(summop.+)--++ (-0.5,0) --++ (0,-0.8) node[sground]{}
+;\end{circuitikz}
+$$v_{out} = -R_f\l[\f{v_1}{R_{in1}} + \f{v_2}{R_{in2}} + \f{v_3}{R_{in3}}\r]$$
+\end{center}
+
+\end{document}

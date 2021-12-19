@@ -1,0 +1,316 @@
+%Type of Document
+\documentclass[a4paper, 12pt]{report}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+
+%Determine Document Sizing
+\geometry{portrait, margin=0.8in}
+
+\begin{comment}
+Document Philosophy:
+Part of the original intention of the Archives Series Project began in an effort to preserve some of the most general and powerful mathematical techniques I learned during my time in Purdue. The Project began as a way of archiving oneself's skills at the peak of performance in case it would ever be needed again one day. Along the way, I was posed with a few important question "Why is this Archive Necessary?", "Couldn't we just refer back to the original textbooks and sources of the Archives?" "What sets such an Archive different than the multitudes of other textbooks that exist out there?"
+
+In my humble opinion I believe that writing and giving names to mathematical objects is a pre-requisite to mathematics. It is impossible to do mathematics without definition of terms, and the notation of the terms are closely related to the definition of terms. Since the intimate relationship between notation and definition is so important, uniting various sources with differing notations under a unified consistent notation style ensures that the information discussed in this document is easily readable provided one learns the notation convention defined along the discussion. This guarantees an ease of information absorption and allows the powerful general mathematical theorem in this document to reach its maximum ease of use without compromising generality.
+
+This calls for the implementation of a series of supposed rules that govern the document. Although not all parts of the documents currently adhere to said rules, this should be a kind of standard that should be achieved in due time for this document to fully implement the principles stated above:
+
+1.) Theorems presented in the document must contain Proofs
+
+2.) Each difference in line or after an = sign, there should be a maximum of 2 similar mathematical operations algebraic operations performed.
+
+3.) Observations should be explained and the types of variables as mathematical objects must be defined within the scope of the theory (Is x a vector? Matrix? Tensor? Real? Complex?) (Is \times a cross product or an algebraic multiplication?)
+
+4.) The inputs and outputs of the functions produced as a consequence of the mathematical theorems must be clearly defined as said mathematical objects.
+
+5.) The Document must not include any examples to make it concise and helpful. Examples may be defined in a seperate document. But not this one, because it has to be concise.
+
+6.) The proof of theorems found in this document should be replaced if a more elegant proof appears.
+
+
+
+
+Winter Tasks:
+Housekeeping
+    Finish Ricing polybar
+    Add a Calendar calcurse or vim based (done)
+    Figure out how to setup python environment (done)
+    Add all of the vim dotfiles for making it a debugger
+    Fix mpsyt
+
+Content Addition
+    AAE 511 -> Fluids
+        Use RTT to rederive continuity and momentum
+        Derive Vorticity Equation
+        Derive the S_{ij} and Omega_{ij} like HW 10
+        Prove that Complex Analysis satisfies condinuity
+        Use Milne-Thompson Circle Theorem for Cylinder
+        Record Blasius Integral Laws
+        Maybe prove kutta circulation law this way
+        Show conformal mapping for cylinder to airfoil
+        Record Hiemenz Flow for 2D Cartesian and Axis-symmetric Flows
+
+    AAE 340 -> Controls & Dynamics
+        Find another name for BKE
+        Prove BKE
+        Derive governing equation for single particle
+            conservation of momentum
+            conservation of angular momentum
+            conservation of energy
+        Re-derive the governing equation for systems of particles
+            conservation of momentum
+            conservation of angular momentum
+            conservation of energy
+        Find the formulation for inertia tensor
+        Prove Euler's Laws of motion
+            Simple case
+            Inertia time dependent case
+            General case
+        Euler Angles 
+
+    AAE 412 -> Computational Fluid Dynamics
+        Copy Paste the unsteady diffusions from hw 3&4
+        Record some numerical schemes
+            first order upwind
+            second order upwind
+            central differencing
+            quick
+        Perform Fourier Stability Analysis
+        tridiagonal solvers
+        Iterative solvers
+
+    Math Archives
+        Introduce index notation
+        Derive some Basic Tensor relations
+        General nabla operation for cartesian cylindrical spherical
+            gradient
+            divergence
+            curl
+            distance dr
+            surface nds
+
+Archive Re-Formatting
+    Re-Format the archives to have chapters
+    Integrate the notes from aae 334 into fluids (done)
+
+Archiving Data
+    Learn Git (done)
+    Configure Google Accounts
+    Make Archives available in git
+\end{comment}
+
+\begin{document}
+
+%%Title
+\title{Mathematics Archives}
+\author{Hans C. Suganda}
+\date{$25^{th}$ February 2021}
+\maketitle
+\newpage
+
+\tableofcontents
+
+\begin{center}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../Linear_DE}{Differential_Operator.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../Systems_DE/}{Matrix_DE.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../Fourier/}{Fourier_Series.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../Laplace/}{Laplace.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../Del/}{Del.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../PDE/}{PDE.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../PDE_Examples/}{2D_Heat.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../PDE_Examples/}{Bar_Vibrations.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../PDE_Examples/}{2D_Wave.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../PDE_Examples/}{Spherical_Harmonics.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../Sturm/}{Sturm.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../PDE_Examples/}{1D_Heat_Eqn.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\import{../PDE_Examples/}{1D_Wave.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\end{center}
+\end{document}
+

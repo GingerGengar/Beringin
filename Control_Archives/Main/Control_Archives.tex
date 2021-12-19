@@ -1,0 +1,132 @@
+\documentclass[a4paper, 12pt]{report}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+%Determine Document Sizing
+\geometry{portrait, margin=0.8in}
+
+\begin{comment}
+Circuit Standards:
+each intersection crossing has to be shown, there should be no ambiguous case whether two wires crossing each other like a + are connected to each other or is just a crossing. If the wires are connected a node[circ]{} will be used
+
+Each Circuit should be anchored at the input. This allows the snippet of code to be portable ie, the input of a certain circuit could be placed at the output of another circuit. EG: circuit1 -> circuit2-> circuit3 -> .... -> circuitn
+
+All necessary terminals such as the source voltage and drain voltage of an operational amplifier must be shown, as well as the corresponding voltages at those terminal. For example a device who theoretically works with 5 terminals must be represented with a figure with 5 terminals, for example, the op amp: source voltage, drain voltage, positive terminal, negative terminal, output terminal. 
+
+As much as possible, use the same scaling for all of the circuits. Instead of making figures smaller to fit more complex circuits, instead assign a symbollic representation of the sub-system units, for example a low pass filter represented by a box with inside labelled "LP"
+\end{comment}
+
+\begin{document}
+
+\title{Control Archives}
+\author{Hans C. Suganda}
+\date{$1^{st}$ June 2021}
+\maketitle
+\newpage
+
+\tableofcontents
+
+\begin{center}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../MOSFET/}{MOSFET.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../Construction_Op_Amp/}{Opamp_fndmntl.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../Usage_Op_Amp/}{Opamp_Usage.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../SS_Implementation/}{SS_Implmntn.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../Long_Response_Circuit/}{Long_Response.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\import{../State_Space/}{State_Space.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\end{center}
+
+\end{document}
+

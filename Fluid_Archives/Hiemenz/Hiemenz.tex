@@ -1,0 +1,21 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{Navier-Stokes Equations}
+\begin{comment}
+\end{comment}
+The full set of the Navier-Stokes Equations are shown below. The three equations below correspond to the differential continuity, momentum, energy laws.
+$$\f{\p}{\p t}[\rho] + \b{v_f} \d \nabla\rho = -\rho \nabla \d \b{v_f}$$
+$$\rho \l[\f{\p}{\p t}[\b{v_f}] + (\b{v_f} \d \nabla) \b{v_f}\r] = -\nabla P_r + \rho \b{F_b} + \mu\nabla^2\b{v_f} = -\nabla P_r + \rho \b{F_b} - \f{2}{3}\nabla(\mu\nabla\d \b{v_f}) + 2\nabla\d(\mu S)$$
+$$\rho c_p\l[\f{\p}{\p t}(T) + \b{v_f}\d\nabla T \r] = \nabla\d(k\nabla T) - \f{2}{3}\mu(\nabla\d \b{v_f})^2 + 2\mu S:S + \be T \f{D}{Dt}\l[P_r\r]$$
+\end{center}
+
+\end{document}

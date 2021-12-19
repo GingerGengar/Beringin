@@ -1,0 +1,53 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{Potential Flows}
+\begin{comment}
+\end{comment}
+Potential and inviscid flows are flows wherein the effects of viscosity is neglected. The degeneracy from the general Navier Stokes equation is shown below,
+
+Consider the continuity differential governing equation,
+$$0 = \f{\p}{\p t}[\rho] +  \nabla \d (\rho\b{v_f})$$
+For a steady-state flow, $\dst{\f{\p}{\p t}[\rho] = 0}$. Substituting to the continuity differential governing equation,
+$$0 = \nabla \d (\rho\b{v_f})$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Compressible Potential Flow}
+\begin{comment}
+\end{comment}
+For the compressible potential flow, let the potential function $\dst{\psi_c}$ be defined as,
+$$\rho\b{v_f} = \nabla \psi_c$$
+Substituting the definition of the potential function into the steady state continuity differential governing equation,
+$$0 = \nabla \d (\nabla \psi_c) = \nabla^2\psi_c$$
+In cartesian coordinates, this yields,
+$$0 = \f{\p^2}{\p x^2}[\psi_c] + \f{\p^2}{\p y^2}[\psi_c] + \f{\p^2}{\p z^2}[\psi_c]$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Incompressible Potential Flow}
+\begin{comment}
+\end{comment}
+Due to the nature of the fluid, the density could be considered a scalar constant. The $\dst{\f{\p}{\p t}[\rho]}$ term in this case is evaluates to zero under two conditions: steady state means that the gradient is unchanging, but also since density is non-changing, this particular term also evaluates to zero. Therefore, for for incompressible flows, the potential flow function would still be applicable for non-steady fluid states.
+$$0 = \nabla \d (\rho\b{v_f}) = \rho\nabla \d (\b{v_f})$$
+Division of both sides by $\rho$,
+$$0 = \nabla \d (\b{v_f})$$
+For the incompressible potential flow, let the potential function $\dst{\psi_i}$ be defined as,
+$$\b{v_f} = \nabla \psi_i$$
+By substituting the fluid velocity field into the continuity degenerate differential form,
+$$0 = \nabla \d (\nabla \psi_i) = \nabla^2\psi_i = \f{\p^2}{\p x^2}[\psi_i] + \f{\p^2}{\p y^2}[\psi_i] + \f{\p^2}{\p z^2}[\psi_i]$$
+\end{center}
+
+\end{document}

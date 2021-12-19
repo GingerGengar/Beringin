@@ -1,0 +1,242 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+
+
+\chapter{Linear Differential Equations}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\stdsection{Definition of Differential Operator}
+\begin{comment}
+\end{comment}
+Let the differential operator be defined as the following: 
+$$L = \sum_{i = 0}^{n}\l[a_i \f{d^{n - i}}{dx^{n - i}}\r] = a_0 \f{d^{n }}{dx^{n}} + a_1 \f{d^{n - 1}}{dx^{n - 1}}+ \dots + a_{n - 1}\f{d}{dx} + a_n$$
+Let the following operator $D$ be defined:
+$$D = \f{d}{dx} \qquad D^k = \f{d^k}{dx^k}$$
+\\Therefore, the linear differential operator could be defined as 
+$$L = \sum_{i = 0}^{n}\l[a_i D^{n - i}\r] = a_0\prod_{i = 1}^{n}\l[D - r_i\r]$$
+\\wherein $a_i$ and $r_i$ are constants albeit complex or real. The notation above is always true because an fundamental theorem of algebra states that $n^{th}$ order polynomial must have $n$ roots. Since linear differential operator could be expressed as a polynomial in terms of the operator $D$, therefore the notation above would always be true regardless of the choice of $a_i$ and $n$. The linear differential operator have certain properties associated to them discussed in the propositions,
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Proposition 1: Operation on 0} 
+\begin{comment}
+\end{comment}
+The linear differential operator when operated on a 0 will yield 0:
+$$L[0]=\sum_{i = 0}^{n}\l[a_i D^{n - i}\r]0=a_0 \f{d^{n }}{dx^{n}}0 + a_1 \f{d^{n - 1}}{dx^{n - 1}}0+ \dots + a_{n - 1}\f{d}{dx}0 + a_n0$$ 
+\\It is given that $\dst{\f{d}{dx}(0) = 0}$, and by reapplying recursively, $\dst{\f{d^k}{dx^k}(0) = 0}$. Therefore, 
+$$L[0]=0$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Proposition 2: Operation on Constants}
+\begin{comment}
+\end{comment}
+The linear differential operator when operated on a constant will yield some constant provided that $a_n \neq 0$:
+$$L[c] = \sum_{i = 0}^{n}\l[a_i D^{n - i}\r]c = a_0 \f{d^{n }}{dx^{n}}c + a_1 \f{d^{n - 1}}{dx^{n - 1}}c+ \dots + a_{n - 1}\f{d}{dx}c + a_nc$$
+\\Considering $\dst{\f{d}{dx}c = \f{d^k}{dx^k}c = 0}$,
+$$L[c] = \sum_{i = 0}^{n}\l[a_i D^{n - i}\r]c = a_nc$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Proposition 3: Operation Commutativity}
+\begin{comment}
+\end{comment}
+If there exist two linearly independent differential operators $L_1$ and $L_2$, then the solution of the system $0 = L_1L_2[y]$ must be a linear combination of the solution to the system $0 = L_1[y]$ and $0 = L_2[y]$:
+$$L_1=\prod_{i = 0}^{m}\l[D - \alpha_{i}\r] \quad,\quad L_2=\prod_{j = 0}^{n}\l[D - \be_{j}\r]$$
+\\Let $y_1(x)$ and $y_2(x)$ be such that:
+$$0 = L_1[y_1(x)]=\prod_{i = 0}^{m}\l[D - \alpha_{i}\r]y_1(x) \quad,\quad 0 = L_2[y_2(x)]=\prod_{j = 0}^{n}\l[D - \be_{j}\r]y_2(x)$$
+\\Let $T_i$ be the transformation defined as $T_i: f(x) \to g(x)\quad , \quad T_i[f(x)] = (D - r_i)f(x) $, wherein $f(x)$ is some arbitrary continuous function over some interval. Indeed the transformation $T_1$ is linear:
+$$T_i[cu(x)] = (D - r_i)cu(x)$$ 
+$$T_i[cu(x)] = c(D - r_i)u(x)$$
+$$cT_i[u(x)] = c(D - r_i)u(x)$$
+\\Therefore, $T_i[cu(x)] = cT_i[u(x)]$ wherein $c$ is some arbitrary constant.
+$$T_i[u(x) + v(x)] = (D - r_i)[u(x) + v(x)]$$
+$$T_i[u(x) + v(x)] = (D - r_i)[u(x)] + (D - r_i)[v(x)]$$
+$$T_i[u(x)] + T_i[v(x)] = (D - r_i)[u(x)] + (D - r_i)[v(x)]$$
+\\Therefore, $T_i[u(x) +v(x)] = T_i[u(x)] + T_i[v(x)]$, and $T_i$ must be a linear transformation. Linear transformations applied compositely form a linear transformation:
+$$T_0(u + v) = T_0(u) + T_0(v)$$
+$$T_1[T_0(u + v)] = T_1[T_0(u)] + T_1[T_0(v)]$$
+$$\prod_{i = 0}^{\a}\l[T_i\r](u + v) = \prod_{i = 0}^{\a}\l[T_i\r](u) + \prod_{i = 0}^{\a}\l[T_i\r](v)$$
+\\Since $L_1$ and $L_2$ is only a specific case of the transformation described as $T_1$ it can be considered that the differential operators of $L_1$ and $L_2$ are linear. Therefore, it can be said that $L_1[L_2]$ must be linear. 
+$$0 =null = L_1[y_1(x)]=\prod_{i = 0}^{m}\l[D - \alpha_{i}\r]y_1(x)\quad,\quad 0 = null = L_2[y_2(x)]=\prod_{j = 0}^{n}\l[D - \be_{j}\r]y_2(x)$$
+\\For $y_1(x)$ and $y_2(x)$:
+$$0 =null = L_2\{L_1[y_1(x)]\}=\prod_{j = 0}^{n}\l[D - \be_{j}\r]\prod_{i = 0}^{m}\l[D - \alpha_{i}\r]y_1(x)$$
+$$0 = null = L_1\{L_2[y_2(x)]\} = \prod_{i = 0}^{m}\l[D - \alpha_{i}\r]\prod_{j = 0}^{n}\l[D - \be_{j}\r]y_2(x)$$
+$$\prod_{i = 0}^{m}\l[D - \alpha_{i}\r]\prod_{j = 0}^{n}\l[D - \be_{j}\r] = \prod_{j = 0}^{n}\l[D - \be_{j}\r]\prod_{i = 0}^{m}\l[D - \alpha_{i}\r] = L_1[L_2] = L_2[L_1]$$
+\\It follows by definition of linear transformation that, $L_1[k_1y_1(x)] = k_1L_1[y_1(x)] = null$ and that $L_2[k_2y_2(x)] = k_2L_2[y2(x)] = null$:
+$$0 =null = L_2\{L_1[k_1y_1(x)]\}=\prod_{j = 0}^{n}\l[D - \be_{j}\r]\prod_{i = 0}^{m}\l[D - \alpha_{i}\r]k_1y_1(x)$$
+$$0 = null = L_1\{L_2[k_2y_2(x)]\} = \prod_{i = 0}^{m}\l[D - \alpha_{i}\r]\prod_{j = 0}^{n}\l[D - \be_{j}\r]k_2y_2(x)$$
+$$0 = L_2\{L_1[k_1y_1(x)]\} + L_2\{L_1[k_2y_2(x)]\} = L_2\{L_1[k_1y_1(x) + k_2y_2(x)]\}$$
+$$0  = \prod_{i = 0}^{m}\l[D - \alpha_{i}\r]\prod_{j = 0}^{n}\l[D - \be_{j}\r][k_1y_1(x) + k_2y_2(x)]$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Homogenous Differential Equation Cases}
+\begin{comment}
+\end{comment}
+Consider the following homogenous differential equation:
+$$0 = \sum_{i = 0}^{n}\l[a_i\overset{n-i}{y}\r] = a_0 \overset{n}{y} + a_1 \overset{n - 1}{y} + \dots + a_{n-1} \dot{y} + a_n y$$
+$$0 = L[y] = \sum_{i = 0}^{n}\l[a_i D^{n - i}\r]y = \prod_{i = 1}^{n}\l[D - r_i\r]y$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Non-Repeated Roots}
+\begin{comment}
+\end{comment}
+By principle of superposition verified by proposition 1 and 3, the general solution to the homogenous $n^{th}$ order differential equation,
+$$y_c = \sum_{i = 1}^{n}\l[c_i y_i\r]$$
+\\Wherein $c_i$ represents either complex or real constants, $y_i$ represents solutions to the $0 = [D - r_i]y_i$ system. Considering the partial system,
+$$0 = [D - r_i]y_i$$
+$$0 = Dy_i - r_i y_i$$
+$$\f{d}{dx}(y_i) = r_i y_i $$
+$$\int \f{1}{y_i}dy_i = \int r_i dx $$
+$$\ln{y_i} = r_i x + C$$
+$$y_i = e^{r_i x + C} = c_i e^{r_i x}$$
+Therefore for as long as there are no roots with multiplicity greater than 1, the following is true, for some choice of constants,
+$$y_c = \sum_{i = 1}^{n}\l[c_i e^{r_i x}\r]$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Repeated Roots}
+\begin{comment}
+\end{comment}
+Suppose the $\a^{th}$ root has a multiplicity of $k$, 
+$$0 = \prod_{i = 1}^{\a - 1}\l[D - r_i\r]\prod_{j = \a + k}^{n}\l[D - r_i\r](D - r_\a)^ky$$
+\\By proposition 3, the general solution to the system must be the linear combination:
+$$y_g(x) = c_1 y_1(x) + c_2 y_2(x)$$
+wherein $y_1(x)$ is the solution to the system $\dst{0 = \prod_{i = 1}^{\a - 1}\l[D - r_i\r]\prod_{j = \a + k}^{n}\l[D - r_i\r]y}$ and $y_2(x)$ is the solution to the system $\dst{ 0 = (D - r_\a)^ky}$. By conjecture, it is suspected that the $\dst{y_2(x) = u(x)e^{r_\a x}}$ wherein $u(x)$ is some function to be determined. 
+$$0 = (D - r_\a) u(x)e^{r_\a x}$$
+$$0 = \f{d}{dx}\l[u(x)e^{r_\a x}\r] - r_\a u(x)e^{r_\a x}$$
+$$0 = \overset{1}{u(x)}e^{r_\a x} + r_\a u(x)e^{r_\a x}  - r_\a u(x)e^{r_\a x}$$
+$$0 = \overset{1}{u(x)}e^{r_\a x}$$
+By reapplying the linear differential operator recursively:
+$$(D - r_\a)^k u(x) e^{r_\a x} = \overset{k}{u(x)}e^{r_a x}$$
+\\Therefore, the system would follow:
+$$0 = (D - r_\a)^k u(x)e^{r_\a x} = \overset{k}{u(x)}e^{r_a x}$$
+$0 \neq e^{r_a x}$ for all $x$
+$$0 = \overset{k}{u(x)}$$
+\\A function that satisfies the following condition must be a polynomial with at most degree $k - 1$. Therefore, 
+$$u(x) = \sum_{i = 0}^{k - 1}\l[c_i x ^{k - 1 - i} \r]$$
+The general solution $y_{rr}(x)$ to the system $\dst{ 0 = (D - r_\a)^ky}$:
+$$y_{rr}(x) = \sum_{i = 0}^{k - 1}\l[c_i x ^{k - 1 - i} \r] e^{r_\a x}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Complex Roots}
+\begin{comment}
+\end{comment}
+Suppose the $\a^{th}$ root is a complex root, by the fundamental theorem of algebra, some other root must be its complex conjugate. Let the complex conjugate root of the $\a^{th}$ root be ordered next to the $\a^{th}$ root in the product notation. Therefore, 
+$$0 = \prod_{i = 1}^{\a - 1}\l[D - r_i \r]\prod_{i = \a + 2}^{n}\l[D - r_i\ \r][D - r_{\a}][D - r_{\a +1 }]y$$
+Let $y_{cr}$ represent the complex root corresponding to the system $0 = [D - r_{\a}][D - r_{\a +1 }]y_{cr}$ . By principle of superposition verified by proposition 1 and 3, 
+$$y_c = \sum_{i = 1}^{n - 2}\l[c_i e^{r_i x}\r] + y_{cr}$$
+$$0 = [D - r_{\a}][D - r_{\a +1 }]y_{cr}$$
+\\By the principles presented earlier,
+$$y_{cr}(x) = c_{\a} e^{(a + bi)x} +c_{\a + 1} e^{(a - bi)x}$$
+$$y_{cr}(x) = e^{ax}\l[c_{\a} e^{bxi} +c_{\a + 1} e^{- bxi}\r]$$
+By De Moivre's theorem,
+$$e^{bxi} = \cos{(bx)} + i\sin{(bx)} \quad, \quad e^{-bxi} = \cos{(bx)} - i\sin{(bx)}$$
+\\Suppose the constants $c_{\a}$ and $c_{\a + 1}$ are complex numbers,
+$$c_{\a} = f_1 + g_1 i \quad, \quad c_{\a + 1} = f_2 + g_2 i$$
+By substituting to the expression for complex solution,
+$$y_{cr}(x) = e^{ax}\l[(f_1 + g_1 i) e^{bxi} + (f_2 + g_2 i) e^{- bxi}\r]$$
+\\Let $y_{cr} = e^{ax} y_{co},$
+$$y_{co} = c_{\a} e^{bxi} + c_{\a + 1} e^{- bxi}$$
+$$y_{co}(x) =(f_1 + g_1 i) e^{bxi} + (f_2 + g_2 i) e^{- bxi}$$
+$$y_{co}(x) =(f_1 + g_1 i)[\cos{(bx)} + i\sin{(bx)}]  + (f_2 + g_2 i) [\cos{(bx)} - i\sin{(bx)}]$$
+\\Let
+$$A(x) = (f_1 + g_1 i)[\cos{(bx)} + i\sin{(bx)}]\quad , \quad B(x) = (f_2 + g_2 i) [\cos{(bx)} - i\sin{(bx)}]$$
+$$A(x) = f_1\cos{(bx)} - g_1 \sin{(bx)} + i[f_1\sin{(bx)} + g_1\cos{(bx)}]$$
+$$ B(x) = f_2\cos{(bx)} + g_2 \sin{(bx)} + i[ - f_2\sin{(bx)} + g_2\cos{(bx)}]$$
+$$y_{co}(x) = A(x) + B(x)$$
+$$y_{co}(x) = (f_1 + f_2)\cos{(bx)} + (g_2 - g_1 )\sin{(bx)} + i[(f_1 - f_2)\sin{(bx)} + (g_1 + g_2)\cos{(bx)}]$$
+\\For the complex root $y_{cr}(x)$ to be real, the imaginary component of $y_{cr}(x)$ must be equals to $0$. Therefore, the following must hold true,
+$$f_1 = f_2 \quad, \quad g_1 = -g_2$$
+For as long as the condition above hold true, the two constants $c_{\a}$ and$c_{\a + 1}$ must be complex conjugates. Considering the case wherein $c_{\a}$ and$c_{\a + 1}$ as complex conjugates,
+$$y_{co}(x) = 2 f_1\cos{(bx)} + 2 g_2\sin{(bx)}$$
+$$y_{cr} = 2e^{ax}[f_1\cos{(bx)} + g_2\sin{(bx)}]$$
+\\Therefore, the following is true for each complex root and conjugate pair,
+$$y_c = \sum_{i = 1}^{n - 2}\l[c_i e^{r_i x}\r] + 2e^{ax}[f_1\cos{(bx)} + g_2\sin{(bx)}]$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Repeated Complex Roots}
+\begin{comment}
+\end{comment}
+Suppose the $\a^{th}$ root is a complex root with a multiplicity of $k$. Let its complex conjugate be placed adjacent after said complex root,
+$$0 = \prod_{i = 1}^{\a - 1}\l[D - r_i\r]\prod_{i = \a + 2k}^{n}\l[D - r_i\r]\l[D - r_{\a}\r]^{k}\l[D - \bar{r_{\a}}\r]^{k}y$$
+\\Let $y_{crr}$ be considered as the solution to the system $0 = \l[D - r_{\a}\r]^{k}\l[D - \bar{r_{\a}}\r]^{k}y_{crr}$ . Based on superposition verified by proposition 1 and 3, 
+$$y_c = \sum_{i = 1}^{n - 2k}\l[c_i e^{r_i x}\r] + y_{crr}$$
+\\Based on the previous work on repeated roots with multiplicity greater than 1,
+$$y_{crr}(x) = \sum_{i = 0}^{k - 1}\l[c_i x ^{k - 1 - i} \r] C_1 e^{r_\a x} + \sum_{i = 0}^{k - 1}\l[c_i x ^{k - 1 - i} \r] C_2 e^{\bar{r_\a} x}$$ 
+\\Let $r_{\a} = a + bi$, and $\bar{r_\a} = a - bi$, 
+$$y_{crr}(x) = \sum_{i = 0}^{k - 1}\l[c_i x ^{k - 1 - i} \r] [C_1 e^{bxi} + C_2 e^{-bxi}] e^{ax}$$
+\\Let $c_{1} = f_1 + g_1 i$ and $c_{2} = f_2 + g_2 i$ . Based on previous work on complex roots,
+$$C_1 e^{bxi} + C_2 e^{- bxi} = 2 f_1\cos{(bx)} + 2 g_2\sin{(bx)}$$
+\\Therefore,
+$$y_{crr}(x) = \sum_{i = 0}^{k - 1}\l[c_i x ^{k - 1 - i} \r] [2 f_1\cos{(bx)} + 2 g_2\sin{(bx)}] e^{ax}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{General Solutions to Homogenous Differential Equations}
+\begin{comment}
+\end{comment}
+Therefore, if an $n^{th}$ order homogeneous differential equation with $a$ real non-repeated roots, $b$ complex root pairs, $c$ real repeated roots with multiplicity $\g$, and $d$ complex repeated root pairs with multiplicity $\be$
+\begin{align*}
+y_c  &= \sum_{l =1}^{a}\l[c_{1,l}e^{r_{1,l}x}\r]\\ 
+&\quad + \sum_{j =1}^{b}[c_{2,j,1} \cos{(b_{1,j} x)} + c_{2,j,2} \sin{(b_{1,j} x)}]e^{a_{1,j} x}\\ 
+&\quad + \sum_{k =1}^{c}\l[\sum_{m = 0}^{\g_k - 1}\l[c_{3,m,k} x ^{\g_k - 1 - m} \r] e^{r_{k} x}\r]\\
+&\quad + \sum_{i =1}^{d}\l[\sum_{p = 0}^{\be_p - 1}\l[c_{4,p,i} x ^{\be_p - 1 - p} \r][k_{4,i,1}\cos{(b_{2,i})x} + k_{4,i,2}\sin{(b_{2,i})x}] e^{r_{i} x}\r]
+\end{align*}
+\\The variables $a$, $b$, $c$, $d$, $\g$, $\be$, and $n$ are related by the following expression,
+$$n = a + 2b + \sum_{i = 1}^{c}[\g_{i}] + \sum_{j = 1}^{d}[2\be_{j}]$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Non-Homogenous Differential Equations}
+\begin{comment}
+\end{comment}
+Consider the following system:
+$$\sum_{i = 0}^{n}\l[a_i \overset{n - i}{y}\r] = \sum_{j = 0}^{m}\l[c_i f_i(x)\r]$$
+\\wherein $f_i(x)$ represents the $i^{th}$ arbitrary function, and $a_i$ represents the $i^{th}$ arbitrary constant. The following function could be rewritten in terms of the linear differential operator $L$:
+$$L[y] = \sum_{j = 0}^{m}\l[c_i f_i(x)\r]$$
+\\Let $y_j$ represent the general solution to the $j^{th}$ system:
+$$L[y_j] = c_i f_j(x)$$
+By taking the summations of the various solutions to the various sytems:
+$$L[y_0] + L[y_1] + \dots +L[y_{j - 1}] + L[y_j] = c_0 f_0(x) + c_1 f_1(x) + \dots + c_{j - 1} f_{j - 1}(x) + c_{j} f_j(x)$$
+\\Since the differential operator $L$ is linear, as shown in proposition 3: 
+$$L\l[\sum_{j = 0}^{m}\l(y_j\r)\r] = L[y_0] + L[y_1] + \dots +L[y_{j - 1}] + L[y_j]$$
+$$L\l[\sum_{j = 0}^{m}\l(y_j\r)\r] =  \sum_{j = 0}^{m}\l[c_i f_i(x)\r] $$
+\\Therefore, a solution to the non-homogenous differential equation:
+$$y_p(x) = \sum_{j = 0}^{m}\l(y_j\r)$$ 
+An $m^{th}$ dimensional subspace spanned by $m$ functions must always contain a null element, in this case, a zero function. Let the $y_c$ represent the general solution to the homogenous differential equation $Ly = null = 0$. Then the general solution must follow:
+$$y_g(x) = \sum_{j = 0}^{m}\l(y_j\r) + y_c$$
+\end{center}
+
+\end{document}

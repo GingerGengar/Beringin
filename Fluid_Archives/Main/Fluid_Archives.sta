@@ -1,0 +1,29 @@
+\standalonepreambles
+\subpreamble{../Terminology/Terminology.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../RTT/RTT.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../NS_GE/NS_GE.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Hiemenz/Hiemenz.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Potential_Flow/Potential_Flow.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Numerical_Methods/Potential_Flow/Gauss_Siedel.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Aerodynamics/Incompressible/Incompressible.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Aerodynamics/Compressible/Compressible.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Creeping_Flow/Creeping_Flow.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\endstandalonepreambles

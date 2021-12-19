@@ -1,0 +1,77 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{Temperature Distribution of a Heated Rod}
+\begin{comment} 
+Physics Archives
+Havent inserted Sturm Liouville orthonormal basis functions
+\end{comment}
+The function of temperature $u$ at some distance $x$ from the origin of a one-dimensional heated rod of uniform material is governed by the equation below,
+$$\f{\p u}{\p t} = k\f{\p^2 u}{\p x^2}$$                                                                  wherein $k$ is some constant related to thermal conductivity. Using the substitution, $u(x,t) = f(x)g(t)$ wherein $f(x)$ is a function purely in $x$ and $g(t)$ is a function purely in terms of $t$,
+$$\f{\p [f(x)g(t)]}{\p t} = k\f{\p^2 [f(x)g(t)]}{\p x^2}$$
+$$f(x)\f{\p [g(t)]}{\p t} = kg(t)\f{\p^2 [f(x)]}{\p x^2}$$
+$$f(x)g'(t) = kg(t)f''(x)$$wherein $g'(t)$ represents the first order derivative of $g(t)$ with respect to time $t$, and $f''(x)$ represents second order derivative of $f(x)$ with respect to distance $x$. Further manipulation to yield a left hand side completely in terms of time $t$ and a right hand side completely in terms of displacement $x$,
+$$\f{1}{k}\f{g'(t)}{g(t)} = \f{f''(x)}{f(x)} = \lambda$$wherein $\lambda$ is some constant. The reason why $\lambda$ is a constant is because $x$ and $t$ are independent variables, therefore a change in one of the values should not affect the other variable. Since the left hand side is and right hand side are in represented completely in independent variables, $\lambda$ must be a constant if $x$ and $t$ are independent variables. $\la$ is the eigenvalue of the problem whose values are often sought and is inferred from the boundary conditions. This is as far as analysis can go without specifying the boundary conditions.
+%Seperator
+%Seperator
+%Seperator
+\section{Zero-Endpoint Temperatures}
+\begin{comment} 
+\end{comment}
+Suppose the rod is of length $L$ and that the initial temperature distribution is known. The boundary conditions,
+$$u(0,t) = u(L,t) = 0\quad,\quad u(x,0) = m(x)$$The first boundary condition is the zero endpoint condition and the second condition is the initial temperature distribution. Reiterating the first boundary condition and substituting $u(x,t)$ as the product of two single variable functions,
+$$u(0,t) = u(L,t) = 0\quad,\quad f(0)g(t) = f(L)g(t) = 0$$
+The function $g(t)$ is not trivial, and therefore, $g(t) \neq 0$. Therefore, it follows that,
+$$f(0) = f(L) = 0$$Because the endpoint conditions, it is convenient that the function $f(x)$ be made into a trigonometric function. Consider the eigenvalue to be negative,
+$$\f{1}{k}\f{g'(t)}{g(t)} = \f{f''(x)}{f(x)} = -\lambda$$
+Two ordinary differential equation problems can be obtained from this,
+$$\f{1}{k}\f{g'(t)}{g(t)} = -\lambda \quad,\quad \f{f''(x)}{f(x)} = -\lambda$$
+$$g'(t) = -\lambda kg(t) \quad,\quad f''(x) = -\lambda f(x)$$                               
+The second ordinary differential equation, $\dst{f''(x) = -\lambda f(x)}$ has the solution,
+$$f(x) = c_1\cos\l(\sqrt{\la}x\r) + c_2\sin\l(\sqrt{\la}x\r)$$To satisfy the endpoint condition $\dst{f(0) = f(L) = 0}$, $c_1 = 0$ and $\sqrt{\la}L = n\pi$, wherein $n$ are integers starting from zero. Therefore, $\la = n^2\pi^2/L^2$. Substituting the eigenvalues and arbitrary constants $c_1$,
+$$f(x) = c_2\sin\l(\f{n\pi}{L} x\r)$$
+Substituting the eigenvalue and solving the second ordinary differential equations problem,
+$$g'(t) = -\f{n^2\pi^2k}{L^2}g(t)$$
+$$\int\f{1}{g(t)}dg(t) = -\f{n^2\pi^2k}{L^2}\int dt$$
+$$\ln[g(t)] = -\f{n^2\pi^2k}{L^2}t + c$$
+$$g(t) = Ce^{\dst{-\l(\f{n^2\pi^2k}{L^2}\r)t}}$$
+Substituting the two equations together,
+$$u(x,t) = C_ne^{\dst{-\l(\f{n^2\pi^2k}{L^2}\r)t}}\sin\l(\f{n\pi}{L} x\r)$$
+Due to the partial differential operator being a linear operator, the superposition principle holds true. Therefore, the general solution to the partial differential equation must be the linear combination of its linearly independent solutions,
+$$u_g(x,t) = \sum^{\infty}_{n=1}\l[C_ne^{\dst{-\l(\f{n^2\pi^2k}{L^2}\r)t}}\sin\l(\f{n\pi}{L} x\r)\r]$$
+%Seperator
+%Seperator
+%Seperator
+\section{Insulated Ends}
+\begin{comment} 
+\end{comment}
+With the same length of rod $L$ and known initial temperature distribution $m(x)$, the boundary conditions,
+$$\f{\p}{\p x}\l[u(0,t)\r] = \f{\p}{\p x}\l[u(L,t)\r] = 0\quad,\quad u(x,0) = m(x)$$
+Substituting the boundary conditions with the definition of $u$ as the product of two single variable functions,
+$$f'(0)g(t) = f'(L)g(t) = 0$$
+Similarly to the previous case, since $g(t)$ is not the trivial zero function,
+$$f'(0) = f'(L) = 0$$
+Just in the previous part, it is convenient to choose the eigenvalues to be negative in the two ordinary differential equation problems,
+$$\f{1}{k}\f{g'(t)}{g(t)} = -\lambda \quad,\quad \f{f''(x)}{f(x)} = -\lambda$$
+This is advantageous because $f$ will take the form of a linear combination of trigonometric functions, at which we can simply choose the cosine series to satisfy the boundary condition above. The general form of $f(x)$,
+$$f(x) = c_1\cos\l(\sqrt{\la}x\r) + c_2\sin\l(\sqrt{\la}x\r)$$
+$$f'(x) = -c_1\sin\l(\sqrt{\la}x\r) + c_2\cos\l(\sqrt{\la}x\r)$$
+The only conditions that would satisfy the end-point boundary conditions, $c_2 = 0$, $\sqrt{\la}L = n\pi$, $\la = n^2\pi^2/L^2$. Substituting the eigenvalues and arbitrary constants would yield,
+$$f(x) = c_1\cos\l(\f{n\pi}{L}x\r)$$
+Solving for $g(t)$ yields,
+$$g'(t) = -\la k g(t)$$
+Familiarly,
+$$g(t) =  e^{-\la k t} = Ce^{\dst{\l(-\f{n^2\pi^2k}{L^2} t\r)}}$$
+Similarly to the previous chapter and by principle of superposition,
+$$u_g(x,t) = \sum^{\infty}_{n=1}\l[C_ne^{\dst{-\l(\f{n^2\pi^2k}{L^2}\r)t}}\cos\l(\f{n\pi}{L} x\r)\r]$$
+\end{center}
+
+\end{document}

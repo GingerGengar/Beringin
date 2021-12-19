@@ -1,0 +1,62 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+
+
+\chapter{Sturm-Liouville Problems}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\stdsection{Definition of Stum-Liouville Problems}A Sturm-Liouville Problem is a problem that satisfies the following equation with the following boundary conditions,
+$$0 = \f{d}{dx}\l[p(x)\f{dy}{dx}\r]-q(x)y+\la r(x)y$$
+Alternately,
+$$0 = \f{dy}{dx}\f{d}{dx}\l[p(x)\r] + p(x)\f{d^2y}{dx^2}-q(x)y+\la r(x)y$$
+$$0 = p(x)\f{d^2y}{dx^2} + p'(x)\f{dy}{dx}-q(x)y+\la r(x)y$$
+The initial conditions are shown below,
+$$0 = \a_1y(a) - \a_2y'(a)\quad,\quad 0 = \be_1y(b) + \be_2y'(b)$$                                        wherein neither $\a_1$ and $\a_2$ both zero nor $\be_1$ and $\be_2$ both zero. The parameter $\la$ is the “eigenvalue” whose possible (constant) values are sought usually via the application of the boundary conditions.    
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Eigenvalue Theorem of Sturm-Liouville Problems}
+\begin{comment}
+\end{comment}
+Suppose that the functions $p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous on the closed interval $[a,b]$ and that $p(x)>0$ and $r(x)>0$ at each point of $[a,b]$. Then the eigenvalues of the Sturm–Liouville problem constitute an increasing sequence,
+$$\la_1 < \la_2 < \la_3 < \dots <\la_\infty$$
+of real numbers with
+$$\lim_{n\to\infty}[\la_n] = \infty$$To within a constant factor, only a single eigenfunction $y_n(x)$ is associated with each eigenvalue $\la_n$. Moreover, if $q(x)\geq0$ on the closed interval $[a,b]$ and the coefficients $\a_1$, $\a_2$, $\be_1$, and $\be_2$ are all non-negative, then the eigenvalues are all non-negative.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Eigenvalues-Eigenfunctions Series}
+\begin{comment}
+\end{comment}
+If the functions $p(x)$, $q(x)$ and $r(x)$ of the Sturm-Liouville problem satisifes the Eigenvalue Theorem, then eigenfunctions $y_i(x)$ and $y_j(x)$ corresponding to eigenvalues $\la_i$ and $\la_j$ wherein $j\neq1$ are orthogonal with respect to each other relative to the function $r(x)$,
+$$0 = \int^{b}_{a}y_i(x)y_j(x)r(x)dx$$
+For a sturm-liouville problem with infinite eigenvalues, it is possible to represent an arbitrary function $f(x)$ as the infinite sum of the eigenvalues,
+$$f(x) = \sum^{\infty}_{m=1}\l[c_my_m(x)\r]$$
+wherein $y_m(x)$ represents the $m^{th}$ eigenfunction of the $m^{th}$ eigenvalue $\la_m$. Taking the integral in both sides with the product to the eigenfunction $y_n(x)$ relative to the function $r(x)$,
+$$\int^{b}_{a}f(x)y_n(x)r(x)dx = \int^{b}_{a}\sum^{\infty}_{m=1}\l[c_my_m(x)\r]y_n(x)r(x)dx$$
+Using the assumption, $\dst{0 = \int^{b}_{a}y_i(x)y_j(x)r(x)dx}$,
+$$\int^{b}_{a}f(x)y_n(x)r(x)dx = \int^{b}_{a}c_n\l[y_n(x)\r]^2r(x)dx = c_n\int^{b}_{a}\l[y_n(x)\r]^2r(x)dx$$
+Therefore, the constant $c_n$ could be obtained by,
+$$c_n = \f{\dst{\int^{b}_{a}f(x)y_n(x)r(x)dx}}{\dst{\int^{b}_{a}\l[y_n(x)\r]^2r(x)dx}}$$
+This particular theorem could be used to prove under certain reasonable conditions that there exists an infinite series that would allow the boundary conditions to be implemented analytically into the partial differential equations problems.
+\end{center}
+
+\end{document}

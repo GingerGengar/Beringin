@@ -1,0 +1,70 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{One-Dimensional Wave Equation}
+\begin{comment} 
+Physics Archives
+\end{comment}
+The equation for the one-dimensional wave equation is shown below,
+$$\f{\p^2 y}{\p t^2} = a^2\f{\p^2 y}{\p x^2}$$ 
+Using the familiar substitution $\dst{y(x,t) = u(x)\times r(t)}$,
+$$\f{\p^2}{\p t^2}\l[u(x)r(t)\r] = a^2\f{\p^2}{\p x^2}\l[u(x)r(t)\r]$$
+$$u(x)r''(t) = a^2u''(x)r(t)$$ 
+wherein $r''(t)$ and $u''(x)$ represents the second order derivative of $r(t)$ and $u(x)$ respectively. Manipulation of the equation,
+$$\f{1}{a^2}\f{r''(t)}{r(t)} = \f{u''(x)}{u(x)}$$
+To fit for the somewhat arbitrary conditions,
+$$y(0,t) = y(L,t) = 0\quad,\quad y(x,0) = f(x) \quad,\quad \f{\p}{\p t}\l[y(x,0)\r] = g(x)$$
+it is useful to consider the derivative homogenous case (A) and the displacement homogenous case (B) seperately,
+$$y_A(0,t) = y_A(L,t) = 0\quad,\quad y_B(0,t) = y_B(L,t) = 0$$
+$$y_A(x,0) = f(x)\quad,\quad y_B(x,0) = 0$$
+$$\f{\p }{\p t}[y_A(x,0)] = 0\quad,\quad \f{\p }{\p t}[y_B(x,0)] = g(x)$$
+The somewhat arbitray boundary condition case would be the satisfied by the  addition of the derivative homogenous case  and the displacement homogenous case. Both function $y_A(x,t)$ and $y_B(x,t)$ satisifes the partial differential equation, therefore, the algebraic addition of them must also satisfy the one dimensional wave equation. When they are added algebraically,
+$$y_A(0,t) + y_B(0,t) = y_A(L,t) + y_B(L,t) = 0 + 0$$
+$$y_A(x,0) + y_B(x,0) = f(x) + 0\quad,\quad \f{\p}{\p t}\l[y_A(x,0) + y_B(x,0)\r] = 0 + g(x)$$
+Therefore, the algebraic addition of the derivative homogenou and displacement homogenous satisfies the somewhat arbitrary conditions provided earlier.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Derivative Homogenous Case}
+\begin{comment}
+\end{comment}
+The boundary conditions for the derivative homogenous case,
+$$y(0,t) = y(L,t) = 0\quad,\quad y(x,0) = f(x)\quad,\quad\f{\p }{\p t}[y(x,0)] = 0$$
+To satisfy the first boundary condition listed above, it would be convenient for the eigenvalues to be considered negative,
+$$\f{1}{a^2}\f{r''(t)}{r(t)} = \f{u''(x)}{u(x)} = -\la$$
+Therefore, the two ordinary differential equations,
+$$u''(x) = -\la u(x)\quad,\quad r''(t) = -\la a^2 r(t)$$
+The characteristic equation associated to the displacement differential equation,
+$$r^2 = -\la\quad,\quad r = \sqrt{\la}i$$
+Therefore, the displacement function $u(x)$ is in terms of the familiar linear combination of trigonometric functions,
+$$u(x) = c_1\cos\l(\sqrt{\la}x\r) + c_2\sin\l(\sqrt{\la}x\r)$$
+The only constants that will satisfy the condition $\dst{y(0,t) = y(L,t) = 0}$, $c_1 = 0$, and $\sqrt{\la}L = n\pi$. Therefore, the eigenvalues are, $\dst{\la = \f{n^2\pi^2}{L^2}}$. Substituting for eigenvalues and arbitray constant $c_1$ into $u(x)$,
+$$u(x) = c_2\sin\l(\f{n\pi}{L}x\r)$$
+The characteristic equation associated to the time dependent differential equation,
+$$r^2 = -\la a^2\quad,\quad r = a\sqrt{\la}i$$
+Therefore, the trigonometric solution to the above characteristic equation,
+$$r(t) = k_1\cos\l(a\sqrt{\la}t\r) + k_2\sin\l(a\sqrt{\la}t\r)$$
+$$r(t) = k_1\cos\l(\f{n\pi a}{L}t\r) + k_2\sin\l(\f{n\pi a}{L}t\r)$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Displacement Homogenous Case}
+\begin{comment}
+\end{comment}
+The boundary conditions for the displacement homogenous case,
+$$y(0,t) = y(L,t) = 0\quad,\quad y(x,0) = 0\quad,\quad\f{\p }{\p t}[y(x,0)] = g(x)$$
+\end{center}
+
+\end{document}

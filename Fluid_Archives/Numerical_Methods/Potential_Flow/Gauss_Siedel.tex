@@ -1,0 +1,57 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{Numerical Methods: Potential Flows}
+\begin{comment}
+Only for 2D , next time please expand to 3D!
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\stdsection{Gauss-Siedel Grid Method}
+\begin{comment}
+\end{comment}
+The Taylor expansion series for an arbitray function $f(t)$ is defined as the following,
+$$f(t) = \sum^{\infty}_{n = 0}\l\{\f{1}{n!}\f{d^n}{dx^n}[f(a)](x - a)^n\r\}$$
+Let the control volume be split up into infinitesmially small grids. Each grid will have horizontal width of $dx$ and a vertical height of $dy$. Let $\psi_{i,j}$ represent the $i^{th}$ column and the $j^{th}$ row value of the stream function. Columns are defined as the vertical edges of the infinitesmially small grids meanwhile rows are defined as the horizontal edges of the infinitesmailly small grids. Therefore, the analysis performed occurs at the edges of the infinitesmially small grids. Indexing starts from the bottom left corner of the control volume, at the origin of the declared coordinate system. Indices start at 0 and progress by increments of 1 along the $x$ and $y$ axes. Analyzing the Taylor Expansion series horizontally in the $x$-direction,
+$$\psi_{i + 1,j} = \sum^{\infty}_{n = 0}\l\{\f{1}{n!}\f{d^n}{dx^n}[\psi_{i,j}](\Delta x)^n\r\}$$
+For the ${i - 1}^{th}$ term,
+$$\psi_{i - 1,j} = \sum^{\infty}_{n = 0}\l\{\f{1}{n!}\f{d^n}{dx^n}[\psi_{i,j}](-\Delta x)^n\r\}$$
+Taking the second order approximation, and neglecting the higher order terms,
+$$\sum^{\infty}_{n = 3}\l\{\f{1}{n!}\f{d^n}{dx^n}[\psi_{i,j}](\Delta x)^n\r\}\approx \sum^{\infty}_{n = 3}\l\{\f{1}{n!}\f{d^n}{dx^n}[\psi_{i,j}](-\Delta x)^n\r\}\approx 0$$
+Therefore, for the ${i + 1}^{th}$ term and the ${i - 1}^{th}$ term respectively,
+$$\psi_{i + 1,j} \approx \psi_{i,j} + \f{d\psi_{i,j}}{dx}\Delta x + \f{1}{2}\f{d^2\psi_{i,j}}{dx^2}(\Delta x)^2 \quad,\quad \psi_{i - 1,j} \approx \psi_{i,j} - \f{d\psi_{i,j}}{dx}\Delta x + \f{1}{2}\f{d^2\psi_{i,j}}{dx^2}(\Delta x)^2$$
+Adding the terms together and manipulating the equation to isolate the $\dst{\f{d^2\psi_{i,j}}{dx^2}}$ term,
+$$\psi_{i + 1,j} + \psi_{i - 1,j} \approx \psi_{i,j} + \f{d\psi_{i,j}}{dx}\Delta x + \f{1}{2}\f{d^2\psi_{i,j}}{dx^2}(\Delta x)^2 + \psi_{i,j} - \f{d\psi_{i,j}}{dx}\Delta x + \f{1}{2}\f{d^2\psi_{i,j}}{dx^2}(\Delta x)^2$$
+$$\psi_{i + 1,j} + \psi_{i - 1,j} \approx 2\psi_{i,j} + \f{d^2\psi_{i,j}}{dx^2}(\Delta x)^2$$
+$$\f{d^2\psi_{i,j}}{dx^2}(\Delta x)^2\approx \psi_{i + 1,j} + \psi_{i - 1,j} - 2\psi_{i,j}$$
+$$\f{d^2\psi_{i,j}}{dx^2} \approx \f{\psi_{i + 1,j} + \psi_{i - 1,j} - 2\psi_{i,j}}{(\Delta x)^2}$$
+Using the same process in the $y$-direction,
+$$\f{d^2\psi_{i,j}}{dy^2} \approx \f{\psi_{i,j + 1} + \psi_{i,j - 1} - 2\psi_{i,j}}{(\Delta y)^2}$$
+Substituting the relevant terms into the governing equation,
+$$\f{\p^2}{\p x^2}[\psi] + \f{\p^2}{\p y^2}[\psi] = 0$$
+$$\f{\psi_{i + 1,j} + \psi_{i - 1,j} - 2\psi_{i,j}}{(\Delta x)^2} + \f{\psi_{i,j + 1} + \psi_{i,j - 1} - 2\psi_{i,j}}{(\Delta y)^2} = 0$$
+Making $\psi_{i,j}$ the subject of the equation above,
+$$(\psi_{i + 1,j} + \psi_{i - 1,j} - 2\psi_{i,j})(\Delta y)^2 + (\psi_{i,j + 1} + \psi_{i,j - 1} - 2\psi_{i,j})(\Delta x)^2 = 0$$
+$$(\psi_{i + 1,j} + \psi_{i - 1,j})(\Delta y)^2 + (\psi_{i,j + 1} + \psi_{i,j - 1})(\Delta x)^2 = 2\psi_{i,j}(\Delta y)^2 + 2\psi_{i,j}(\Delta x)^2$$
+$$(\psi_{i + 1,j} + \psi_{i - 1,j})(\Delta y)^2 + (\psi_{i,j + 1} + \psi_{i,j - 1})(\Delta x)^2 = 2[(\Delta y)^2 + (\Delta x)^2](\psi_{i,j})$$
+$$\psi_{i,j} = \f{(\psi_{i + 1,j} + \psi_{i - 1,j})(\Delta y)^2 + (\psi_{i,j + 1} + \psi_{i,j - 1})(\Delta x)^2}{2[(\Delta y)^2 + (\Delta x)^2]}$$
+The relative error $\epsilon$ of the stream function for the mesh corners are defined as
+$$\l|\f{\overset{p+1}{\psi_{i,j}} - \overset{p}{\psi_{i,j}}}{\overset{p+1}{\psi_{i,j}}}\r| = \epsilon$$
+wherein $\dst{\overset{p+1}{\psi_{i,j}}}$ represents the $p+1^{th}$ iteration of $\psi_{i,j}$ formulated through the Gauss-Seidel method.The relative error for the control volume would likewise be defined as
+$$\f{1}{k}\sqrt{\sum^{n-1}_{i = 1}\sum^{m-1}_{j = 1}\l(\f{\overset{p+1}{\psi_{i,j}} - \overset{p}{\psi_{i,j}}}{\overset{p+1}{\psi_{i,j}}}\r)^2} = \epsilon_{t}\quad,\quad k = (n-1)(m-1)$$
+The value of the error $\epsilon$ would represent the error tolerance and a direct numerical simulation of the potential flow algorithm should keep running until the error tolerance would be low enough. The values of $n$ and $m$ would be shown analytically below,
+$$m = \f{H}{dy}\quad,\quad n = \f{L}{dx}$$
+\end{center}
+
+\end{document}
