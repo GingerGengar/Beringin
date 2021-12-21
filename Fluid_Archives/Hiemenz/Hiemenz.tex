@@ -16,6 +16,307 @@ The full set of the Navier-Stokes Equations are shown below. The three equations
 $$\f{\p}{\p t}[\rho] + \b{v_f} \d \nabla\rho = -\rho \nabla \d \b{v_f}$$
 $$\rho \l[\f{\p}{\p t}[\b{v_f}] + (\b{v_f} \d \nabla) \b{v_f}\r] = -\nabla P_r + \rho \b{F_b} + \mu\nabla^2\b{v_f} = -\nabla P_r + \rho \b{F_b} - \f{2}{3}\nabla(\mu\nabla\d \b{v_f}) + 2\nabla\d(\mu S)$$
 $$\rho c_p\l[\f{\p}{\p t}(T) + \b{v_f}\d\nabla T \r] = \nabla\d(k\nabla T) - \f{2}{3}\mu(\nabla\d \b{v_f})^2 + 2\mu S:S + \be T \f{D}{Dt}\l[P_r\r]$$
+
+
+
+
+
+
+
+
+
+
+%Seperator
+%Seperator
+\subsection{Part b}
+The continuity governing equation for incompressible fluids in cylindrical coordinates,
+$$0=\na\d \b{v} = \f{1}{r}\f{\p}{\p r}[r v_r] + \f{1}{r} \f{\p}{\p \t}[v_\t] + \f{\p}{\p z}[v_z]$$
+In $3$-dimensions, the fluid velocity has a radial component, an azimuthal (swirl) component and a $z$ component. For this derivation, it is assumed that the fluid does not have swirl and that the flow is axis-symmetric. All quantities are not expected to vary in the $\t$ direction. The flow is also assumed to be steady. Let the fluid velocity vector $\b{v}$ be defined below,
+$$\b{v} = \begin{bmatrix} v_r && v_\t && v_z \end{bmatrix}^T$$
+wherein the $v_r$, $v_\t$ and $v_z$ correspond to the fluid velocity components in the radial, azimuthal and $z$-direction respectively. The radial component of velocity for axis-symmetric potential flow is defined to be,
+$$v_{r,i} = cr$$
+
+Reiterating the continuity expression,
+$$0= \f{1}{r}\f{\p}{\p r}[r v_r] + \f{1}{r} \f{\p}{\p \t}[v_\t] + \f{\p}{\p z}[v_z]$$
+Due to the axis-symmetric assumption, $\dst{\f{1}{r} \f{\p}{\p \t}[v_\t]=0}$. Substituting,
+$$0= \f{1}{r}\f{\p}{\p r}[r v_r] + \f{\p}{\p z}[v_z]$$
+Substituting the radial velocity for the inviscid flow into the continuity expression,
+$$0= \f{1}{r}\f{\p}{\p r}[r \times cr] + \f{\p}{\p z}[v_z]$$
+$$0= \f{1}{r}\f{\p}{\p r}[cr^2] + \f{\p}{\p z}[v_z]$$
+$$0= \f{1}{r} \times 2cr + \f{\p}{\p z}[v_z]$$
+$$0=  2c + \f{\p}{\p z}[v_z]$$
+$$-2c = \f{\p}{\p z}[v_z]$$
+$$-2cz + k = v_z$$
+wherein $k$ is some constant to satisfy some boundary condition. Stagnation point is defined to be a point in the fluid where there is no velocity. Since a stagnation point occurs at $z=0$, then the $v_z$ velocity must also be zero at said point. Substituting,
+$$0 + k = 0$$
+From applying the boundary condition of the stagnation point, $k$ can be safely neglected. Hence, the fluid velocity in the $z$-direction for inviscid flows,
+$$-2cz = v_{z,i}$$
+
+To make an "intelligent" guess on the modification performed for the fluid flow, the stream function for the inviscid flow must first be determined. Assume that the $\b{A}$ is the velocity potential vector, whose components,
+$$\b{A} = \begin{bmatrix} A_r && A_\t && A_z \end{bmatrix}^T$$
+The relationship of the velocity vector field to the velocity potential vector,
+$$\b{v} = \begin{bmatrix} v_r \\~\\ v_\t \\~\\ v_z \end{bmatrix} = \na\times\b{A} = \begin{bmatrix}
+\dst{\f{1}{r}\f{\p A_z}{\p \t} - \f{\p A_\t}{\p z}} \\~\\
+\dst{\f{\p A_r}{\p z} - \f{\p A_z}{\p r}} \\~\\
+\dst{\f{1}{r}\f{\p}{\p r}(rA_\t) - \f{1}{r}\f{\p A_r}{\p \t}}
+\end{bmatrix}$$
+Since the problem is assumed to be axis-symmetric, and also no swirl, then
+$$0=\f{\p A_r}{\p z} \quad,\quad 0=\f{\p A_z}{\p r}$$
+Therefore,
+$$0= A_r \quad,\quad 0= A_z$$
+Let $A_\t = \psi$ which would represent the stream function of this axis-symmetric fluid flow. Substituting for the simplification,
+$$v_r =  - \f{\p A_\t}{\p z} \quad,\quad v_z = \f{1}{r}\f{\p}{\p r}(rA_\t)$$
+Susbtituting for $\psi$,
+$$v_r =  -\f{\p \psi}{\p z} \quad,\quad v_z = \f{1}{r}\f{\p}{\p r}(r\psi)$$
+If $\psi_i$ represents the stream function to the inviscid fluid flow,
+$$v_{r,i} =  -\f{\p \psi_i}{\p z} \quad,\quad v_{z,i} = \f{1}{r}\f{\p}{\p r}(r\psi_i)$$
+Substituting for the inviscid flow field that was determined earlier,
+$$cr =  -\f{\p \psi_i}{\p z} \quad,\quad -2cz = \f{1}{r}\f{\p}{\p r}(r\psi_i)$$
+
+Analyzing the velocity in the axis-direction,
+$$-2cz = \f{1}{r}\f{\p}{\p r}(r\psi_i)$$
+$$-2czr = \f{\p}{\p r}(r\psi_i)$$
+$$-2cz\int r\,dr = \int \f{\p}{\p r}(r\psi_i)\,dr$$
+$$-2cz\times \f{1}{2}r^2 = \int \,d(r\psi_i)$$
+$$-cz\times r^2 = r\psi_i + k(z)$$
+$$-czr^2 = r\psi_i + k(z)$$
+
+Analyzing the velocity in the radial direction,
+$$cr =  -\f{\p \psi_i}{\p z}$$
+$$-cr =  \f{\p \psi_i}{\p z}$$
+Deriving the previous expression with respect to $z$,
+$$\f{\p}{\p z}[-czr^2] = \f{\p}{\p z}[r\psi_i] + \f{\p}{\p z}[k(z)]$$
+$$-cr^2 = r\f{\p}{\p z}[\psi_i] + k'(z)$$
+Substituting for the derivative of $\psi_i$ with respect to $z$,
+$$-cr^2 = r\times -cr + k'(z)$$
+$$-cr^2 = -cr^2 + k'(z)$$
+$$k'(z)=0$$
+Hence, $k(z) = constant$. This shows that some constant can be added to the stream function and the resulting fluid flow would still be identical. Let $k(z)=0$ purely for convenience,
+$$-czr^2 = r\psi_i + k(z) = r\psi_i$$
+$$-czr = \psi_i$$
+This is the stream function for the inviscid flow. The stream function should be altered in order to satisfy the no-slip boundary condition on the walls. Making the minimum changes necessary to allow for this, $z$ in the stream function of the inviscid flow is replaced with an arbitrar function $f(z)$. $f$ is a function purely in $z$. Let $\psi$ be the stream function to a fluid flow that satisfies the Navier-Stokes equations near a stagnation point,
+$$\psi = -crf(z)$$
+To simplify notation,
+$$\psi = -crf$$
+Finding the velocities with the modified stream function,
+$$v_r =  -\f{\p \psi}{\p z} \quad,\quad v_z = \f{1}{r}\f{\p}{\p r}(r\psi)$$
+$$v_r =  -\f{\p}{\p z}(\psi) \quad,\quad v_z = \f{1}{r}\f{\p}{\p r}(r\psi)$$
+$$v_r =  -\f{\p}{\p z}(-crf) \quad,\quad v_z = \f{1}{r}\f{\p}{\p r}(-cr^2f)$$
+$$v_r =  crf' \quad,\quad v_z = \f{1}{r}\times (-2crf)$$
+$$v_r =  crf' \quad,\quad v_z = -2cf$$
+Although the fluid velocity fiield that obeys the Navier-Stokes equation would be different than the inviscid flow field near the wall, the velocity field should be identical to the inviscid flow field very far from the wall. Hence, 
+$$\lim_{z\to\infty}\l[v_{r,i}\r] =  \lim_{z\to\infty}\l[crf'\r]$$
+$$\lim_{z\to\infty}\l[cr\r] =  \lim_{z\to\infty}\l[cr\r]\lim_{z\to\infty}\l[f'\r]$$
+$$1 = \lim_{z\to\infty}\l[f'\r]$$
+$$\lim_{z\to\infty}\l[v_{z,i}\r] = \lim_{z\to\infty}\l[-2cf\r]$$
+$$\lim_{z\to\infty}\l[-2cz\r] = \lim_{z\to\infty}\l[-2cf\r]$$
+$$\lim_{z\to\infty}\l[-2c\r]\lim_{z\to\infty}\l[z\r] = \lim_{z\to\infty}\l[-2c\r]\lim_{z\to\infty}\l[f\r]$$
+$$\lim_{z\to\infty}\l[z\r] = \lim_{z\to\infty}\l[f\r]$$
+
+
+
+To summarize the stream function of the flow field which is an exact-solution to the Navier-Stokes equation,
+$$\psi = -crf$$
+The resulting velocity components of the flow field with such a stream function,
+$$v_r =  crf' \quad,\quad v_z = -2cf$$
+The limits of $f$ such that the boundary conditions of the flow field matching with that of the invscid fluid flow very far away from the wall,
+$$1 = \lim_{z\to\infty}\l[f'\r] \quad,\quad \lim_{z\to\infty}\l[z\r] = \lim_{z\to\infty}\l[f\r]$$
+
+
+
+The laplacian of an arbitrary vector $v$ in polar coordinates,
+$$\na^2 v = \f{1}{r}\f{\p }{\p r}\l[r\f{\p v}{\p r}\r] + \f{1}{r^2}\f{\p^2 v}{\p \t^2} + \f{\p^2 v}{\p z^2}$$
+The momentum equation in the radial direction,
+$$\rho\l[\f{\p v_r}{\p t}  + v_r\f{\p v_r}{\p r} + \f{v_\t}{r}\f{\p v_r}{\p \t} - \f{v_\t^2}{r}  + v_z\f{\p v_r}{\p z} \r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{v_r}{r^2} - \f{2}{r^2}\f{\p v_\t}{\p \t}\r] + \rho g_r$$
+Due to the steady state assumption, $\dst{\f{\p v_r}{\p t}=0}$. Due to the axis-symmetric assumption,$\dst{\f{v_\t}{r}\f{\p v_r}{\p \t}=0}$. Assuming the flow field does not have any swirl, $\dst{\f{v_\t^2}{r}=0}$ and $\dst{- \f{2}{r^2}\f{\p v_\t}{\p \t}=0}$. Neglecting any body force, $\dst{\rho g_r=0}$. Substituting,
+$$\rho\l[v_r\f{\p v_r}{\p r}  + v_z\f{\p v_r}{\p z} \r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{v_r}{r^2} \r]$$
+Substituting the definition of $v_r$ from the stream-function analysis,
+$$\rho\l[crf'\f{\p}{\p r}(crf')  + v_z\f{\p}{\p z}(crf') \r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{crf'}{r^2} \r]$$
+$$\rho\l[crf'\times cf'  + v_z\times crf'' \r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{cf'}{r} \r]$$
+$$\rho\l[c^2rf'^2  + v_z\times crf''\r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{cf'}{r}\r]$$
+Substituting for the velocity $v_z$,
+$$\rho\l[c^2rf'^2 - 2cf\times crf''\r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{cf'}{r}\r]$$
+$$\rho\l[c^2rf'^2 - 2c^2rff''\r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{cf'}{r}\r]$$
+
+The laplacian of the radial velocity,
+$$\na^2 v_r = \f{1}{r}\f{\p }{\p r}\l[r\f{\p v_r}{\p r}\r] + \f{1}{r^2}\f{\p^2 v_r}{\p \t^2} + \f{\p^2 v_r}{\p z^2}$$
+Substituting for the radial velocity $v_r$.
+$$\na^2 v_r = \f{1}{r}\f{\p }{\p r}\l[r\f{\p crf'}{\p r}\r] + \f{1}{r^2}\f{\p^2 crf'}{\p \t^2} + \f{\p^2 crf'}{\p z^2}$$
+Due to the axis-symmetric assumption
+$$\na^2 v_r = \f{1}{r}\f{\p }{\p r}\l[r\f{\p crf'}{\p r}\r] + \f{\p^2 crf'}{\p z^2}$$
+$$\na^2 v_r = \f{1}{r}\f{\p }{\p r}\l[crf'\r] + \f{\p^2 crf'}{\p z^2}$$
+$$\na^2 v_r = \f{1}{r}\times cf' + crf'''$$
+$$\na^2 v_r = \f{cf'}{r} + crf'''$$
+
+Reiterating where we left off with the radial momentum,
+$$\rho\l[c^2rf'^2 - 2c^2rff''\r] = -\f{\p p}{\p r} + \mu\l[\na^2v_r - \f{cf'}{r}\r]$$
+Substituting the laplacian of radial velocity into the momentum equation in the radial direction,
+$$\rho\l[c^2rf'^2 - 2c^2rff''\r] = -\f{\p p}{\p r} + \mu\l[\f{cf'}{r} + crf''' - \f{cf'}{r}\r]$$
+$$\rho\l[c^2rf'^2 - 2c^2rff''\r] = -\f{\p p}{\p r} + \mu\l[crf'''\r]$$ %This is the ODE 1
+The above is the first ordinary differential equation which describes $f$. Unfortunately, the term $\dst{\f{\p p}{\p r}}$ cannot be ignored when considering the exact case because there is significant pressure changes in the fluid flow. If the exact solution of the Navier-Stokes mimics potential flow far away, and the inviscid solution does allow for significant pressure gradients, then pressure gradients must also be taken into account when considering the exact solution to the Navier-Stokes. 
+
+
+
+The momentum equation in the axial direction,
+$$\rho\l[\f{\p v_z}{\p t} + v_r\f{\p v_z}{\p r} + \f{v_\t}{r}\f{\p v_z}{\p \t} + v_z\f{\p v_z}{\p z}\r] = - \f{\p p}{\p z} + \mu\na^2v_z + \rho g_z$$
+
+Just like before, due to the steady state assumption, $\dst{\f{\p v_z}{\p t}=0}$. Due to the axis-symmetric assumption, $\dst{\f{v_\t}{r}\f{\p v_z}{\p \t}=0}$. Neglecting any body force in the axial direction, $\dst{\rho g_z=0}$. Substituting for these simplifications,
+$$\rho\l[ v_r\f{\p v_z}{\p r} + v_z\f{\p v_z}{\p z}\r] = - \f{\p p}{\p z} + \mu\na^2v_z$$
+Substituting for axial velocity $v_z$ in terms of $f$,
+$$v_z = -2cf$$
+$$\rho\l[ v_r\f{\p }{\p r}(-2cf) - 2cf\f{\p }{\p z}(-2cf)\r] = - \f{\p p}{\p z} + \mu\na^2v_z$$
+Substituting for radial velocity,
+$$v_r =  crf'$$
+$$\rho\l[ crf'\f{\p }{\p r}(-2cf) - 2cf\f{\p }{\p z}(-2cf)\r] = - \f{\p p}{\p z} + \mu\na^2v_z$$
+$$\rho\l[ - 2cf\times -2cf'\r] = - \f{\p p}{\p z} + \mu\na^2v_z$$
+$$\rho\l[4c^2ff'\r] = - \f{\p p}{\p z} + \mu\na^2v_z$$
+
+The laplacian of the axial velocity,
+$$\na^2 v_z = \f{1}{r}\f{\p }{\p r}\l[r\f{\p v_z}{\p r}\r] + \f{1}{r^2}\f{\p^2 v_z}{\p \t^2} + \f{\p^2 v_z}{\p z^2}$$
+Due to the axis-symmetric assumption, $\dst{\f{1}{r^2}\f{\p^2 v_z}{\p \t^2}=0}$
+$$\na^2 v_z = \f{1}{r}\f{\p }{\p r}\l[r\f{\p v_z}{\p r}\r] + \f{\p^2 v_z}{\p z^2}$$
+Substituting for radial velocity $v_r$ and axial velocity $v_z$,
+$$\na^2 v_z = \f{1}{r}\f{\p }{\p r}\l[r\f{\p }{\p r}(-2cf)\r] + \f{\p^2 }{\p z^2}(-2cf)$$
+$$\na^2 v_z =  -2cf''$$
+Substituting laplacian of axial velocity into the axial momentum equation,
+$$\rho\l[4c^2ff'\r] = - \f{\p p}{\p z} + \mu\times-2cf''$$
+$$4\rho c^2ff' = - \f{\p p}{\p z} - 2\mu cf''$$ %This is ODE 2
+
+We now have $2$ ordinary differential equations that describe $f$ it is now possible to potentially solve the expressions by using differential equation $2$ to determine pressure in terms of $f$ and substituting into differential equation $1$ to solve for $f$. Integrating differential equation $2$,
+$$4\rho c^2 \int ff'\, dz = - \int\f{\p p}{\p z}\, dz - 2\mu c\int f''\,dz$$ 
+$$4\rho c^2 \int f\f{df}{dz}\, dz = - \int \,dp - 2\mu c\int f''\,dz$$ 
+$$4\rho c^2 \int f\, df = - \int \,dp - 2\mu c\int f''\,dz$$ 
+$$4\rho c^2 \times\f{1}{2}f^2 = - p - 2\mu cf' + k(r)$$ 
+wherein $k(r)$ is a function that is purely in terms of $r$. This function appears as a consequence of integrating with respect to $z$. 
+$$2\rho c^2 f^2 = - p - 2\mu cf' + k(r)$$ 
+Making pressure the subject of the expression,
+$$p = - 2\mu cf' - 2\rho c^2 f^2 + k(r)$$ 
+
+The exact solution to the Navier-Stokes equation should match the inviscid solution very far away from the wall. Implying that the pressure for the exact solution and the inviscid solution must match infinitely far away from the wall. Taking the limits as $z$ approaches $\infty$,
+$$\lim_{z\to\infty}\l[p\r] = - 2\mu c\lim_{z\to\infty}\l[f'\r] - 2\rho c^2 \lim_{z\to\infty}\l[f^2\r] + \lim_{z\to\infty}\l[k(r)\r]$$ 
+Susbtituting the limits for $f$ which was determined earlier,
+$$1 = \lim_{z\to\infty}\l[f'\r] \quad,\quad \lim_{z\to\infty}\l[z\r] = \lim_{z\to\infty}\l[f\r]$$
+$$\lim_{z\to\infty}\l[p\r] = - 2\mu c - 2\rho c^2 \lim_{z\to\infty}\l[z^2\r] + \lim_{z\to\infty}\l[k(r)\r]$$ 
+For values of $z\to\infty$,
+$$p = - 2\mu c - 2\rho c^2 z^2 + k(r)$$ 
+
+
+For the inviscid fluid flow, bernoulli's equation can be used to determine pressure,
+$$p_0 = p + \f{1}{2}\rho |\b{v_i}|^2$$
+wherein $\b{v_i}$ represents the local fluid velocity for inviscid flow. Considering that there is only radial and axial velocity in an axis-symetric problem,
+$$|\b{v_i}|^2 = v_{r,i}^2 + v_{z,i}^2$$
+Substituting,
+$$p_0 = p + \f{1}{2}\rho \l[v_{r,i}^2 + v_{z,i}^2\r]$$
+Making pressure the subject of the expression,
+$$p = p_0 - \f{1}{2}\rho \l[v_{r,i}^2 + v_{z,i}^2\r]$$
+Substituting for the inviscid radial and axial velocities,
+$$p = p_0 - \f{1}{2}\rho \l[(cr)^2 + (-2cz)^2\r]$$
+$$p = p_0 - \f{1}{2}\rho \l[c^2r^2 + 4c^2z^2\r]$$
+$$p = p_0 - \f{1}{2}\rho c^2r^2 -  2\rho c^2z^2$$
+
+Matching the exact solution's pressure to the inviscid solution's pressure far away from the wall,
+$$p = - 2\mu c - 2\rho c^2 z^2 + k(r) = p_0 - \f{1}{2}\rho c^2r^2 -  2\rho c^2z^2$$
+$$- 2\mu c + k(r) = p_0 - \f{1}{2}\rho c^2r^2$$
+$$k(r) = p_0 - \f{1}{2}\rho c^2r^2 + 2\mu c$$
+Substituting the function $k$ into the expression for pressure in the exact solution,
+$$p = - 2\mu c - 2\rho c^2 z^2 + p_0 - \f{1}{2}\rho c^2r^2 + 2\mu c$$ 
+$$p = - 2\rho c^2 z^2 + p_0 - \f{1}{2}\rho c^2r^2$$ 
+Taking the derivative with respect to $r$,
+$$\f{\p p}{\p r} = - 2\rho c^2 \f{\p}{\p r}(z^2) + \f{\p p_0}{\p r} - \f{1}{2}\rho \f{\p}{\p r}(c^2r^2)$$ 
+$$\f{\p p}{\p r} = - \f{1}{2}\rho \f{\p}{\p r}(c^2r^2)$$ 
+$$\f{\p p}{\p r} = - \f{1}{2}\rho \times 2c^2r$$ 
+$$\f{\p p}{\p r} = - \rho c^2r$$ 
+$$-\f{\p p}{\p r} = \rho c^2r$$ 
+
+Substituting the gradient of pressure in $r$ into differential equation $1$,
+$$\rho\l[c^2rf'^2 - 2c^2rff''\r] = -\f{\p p}{\p r} + \mu\l[crf'''\r]$$ %This is the ODE 1
+$$\rho\l[c^2rf'^2 - 2c^2rff''\r] = \rho c^2r + \mu crf'''$$ 
+$$\l[c^2rf'^2 - 2c^2rff''\r] =  c^2r + \f{\mu}{\rho} crf'''$$ 
+$$rf'^2 - 2rff'' =  r + \f{\mu}{\rho} \f{1}{c}rf'''$$ 
+
+The relation between kinematic and dynamic viscosity is shown below,
+$$\nu = \f{\mu}{\rho}$$
+Substituting,
+$$rf'^2 - 2rff'' =  r + \nu\f{1}{c}rf'''$$ 
+$$f'^2 - 2ff'' =  1 + \nu\f{1}{c}f'''$$ 
+$$-\f{\nu}{c}f''' + f'^2 - 2ff'' - 1 = 0$$ 
+
+Let the function $\phi$ and variable $\eta$ be defined below,
+$$f = \l(\f{2c}{\nu}\r)^{-1/2}\phi \quad,\quad \eta = \l(\f{2c}{\nu}\r)^{1/2}z$$
+
+By conjecture,
+$$\f{d^n}{dz^n} = \l[\l(\f{2c}{\nu}\r)^{1/2}\r]^n\f{d^n}{d\eta^n}$$
+$$\f{d^n}{dz^n} = 2^{n/2}\l(\f{c}{\nu}\r)^{n/2}\f{d^n}{d\eta^n}$$
+
+Consider when $n=1$,
+$$\f{d}{dz} = \f{d}{d\eta}\times\f{d\eta}{dz}$$
+$$\f{d}{dz} = \f{d}{d\eta}\times\f{d}{dz}\l[\l(\f{2c}{\nu}\r)^{1/2}z\r]$$
+$$\f{d}{dz} = 2^{1/2}\l(\f{c}{\nu}\r)^{1/2}\f{d}{d\eta}$$
+
+Let $n=k+1$
+$$\f{d}{dz}\l[\f{d^{k}}{dz^{k}}\r] = 2^{(k+1)/2}\l(\f{c}{\nu}\r)^{(k+1)/2}\f{d^{k+1}}{d\eta^{k+1}}$$
+Let $LHS$ and $RHS$ be defined,
+$$LHS = \f{d}{dz}\l[\f{d^{k}}{dz^{k}}\r] \quad,\quad RHS = 2^{(k+1)/2}\l(\f{c}{\nu}\r)^{(k+1)/2}\f{d^{k+1}}{d\eta^{k+1}}$$
+$$LHS = \f{d}{dz}\l[2^{k/2}\l(\f{c}{\nu}\r)^{k/2}\f{d^k}{d\eta^k}\r]$$
+$$LHS = \f{d}{d\eta}\l[2^{k/2}\l(\f{c}{\nu}\r)^{k/2}\f{d^k}{d\eta^k}\r]\times \f{d\eta}{dz}$$
+$$LHS = \f{d}{d\eta}\l[2^{k/2}\l(\f{c}{\nu}\r)^{k/2}\f{d^k}{d\eta^k}\r]\times 2^{1/2}\l(\f{c}{\nu}\r)^{1/2}$$
+$$LHS = 2^{(k+1)/2}\l(\f{c}{\nu}\r)^{(k+1)/2}\f{d}{d\eta}\l[\f{d^k}{d\eta^k}\r]$$
+Since $LHS=RHS$, by principle of mathematical induction, the formula is true. Applying to the exact solution,
+$$-\f{\nu}{c}f''' + f'^2 - 2ff'' - 1 = 0$$
+
+$$-\f{\nu}{c}f''' = -\f{\nu}{c}\times 2^{3/2}\l(\f{c}{\nu}\r)^{3/2}\f{d^3}{d\eta^3}\l[2^{-1/2}\l(\f{c}{\nu}\r)^{-1/2}\phi\r]$$
+$$-\f{\nu}{c}f''' = -2^{3/2-1/2}\l(\f{c}{\nu}\r)^{3/2-1-1/2}\f{d^3}{d\eta^3}\l[\phi\r]$$
+$$-\f{\nu}{c}f''' = -2\f{d^3}{d\eta^3}\l[\phi\r]$$
+$$-\f{\nu}{c}f''' = -2\phi'''$$
+
+
+$$f'^2 = \l\{2^{1/2}\l(\f{c}{\nu}\r)^{1/2}\f{d}{d\eta}\l[2^{-1/2}\l(\f{c}{\nu}\r)^{-1/2}\phi\r]\r\}^2$$
+$$f'^2 = \l\{\f{d}{d\eta}\l[\phi\r]\r\}^2$$
+$$f'^2 = \l\{\phi'\r\}^2$$
+$$f'^2 = \phi'^2$$
+
+$$-2ff'' = -(2)2^{-1/2}\l[\l(\f{c}{\nu}\r)^{-1/2}\phi\r]2\l(\f{c}{\nu}\r)\f{d^2}{d\eta^2}\l[2^{-1/2}\l(\f{c}{\nu}\r)^{-1/2}\phi\r]$$
+$$-2ff'' = -2^{1-1/2+1-1/2}\l[\l(\f{c}{\nu}\r)^{-1/2+1-1/2}\phi\r]\f{d^2}{d\eta^2}\l[\phi\r]$$
+$$-2ff'' = -2\phi\phi''$$
+
+Substituting all the terms together,
+$$-2\phi''' + \phi'^2 - 2\phi\phi'' - 1 = 0$$
+$$-2\phi''' - 2\phi\phi'' + \phi'^2 - 1 = 0$$
+$$\phi''' + \phi\phi'' - \f{1}{2}\phi'^2 + \f{1}{2} = 0$$
+
+Reiterating the radial and axial velocities based on the modified stream function,
+$$v_r =  crf' \quad,\quad v_z = -2cf$$
+At the stagntion point $z=0$ and since $\eta$ is a linear function of $z$, $z=0$. The stagnation point is defined as a point in the fluid where fluid velocity is zero. Therefore,
+$$0 =  crf'(0) \quad,\quad 0 = -2cf(0)$$
+$$0 =  f'(0) \quad,\quad 0 = -f(0)$$
+Both derivative and function $f$ have linear scaling with $\phi'$ and $\phi$ respectively. Therefore,
+$$\phi(0)=0 \quad,\quad \phi'(0) = 0$$
+Infinitely far away,
+$$v_r = cr = crf'$$
+$$1 = f'(\infty)$$
+Taking the derivative of $f$,
+$$\f{df}{dz} = \l(\f{2c}{\nu}\r)^{1/2}\f{d}{d\eta}\l[\l(\f{2c}{\nu}\r)^{-1/2}\phi\r]$$
+$$\f{df}{dz} = \phi'(\eta)$$
+Substituting for infinite distance away,
+$$\f{df}{dz}_{z=\infty} = \phi'(\eta=\infty)$$
+$$1 = \phi'(\infty)$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{center}
 
 \end{document}
