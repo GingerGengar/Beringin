@@ -1,0 +1,371 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\chapter{Vorticity Equation}
+\begin{comment}
+
+It is important that in the other works, the body acceleration is denoted as \b{F_b}, CHANGE IT TO \b{g_b}. This is important because \b{F_b} is misleading. We don't mean force, we mean the acceleration vector. So use \b{g_b} instead.
+
+
+Results of a few reflections, we cannot just say that \f{D\rho}{Dt} = 0 for continuity. If we are to expand using \f{D\rho}{Dt} = 0, we will obtain the form, 0 = \f{\p\rho}{\p t} + v_i \f{\p\rho}{\p x_i}. The actual continuity governing equation: 0 = \f{\p\rho}{\p t} + \rho\f{\p}{\p x_j}(v_j) + v_j\f{\p\rho}{\p x_j}. Now if the divergence of velocity is zero, then the general continuity governing equation DEGENERATES into 0 = \f{D\rho}{Dt}. This means that that the observation 0 = \f{D\rho}{Dt} is only true for incompressible flow and could not represent the most general case of the continuity of fluids. Since an observation 0 = \f{D\rho}{Dt} fails to yield the most general case, then it is safe to assume that similar observations such as \b{a} = \f{D\b{v_f}}{Dt} will also likely fail to capture the full generality of the momentum governing equation.
+
+Non-conervative form of the momentum equation referenced, please add the proof in a different part!
+
+Please enforce consistency in notation. Please make sure that \b{v_f} is used when referring to fluid velocity throughout other documents. 
+
+Please include a chapter about index notation!
+
+
+Things to automate:
+    making the $$$$ environments
+    matrix environments
+    Subscript and superscripts
+    fractions
+    includegraphics commands
+    Copy Pasting if possible
+
+
+\end{comment}
+
+
+
+%Relevant mathematical proofs:
+
+Let $\b{A}$ and $\b{B}$ be vector fields, and $\phi$, $\psi$ be scalar fields,
+
+%Proof 1
+$$\na\times (\b{A}\times \b{B}) = \b{B}\d\na \b{A} + \b{A}\na\d \b{B} - \b{A}\d\na \b{B} - \b{B}\na\d \b{A}$$
+Let,
+$$LHS = \na\times (\b{A}\times \b{B}) \quad,\quad RHS = \b{B}\d\na \b{A} + \b{A}\na\d \b{B} - \b{A}\d\na \b{B} - \b{B}\na\d \b{A}$$
+
+Converting $RHS$ into index notation,
+$$RHS_i = B_j \f{\p }{\p x_j}(A_i) + A_i \f{\p}{\p x_j}(B_j) - A_j\f{\p}{\p x_j}(B_i) - B_i\f{\p}{\p x_j}(A_j)$$
+
+Converting $LHS$ into index notation,
+$$LHS_i = \epsilon_{ijk} \f{\p}{\p x_j}\l[\epsilon_{klm} A_l B_m\r] = \epsilon_{ijk}\epsilon_{klm} \f{\p}{\p x_j}\l[ A_l B_m\r]$$
+
+Using the cylcic permutation property of the permutation tensor $\epsilon_{ijk} = \epsilon_{kij}$. Therefore,
+$$\epsilon_{ijk}\epsilon_{klm} = \epsilon_{kij}\epsilon_{klm}$$
+
+Using the double permutation tensor identity,
+$$\epsilon_{ijk}\epsilon_{klm} = \epsilon_{kij}\epsilon_{klm} = \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}$$
+
+Substituting into $LHS_i$,
+$$LHS_i = \epsilon_{ijk}\epsilon_{klm} \f{\p}{\p x_j}\l[ A_l B_m\r] = \l[\delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}\r]\f{\p}{\p x_j}\l[ A_l B_m\r] = \delta_{il}\delta_{jm}\f{\p}{\p x_j}\l[ A_l B_m\r] - \delta_{im}\delta_{jl}\f{\p}{\p x_j}\l[ A_l B_m\r]$$
+$$LHS_i = \delta_{jm}\f{\p}{\p x_j}\l[ A_i B_m\r] - \delta_{jl}\f{\p}{\p x_j}\l[ A_l B_i\r] = \f{\p}{\p x_j}\l[ A_i B_j\r] - \f{\p}{\p x_j}\l[ A_j B_i\r]$$
+Expanding using product rule,
+$$LHS_i = A_i\f{\p}{\p x_j}\l[B_j\r] + B_j\f{\p}{\p x_j}\l[A_i\r] - \l\{A_j\f{\p}{\p x_j}\l[B_i\r] + B_i\f{\p}{\p x_j}\l[ A_j\r]\r\}$$
+$$LHS_i = A_i\f{\p}{\p x_j}\l[B_j\r] + B_j\f{\p}{\p x_j}\l[A_i\r] - A_j\f{\p}{\p x_j}\l[B_i\r] - B_i\f{\p}{\p x_j}\l[ A_j\r]$$
+
+Since $LHS_i = RHS_i$, the vector identity is proven to be true.
+
+
+%Proof 2
+The curl of a scalar gradient is zero,
+$$0 = \na\times\na\phi$$
+Let ,
+$$LHS = 0 \quad,\quad RHS = \na\times\na\phi$$
+Converting $LHS$ and $RHS$ into index notation,
+$$LHS_i = 0 \quad,\quad RHS_i =  \epsilon_{ijk}\f{\p}{\p x_j}\l[\f{\p \phi}{\p x_k}\r] = \epsilon_{ijk}\f{\p^2 }{\p x_j \p x_k}(\phi)$$
+Since partial derivative operators are commutative, $\dst \f{\p^2 }{\p x_j \p x_k}(\phi)$ is a symmetry tensor. If $i$ is held constant, the permutation tensor $\epsilon_{ijk}$ is anti-symmetric. The element-wise multiplication of a symmetric tensor and anti-symmetric tensor added up together yields zero. Therefore,
+$$RHS_i = 0$$
+Since $LHS_i = RHS_i$, the claim is proven to be true.
+
+
+%Proof 3
+The divergence of the curl of a vector field is zero,
+$$0 = \na\d(\na\times \b{A})$$
+Let,
+$$LHS = 0 \quad,\quad RHS = \na\d(\na\times \b{A})$$
+Converting $LHS$ and $RHS$ into index notation,
+$$LHS_i = 0 \quad,\quad RHS_i = \f{\p}{\p x_j}\l[\epsilon_{jkl} \f{\p}{\p x_k}(A_l)\r] = \epsilon_{jkl}\f{\p}{\p x_j}\l[\f{\p}{\p x_k}(A_l)\r] = \epsilon_{jkl}\f{\p^2}{\p x_j\p x_k}(A_l)$$
+Since $\epsilon_{jkl}$ is an anti-symmetric tensor and $\dst \f{\p^2}{\p x_j\p x_k}(A_l)$ is a symmetric tensor, then $RHS_i = 0$. Since $LHS_i = RHS_i$, then the claim is proven to be true.
+
+
+
+%Node 1a
+The substantive derivative of fluid velocity $\b{v_f}$ appears in the non-conservative form of the momentum equation. The substantive derivative of fluid velocity $\b{v_f}$ in vector form,
+$$\f{D \b{v_f}}{Dt} = \f{\p \b{v_f}}{\p t} + \b{v_f}\d\na\b{v_f}$$
+
+
+%Process 1a
+By conjecture,
+$$\b{v_f}\d\na\b{v_f} = \b{\w_f}\times \b{v_f} + \na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)$$
+Let,
+$$LHS = \b{v_f}\d\na\b{v_f} \quad,\quad RHS = \b{\w_f}\times \b{v_f} + \na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)$$
+wherein $\b{\w_f}$ represents the fluid vorticity. Fluid vorticity is defined as the curl of fluid velocity, $\dst \b{\w_f} = \na\times \b{v_f}$.
+
+Expressing $LHS$ in index notation,
+$$LHS_i = v_j\f{\p v_i}{\p x_j}$$
+wherein $v_i$ represents the $i^{th}$ component of the velocity vector $\b{v_f}$. 
+
+Expressing $RHS$ in index notation,
+$$RHS_i = \epsilon_{ijk} \w_j v_k + \f{\p}{\p x_i}\l[\f{1}{2}v_jv_j\r]$$
+wherein $\w_j$ represents the $j^{th}$ component of fluid vorticity vector $\b{\w_f}$. Expressing the definition of vorticity as curl of fluid velocity in index notation,
+$$\w_j = \epsilon_{jlm}\f{\p v_m}{\p x_l}$$
+Substituting $\w_j$ into $RHS_i$,
+$$RHS_i = \epsilon_{ijk} \epsilon_{jlm}\f{\p v_m}{\p x_l} v_k + \f{\p}{\p x_i}\l[\f{1}{2}v_jv_j\r] = \epsilon_{ijk} \epsilon_{jlm} v_k\f{\p v_m}{\p x_l} + \f{\p}{\p x_i}\l[\f{1}{2}v_jv_j\r]$$
+
+Based on the cyclic permutation properties of the permutation tensors $\epsilon_{ijk}$, $\dst \epsilon_{ijk} = \epsilon_{jki}$. Therefore,
+$$\epsilon_{ijk} \epsilon_{jlm} = \epsilon_{jki} \epsilon_{jlm}$$
+Based on the double permutation tensor identity,
+$$\epsilon_{ijk} \epsilon_{jlm} = \epsilon_{jki} \epsilon_{jlm} = \delta_{kl}\delta_{im} - \delta_{km}\delta_{il}$$
+Substituting into $RHS_i$,
+$$RHS_i = \l[\delta_{kl}\delta_{im} - \delta_{km}\delta_{il}\r]v_k\f{\p v_m}{\p x_l} + \f{\p}{\p x_i}\l[\f{1}{2}v_jv_j\r] = \delta_{kl}\delta_{im}v_k\f{\p v_m}{\p x_l} - \delta_{km}\delta_{il}v_k\f{\p v_m}{\p x_l} + \f{\p}{\p x_i}\l[\f{1}{2}v_jv_j\r]$$
+$$RHS_i = v_l\f{\p v_i}{\p x_l} - v_k\f{\p v_k}{\p x_i} + \f{\p}{\p x_i}\l[\f{1}{2}v_jv_j\r] = v_l\f{\p v_i}{\p x_l} - v_k\f{\p v_k}{\p x_i} + \f{1}{2}\f{\p}{\p x_i}\l[v_jv_j\r]$$
+$$RHS_i = v_l\f{\p v_i}{\p x_l} - v_k\f{\p v_k}{\p x_i} + \f{1}{2}\l[v_j\f{\p}{\p x_i}\l(v_j\r) + v_j\f{\p}{\p x_i}\l(v_j\r)\r] = v_l\f{\p v_i}{\p x_l} - v_k\f{\p v_k}{\p x_i} + v_j\f{\p v_j}{\p x_i} = v_l\f{\p v_i}{\p x_l}$$
+Renaming the dummy index $l\to j$,
+$$RHS_i = v_j\f{\p v_i}{\p x_j}$$
+Since $LHS_i = RHS_i$, then the conjecture shown below must be true,
+$$\b{v_f}\d\na\b{v_f} = \b{\w_f}\times \b{v_f} + \na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)$$
+
+%Node 2a
+
+Susbtituting into the substantive derivative of fluid velocity,
+$$\f{D \b{v_f}}{Dt} = \f{\p \b{v_f}}{\p t} + \b{v_f}\d\na\b{v_f} = \f{\p \b{v_f}}{\p t} + \b{\w_f}\times \b{v_f} + \na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)$$
+
+%Process 2a
+Taking the curl of the substantive derivative of fluid velocity,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \na\times\l(\f{\p \b{v_f}}{\p t}\r) + \na\times\l(\b{\w_f}\times \b{v_f}\r) + \na\times\l[\na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)\r]$$
+
+The curl operations and the partial derivative operations are commutative. Therefore,
+$$\na\times\l(\f{\p \b{v_f}}{\p t}\r) = \f{\p }{\p t}\l(\na\times\b{v_f}\r)$$
+Substituting for the definition of fluid vorticity $\dst \b{\w_f} = \na\times \b{v_f}$,
+$$\na\times\l(\f{\p \b{v_f}}{\p t}\r) = \f{\p }{\p t}\l(\b{\w_f}\r) = \f{\p \b{\w_f}}{\p t}$$
+
+Substituting into the curl of fluid velocity substantive derivative,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{\p \b{\w_f}}{\p t} + \na\times\l(\b{\w_f}\times \b{v_f}\r) + \na\times\l[\na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)\r]$$
+
+$\b{v_f}\d\b{v_f}$ is a scalar. The curl of a scalar gradient is zero. Therefore,
+$$0 = \na\times\l[\na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)\r]$$
+
+Negletcting the $\dst \na\times\l[\na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)\r]$ term,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{\p \b{\w_f}}{\p t} + \na\times\l(\b{\w_f}\times \b{v_f}\r)$$
+
+This is a vector identity,
+$$\na\times (\b{A}\times \b{B}) = \b{B}\d\na \b{A} + \b{A}\na\d \b{B} - \b{A}\d\na \b{B} - \b{B}\na\d \b{A}$$
+Let $\b{A} = \b{\w_f}$ and $\b{B} = \b{v_f}$,
+$$\na\times (\b{\w_f}\times \b{v_f}) = \b{v_f}\d\na \b{\w_f} + \b{\w_f}\na\d \b{v_f} - \b{\w_f}\d\na \b{v_f} - \b{v_f}\na\d \b{\w_f}$$
+
+Based on the definition of fluid vorticity $\b{\w_f} = \na\times\b{v_f}$,
+$$\b{v_f}\na\d \b{\w_f} = \b{v_f}\na\d (\na\times\b{v_f})$$
+Since the divergence of a vector field curl is zero, $\dst \na\d (\na\times\b{v_f})=0$. Therefore,
+$$0 = \b{v_f}\na\d \b{\w_f}$$
+
+Neglecting the $\dst \b{v_f}\na\d \b{\w_f}$ term,
+$$\na\times (\b{\w_f}\times \b{v_f}) = \b{v_f}\d\na \b{\w_f} + \b{\w_f}\na\d \b{v_f} - \b{\w_f}\d\na \b{v_f}$$
+
+
+%Node 3a
+Substituting $\dst \na\times (\b{\w_f}\times \b{v_f})$, into the substantive derivative of vorticity,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{\p \b{\w_f}}{\p t} + \b{v_f}\d\na \b{\w_f} + \b{\w_f}\na\d \b{v_f} - \b{\w_f}\d\na \b{v_f}$$
+
+
+%Process 3a
+
+The definition of substantive derivative of vorticity is shown below,
+$$\f{D \b{\w_f}}{Dt} = \f{\p \b{\w_f}}{\p t} + \b{v_f}\d\na \b{\w_f}$$
+Substituting for the substantive derivative of vorticity into the curl of fluid velocity substantive derivative,
+
+%Node 4a
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{D \b{\w_f}}{Dt} + \b{\w_f}\na\d \b{v_f} - \b{\w_f}\d\na \b{v_f}$$
+
+
+
+
+%Node 1b
+
+The symmetric strain rate tensor is defined as, 
+$$S_{ij} = \f{1}{2}\l(\f{\p v_i}{\p x_j}+\f{\p v_j}{\p x_i}\r)$$ 
+The symmetric strain rate tensor is symmetric.
+
+The rotation rate tensor is defined as,
+$$\Omega_{ij} = \f{1}{2}\l(\f{\p v_i}{\p x_j}-\f{\p v_j}{\p x_i}\r)$$
+The rotation rate tensor is anti-symmetric.
+
+The summation of the strain rate tensor and the rotation rate tensor,
+$$S_{ij} + \Omega_{ij} = \f{1}{2}\l(\f{\p v_i}{\p x_j}+\f{\p v_j}{\p x_i}\r) + \f{1}{2}\l(\f{\p v_i}{\p x_j}-\f{\p v_j}{\p x_i}\r) = \f{1}{2}\l(\f{\p v_i}{\p x_j}+\f{\p v_j}{\p x_i} + \f{\p v_i}{\p x_j}-\f{\p v_j}{\p x_i}\r) = \f{1}{2}\l(\f{\p v_i}{\p x_j} + \f{\p v_i}{\p x_j}\r)$$
+$$S_{ij} + \Omega_{ij} = \f{\p v_i}{\p x_j}$$
+
+Therefore, this shows that the fluid velocity gradient tensor $\dst \f{\p v_i}{\p x_j}$ can be decomposed into an algebraic sum of a symmetric tensor $S_{ij}$ and an anti-symmetric tensor $\Omega_{ij}$.
+
+
+%Node 1c
+
+The rotation rate tensor is somewhat related to the fluid vorticity vector. Consider $i^{th}$ component of the fluid vorticity vector the $i^{th}$ component of fluid velocity curl,
+$$\w_i = \epsilon_{ijk}\f{\p v_k}{\p x_j}$$
+
+%Process 2c
+
+Using the fluid vorticity to contract the permutation tensor on along its third dimension,
+$$\epsilon_{lmi}\w_i = \epsilon_{lmi}\epsilon_{ijk}\f{\p v_k}{\p x_j}$$
+Due to the permutation cyclic property, $\epsilon_{lmi} = \epsilon_{ilm}$. Therefore,
+$$\epsilon_{lmi}\epsilon_{ijk} = \epsilon_{ilm}\epsilon_{ijk} = \delta_{lj}\delta_{mk} - \delta_{lk}\delta_{mj}$$
+Substituting into the permutation tensor contraction,
+$$\epsilon_{lmi}\w_i = \epsilon_{lmi}\epsilon_{ijk}\f{\p v_k}{\p x_j} = [\delta_{lj}\delta_{mk} - \delta_{lk}\delta_{mj}]\f{\p v_k}{\p x_j} = \delta_{lj}\delta_{mk}\f{\p v_k}{\p x_j} - \delta_{lk}\delta_{mj}\f{\p v_k}{\p x_j} = \delta_{mk}\f{\p v_k}{\p x_l} - \delta_{mj}\f{\p v_l}{\p x_j}$$
+$$\epsilon_{lmi}\w_i = \f{\p v_m}{\p x_l} - \f{\p v_l}{\p x_m}$$
+
+Under an index varible change $l\to i$, $m\to j$, $i\to k$,
+$$\epsilon_{ijk}\w_k = \f{\p v_j}{\p x_i} - \f{\p v_i}{\p x_j}$$
+This form is already similar to the rotation rate tensor. In essence, contracting the permutation tensor along any dimension would allow the usage of the double permutation tensor identity. The third dimension was chosen in order to obtain the 'alternating' pattern similar to the rotation rate tensor. Minor algebraic manipulatins can then be performed to match $\epsilon_{ijk}\w_k$ to the rotation rate tensor,
+$$-\epsilon_{ijk}\w_k =  \f{\p v_i}{\p x_j} - \f{\p v_j}{\p x_i}$$
+$$-\f{1}{2}\epsilon_{ijk}\w_k =  \f{1}{2}\l(\f{\p v_i}{\p x_j} - \f{\p v_j}{\p x_i}\r)$$
+
+%Node 2c
+The $RHS$ matches the rotation rate tensor. Therefore,
+$$-\f{1}{2}\epsilon_{ijk}\w_k =  \Omega_{ij}$$
+
+%Node 3c
+By conjecture, using the fluid vorticity vector $\b{\w_f}$ to contract the rotation rate tensor along the second dimension would yield zero. This claim is expressed in index notation,
+$$0 = \w_j\Omega_{ij}$$
+
+%Process 3c
+Let 
+$$LHS_i = 0 \quad,\quad RHS_i = \w_j\Omega_{ij}$$
+Substituting the definition of the rotation rate tensor in terms of the fluid vorticity vector,
+$$RHS_i = \w_j\Omega_{ij} = -\f{1}{2}\epsilon_{ijk}\w_j\w_k$$
+Since $\epsilon_{ijk}$ is an anti-symmetric tensor, and $\w_j\w_k$ is a symmetric tensor due to multiplication being a commutative operation,
+$$RHS_i = \w_j\Omega_{ij} = -\f{1}{2}\epsilon_{ijk}\w_j\w_k = 0$$
+Therefore, the claim is proven to be true.
+
+%Process 4ab
+Reiterating the last form of the curl of fluid velocity substantive derivative,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{D \b{\w_f}}{Dt} + \b{\w_f}\na\d \b{v_f} - \b{\w_f}\d\na \b{v_f}$$
+Converting the last term in $RHS$ into index notation,
+$$\l(\b{\w_f}\d\na \b{v_f}\r)_i = \w_j\f{\p v_i}{\p x_j}$$
+Expressing the velocity gradient tensor $\dst \f{\p v_i}{\p x_j}$ in terms of its symmetric and anti-symmetric components,
+$$\l(\b{\w_f}\d\na \b{v_f}\r)_i = \w_j\f{\p v_i}{\p x_j} = \w_j[S_{ij} + \Omega_{ij}] = \w_jS_{ij} + \w_j\Omega_{ij}$$
+
+%Process 4abc
+Based on previous work, the contraction of the rotation tensor on the second index using the fluid vorticity vector yields zero,
+$$0 = \w_j\Omega_{ij}$$
+Neglecting the $\dst \w_j\Omega_{ij}$ term,
+$$\l(\b{\w_f}\d\na \b{v_f}\r)_i  = \w_j S_{ij}$$
+Converting into vector notation,
+$$\b{\w_f}\d\na \b{v_f}  = \b{\w_f} \d \db{S_f}$$
+wherein $\db{S_f}$ represents the symmetric strain rate tensor for the fluid velocity vector field.
+
+%Node 5abc
+Substituting into the curl of fluid velocity substantive derivative,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{D \b{\w_f}}{Dt} + \b{\w_f}\na\d \b{v_f} - \b{\w_f} \d \db{S_f}$$
+
+
+%Node 1d
+The differential continuity equation is shown below,
+$$0 = \f{\p}{\p t}[\rho] + \na\d(\rho\b{v_f})$$
+
+%Process 1d
+Converting the differential continuity equation into tensor index notation,
+$$0 = \f{\p}{\p t}[\rho] + \f{\p}{\p x_j}(\rho v_j)$$
+Using chain rule,
+$$0 = \f{\p}{\p t}[\rho] + \rho\f{\p}{\p x_j}(v_j) + v_j\f{\p}{\p x_j}(\rho)$$
+Manipulating further,
+$$\rho\f{\p}{\p x_j}(v_j) = -\f{\p}{\p t}[\rho] - v_j\f{\p}{\p x_j}(\rho)$$
+$$\f{\p}{\p x_j}(v_j) = -\f{1}{\rho}\l[\f{\p}{\p t}(\rho) + v_j\f{\p}{\p x_j}(\rho)\r]$$
+The substantive derivative of fluid density $\rho$ in vector notation,
+$$\f{D }{Dt}(\rho) = \f{\p}{\p t}(\rho) + \b{v_f}\d\na\rho$$
+Converting the substatntive derivative of fluid density into index notation,
+$$\l[\f{D }{Dt}(\rho)\r]_i = \f{\p}{\p t}(\rho) + v_j\f{\p}{\p x_j}(\rho)$$
+
+%Node 2d
+Substituting,
+$$\f{\p}{\p x_j}(v_j) = -\f{1}{\rho}\l[\f{D }{Dt}(\rho)\r]_i$$
+Converting into vector index notation,
+$$\na\d\b{v_f} = -\f{1}{\rho}\f{D }{Dt}(\rho)$$
+
+%Process 5abcd
+Substituting the divergence of fluid velocity $\b{v_f}$ into the fluid velocity substantive derivative,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{D \b{\w_f}}{Dt} - \f{\b{\w_f}}{\rho}\f{D }{Dt}(\rho) - \b{\w_f} \d \db{S_f}$$
+
+By conjecture,
+$$\rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] = \f{D \b{\w_f}}{Dt} - \f{\b{\w_f}}{\rho}\f{D }{Dt}(\rho)$$
+Let
+$$LHS = \rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] \quad,\quad RHS = \f{D \b{\w_f}}{Dt} - \f{\b{\w_f}}{\rho}\f{D }{Dt}(\rho)$$
+Using quotient rule,
+$$LHS = \rho\times\f{1}{\rho^2}\l\{\rho\f{D}{Dt}\l[\w_f\r] - \b{\w_f}\f{D}{Dt}\l[\rho\r]\r\} = \f{1}{\rho}\l\{\rho\f{D}{Dt}\l[\w_f\r] - \b{\w_f}\f{D}{Dt}\l[\rho\r]\r\} = \f{1}{\rho}\rho\f{D}{Dt}\l[\w_f\r] - \f{1}{\rho}\b{\w_f}\f{D}{Dt}\l[\rho\r]$$
+$$LHS = \f{D}{Dt}\l[\w_f\r] - \f{\b{\w_f}}{\rho}\f{D}{Dt}\l[\rho\r]$$
+Since $LHS = RHS$, the claim is proven. 
+
+%Node 6abcd
+Substituting for this simplification,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] - \b{\w_f} \d \db{S_f}$$
+
+%Node 1e
+The non-conservative form of the momentum equation,
+$$\rho \f{D\b{v_f}}{Dt} = \na\d\db{T_f} + \b{g_b}$$
+
+%Process 2e
+Making the substantive derivative of fluid velocity the subject of the equation,
+$$\f{D\b{v_f}}{Dt} = \f{1}{\rho}\na\d\db{T_f} + \f{1}{\rho}\b{g_b}$$
+Taking the curl of the resulting expression so that it might be substituted into the main equation,
+
+%Node 2e
+$$\na\times \l(\f{D\b{v_f}}{Dt}\r) = \na\times\l[\f{1}{\rho}\na\d\db{T_f} + \f{1}{\rho}\b{g_b}\r] = \na\times\l[\f{1}{\rho}\na\d\db{T_f}\r] + \na\times\l[\f{1}{\rho}\b{g_b}\r]$$
+
+%Process 6abcde
+Substituting the complete stress tensor and external acceleration into the main equation,
+$$\na\times\l(\f{D \b{v_f}}{Dt}\r) = \rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] - \b{\w_f} \d \db{S_f} = \na\times\l[\f{1}{\rho}\na\d\db{T_f}\r] + \na\times\l[\f{1}{\rho}\b{g_b}\r]$$
+$$\rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] - \b{\w_f} \d \db{S_f} = \na\times\l[\f{1}{\rho}\na\d\db{T_f}\r] + \na\times\l[\f{1}{\rho}\b{g_b}\r]$$
+
+%Node 7abcde
+Hence, the 'basic' vorticity equation,
+$$\rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] = \b{\w_f} \d \db{S_f} + \na\times\l[\f{1}{\rho}\na\d\db{T_f}\r] + \na\times\l[\f{1}{\rho}\b{g_b}\r]$$
+
+
+%Node 1f
+The complete stress tensor $\db{T_f}$ defined in index notation,
+$$T_{ij} = -P_r\delta_{ij} + \mu\l[\f{\p v_i}{\p x_j} + \f{\p v_j}{\p x_i}\r] + \la\f{\p v_k}{\p x_k}\delta_{ij}$$
+wherein $\l(\db{T_f}\r)_{ij} = T_{ij}$, $\mu$ is the dynamic viscosity and $\la$ is the second coefficient of viscosity. The viscous stress tensor $\db{\tau_f}$ has a rank of $2$ and its $ij$ component is referred as $\tau_{ij}$. The viscous stress tensor components in index form is defined to be,
+$$\tau_{ij} = \mu\l[\f{\p v_i}{\p x_j} + \f{\p v_j}{\p x_i}\r] + \la\f{\p v_k}{\p x_k}\delta_{ij}$$
+Therefore, the complete stress tensor can be expressed in terms of the viscous stress tensor,
+$$T_{ij} = -P_r\delta_{ij} + \tau_{ij}$$
+
+%Process 7abcdef
+Expressing the complete stress tensor term in index notation,
+$$\l\{\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r]\r\}_i = \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(T_{ml})\r]$$
+Renaming the indices $i\to m$ $j\to l$,
+$$T_{ml} = -P_r\delta_{ml} + \tau_{ml}$$
+Substituting for the complete stress tensor,
+$$\l\{\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r]\r\}_i = \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(-P_r\delta_{ml} + \tau_{ml})\r]$$
+$$\l\{\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r]\r\}_i = \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(-P_r\delta_{ml})\r] + \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(\tau_{ml})\r]$$
+By applying the kronecker-delta contraction,
+$$\l\{\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r]\r\}_i = -\epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p P_r}{\p x_l}\r] + \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(\tau_{ml})\r]$$
+By applying product rule on the pressure-related term,
+$$\l\{\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r]\r\}_i = -\epsilon_{ijl}\f{1}{\rho}\f{\p}{\p x_j}\l[\f{\p P_r}{\p x_l}\r]          -\epsilon_{ijl}\f{\p P_r}{\p x_l}\f{\p}{\p x_j}\l[\f{1}{\rho}\r]            + \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(\tau_{ml})\r]$$
+Due to the partial derivative operations being commutative $\dst \f{\p}{\p x_j}\l[\f{\p P_r}{\p x_l}\r]$ is a symmetric tensor of rank $2$. Since the permuation tensor $\epsilon_{ijl}$ is anti-symmetric,
+$$0 = -\epsilon_{ijl}\f{1}{\rho}\f{\p}{\p x_j}\l[\f{\p P_r}{\p x_l}\r]$$
+Neglecting the term,
+$$\l\{\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r]\r\}_i =          -\epsilon_{ijl}\f{\p P_r}{\p x_l}\f{\p}{\p x_j}\l[\f{1}{\rho}\r]            + \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(\tau_{ml})\r]$$
+Applying chain rule, $\dst \f{\p}{\p x_j}\l[\f{1}{\rho}\r] = -\f{1}{\rho^2}\f{\p \rho}{\p x_j}$. Substituting,
+$$\l\{\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r]\r\}_i = \epsilon_{ijl}\f{\p P_r}{\p x_l}\f{1}{\rho^2}\f{\p \rho}{\p x_j} + \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(\tau_{ml})\r] = \epsilon_{ijl}\f{1}{\rho^2}\f{\p \rho}{\p x_j}\f{\p P_r}{\p x_l} + \epsilon_{ijl}\f{\p}{\p x_j}\l[\f{1}{\rho}\f{\p }{\p x_m}(\tau_{ml})\r]$$
+Converting into index notation,
+$$\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r] =  \f{1}{\rho^2}\na\rho\times\na P_r + \na\times\l[\f{1}{\rho}\na\d\db{\tau_f}\r]$$
+Substituting into the basic vorticity equation,
+$$\rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] = \b{\w_f} \d \db{S_f} + \f{1}{\rho^2}\na\rho\times\na P_r + \na\times\l[\f{1}{\rho}\na\d\db{\tau_f}\r] + \na\times\l[\f{1}{\rho}\b{g_b}\r]$$
+
+
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\end{center}
+
+\end{document}

@@ -1,33 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.11.29)  20 DEC 2021 10:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.11.29)  21 DEC 2021 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Fluid_Archives.tex
-(./Fluid_Archives.tex
+**Vorticity.tex
+(./Vorticity.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
-(/usr/share/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
-)
-\c@part=\count179
-\c@chapter=\count180
-\c@section=\count181
-\c@subsection=\count182
-\c@subsubsection=\count183
-\c@paragraph=\count184
-\c@subparagraph=\count185
-\c@figure=\count186
-\c@table=\count187
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
-) (../Environment/Packages.sty (/usr/share/texmf-dist/tex/latex/standalone/stan
-dalone.sty
-Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with prea
-mbles
-
+(/usr/share/texmf-dist/tex/latex/standalone/standalone.cls
+Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
+dalone
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
@@ -47,9 +28,39 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@tempa@toks=\toks16
 
 (/usr/share/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count188
+\XKV@depth=\count179
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
+\sa@internal=\count180
+\c@sapage=\count181
+
+(/usr/share/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2018/03/26 v1.3a Default configuration file for 'standalon
+e' class
+)
+(/usr/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count182
+\c@chapter=\count183
+\c@section=\count184
+\c@subsection=\count185
+\c@subsubsection=\count186
+\c@paragraph=\count187
+\c@subparagraph=\count188
+\c@figure=\count189
+\c@table=\count190
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+))
+(../Environment/Packages.sty
+(/usr/share/texmf-dist/tex/latex/standalone/standalone.sty
+Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with prea
+mbles
+
 (/usr/share/texmf-dist/tex/latex/currfile/currfile.sty
 Package: currfile 2020/09/29 v0.7d Provides the file path elements of the curre
 nt input file
@@ -69,11 +80,10 @@ Package: filehook 2020/09/29 v0.8a Hooks for input files
 (/usr/share/texmf-dist/tex/latex/filehook/filehook-2020.sty
 Package: filehook-2020 2020/09/29 v0.8a Hooks for input files
 ))
-\c@currfiledepth=\count189
+\c@currfiledepth=\count191
 )
 \sa@out=\write3
-
-(./Fluid_Archives.sta) (/usr/share/texmf-dist/tex/latex/gincltex/gincltex.sty
+ (./Vorticity.sta) (/usr/share/texmf-dist/tex/latex/gincltex/gincltex.sty
 (/usr/share/texmf-dist/tex/latex/svn-prov/svn-prov.sty
 Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
 )
@@ -133,12 +143,12 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 
 (/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count190
+\c@checkoddpage=\count192
 )
 (/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box48
-\sift@deathcycles=\count191
+\sift@deathcycles=\count193
 \@vwid@loff=\dimen153
 \@vwid@roff=\dimen154
 ))
@@ -171,13 +181,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count192
+\inf@bad=\count194
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count193
-\leftroot@=\count194
+\uproot@=\count195
+\leftroot@=\count196
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count195
-\DOTSCASE@=\count196
+\classnum@=\count197
+\DOTSCASE@=\count198
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -186,15 +196,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen157
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count197
-\c@MaxMatrixCols=\count198
+\macc@depth=\count199
+\c@MaxMatrixCols=\count266
 \dotsspace@=\muskip16
-\c@parentequation=\count199
-\dspbrk@lvl=\count266
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
 \tag@help=\toks18
-\row@=\count267
-\column@=\count268
-\maxfields@=\count269
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
 \andhelp@=\toks19
 \eqnshift@=\dimen158
 \alignsep@=\dimen159
@@ -238,9 +248,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count270
-\Gm@cntv=\count271
-\c@Gm@tempcnt=\count272
+\Gm@cnth=\count272
+\Gm@cntv=\count273
+\c@Gm@tempcnt=\count274
 \Gm@bindingoffset=\dimen164
 \Gm@wd@mp=\dimen165
 \Gm@odd@mp=\dimen166
@@ -281,8 +291,8 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen172
-\Hy@linkcounter=\count273
-\Hy@pagecounter=\count274
+\Hy@linkcounter=\count275
+\Hy@pagecounter=\count276
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
@@ -299,7 +309,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count275
+\Hy@SavedSpaceFactor=\count277
 
 (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
@@ -313,7 +323,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count276
+\c@Hy@tempcnt=\count278
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -329,7 +339,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count277
+\Fld@menulength=\count279
 \Field@Width=\dimen174
 \Fld@charsize=\dimen175
 Package hyperref Info: Hyper figures OFF on input line 6075.
@@ -347,9 +357,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count278
-\c@Item=\count279
-\c@Hfootnote=\count280
+\Hy@abspage=\count280
+\c@Item=\count281
+\c@Hfootnote=\count282
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -361,8 +371,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count281
-\c@bookmark@seq@number=\count282
+\Fld@listcount=\count283
+\c@bookmark@seq@number=\count284
 
 (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -376,23 +386,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip52
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count283
+\lst@mode=\count285
 \lst@gtempboxa=\box52
 \lst@token=\toks23
-\lst@length=\count284
+\lst@length=\count286
 \lst@currlwidth=\dimen176
-\lst@column=\count285
-\lst@pos=\count286
+\lst@column=\count287
+\lst@pos=\count288
 \lst@lostspace=\dimen177
 \lst@width=\dimen178
-\lst@newlines=\count287
-\lst@lineno=\count288
+\lst@newlines=\count289
+\lst@lineno=\count290
 \lst@maxwidth=\dimen179
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count289
-\lst@skipnumbers=\count290
+\c@lstnumber=\count291
+\lst@skipnumbers=\count292
 \lst@framebox=\box53
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -427,49 +437,49 @@ Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \backup@length=\skip54
 \ar@cellbox=\box55
 )
-(../Environment/Conventions.sty) Excluding 'comment' comment.
+(../Environment/Conventions.sty) (../Environment/Hyahoos.sty)
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count291
+\l__color_backend_stack_int=\count293
 \l__pdf_internal_box=\box56
 )
-(./Fluid_Archives.aux)
-\openout1 = `Fluid_Archives.aux'.
+(./Vorticity.aux)
+\openout1 = `Vorticity.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
- (./Fluid_Archives.sta (../Environment/Hyahoos.sty))
-\openout3 = `Fluid_Archives.sta'.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+ (./Vorticity.sta)
+\openout3 = `Vorticity.sta'.
 
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count292
+\scratchcounter=\count294
 \scratchdimen=\dimen182
 \scratchbox=\box57
-\nofMPsegments=\count293
-\nofMParguments=\count294
+\nofMPsegments=\count295
+\nofMParguments=\count296
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count295
+\MPscratchCnt=\count297
 \MPscratchDim=\dimen183
-\MPnumerator=\count296
-\makeMPintoPDFobject=\count297
+\MPnumerator=\count298
+\makeMPintoPDFobject=\count299
 \everyMPtoPDFconversion=\toks26
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -484,16 +494,16 @@ e
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(57.81621pt, 481.87546pt, 57.81621pt)
-* v-part:(T,H,B)=(57.81621pt, 729.41443pt, 57.81621pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=481.87546pt
-* \textheight=729.41443pt
+* h-part:(L,W,R)=(57.81621pt, 498.66258pt, 57.81621pt)
+* v-part:(T,H,B)=(57.81621pt, 679.33757pt, 57.81621pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=498.66258pt
+* \textheight=679.33757pt
 * \oddsidemargin=-14.45378pt
 * \evensidemargin=-14.45378pt
 * \topmargin=-51.45378pt
@@ -501,7 +511,7 @@ e
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=35.0pt
+* \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -514,7 +524,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 14.
+Package hyperref Info: Link coloring OFF on input line 9.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -524,224 +534,75 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count298
+\c@section@level=\count300
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 9.
+LaTeX Info: Redefining \pageref on input line 9.
+LaTeX Info: Redefining \nameref on input line 9.
 
-(./Fluid_Archives.out) (./Fluid_Archives.out)
+(./Vorticity.out) (./Vorticity.out)
 \@outlinefile=\write5
-\openout5 = `Fluid_Archives.out'.
+\openout5 = `Vorticity.out'.
 
-\c@lstlisting=\count299
-LaTeX Font Info:    Trying to load font information for U+esint on input line 2
-1.
+\c@lstlisting=\count301
+ [1
 
-(/usr/share/texmf-dist/tex/latex/esint/uesint.fd
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Chapter 1.
+Excluding 'comment' comment.
+LaTeX Font Info:    Trying to load font information for U+esint on input line 4
+8.
+ (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) [2
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Fluid_Archives.tocpdfTe
-X warning (ext4): destination with the same identifier (name{page.1}) has been 
-already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.36 ...Inviscid Compressible Flow}{29}{chapter.8}
-                                                  % [1
-
-])
-\tf@toc=\write6
-\openout6 = `Fluid_Archives.toc'.
-
-
-(../Terminology/../Terminology/Terminology.tex [2]
-Chapter 1.
-Excluding 'comment' comment. Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
-[]|\OT1/cmr/m/n/12 Symbollic
+] [3] [4] [5]
+Overfull \hbox (0.97443pt too wide) detected at line 201
+\OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 + 
+[] = [] [] + [] [] = [] [] = [] []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
-\OT1/cmr/m/n/12 Rep-re-sen-ta-
+[6] [7] [8] [9] [10]
+Overfull \hbox (3.92844pt too wide) detected at line 354
+[][] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^O[][][][] \OT1/cmr/m/n/12 + \OML/cmm/
+m/it/12 ^^O[][] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^O[][][][] \OT1/cmr/m/n/
+12 + \OML/cmm/m/it/12 ^^O[][] []
  []
 
-
-Underfull \hbox (badness 1540) in paragraph at lines 27--28
-[]|\OT1/cmr/m/n/12 Upward force ex-pe-ri-enced
- []
-
-[3
-
-] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
-[]|\OT1/cmr/m/n/12 Symbollic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
-\OT1/cmr/m/n/12 Rep-re-sen-ta-
- []
-
-
-Underfull \hbox (badness 1552) in paragraph at lines 43--43
-[]|\OT1/cmr/m/n/12 Angle of at-
- []
-
-
-Underfull \hbox (badness 1418) in paragraph at lines 51--52
-\OT1/cmr/m/n/12 wing. The dis-tance be-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 Mean Cam-
- []
-
-[4] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
-[]|\OT1/cmr/m/n/12 Symbollic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
-\OT1/cmr/m/n/12 Rep-re-sen-ta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
-[]|\OT1/cmr/m/n/12 Aerodynamic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-[]|\OT1/cmr/m/n/12 Center of
- []
-
-[5] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 89--89
-[]|\OT1/cmr/m/n/12 Symbollic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--89
-\OT1/cmr/m/n/12 Rep-re-sen-ta-
- []
-
-[6] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-[]|\OT1/cmr/m/n/12 Symbollic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-\OT1/cmr/m/n/12 Rep-re-sen-ta-
- []
-
-
-Underfull \hbox (badness 3148) in paragraph at lines 120--121
-[]|\OT1/cmr/m/n/12 Both Adi-a-batic and Re-
- []
-
-) Excluding 'comment' comment. (../RTT/../RTT/RTT.tex [7]
-Chapter 2.
-Excluding 'comment' comment. Excluding 'comment' comment. [8
-
-] [9]
-Excluding 'comment' comment.) Excluding 'comment' comment.
-(../NS_GE/../NS_GE/NS_GE.tex [10]
-Chapter 3.
-Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. [11
-
-] Excluding 'comment' comment. [12] [13]
-Excluding 'comment' comment. Excluding 'comment' comment. [14]
-Excluding 'comment' comment. [15] [16] Excluding 'comment' comment.)
-Excluding 'comment' comment. (../Hiemenz/../Hiemenz/Hiemenz.tex [17]
-Chapter 4.
-Excluding 'comment' comment.) Excluding 'comment' comment.
-(../Potential_Flow/../Potential_Flow/Potential_Flow.tex [18
-
-]
-Chapter 5.
-Excluding 'comment' comment. [19
-
-] Excluding 'comment' comment. [20]
-Excluding 'comment' comment.) Excluding 'comment' comment.
-(../Numerical_Methods/Potential_Flow/Gauss_Siedel.tex [21]
-Chapter 6.
-Excluding 'comment' comment. Excluding 'comment' comment. [22
-
-])
-Excluding 'comment' comment. (../Aerodynamics/Incompressible/Incompressible.tex
-[23]
-Chapter 7.
-Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. [24
-
-] Excluding 'comment' comment.
-Excluding 'comment' comment. [25] Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment. [26]
-Excluding 'comment' comment. [27] Excluding 'comment' comment.)
-Excluding 'comment' comment. (../Aerodynamics/Compressible/Compressible.tex
-[28]
-Chapter 8.
-Excluding 'comment' comment. Excluding 'comment' comment. [29
-
-]
-Excluding 'comment' comment. Excluding 'comment' comment. [30]
-Excluding 'comment' comment. [31] Excluding 'comment' comment. [32]
-Excluding 'comment' comment. [33] Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment. [34])
-Excluding 'comment' comment.
-(../Creeping_Flow/../Creeping_Flow/Creeping_Flow.tex [35]
-Chapter 9.
-Excluding 'comment' comment. Excluding 'comment' comment. [36
-
-] [37] [38]
-Excluding 'comment' comment. Excluding 'comment' comment. [39] [40]
-Excluding 'comment' comment. Excluding 'comment' comment.)
-Excluding 'comment' comment. [41] (./Fluid_Archives.aux)
-Package rerunfilecheck Info: File `Fluid_Archives.out' has not changed.
-(rerunfilecheck)             Checksum: 00E1961DC79A5BD11E04C4346BC82B39;8452.
+[11] (./Vorticity.aux)
+Package rerunfilecheck Info: File `Vorticity.out' has not changed.
+(rerunfilecheck)             Checksum: 72C3C66CA163AB43DCBA9A46482B996C;136.
  ) 
 Here is how much of TeX's memory you used:
- 13255 strings out of 478994
- 193858 string characters out of 5864750
- 516933 words of memory out of 5000000
- 30360 multiletter control sequences out of 15000+600000
- 413201 words of font info for 69 fonts, out of 8000000 for 9000
+ 13205 strings out of 478994
+ 193014 string characters out of 5864750
+ 520219 words of memory out of 5000000
+ 30437 multiletter control sequences out of 15000+600000
+ 408882 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 143i,17n,144p,889b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 143i,7n,144p,893b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf
--dist/fonts/type1/public/esint-type1/esint10.pfb>
-Output written on Fluid_Archives.pdf (42 pages, 234927 bytes).
+ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Vorticity.pdf (11 pages, 105316 bytes).
 PDF statistics:
- 519 PDF objects out of 1000 (max. 8388607)
- 457 compressed objects within 5 object streams
- 96 named destinations out of 1000 (max. 500000)
- 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 9 words of extra memory for PDF output out of 10000 (max. 10000000)
 
