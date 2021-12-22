@@ -290,6 +290,56 @@ I_z\dot{\w_z}+\dot{I_z}\w_z + (I_{y} - I_{x})\w_x\w_y
 
 
 
+
+
+
+%Seperator
+%Seperator
+%Seperator
+\section{Problem 1}
+\begin{comment}
+\end{comment}
+Reiterating Euler's equations of motion,
+$$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = \begin{bmatrix} 
+I_{x}\dot{\w_x} + (I_{z} - I_{y})\w_z\w_y\\
+I_{y}\dot{\w_y} + (I_{x} - I_{z})\w_x\w_z\\
+I_{z}\dot{\w_z} + (I_{y} - I_{x})\w_x\w_y
+\end{bmatrix}$$
+Parsing out the scalar quantities,
+$$M_x=I_{x}\dot{\w_x} + (I_{z} - I_{y})\w_z\w_y \quad,\quad M_y=I_{y}\dot{\w_y} + (I_{x} - I_{z})\w_x\w_z \quad,\quad M_z=I_{z}\dot{\w_z} + (I_{y} - I_{x})\w_x\w_y$$
+Making $\dot{\w_i}$ subject of the equations,
+$$M_x - (I_{z} - I_{y})\w_z\w_y=I_{x}\dot{\w_x} \quad,\quad M_y - (I_{x} - I_{z})\w_x\w_z=I_{y}\dot{\w_y} \quad,\quad M_z - (I_{y} - I_{x})\w_x\w_y=I_{z}\dot{\w_z}$$
+$$M_x+(I_{y}-I_{z})\w_z\w_y = I_{x}\dot{\w_x} \quad,\quad M_y+(I_{z}-I_{x})\w_x\w_z = I_{y}\dot{\w_y} \quad,\quad M_z+(I_{x}-I_{y})\w_x\w_y = I_{z}\dot{\w_z}$$
+$$\f{1}{I_{x}}\l[M_x+(I_{y}-I_{z})\w_z\w_y\r] = \dot{\w_x} ,\quad \f{1}{I_{y}}\l[M_y+(I_{z}-I_{x})\w_x\w_z\r] = \dot{\w_y} ,\quad \f{1}{I_{z}}\l[M_z+(I_{x}-I_{y})\w_x\w_y\r] = \dot{\w_z}$$
+
+
+Let $\b{F_b}$ represent the force vector represented in a body-fitted coordinate system. According to Newton's second law,
+$$\b{F_b} = m\b{a_b}$$
+The direction cosine matrix $A_{313}(\psi,\t,\phi)$ is defined to have the following property,
+$$\b{a_b} = A_{313}(\psi,\t,\phi) \b{a_i}$$
+wherein $\b{a_i}$ represent acceleration perceived in the inertial coordinate system and $\b{a_b}$ represent acceleration perceived in the body-fitted coordinate system. Making $\b{a_b}$ subject of Newton's second law,
+$$\b{a_b} = \f{1}{m}\b{F_b}$$
+The direction cosine matrix $A_{313}(\psi,\t,\phi)$ was actually formed as a series of rotation transformations in the perceding sections. The rotation matrices are orthogonal matrice. Therefore, the direction cosine matrix $A_{313}(\psi,\t,\phi)$ is also orthogonal. One property of orthogonal matrices,
+$$A_{313}(\psi,\t,\phi)^{-1} = A_{313}(\psi,\t,\phi)^T$$
+Therefore, 
+$$\b{a_i} = A_{313}(\psi,\t,\phi)^{-1}\b{a_b} = A_{313}(\psi,\t,\phi)^T\b{a_b}$$
+Substituting Newton's second law for $\b{a_b}$,
+$$\b{a_i} = \f{1}{m}A_{313}(\psi,\t,\phi)^T\b{F_b}$$
+
+The script \url{Main.m} handles the initial condition, the integrator call, the plotting, and other small utilities. \url{Main.m} is shown below,
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{center}
 
 \end{document}

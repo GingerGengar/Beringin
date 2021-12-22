@@ -1,0 +1,127 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+
+%Seperator
+%Seperator
+%Seperator
+\section{Problem 3}
+\begin{comment}
+\end{comment}
+In $2$-dimensions, the rotation matrix $r$ is typically defined below,
+$$r = \begin{bmatrix}
+\cos(\a) && -\sin(\a) \\ 
+\sin(\a) && \cos(\a)
+\end{bmatrix}$$
+The matrix $r$ rotates a set of coordinate points by angle $\a$ in the counter-clockwise direction. Typically, a coordinate system would have its axes rotated in the counter-clockwise direction. As a result, all coordinates are now perceived in the rotated coordinate system to have been rotated in the clockwise direction. Suppose the ange $\a = -\t$, the rotation matrix would take the form,
+$$r = \begin{bmatrix}
+\cos(-\t) && -\sin(-\t) \\ 
+\sin(-\t) && \cos(-\t)
+\end{bmatrix} = \begin{bmatrix}
+\cos(\t) && \sin(\t) \\ 
+-\sin(\t) && \cos(\t)
+\end{bmatrix}$$
+The eulerian angles represent parameters in successive rotation transformation to determine orientation. These successive rotation transformations are non-commutative. For the specific order of transformation eulerian angles $3-1-3$, the coordinate system is typically rotated in the $z$-axis by angle $\phi$, then rotated in the $x$-axis by angle $\t$, before rotated in the $z$-axis again by angle $\psi$. 
+\\~\\To express coordinates in an inertial coordinate system in terms of a body-fitted coordinate system, it is possible to apply successive rotation transformations on the coordinates in the inertial coordinate system to determine how the same coordinates are perceived in the body-fitted coordinate system. For this solution, the eulerian angle sequence $3-1-3$ is chosen. 
+
+For rotation in the $z$-axis by angle $\phi$, the $z$-coordinate is held constant. Therefore,
+$$A_{3}(\phi) = \begin{bmatrix}
+\cos(\phi) && \sin(\phi) && 0 \\
+-\sin(\phi) && \cos(\phi) && 0 \\
+0 && 0 && 1 
+\end{bmatrix}$$
+For rotation in the $x$-axis by angle $\t$, the $x$-coordinate is held constant. Therefore,
+$$A_{1}(\t) = \begin{bmatrix}
+1 && 0 && 0 \\
+0 && \cos(\t) && \sin(\t) \\
+0 && -\sin(\t) && \cos(\t) 
+\end{bmatrix}$$
+For rotation in the $z$-axis by angle $\psi$, the $z$-coordinate is held constant. Therefore,
+$$A_{3}(\psi) = \begin{bmatrix}
+\cos(\psi) && \sin(\psi) && 0 \\
+-\sin(\psi) && \cos(\psi) && 0 \\
+0 && 0 && 1 
+\end{bmatrix}$$
+Applying the transformations in $3-1-3$ order,
+$$A_{313}(\psi,\t,\phi) = A_{3}(\psi)A_{1}(\t)A_{3}(\phi)$$
+The resulting matrix $A_{313}(\psi,\t,\phi)$ would be the direction cosine matrix that would have the properties,
+$$\b{v_b} = A_{313}(\psi,\t,\phi)\b{v_i}$$
+wherein $\b{v_b}$ represents the coordinates in the body-fitted coordinate system and $\b{v_i}$ represents the coordinates in the inertial coordinate system. Computing the direction matrix,
+$$A_{1}(\t)A_{3}(\phi) = \begin{bmatrix}
+1 && 0 && 0 \\
+0 && \cos(\t) && \sin(\t) \\
+0 && -\sin(\t) && \cos(\t) 
+\end{bmatrix}\begin{bmatrix}
+\cos(\phi) && \sin(\phi) && 0 \\
+-\sin(\phi) && \cos(\phi) && 0 \\
+0 && 0 && 1 
+\end{bmatrix}$$
+As a short-hand to make notation easier, let $\sin(\t)=s_\t$, $\cos(\t)=c_\t$. Substituting,
+$$A_{1}(\t)A_{3}(\phi) = \begin{bmatrix}
+1 && 0 && 0 \\
+0 && c_\t && s_\t \\
+0 && -s_\t && c_\t 
+\end{bmatrix}\begin{bmatrix}
+c_\phi && s_\phi && 0 \\
+-s_\phi && c_\phi && 0 \\
+0 && 0 && 1 
+\end{bmatrix} = \begin{bmatrix}
+c_\phi && s_\phi && 0 \\
+-c_\t s_\phi && c_\t c_\phi && s_\t \\
+s_\t s_\phi && -s_\t c_\phi && c_\t 
+\end{bmatrix}$$
+
+$$A_{3}(\psi)A_{1}(\t)A_{3}(\phi)= \begin{bmatrix}
+c_\psi && s_\psi && 0 \\
+-s_\psi && c_\psi && 0 \\
+0 && 0 && 1 
+\end{bmatrix}\begin{bmatrix}
+c_\phi && s_\phi && 0 \\
+-c_\t s_\phi && c_\t c_\phi && s_\t \\
+s_\t s_\phi && -s_\t c_\phi && c_\t 
+\end{bmatrix}$$
+Therefore,
+$$A_{313}(\psi,\t,\phi) = A_{3}(\psi)A_{1}(\t)A_{3}(\phi) = \begin{bmatrix}
+c_\psi c_\phi - s_\psi c_\t s_\phi && c_\psi s_\phi + s_\psi c_\t c_\phi&& s_\psi s_\t\\
+-s_\psi c_\phi - c_\psi c_\t s_\phi && -s_\psi s_\phi + c_\psi c_\t c_\phi && c_\psi s_\t\\
+s_\t s_\phi && -s_\t c_\phi && c_\t 
+\end{bmatrix}$$
+
+For the first transformation, $\phi$ represents the rotation angle along the $z$-axis in the inertial coordinate system. Let $\dot{\b{\phi}}$ represent the time derivative of this transformation. Let $\dot{\b{\phi}}_i$ represent the vector expressed in inertial coordinates and $\dot{\b{\phi}}_b$ represent the vector expressed in body-fitted coordinates,
+$$\dot{\b{\phi}}_i = \begin{bmatrix}0 && 0 && \dot{\phi}\end{bmatrix}^T$$
+To express the time derivative rotation vector in terms of body-fitted coordinates,
+$$\dot{\b{\phi}}_b = A_{313}(\psi,\t,\phi)\dot{\b{\phi}}_i$$
+Substituting for the relevant terms,
+$$\dot{\b{\phi}}_b = \begin{bmatrix}
+c_\psi c_\phi - s_\psi c_\t s_\phi && c_\psi s_\phi + s_\psi c_\t c_\phi&& s_\psi s_\t\\
+-s_\psi c_\phi - c_\psi c_\t s_\phi && -s_\psi s_\phi + c_\psi c_\t c_\phi && c_\psi s_\t\\
+s_\t s_\phi && -s_\t c_\phi && c_\t 
+\end{bmatrix}\begin{bmatrix}
+0 \\ 0 \\ \dot{\phi}\end
+{bmatrix} = \begin{bmatrix}
+s_\psi s_\t \dot{\phi}\\
+c_\psi s_\t \dot{\phi}\\
+c_\t\dot{\phi}
+\end{bmatrix}$$
+Expressing the vector $\dot{\b{\phi}}_b$ verbosely,
+$$\dot{\b{\phi}}_b = f_1\h{b_1} + f_2\h{b_2} + f_3\h{b_3} = s_\psi s_\t \dot{\phi}\h{b_1} + c_\psi s_\t \dot{\phi}\h{b_2} + c_\t\dot{\phi}\h{b_3}$$
+By comparing the terms,
+\\~\\\fbox{$\dst{f_1 = \sin(\psi)\sin(\t)\dot{\phi} \quad,\quad f_2 = \cos(\psi)\sin(\t)\dot{\phi} \quad,\quad f_3 = \cos(\t)\dot{\phi}}$}
+
+%Seperator
+%Seperator
+%Seperator
+
+
+
+\end{center}
+
+\end{document}
