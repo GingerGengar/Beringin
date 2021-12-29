@@ -17,6 +17,70 @@ Each Circuit should be anchored at the input. This allows the snippet of code to
 All necessary terminals such as the source voltage and drain voltage of an operational amplifier must be shown, as well as the corresponding voltages at those terminal. For example a device who theoretically works with 5 terminals must be represented with a figure with 5 terminals, for example, the op amp: source voltage, drain voltage, positive terminal, negative terminal, output terminal. 
 
 As much as possible, use the same scaling for all of the circuits. Instead of making figures smaller to fit more complex circuits, instead assign a symbollic representation of the sub-system units, for example a low pass filter represented by a box with inside labelled "LP"
+
+
+
+
+
+
+
+
+
+
+Dynamics notation conventions:
+Basic Mathematical Objects
+    Scalars
+        length, time, mass, energy
+    Vectors
+        force, position, velocity, acceleration, momentum, moments, angles, angular velocity, angular acceleration, angular momentum
+    Matrix
+        Inertia tensor
+Basic Operations
+    frame derivative
+    scalar multiplication
+    dot product
+    cross product
+
+
+
+Vector Notation Conventions:
+$${}^{A}_{C}\bar{v}^{B}_{D}$$
+Let A represent top left superscript B top right superscript, C represent bottom left subscript, D represent bottom right subscript. Let the A,B,C,D be named specifiers. Workings should contain the least amount of specifiers needed, to allow for expression generality. 
+
+Position vectors: 
+    A=none
+    B=point referral
+    C=basis vector
+    D=Naming, indexing
+
+Velocity vectors: 
+    A=frame derivative is taken with respect to
+    B=point referral
+    C=basis vector
+    D=Naming, indexing
+
+Acceleration vector and momentum vector is similar to the velocity vector notation-wise.
+
+Force vectors:
+    A=Frame the force is asociated with
+    B=Object experiencing force
+    C=basis vector
+    D=Naming, indexing
+Note that for the force vector, the frame the force is asociated to is rarely used. Most probably used for saying the entire force acting on a body in an inertial reference frame or a non-inertial reference frame
+
+Torque vectors:
+    A=Frame the torque is asociated with
+    B=Point of reference
+    C=basis vector
+    D=Naming, indexing
+
+Angular velocity vectors:
+   A=First frame
+   B=Second frame
+   C=none
+   D=none
+
+
 \end{comment}
 
 \begin{document}
