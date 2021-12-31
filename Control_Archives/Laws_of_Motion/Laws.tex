@@ -10,8 +10,69 @@
 
 \begin{center}
 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\chapter{Laws of Motions}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Newton's $2^{nd}$ Law}
+\begin{comment}
+\end{comment}
+Newton's $2^{nd}$ law for a point particle $p$ is shown below,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+$LHS$ represents the summation of $n$ number of forces acting on particle $p$. The forces here are perceived through an inertial frame $e$, and hence, represent true forces and not 'fictitious forces'. $RHS$ represents the acceleration of particle $p$ relative to the origin of the inertial frame $e$ and perceived from the inertial frame $e$. $m_{p}$ represents the mass of the particle $p$ and $\bar{r}^{o_{e}p}$ represents the position vector of particle $p$ relative to the origin of the inertial frame $e$. Note that the left-right sub-superscripts follow the notation convention described in the terminology. $o_{e}p$ represents the position vector starting from the origin of frame $e$ and ending at the position of particle $p$. 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Euler's Law}
+\begin{comment}
+\end{comment}
+Newton's $2^{nd}$ law could be extended to rotation as well. Taking the cross product of Newton's $2^{nd}$ law with position vector $\bar{r}^{o_{e}p}$,
+$$\bar{r}^{o_{e}p}\times\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+The summation $\displaystyle\sum$ operator and the vector cross-product operator are commutative with one another. Therefore,
+\begin{equation}\sum^{n}_{i = 1}\left[\bar{r}^{o_{e}p}\times{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]\label{euler-sub-1}\end{equation}
+Torque $\bar{\Gamma}$ is defined as shown below,
+$${}^{e}\bar{\Gamma}^{o_{e}}_{p,i} = \bar{r}^{o_{e}p}\times{}^{e}\bar{F}^{p}_{i}$$
+The 'A' specifier on torque $\bar{\Gamma}$ represents that the torque is perceived in an inertial reference frame. This means ficitious forces should be exluded. The 'B'specifier on torque $\bar{\Gamma}$ represents that the moment is taken with respect to the origin of the inertial reference frame $e$. The 'D' specifier is to represent that the $i^{th}$ torque produced from the $i^{th}$ force is acting on particle $p$. Substituting the definition for torque to equation $\ref{euler-sub-1}$,
+\begin{equation}\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]\label{euler-sub-2}\end{equation}
 
+Here we make the claim,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+Let $LHS$ and $RHS$ be defined below,
+$$LHS = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right] \quad,\quad RHS = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+Epxanding $LHS$ based on product rule,
+$$LHS = \bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[ m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right] + \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\right]\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)$$
+The vector crosss-product with itself is zero. Therefore the term $\displaystyle \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\right]\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right) = 0$. Ignorinng the second term in the equation above,
+$$LHS = \bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[ m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right]$$
+Scalar multiplication and frame derivative operations are commutative as long as the scalar remains constant with time. Since mass of particle $m_{p}$ is unchanging in time due to conservation of mass,
+$$LHS =  m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right]$$
+Simplifying to $2^{nd}$ order derivative,
+$$LHS =  m_{p}\bar{r}^{o_{e}p}\times \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}\left(\bar{r}^{o_{e}p}\right) $$
+Since $LHS = RHS$, the claim is proven to be true. Since the claim is true, the claim can be substituted into equation $\ref{euler-sub-2}$,
 
+\begin{equation}\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right]\label{euler-sub-3}\end{equation}
+
+Let angular momentum $\bar{L}$ be defined below,
+$${}^{e}\bar{L}^{o_{e}}_{p} = \bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)$$
+Angular momentum is dependent on $\displaystyle \overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)$. This term is dependent on the frame derivative operation and which frame the time derivative of $\displaystyle \bar{r}^{o_{e}p}$ is taken with respect to. The frame used for the frame derivative operation when constructing the angular momentum definition is represented in the 'A' specifier. The angular momentum is also dependent on the position vector of particle $p$, $\displaystyle \bar{r}^{o_{e}p}$. $2$ facts can be deduced from the position vector in this form: the point of reference the particle $p$ is taken with respect to, in this case origin of inertial frame $o_{e}$, and the object the position vector is pointing at, particle $p$. Likewise, the angular momentum vector notation needs to be able to express the point of reference and the particle being referenced. The point of reference is represented in the 'B' specifier meanwhile the object being referenced, particle $p$ is represented in the 'D' specifier.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
 
 \end{center}
 
