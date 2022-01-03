@@ -9,10 +9,161 @@
 \begin{document}
 
 \begin{center}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\chapter{Single-Particle Conservation Laws}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Linear Momentum}
+\begin{comment}
+\end{comment}
+The general form of Newton's $2^{nd}$ law is shown below for a single particle $p$,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+Expressing the $2^{nd}$ order derivative in terms of $1^{st}$ order derivative,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\overset{e}{\frac{\partial}{\partial t}}\left\{\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}p}]\right\}$$
+Integrating both sides with respect to time $t$, for time interval $t_{1} \leq t \leq t_{2}$,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \,dt = \int^{t_{2}}_{t_{1}} m_{p}\overset{e}{\frac{\partial}{\partial t}}\left\{\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}p}]\right\} \,dt$$
+Since mass of particle $m_{p}$ is a scalar constant unchanging with time,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \,dt = m_{p}\int^{t_{2}}_{t_{1}} \overset{e}{\frac{\partial}{\partial t}}\left\{\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}p}]\right\} \,dt$$
+
+For ease of notation,
+$$\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}p}] = {}^{e}_{e}\bar{v}^{o_{e}p}$$
+Here we make the satement that the frame derivative of particle $p$ position vector is the velocity vector. The 'A' specifier shows represents the velocity vector perceived in the $e$ frame. The 'C' specifier represents the velocity vector expressed as a linear combination of the $e$ frame basis vectors, this would be important. Lastly, the 'B' specifier is used to represent the velocity vector as velocity of point particle $p$ relative to the origin of the $e$ frame. Performing the substitution,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \,dt = m_{p}\int^{t_{2}}_{t_{1}} \overset{e}{\frac{\partial}{\partial t}}\left\{{}^{e}_{e}\bar{v}^{o_{e}p}\right\} \,dt$$
+It was important to specify velocity expressed in terms of the basis vectors of $e$ because in doing so, the frame derivative operation with respect to frame $e$, acts the same way as a conventional time derivative on each component of velocity vector $\bar{v}$. If velocity vector $\bar{v}$ was expressed in basis vector other than the basis vectors of the $e$ frame, the first order KTT form must be used for the frame derivative and complicates the problem further. Since the frame derivative with respect to frame $e$ functions the same way as conventional time derivative, the fundamental theorem of calculus can be employed on each of the components of velocity vector $\bar{v}$. Therefore,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \,dt = m_{p}\int^{t_{2}}_{t_{1}} \overset{e}{{\partial}}\left\{{}^{e}_{e}\bar{v}^{o_{e}p}\right\} =  m_{p} \left[{}^{e}_{e}\bar{v}^{o_{e}p}\right]^{t_{2}}_{t_{1}}$$
+The summation operation $\displaystyle \sum$ and the integral operation $\displaystyle \int$ are commutative. Therefore, 
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \,dt = \sum^{n}_{i = 1}\left[\int^{t_{2}}_{t_{1}} {}^{e}\bar{F}^{p}_{i} \,dt\right] =  m_{p} \left[{}^{e}_{e}\bar{v}^{o_{e}p}\right]^{t_{2}}_{t_{1}}$$
+Linear momentum is defined as,
+$${}^{e}\bar{P}^{o_{e}p} = m_{p}{}^{e}_{e}\bar{v}^{o_{e}p}$$
+Substituting the expression for linear momentum,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \,dt = \sum^{n}_{i = 1}\left[\int^{t_{2}}_{t_{1}} {}^{e}\bar{F}^{p}_{i} \,dt\right] = \left[{}^{e}\bar{P}^{o_{e}p}\right]^{t_{2}}_{t_{1}}$$
+The statement above shows the conservation of linear momentum. The change in linear momentum is equivalent to the time integral of the resultant force acting on particle $p$. The change in linear momentum is also equivalent to the summation of the time integral of every single force acting on particle $p$.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Angular Momentum}
+\begin{comment}
+\end{comment}
+Euler's law is shown below,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p}\right]$$
+If the angular momentum vector is expressed in terms of the basis vectors of the $e$ frame basis vector, the frame derivative operation $\displaystyle \overset{e}{\frac{\partial}{\partial t}}$ functions the same way as a conventional derivative operation. Therefore,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{p}\right] = \frac{d}{d t}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{p}\right]$$
+Integrating the equation with respect to time with time interval $t_{1} \leq t \leq t_{2}$,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] \,dt = \int^{t_{2}}_{t_{1}} \frac{d}{d t}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{p}\right] \,dt$$
+Using the fundamental theorem of calculus,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] \,dt = \int^{t_{2}}_{t_{1}} d\left[{}^{e}_{e}\bar{L}^{o_{e}}_{p}\right] $$
+An exact differential $\displaystyle d\left[{}^{e}_{e}\bar{L}^{o_{e}}_{p}\right]$ is formed. Therefore,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] \,dt = \left[{}^{e}_{e}\bar{L}^{o_{e}}_{p}\right]^{t_{2}}_{t_{1}} $$
+The summation operation and integral operation is commutative. Therefore,
+$$\int^{t_{2}}_{t_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] \,dt = \sum^{n}_{i = 1}\left[\int^{t_{2}}_{t_{1}} {}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\,dt\right] = \left[{}^{e}_{e}\bar{L}^{o_{e}}_{p}\right]^{t_{2}}_{t_{1}} $$
+The conservation of angular momentum is similar to the conservation of linear momentum. The change in angular momentum of particle $p$ is equals to the time integral of the resultant torque applied on particle $p$. The change in angular momentum of particle $p$ is also equivalent to the summation of time integrals for each individual torque acting on particle $p$.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Kinetic Energy}
+\begin{comment}
+Let, $\displaystyle \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = \bar{F_{r}}$. Substituting,
+$$\bar{F_{r}} \cdot\overset{e}{\bar{dr}} = m_{p}\frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}}$$
+\end{comment}
+Reiterating Newton's $2^{nd}$ law,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+If the position vector $\bar{r}^{o_{e}p}$ is expressed in terms of the basis vectors in the $e$-frame, the partial derivative operation $\displaystyle \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}$ would function the same as the second order conventional derivative. Therefore,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p}] = m_{p}\frac{d^{2}}{d t^{2}}[{}_{e}\bar{r}^{o_{e}p}] = m_{p}\frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]$$
+
+Let infinitesmial distance in the $e$ frame be defined as a vector below,
+$$\overset{e}{\bar{dr}} = \begin{bmatrix}
+dx_{1} && dx_{2} && dx_{3}
+\end{bmatrix}^{T}$$
+Taking the dot product of the resultant force with infinitesmial distance in the $e$ frame $\overset{e}{\bar{dr}}$,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \cdot\overset{e}{\bar{dr}} = m_{p}\frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}}$$
 
 
+Let $\displaystyle {}_{e}r^{o_{e}p}_{i}$ represent the index notation for the components of $\displaystyle {}_{e}\bar{r}^{o_{e}p}$. By using chain rule,
+$$\left\{\frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\right\}_{i} = \frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\right] = \frac{d}{d \alpha}\left[\frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\right] \times \frac{d \alpha}{d t}$$
+wherein $\alpha$ is some variable. Here the $\times$ represents scalar multiplication, not the cross product operation because the quantities $\displaystyle {}_{e}r^{o_{e}p}_{i}$ is a scalar quantity. Expressing the dot product operation with infinitesmaily distance $\overset{e}{\bar{dr}}$,
+$$ \frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}} = \frac{d}{d \alpha}\left[\frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\right] \times \frac{d \alpha}{d t}\times dx_{i}$$
 
+Since $\alpha$ could be any variable we desire, let $\alpha = x_{i}$. Then $d\alpha = dx_{i}$. Substituting,
+$$ \frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}} = \frac{d}{d x_{i}}\left[\frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\right] \times \frac{d x_{i}}{d t}\times dx_{i} = d\left[\frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\right] \times \frac{d x_{i}}{d t}$$
+Earlier, $\overset{e}{\bar{dr}}$ was defined to be some infinitesmial distance. Now, let us specify that $\overset{e}{\bar{dr}}$ represents infinitesmial distance of the particle  $p$ trajectory. If this is the case, then $x_{i} = {}_{e}r^{o_{e}p}_{i}$. Therefore,
+$$\frac{d x_{i}}{d t} = \frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)$$
+Susbtituting,
+$$ \frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}} = d\left[\frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\right] \times \frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right) = \frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\times d\left[\frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right)\right] $$
+Here we make the substitution $\displaystyle \frac{d}{d t}\left({}_{e}r^{o_{e}p}_{i}\right) = {}^{e}v^{o_{e}p}_{i}$, wherein $\displaystyle {}^{e}v^{o_{e}p}_{i}$ is the index notation of $\displaystyle  {}^{e}\bar{v}^{o_{e}p}_{i}$. The 'A' specifier of velocity being $e$ is perfectly valid because the frame derivative earlier was taken with respect to the inertial $e$ frame. 
+$$ \frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}} = {}^{e}v^{o_{e}p}_{i}\times d\left[{}^{e}v^{o_{e}p}_{i}\right] $$
 
+Substituting into the resultant force equation,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \cdot\overset{e}{\bar{dr}} = m_{p}\frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}} = m_{p} {}^{e}v^{o_{e}p}_{i}d\left[{}^{e}v^{o_{e}p}_{i}\right]$$
+
+Let the initial position of the particle be denoted with position vector ${}_{e}\bar{r}_{1}$, implying this position vector is expressed in terms of the basis vectors of the inertial $e$ frame. Let particle $p$ have some initial velocity ${}^{e}_{e}\bar{v}_{1}$ initially. At the final position, particle $p$ has the position vector ${}_{e}\bar{r}_{2}$ and final velocity of ${}^{e}_{e}\bar{v}_{2}$. Performing integration,
+$$\int^{{}_{e}\bar{r}_{2}}_{{}_{e}\bar{r}_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \cdot\overset{e}{\bar{dr}} = \int^{{}^{e}_{e}\bar{v}_{2}}_{{}^{e}_{e}\bar{v}_{1}} m_{p} {}^{e}v^{o_{e}p}_{i}d\left[{}^{e}v^{o_{e}p}_{i}\right] =  \left[\frac{1}{2}m_{p} {}^{e}v^{o_{e}p}_{i}\,\,{}^{e}v^{o_{e}p}_{i}\right]^{{}^{e}_{e}\bar{v}_{2}}_{{}^{e}_{e}\bar{v}_{1}}$$
+The $LHS$ is in vector notation but the $RHS$ is in index notation. Changing $RHS$ to vector notation,
+$$\int^{{}_{e}\bar{r}_{2}}_{{}_{e}\bar{r}_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \cdot\overset{e}{\bar{dr}} = \left[\frac{1}{2}m_{p}{}^{e}\bar{v}^{o_{e}p}\cdot{}^{e}\bar{v}^{o_{e}p}\right]^{{}^{e}_{e}\bar{v}_{2}}_{{}^{e}_{e}\bar{v}_{1}}$$
+The summation operation and the integral operation are both commutative. Therefore,
+$$\int^{{}_{e}\bar{r}_{2}}_{{}_{e}\bar{r}_{1}} \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] \cdot\overset{e}{\bar{dr}} =  \sum^{n}_{i = 1}\left[\int^{{}_{e}\bar{r}_{2}}_{{}_{e}\bar{r}_{1}}{}^{e}\bar{F}^{p}_{i}\cdot\overset{e}{\bar{dr}}\right]  = \left[\frac{1}{2}m_{p}{}^{e}\bar{v}^{o_{e}p}\cdot{}^{e}\bar{v}^{o_{e}p}\right]^{{}^{e}_{e}\bar{v}_{2}}_{{}^{e}_{e}\bar{v}_{1}}$$
+This is the final form conservation of kinetic energy. Let us consider what has happened. Newton's $2^{nd}$ law was invoked for particle $p$. The expression was taken with a dot product to infinitesmial distance vector which is then set to the actual path of particle $p$. The expression was integrated applying the bounds for the initial and final states of particle $p$. The states are position and velocity, both perceived in the inertial frame. The final result is the expresion for conservation of kinetic energy. The force spatial integral of the particle is the change of kinetic energy.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\chapter{Rigid Body Conservation Laws}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Center of Mass}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Linear Momentum}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Angular Momentum}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Kinetic Energy}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
 \end{center}
 
 \end{document}
