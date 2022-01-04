@@ -17,6 +17,9 @@
 %Seperator
 \chapter{Laws of Motions}
 \begin{comment}
+Probably should rename rigid body to system of particles. There has to be a distinction between the two. Rigid bodies have the constraint that particles cannot move with respect to one another meanwhile for a system of particles, particles can still move relative to one another. Think of an aircraft as a rigid body meanwhile the earth and moon as a system of particles.
+
+
 \end{comment}
 %Seperator
 %Seperator
@@ -33,14 +36,32 @@
 \subsection{Point Particle}
 \begin{comment}
 \end{comment}
+%Seperator
+%Seperator
+%Seperator
+\subsubsection{Inertial Reference Frame}
+\begin{comment}
+\end{comment}
 Newton's $2^{nd}$ law for a point particle $p$ is shown below,
 $$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
 $LHS$ represents the summation of $n$ number of forces acting on particle $p$. The forces here are perceived through an inertial frame $e$, and hence, represent true forces and not 'fictitious forces'. $RHS$ represents the acceleration of particle $p$ relative to the origin of the inertial frame $e$ and perceived from the inertial frame $e$. $m_{p}$ represents the mass of the particle $p$ and $\bar{r}^{o_{e}p}$ represents the position vector of particle $p$ relative to the origin of the inertial frame $e$. Note that the left-right sub-superscripts follow the notation convention described in the terminology. $o_{e}p$ represents the position vector starting from the origin of frame $e$ and ending at the position of particle $p$. 
 %Seperator
 %Seperator
 %Seperator
+\subsubsection{Non-Inertial Reference Frame}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
 %Seperator
 \subsection{Rigid Bodies}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+\subsubsection{Inertial Reference Frame}
 \begin{comment}
 \end{comment}
 Newton's $2^{nd}$ law for the $i^{th}$ point particle in a rigid body is shown below,
@@ -86,6 +107,12 @@ $$\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right] = \sum^{n_{2}}_{i
 Let $\displaystyle M = \left[\sum^{n_{2}}_{i = 1}\left(m_{i}\right)\right]$. Here $M$ represents the total mass of the rigid body. Substituting for $M$,
 $$\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right] = M{}^{e}\bar{a}^{o_{e}c}$$
 This is the final form for Newton's $2^{nd}$ law for a rigid body. On the $LHS$ there is the resultant external force acting on the rigid body. On the $RHS$ there is the total mass of the rigid body multiplied by acceleration of the center of mass. Due to Newton's $3^{rd}$ law, the internal forces of a rigid body can be safely ignored. The rigid body form of Newton's $2^{nd}$ law replaces forces on individual point particles with the summation of external forces and also replaces acceleration of single particles with the acceleration of the rigid body's center of mass. The rigid body form of Newton's $2^{nd}$ law replaces mass of the $i^{th}$ particle with the total mass of the rigid body $M$ when compared to Newton's $2^{nd}$ law for a single particle.
+%Seperator
+%Seperator
+%Seperator
+\subsubsection{Non-Inertial Reference Frame}
+\begin{comment}
+\end{comment}
 
 %Seperator
 %Seperator
@@ -100,6 +127,12 @@ This is the final form for Newton's $2^{nd}$ law for a rigid body. On the $LHS$ 
 %Seperator
 %Seperator
 \subsection{Point Particle}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+\subsubsection{Inertial Reference Frame}
 \begin{comment}
 \end{comment}
 Newton's $2^{nd}$ law could be extended to rotation as well. Taking the cross product of Newton's $2^{nd}$ law with position vector $\bar{r}^{o_{e}p}$,
@@ -134,10 +167,22 @@ $$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\f
 %Seperator
 %Seperator
 %Seperator
+\subsubsection{Non-Inertial Reference Frame}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
 %Seperator
 \subsection{Rigid Bodies}
 \begin{comment}
 Kind of incomplete, more information about the colinear argument need to be made
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+\subsubsection{Inertial Reference Frame}
+\begin{comment}
 \end{comment}
 EUler's law for a point particle $p$,
 $$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p}\right]$$
@@ -170,8 +215,18 @@ $$\sum^{n_{2}}_{i = 1}\left\{ \overset{e}{\frac{\partial}{\partial t}}\left[{}^{
 The summation and partial derivative operations as commutative. Therefore,
 $$\overset{e}{\frac{\partial}{\partial t}}\left[\sum^{n_{2}}_{i = 1}\left\{{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right\}\right] = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}$$
 Let $\displaystyle {}^{e}\bar{L}^{o_{e}}_{rb} = \sum^{n_{2}}_{i = 1}\left\{{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right\}$. Wherein $\displaystyle {}^{e}\bar{L}^{o_{e}}_{rb}$ represents the total angular momentum of the rigid body $rb$. Substituting,
-\begin{equation}\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{rb}\right] = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}\label{euler-law-primitive}\end{equation}
-Equation $\ref{euler-law-primitive}$ 
+$$\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{rb}\right] = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}$$
+Let $\displaystyle {}^{e}\bar{\Gamma}^{o_{e}}_{rb} = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}\label{euler-law-primitive}$, wherein ${}^{e}\bar{\Gamma}^{o_{e}}_{rb}$ represents the torque that is acting on the rigid body as a whole. From the colinear argument made earlier, the internal forces do not contribute to the torque of the rigid body as a whole. Note that ${}^{e}\bar{F}^{p_{i}}_{ext}$ represents the resultant external forces acting on a single particle $p_{i}$ in the rigid body $rb$. Substituting,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{rb}\right] = {}^{e}\bar{\Gamma}^{o_{e}}_{rb}$$
+
+%Seperator
+%Seperator
+%Seperator
+\subsubsection{Non-Inertial Reference Frame}
+\begin{comment}
+\end{comment}
+
+
 
 %Seperator
 %Seperator

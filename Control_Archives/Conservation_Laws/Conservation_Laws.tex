@@ -131,17 +131,36 @@ This is the final form conservation of kinetic energy. Let us consider what has 
 %Seperator
 %Seperator
 %Seperator
-\section{Center of Mass}
-\begin{comment}
-\end{comment}
-%Seperator
-%Seperator
-%Seperator
-%Seperator
-%Seperator
 \section{Linear Momentum}
 \begin{comment}
 \end{comment}
+Newton's $2^{nd}$ law for a system of particles is shown below,
+$$\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right] = M{}^{e}\bar{a}^{o_{e}c}$$
+wherein $M$ represents the total mass of the system of particles, $\displaystyle M = \left[\sum^{n_{2}}_{i = 1}\left(m_{i}\right)\right]$. Multiplying Newton's $2^{nd}$ law infinitesmial time $dt$,
+$$\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = M{}^{e}\bar{a}^{o_{e}c}\,dt$$
+Although $dt$ represents infinitesmial time, one can simply treat $dt$ like a scalar constant and that a scalar constant multipled by a vector in a vector equation simply implies the scalar constant is multiplied to all of the components of the vectors. ${}^{e}\bar{a}^{o_{e}c}$ represents acceleration of the center of mass of the system of particles perceived in the inertial frame $e$. 
+$${}^{e}\bar{a}^{o_{e}c} = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{v}^{o_{e}c}\right]$$
+If the velocity of the center of mass is expressed as a linear combination of the basis vectors of inertial frame $e$,
+\begin{equation}{}^{e}_{e}\bar{a}^{o_{e}c} = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right] = \frac{d}{d t}\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right]\label{velocity-dot}\end{equation}
+This is one of the properties of the frame derivative.
+
+Enforcing that the acceleration terms in Newton's $2^{nd}$ law be expressed as a linear combination of the basis vectors of inertial frame $e$,
+\begin{equation}\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = M{}^{e}_{e}\bar{a}^{o_{e}c}\,dt \label{2-law-strat}\end{equation}
+Substituting equation $\ref{velocity-dot}$ to $\ref{2-law-strat}$,
+$$\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = M\frac{d}{d t}\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right]\label{velocity-dot}\,dt$$
+Integrating for time interval $t_{1} \leq t \leq t_{2}$,
+$$\int^{t_{2}}_{t_{1}}\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = \int^{t_{2}}_{t_{1}}M\frac{d}{d t}\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right]\label{velocity-dot}\,dt$$
+By the fundamental theorem of calculus,
+$$\int^{t_{2}}_{t_{1}}\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = \int^{t_{2}}_{t_{1}}M \,d\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right]\label{velocity-dot}$$
+$$\int^{t_{2}}_{t_{1}}\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = M\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right]\label{velocity-dot}^{t_{2}}_{t_{1}}$$
+Since the summation and integration operations are commutative with each other,
+$$\int^{t_{2}}_{t_{1}}\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = \sum^{n_{2}}_{i = 1}\left[\int^{t_{2}}_{t_{1}}{}^{e}\bar{F}^{p_{i}}_{ext}\,dt\right] = M\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right]\label{velocity-dot}^{t_{2}}_{t_{1}}$$
+Susbstituting for the total mass $M$ of the system of particles,
+$$\int^{t_{2}}_{t_{1}}\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right]\,dt = \sum^{n_{2}}_{i = 1}\left[\int^{t_{2}}_{t_{1}}{}^{e}\bar{F}^{p_{i}}_{ext}\,dt\right] = \left[\sum^{n_{2}}_{i = 1}\left(m_{i}\right)\right]\left[{}^{e}_{e}\bar{v}^{o_{e}c}\right]\label{velocity-dot}^{t_{2}}_{t_{1}}$$
+This is the conservation of linear momentum for a system of particles. The conservation of linear momentum differs compared to the single particle case in that the mass of a single particle is now replaced with the total mass of the system of particles and that the velocity is now not the velocity of a single particle, but is instead the velocity of the center of mass for the system of particles.
+
+
+
 %Seperator
 %Seperator
 %Seperator
@@ -150,6 +169,18 @@ This is the final form conservation of kinetic energy. Let us consider what has 
 \section{Angular Momentum}
 \begin{comment}
 \end{comment}
+Euler's law for a system of particles is shown below,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{rb}\right] = {}^{e}\bar{\Gamma}^{o_{e}}_{rb}$$
+wherein ${}^{e}\bar{\Gamma}^{o_{e}}_{rb}$ represents the total torque that the system of particles experiences. Asserting that the angular momentum vector $\displaystyle \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{rb}\right]$ must be expressed in terms of the $e$-frame basis vector,
+\begin{equation}{}^{e}\bar{\Gamma}^{o_{e}}_{rb} = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{rb}\right]\label{shazam-1}\end{equation}
+Since the angular momentum vector is expressed in terms of the $e$-frame basis vector,
+\begin{equation}\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{rb}\right] = \frac{d}{d t}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{rb}\right]\label{shazam-2}\end{equation}
+Substituting equation $\ref{shazam-2}$ to equation $\ref{shazam-1}$,
+$${}^{e}\bar{\Gamma}^{o_{e}}_{rb} = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{rb}\right]\label{shazam-1} = \frac{d}{d t}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{rb}\right]$$
+Integrating the equation for time interval $t_{1} \leq t \leq t_{2}$,
+$$\int^{t_{2}}_{t_{1}} {}^{e}\bar{\Gamma}^{o_{e}}_{rb} \,dt = \int^{t_{2}}_{t_{1}} \frac{d}{d t}\left[{}^{e}_{e}\bar{L}^{o_{e}}_{rb}\right] \,dt$$
+By fundamental theorem of calculus,
+$$\int^{t_{2}}_{t_{1}} {}^{e}\bar{\Gamma}^{o_{e}}_{rb} \,dt =  \left[{}^{e}_{e}\bar{L}^{o_{e}}_{rb}\right]^{t_{2}}_{t_{1}} $$
 %Seperator
 %Seperator
 %Seperator
@@ -158,6 +189,79 @@ This is the final form conservation of kinetic energy. Let us consider what has 
 \section{Kinetic Energy}
 \begin{comment}
 \end{comment}
+Newton's $2^{nd}$ law for the $i^{th}$ point particle in a system of particles is shown below,
+\begin{equation}\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{j}\right] = {}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right] = m_{p_{i}}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p_{i}}]\label{2-law-pp}\end{equation}
+Work for the $i^{th}$ particle in a system of particles is defined as,
+$$w_{i} = \int^{\bar{r}_{2,i}}_{\bar{r}_{1,i}} \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{j}\right]\cdot\,d\bar{r}$$
+wherein $\bar{r}_{2,i}$ represents the final position and $\bar{r}_{1,i}$ represents the initial position of the $i^{th}$ particle. The work for the $i^{th}$ particle is a line integral following the path that the particle takes. Since $d\bar{r}$ represents a vector of infinitesmial distance that the $i^{th}$ particle takes, then,
+$$\frac{d\bar{r}}{dt} = \overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+It is important that the position vector $\bar{r}^{o_{e}p_{i}}$ here must be expressed in terms of the $e$-frame basis vectors because otherwise, KTT of the first order must be invoked when $\bar{r}^{o_{e}p_{i}}$ is frame-derived with respect to frame $e$. Manipulating the differentials,
+$$d\bar{r} = \overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt$$
+Substituting into the integral expression for the $i^{th}$ particle,
+$$w_{i} = \int^{\bar{r}_{2,i}}_{\bar{r}_{1,i}} \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{j}\right]\cdot\,d\bar{r} = \int^{\bar{r}_{2,i}}_{\bar{r}_{1,i}} \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{j}\right]\cdot\, \overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt$$
+Substituting for equation $\ref{2-law-pp}$,
+
+
+$$w_{i} = \int^{t_{2}}_{t_{1}} \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt = \int^{t_{2}}_{t_{1}} \left\{ m_{p_{i}}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p_{i}}] \right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt$$
+Asserting that the vector $\bar{r}^{o_{e}p_{i}}$ must be expressed in terms of the $e$-frame basis vectors for convenience,
+$$w_{i} = \int^{t_{2}}_{t_{1}} \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt = \int^{t_{2}}_{t_{1}} \left\{ m_{p_{i}}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}] \right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt$$
+Taking the summation for all particles existing for the system of particles,
+$$\sum^{n_{2}}_{i = 1}\left[w_{i}\right] = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}} \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}} \left\{ m_{p_{i}}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}] \right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt$$
+
+
+Let $LHS$ and $RHS$ be defined below,
+$$LHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}} \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt \quad,\quad RHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}}   m_{p_{i}}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}]   \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt$$
+
+By conjecture,
+\begin{equation}\overset{e}{\frac{\partial}{\partial t}}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\} = \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}] \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\label{double-der-trick}\end{equation}
+Let
+$$lhs = \overset{e}{\frac{\partial}{\partial t}}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\} \quad,\quad rhs = \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}] \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+By applying product rule,
+$$lhs = \frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}\left\{\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\} + \overset{e}{\frac{\partial}{\partial t}}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+Factoring out the scalar constant $1/2$ and simplifying to $2^{nd}$ order frame derivatives,
+$$lhs = \frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}]  + \frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}\left\{\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+$$lhs = \frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}]  + \frac{1}{2}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}} [{}_{e}\bar{r}^{o_{e}p_{i}}] \cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+Since dot product is a commutative operation,
+$$lhs = \frac{1}{2}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]  + \frac{1}{2}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}} [{}_{e}\bar{r}^{o_{e}p_{i}}] \cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+$$lhs = \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+Since $lhs = rhs$ equation $\ref{double-der-trick}$ is proven to be true. Substituting equation $\ref{double-der-trick}$ into $RHS$,
+$$RHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}}   m_{p_{i}}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}]   \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]dt\quad,\quad\overset{e}{\frac{\partial}{\partial t}}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\} = \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[{}_{e}\bar{r}^{o_{e}p_{i}}] \cdot\,\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]$$
+$$RHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}}m_{p_{i}}\overset{e}{\frac{\partial}{\partial t}}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}dt$$
+
+
+The term $\displaystyle \left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}$ is asserted to be expressed as a linear combination of frame $e$-basis vectors. If the term is expressed as a linear combination of frame $e$ basis vectors, then
+$$\overset{e}{\frac{\partial}{\partial t}}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\} = \frac{d}{d t}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}$$
+Substituting to $RHS$,
+$$RHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}}m_{p_{i}} \frac{d}{d t}\left\{\frac{1}{2}\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}dt$$
+$$RHS = \sum^{n_{2}}_{i = 1}\int^{\bar{v}_{2,i}}_{\bar{v}_{1,i}}\frac{1}{2}m_{p_{i}} \,d\left\{\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}$$
+$$RHS = \sum^{n_{2}}_{i = 1}\left\{ \frac{1}{2}m_{p_{i}} \,\left\{\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\cdot\overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}]\right\}^{\bar{v}_{2,i}}_{\bar{v}_{1,i}}\right\}$$
+Making the substitution $\displaystyle \overset{e}{\frac{\partial}{\partial t}}[{}_{e}\bar{r}^{o_{e}p_{i}}] = {}^{e}_{e}\bar{v}^{o_{e}p_{i}}$,
+$$RHS = \sum^{n_{2}}_{i = 1}\left\{ \frac{1}{2}m_{p_{i}} \,\left[{}^{e}_{e}\bar{v}^{o_{e}p_{i}}\cdot{}^{e}_{e}\bar{v}^{o_{e}p_{i}}\right]^{\bar{v}_{2,i}}_{\bar{v}_{1,i}}\right\}$$
+This is the statement for the sum of the individual particles' kinetic energy. Let $\bar{r}^{o_{e}p_{i}} = \bar{r}^{o_{e}a} + \bar{r}^{ap_{i}}$, wherein $a$ could be some arbitrary point. Substituting into $LHS$,
+$$LHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}} \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a} + \bar{r}^{ap_{i}}]dt$$
+Parsing the terms,
+$$LHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}} \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  +   \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]dt$$
+$$LHS = \sum^{n_{2}}_{i = 1}\int^{t_{2}}_{t_{1}} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  +  \left\{\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  +   \left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]dt$$
+\begin{align*}
+LHS =& \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]\right\}  + \sum^{n_{2}}_{i = 1}\left\{\left\{\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}] \right\}  \\ &+   \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}dt
+\end{align*}
+\begin{align*}
+LHS =& \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]\right\}  + \sum^{n_{2}}_{i = 1}\left\{\left\{\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\}  \right\}\cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  \\ &+   \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}dt
+\end{align*}
+$\displaystyle \sum^{n_{2}}_{i = 1}\left\{\left\{\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\}  \right\} = 0$ because of Newton's $3^{rd}$ law and that a particle cannot exert a force on itself. If one can form a $5^{th}$ order tensor which the first two indices correspond to $i$ and $j$, then the main diagonal of this tensor is zero due to the fact a particle cannot exert a force on itself. Due to Newton's $3^{rd}$ law, the tensor is anti-symmetric. The contraction of an anti-symmetric tensor on its $2$ anti-symmetric 'axis' yields zero. Hence, the summation of the internal forces of the system of particles is zero. Simplifying the expression,
+\begin{align*}
+LHS =& \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]\right\}  +   \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}dt
+\end{align*}
+\begin{align*}
+LHS = \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  +  \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}dt
+\end{align*}
+Typically the point $a$ is defined as the center of mass. And in that case, then the term $\displaystyle \sum^{n_{2}}_{i = 1} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]$ represents work done in translating the center of mass to some velocity. The $\displaystyle \sum^{n_{2}}_{i = 1}\left[ {}^{e}\bar{F}^{p_{i}}_{ext}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right]$ term  represents the work done by the external force in rotating and stretching of the system of particles, meanwhile the $\displaystyle \sum^{n_{2}}_{i = 1}\left\{\left \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}$ term represents work done by internal forces in stretching. For rigid bodies, this term is zero. Combining the terms together,
+$$\sum^{n_{2}}_{i = 1}\left[w_{i}\right] = LHS = RHS$$
+\begin{align*}
+    \sum^{n_{2}}_{i = 1}\left[w_{i}\right] & = \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  +  \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}dt \\ & = \sum^{n_{2}}_{i = 1}\left\{ \frac{1}{2}m_{p_{i}} \,\left[{}^{e}_{e}\bar{v}^{o_{e}p_{i}}\cdot{}^{e}_{e}\bar{v}^{o_{e}p_{i}}\right]^{\bar{v}_{2,i}}_{\bar{v}_{1,i}}\right\}
+\end{align*}
+This is the final form of the conservation of kinetic energy.
+
 %Seperator
 %Seperator
 %Seperator
