@@ -1,4 +1,34 @@
 \standalonepreambles
+\subpreamble{../Terminology/Terminology.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../KTT/KTT.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Laws_of_Motion/Laws.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Conservation_Laws/Conservation_Laws.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Rotational_Dynamics/Includes/Includes.tex}
+\usepackage {../../Environment/Packages}\usepackage {../../Environment/Conventions}\usepackage {../../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Rotational_Dynamics/Includes/../Inertia_Tensor/Inertia_Tensor.tex}
+\usepackage {../../Environment/Packages}\usepackage {../../Environment/Conventions}\usepackage {../../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Rotational_Dynamics/Includes/../Euler_Equations/Euler_Eqns.tex}
+\usepackage {../../Environment/Packages}\usepackage {../../Environment/Conventions}\usepackage {../../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Rotational_Kinematics/Includes/Includes.tex}
+\usepackage {../../Environment/Packages}\usepackage {../../Environment/Conventions}\usepackage {../../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Rotational_Kinematics/Includes/../Direction_Cosine_Matrix/Direction_Cosine.tex}
+\usepackage {../../Environment/Packages}\usepackage {../../Environment/Conventions}\usepackage {../../Environment/Hyahoos}
+\endsubpreamble
+\subpreamble{../Rotational_Kinematics/Includes/../Euler_Angles/Euler_Angles.tex}
+\usepackage {../../Environment/Packages}\usepackage {../../Environment/Conventions}\usepackage {../../Environment/Hyahoos}
+\endsubpreamble
 \subpreamble{../MOSFET/MOSFET.tex}
 \usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
 \endsubpreamble

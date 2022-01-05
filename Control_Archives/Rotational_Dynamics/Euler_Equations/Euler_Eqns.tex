@@ -2,9 +2,9 @@
 \documentclass[class=report, 12pt, crop=false]{standalone}
 
 %Load Pre-ambles
-\usepackage{../Environment/Packages}
-\usepackage{../Environment/Conventions}
-\usepackage{../Environment/Hyahoos}
+\usepackage{../../Environment/Packages}
+\usepackage{../../Environment/Conventions}
+\usepackage{../../Environment/Hyahoos}
 
 \begin{document}
 
@@ -133,13 +133,12 @@ $$\b{\Gamma}^{c} = \ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r)$$
 Let the moments $\b{\Gamma}^{c}$ be defined to have components below,
 $$\b{\Gamma}^{c} = \ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = \begin{bmatrix}M_x && M_y && M_z\end{bmatrix}^T$$
 Substituting for the moments and simplifying,
-\\~\\\fbox{\parbox{17.3cm}{
 $$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = 
 \begin{bmatrix} 
 I_{xx}\dot{\w_x} + I_{xy}\dot{\w_y} + I_{xz}\dot{\w_z}  + \w_yI_{zx}\w_x + (\w_y\w_y - \w_z\w_z)I_{yz} + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y\\
 I_{yx}\dot{\w_x} + I_{yy}\dot{\w_y} + I_{yz}\dot{\w_z} - (\w_x\w_x - \w_z\w_z)I_{xz} - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y\\
 I_{zx}\dot{\w_x} + I_{zy}\dot{\w_y} + I_{zz}\dot{\w_z} + (\w_x\w_x - \w_y\w_y)I_{xy} + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xz}\w_z
-\end{bmatrix}$$}}
+\end{bmatrix}$$
 
 %Seperator
 %Seperator
@@ -178,12 +177,11 @@ I_{zz}\dot{\w_z} + (I_{yy} - I_{xx})\w_x\w_y
 Earlier, the body-fitted coordinates were declared to be arbitrary as long as the origin of the body-fitted coordinates were nested in the center of mass of the rigid body. To simplify Euler's euqations of motions, the body-fitted coordinates' axes were set to the principal axes. Though this is merely one case of the general case, and it would be reasonable to leave the notations as is, for clarity's sake, the notation for the general moments of inertia are changed to specify moments of inertia with respect to the principal axes,
 $$I_{xx}\to I_x \quad,\quad I_{yy}\to I_y \quad,\quad I_{zz}\to I_z$$
 Hence, Euler's equations of motions with the constraint of the body-fitted coordinates must have an origin at the center of mass and the axes of the body-fitted coordinates must be the principal axes,
-\\~\\\fbox{\parbox{\textwidth}{
 $$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = \begin{bmatrix} 
 I_{x}\dot{\w_x} + (I_{z} - I_{y})\w_z\w_y\\
 I_{y}\dot{\w_y} + (I_{x} - I_{z})\w_x\w_z\\
 I_{z}\dot{\w_z} + (I_{y} - I_{x})\w_x\w_y
-\end{bmatrix}$$}}
+\end{bmatrix}$$
 
 
 %Seperator
@@ -277,14 +275,13 @@ I_z\dot{\w_z}+\dot{I_z}\w_z
 (I_{y} - I_{x})\w_x\w_y
 \end{bmatrix}$$
 Just as before, the time derivative of $\b{H}^c$ is the moment acting on the body. Substituting,
-\\~\\\fbox{\parbox{\textwidth}{
 $$\begin{bmatrix}
 M_x \\ M_y \\ M_z
 \end{bmatrix} = \begin{bmatrix}
 I_x\dot{\w_x}+\dot{I_x}\w_x + (I_{z} - I_{y})\w_y\w_z\\
 I_y\dot{\w_y}+\dot{I_y}\w_y + (I_{x} - I_{z})\w_x\w_z\\
 I_z\dot{\w_z}+\dot{I_z}\w_z + (I_{y} - I_{x})\w_x\w_y
-\end{bmatrix}$$}}
+\end{bmatrix}$$
 
 
 

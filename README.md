@@ -1,7 +1,8 @@
-Rationale of the project:
+#Rationale:
 
-Objectives of the project:
-Resolve knowledge dependency issues
+#Objectives:
+
+##Resolve knowledge dependency issues
 
     A particular topic should have its pre-requisite topics made clear. For example, the knowledge of derivatives and integrals is a pre-requisite to differential equations.
 
@@ -9,7 +10,7 @@ Resolve knowledge dependency issues
 
     A particular document should always be able to trace its path back to "first principles", which are either nested in physical observation like Newton's 2nd law or some definition agreed upon definition, for example definition of integers.
 
-Segmentize knowledge into small parts
+##Segmentize knowledge into small parts
 
     Document should be split into small modular pieces. This helps with recyclability. 
 
@@ -17,13 +18,13 @@ Segmentize knowledge into small parts
 
     Doing this also has advantages particularly when collaborating. Files allow the writing of the archives to be more distributed, and makes it easier to do merges.
 
-Generalization and Abstraction
+##Generalization and Abstraction
     
     Generalizations allow equations to become more 'powerful' in that they are able to describe a wider variety of cases.
     
     However, the more generalizations and abstractions are implemented on a particular topic, the harder it is to write, and the harder it is to understand for the inexperienced learner. 
 
-Enact Variable Naming Standardization
+##Enact Variable Naming Standardization
     
     Variables should be named. If a variable was never or defined, it shouldn't be used. Always assume the worst case that learner does not recognize any form of variable naming conventions. Additionally, variable naming conventions are very loose. x can represent so many different things across many different fields and sometimes even within the same field.
 

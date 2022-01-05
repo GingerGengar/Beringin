@@ -2,10 +2,9 @@
 \documentclass[class=report, 12pt, crop=false]{standalone}
 
 %Load Pre-ambles
-\usepackage{../Environment/Packages}
-\usepackage{../Environment/Conventions}
-\usepackage{../Environment/Hyahoos}
-\def\sizes{0.15}
+\usepackage{../../Environment/Packages}
+\usepackage{../../Environment/Conventions}
+\usepackage{../../Environment/Hyahoos}
 
 \begin{document}
 
@@ -13,12 +12,11 @@
 %Seperator
 %Seperator
 %Seperator
-\section{Problem 1}
+%Seperator
+%Seperator
+\section{Direction Cosine Matrix}
 \begin{comment}
 \end{comment}
-%Seperator
-%Seperator
-\subsection{Part a}
 The dot product can be thought as some form of projection of one vector onto another vector. Consider the dot product of two vectors $\b{a}$ and $\b{b}$. Based on the definition of dot product,
 $$\b{a}\d\b{b} = |a||b|\cos\t$$
 wherein $\t$ is the angle between the vectors $\b{a}$ and $\b{b}$. Let an arbitrary vector $\b{r}$ be represented in basis vectors $\h{i}$, $\h{j}$, and $\h{k}$. Let these basis vectors be of mangitude $1$. Let another set of basis vectors of magnitude $1$ be defined as $\h{i}'$, $\h{j}'$, and $\h{k}'$. The arbitrary vector $\b{r}$ could be expressed as a linear combination of these basis vectors,
@@ -65,7 +63,6 @@ x' \\ y' \\ z'
 x \\ y \\ z
 \end{bmatrix}$$
 Hence, based on the problem definition,
-\\~\\\fbox{\parbox{\textwidth}{
 $$\b{r}' = \begin{bmatrix}
 x' \\ y' \\ z'
 \end{bmatrix} \quad,\quad \b{r} = \begin{bmatrix}
@@ -76,11 +73,13 @@ x \\ y \\ z
 \cos\t_{ik'} && \cos\t_{jk'} && \cos\t_{kk'}
 \end{bmatrix}$$
 $$\b{r}' = l \b{r}$$
-}}
-\\~\\The figure below shows some of the angles referenced in the $l$ matrix,
-\\~\\\includegraphics[scale=\sizes]{Bajing_Terbang}
-
-
+The figure below shows some of the angles referenced in the $l$ matrix,
+%\\~\\\includegraphics[scale=\sizes]{Bajing_Terbang}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
 \end{center}
 
 \end{document}

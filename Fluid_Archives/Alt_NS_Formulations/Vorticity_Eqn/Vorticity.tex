@@ -27,73 +27,15 @@ Non-conervative form of the momentum equation referenced, please add the proof i
 
 Please enforce consistency in notation. Please make sure that \b{v_f} is used when referring to fluid velocity throughout other documents. 
 
-Please include a chapter about index notation!
 
 
 Things to automate:
-    making the $$$$ environments
-    matrix environments
-    Subscript and superscripts
-    fractions
     includegraphics commands
-    Copy Pasting if possible
-
 
 \end{comment}
 
 
 
-%Relevant mathematical proofs:
-
-Let $\b{A}$ and $\b{B}$ be vector fields, and $\phi$, $\psi$ be scalar fields,
-
-%Proof 1
-$$\na\times (\b{A}\times \b{B}) = \b{B}\d\na \b{A} + \b{A}\na\d \b{B} - \b{A}\d\na \b{B} - \b{B}\na\d \b{A}$$
-Let,
-$$LHS = \na\times (\b{A}\times \b{B}) \quad,\quad RHS = \b{B}\d\na \b{A} + \b{A}\na\d \b{B} - \b{A}\d\na \b{B} - \b{B}\na\d \b{A}$$
-
-Converting $RHS$ into index notation,
-$$RHS_i = B_j \f{\p }{\p x_j}(A_i) + A_i \f{\p}{\p x_j}(B_j) - A_j\f{\p}{\p x_j}(B_i) - B_i\f{\p}{\p x_j}(A_j)$$
-
-Converting $LHS$ into index notation,
-$$LHS_i = \epsilon_{ijk} \f{\p}{\p x_j}\l[\epsilon_{klm} A_l B_m\r] = \epsilon_{ijk}\epsilon_{klm} \f{\p}{\p x_j}\l[ A_l B_m\r]$$
-
-Using the cylcic permutation property of the permutation tensor $\epsilon_{ijk} = \epsilon_{kij}$. Therefore,
-$$\epsilon_{ijk}\epsilon_{klm} = \epsilon_{kij}\epsilon_{klm}$$
-
-Using the double permutation tensor identity,
-$$\epsilon_{ijk}\epsilon_{klm} = \epsilon_{kij}\epsilon_{klm} = \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}$$
-
-Substituting into $LHS_i$,
-$$LHS_i = \epsilon_{ijk}\epsilon_{klm} \f{\p}{\p x_j}\l[ A_l B_m\r] = \l[\delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}\r]\f{\p}{\p x_j}\l[ A_l B_m\r] = \delta_{il}\delta_{jm}\f{\p}{\p x_j}\l[ A_l B_m\r] - \delta_{im}\delta_{jl}\f{\p}{\p x_j}\l[ A_l B_m\r]$$
-$$LHS_i = \delta_{jm}\f{\p}{\p x_j}\l[ A_i B_m\r] - \delta_{jl}\f{\p}{\p x_j}\l[ A_l B_i\r] = \f{\p}{\p x_j}\l[ A_i B_j\r] - \f{\p}{\p x_j}\l[ A_j B_i\r]$$
-Expanding using product rule,
-$$LHS_i = A_i\f{\p}{\p x_j}\l[B_j\r] + B_j\f{\p}{\p x_j}\l[A_i\r] - \l\{A_j\f{\p}{\p x_j}\l[B_i\r] + B_i\f{\p}{\p x_j}\l[ A_j\r]\r\}$$
-$$LHS_i = A_i\f{\p}{\p x_j}\l[B_j\r] + B_j\f{\p}{\p x_j}\l[A_i\r] - A_j\f{\p}{\p x_j}\l[B_i\r] - B_i\f{\p}{\p x_j}\l[ A_j\r]$$
-
-Since $LHS_i = RHS_i$, the vector identity is proven to be true.
-
-
-%Proof 2
-The curl of a scalar gradient is zero,
-$$0 = \na\times\na\phi$$
-Let ,
-$$LHS = 0 \quad,\quad RHS = \na\times\na\phi$$
-Converting $LHS$ and $RHS$ into index notation,
-$$LHS_i = 0 \quad,\quad RHS_i =  \epsilon_{ijk}\f{\p}{\p x_j}\l[\f{\p \phi}{\p x_k}\r] = \epsilon_{ijk}\f{\p^2 }{\p x_j \p x_k}(\phi)$$
-Since partial derivative operators are commutative, $\dst \f{\p^2 }{\p x_j \p x_k}(\phi)$ is a symmetry tensor. If $i$ is held constant, the permutation tensor $\epsilon_{ijk}$ is anti-symmetric. The element-wise multiplication of a symmetric tensor and anti-symmetric tensor added up together yields zero. Therefore,
-$$RHS_i = 0$$
-Since $LHS_i = RHS_i$, the claim is proven to be true.
-
-
-%Proof 3
-The divergence of the curl of a vector field is zero,
-$$0 = \na\d(\na\times \b{A})$$
-Let,
-$$LHS = 0 \quad,\quad RHS = \na\d(\na\times \b{A})$$
-Converting $LHS$ and $RHS$ into index notation,
-$$LHS_i = 0 \quad,\quad RHS_i = \f{\p}{\p x_j}\l[\epsilon_{jkl} \f{\p}{\p x_k}(A_l)\r] = \epsilon_{jkl}\f{\p}{\p x_j}\l[\f{\p}{\p x_k}(A_l)\r] = \epsilon_{jkl}\f{\p^2}{\p x_j\p x_k}(A_l)$$
-Since $\epsilon_{jkl}$ is an anti-symmetric tensor and $\dst \f{\p^2}{\p x_j\p x_k}(A_l)$ is a symmetric tensor, then $RHS_i = 0$. Since $LHS_i = RHS_i$, then the claim is proven to be true.
 
 
 

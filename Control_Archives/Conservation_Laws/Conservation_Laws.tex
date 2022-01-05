@@ -14,8 +14,7 @@
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-\chapter{Single-Particle Conservation Laws}
+\chapter{Conservation Laws}
 \begin{comment}
 \end{comment}
 %Seperator
@@ -23,7 +22,14 @@
 %Seperator
 %Seperator
 %Seperator
-\section{Linear Momentum}
+\section{Single-Particle}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Linear Momentum}
 \begin{comment}
 \end{comment}
 The general form of Newton's $2^{nd}$ law is shown below for a single particle $p$,
@@ -53,8 +59,7 @@ The statement above shows the conservation of linear momentum. The change in lin
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-\section{Angular Momentum}
+\subsection{Angular Momentum}
 \begin{comment}
 \end{comment}
 Euler's law is shown below,
@@ -74,8 +79,7 @@ The conservation of angular momentum is similar to the conservation of linear mo
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-\section{Kinetic Energy}
+\subsection{Kinetic Energy}
 \begin{comment}
 Let, $\displaystyle \sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = \bar{F_{r}}$. Substituting,
 $$\bar{F_{r}} \cdot\overset{e}{\bar{dr}} = m_{p}\frac{d}{d t}\left[\frac{d}{d t}\left({}_{e}\bar{r}^{o_{e}p}\right)\right]\cdot\overset{e}{\bar{dr}}$$
@@ -122,16 +126,14 @@ This is the final form conservation of kinetic energy. Let us consider what has 
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-\chapter{Rigid Body Conservation Laws}
+\section{Systems of Particles}
 \begin{comment}
 \end{comment}
 %Seperator
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-\section{Linear Momentum}
+\subsection{Linear Momentum}
 \begin{comment}
 \end{comment}
 Newton's $2^{nd}$ law for a system of particles is shown below,
@@ -165,8 +167,7 @@ This is the conservation of linear momentum for a system of particles. The conse
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-\section{Angular Momentum}
+\subsection{Angular Momentum}
 \begin{comment}
 \end{comment}
 Euler's law for a system of particles is shown below,
@@ -185,8 +186,7 @@ $$\int^{t_{2}}_{t_{1}} {}^{e}\bar{\Gamma}^{o_{e}}_{rb} \,dt =  \left[{}^{e}_{e}\
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-\section{Kinetic Energy}
+\subsection{Kinetic Energy}
 \begin{comment}
 \end{comment}
 Newton's $2^{nd}$ law for the $i^{th}$ point particle in a system of particles is shown below,
@@ -255,7 +255,7 @@ LHS =& \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{
 \begin{align*}
 LHS = \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  +  \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}dt
 \end{align*}
-Typically the point $a$ is defined as the center of mass. And in that case, then the term $\displaystyle \sum^{n_{2}}_{i = 1} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]$ represents work done in translating the center of mass to some velocity. The $\displaystyle \sum^{n_{2}}_{i = 1}\left[ {}^{e}\bar{F}^{p_{i}}_{ext}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right]$ term  represents the work done by the external force in rotating and stretching of the system of particles, meanwhile the $\displaystyle \sum^{n_{2}}_{i = 1}\left\{\left \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}$ term represents work done by internal forces in stretching. For rigid bodies, this term is zero. Combining the terms together,
+Typically the point $a$ is defined as the center of mass. And in that case, then the term $\displaystyle \sum^{n_{2}}_{i = 1} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]$ represents work done in translating the center of mass to some velocity. The $\displaystyle \sum^{n_{2}}_{i = 1}\left[ {}^{e}\bar{F}^{p_{i}}_{ext}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right]$ term  represents the work done by the external force in rotating and stretching of the system of particles, meanwhile the $\displaystyle \sum^{n_{2}}_{i = 1}\left\{\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}$ term represents work done by internal forces in stretching. For rigid bodies, this term is zero. Combining the terms together,
 $$\sum^{n_{2}}_{i = 1}\left[w_{i}\right] = LHS = RHS$$
 \begin{align*}
     \sum^{n_{2}}_{i = 1}\left[w_{i}\right] & = \int^{t_{2}}_{t_{1}} \sum^{n_{2}}_{i = 1} \left\{{}^{e}\bar{F}^{p_{i}}_{ext}\right\}  \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{o_{e}a}]  +  \sum^{n_{2}}_{i = 1}\left\{\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\} \cdot\,\overset{e}{\frac{\partial}{\partial t}}[\bar{r}^{ap_{i}}]\right\}dt \\ & = \sum^{n_{2}}_{i = 1}\left\{ \frac{1}{2}m_{p_{i}} \,\left[{}^{e}_{e}\bar{v}^{o_{e}p_{i}}\cdot{}^{e}_{e}\bar{v}^{o_{e}p_{i}}\right]^{\bar{v}_{2,i}}_{\bar{v}_{1,i}}\right\}
