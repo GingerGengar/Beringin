@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.28)  5 JAN 2022 12:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.28)  6 JAN 2022 10:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -652,23 +652,23 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-Excluding 'comment' comment. [57] [58]) Excluding 'comment' comment. [59] (./Math_Archives.aux)
+Excluding 'comment' comment. [57] [58] Excluding 'comment' comment. [59]) Excluding 'comment' comment. [60] (./Math_Archives.aux)
 Package rerunfilecheck Info: File `Math_Archives.out' has not changed.
-(rerunfilecheck)             Checksum: D981ABAAC30FA2696B508F075642B43A;16374.
+(rerunfilecheck)             Checksum: F70020FF50127033A002FE2CB889D94A;16583.
  ) 
 Here is how much of TeX's memory you used:
- 14162 strings out of 478353
- 223305 string characters out of 5854634
- 541200 words of memory out of 5000000
- 31848 multiletter control sequences out of 15000+600000
+ 14165 strings out of 478353
+ 223350 string characters out of 5854634
+ 541202 words of memory out of 5000000
+ 31849 multiletter control sequences out of 15000+600000
  414515 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  140i,20n,134p,803b,519s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Math_Archives.pdf (60 pages, 312234 bytes).
+Output written on Math_Archives.pdf (61 pages, 313395 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
- 671 compressed objects within 7 object streams
- 142 named destinations out of 1000 (max. 500000)
- 633 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 780 PDF objects out of 1000 (max. 8388607)
+ 680 compressed objects within 7 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 641 words of extra memory for PDF output out of 10000 (max. 10000000)
 

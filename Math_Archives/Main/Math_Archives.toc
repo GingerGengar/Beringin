@@ -77,3 +77,4 @@
 \contentsline {subsection}{\numberline {18.4.7}Double Curl of Vector}{56}{subsection.18.4.7}%
 \contentsline {subsection}{\numberline {18.4.8}Curl of Vector Scalar}{57}{subsection.18.4.8}%
 \contentsline {subsection}{\numberline {18.4.9}Triple Curl of Vector}{58}{subsection.18.4.9}%
+\contentsline {subsection}{\numberline {18.4.10}Divergence of Vector Scalar}{59}{subsection.18.4.10}%

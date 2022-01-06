@@ -288,10 +288,19 @@ Since $LHS_{i} = RHS_{i}$, the identity is proven to be true.
 %Seperator
 %Seperator
 %Seperator
-\subsection{Divergence of Scalar Vector Product}
+\subsection{Divergence of Vector Scalar}
 \begin{comment}
 \end{comment}
-
+$$\nabla \cdot(\phi\bar{A}) = \phi(\nabla \cdot\bar{A}) + \bar{A}\cdot\nabla\phi$$
+Let,
+$$LHS = \nabla \cdot(\phi\bar{A}) \quad,\quad RHS = \phi(\nabla \cdot\bar{A}) + \bar{A}\cdot\nabla\phi$$
+Converting $RHS$ into index notation,
+$$RHS_{i} = \phi\frac{\partial}{\partial x_{j}}[A_{j}] + A_{j}\frac{\partial}{\partial x_{j}}[\phi]$$
+Converting $LHS$ into index notation,
+$$LHS_{i} = \frac{\partial}{\partial x_{j}}[\phi A_{j}]$$
+Using product rule,
+$$LHS_{i} = \phi\frac{\partial}{\partial x_{j}}[A_{j}] + A_{j}\frac{\partial}{\partial x_{j}}[\phi]$$
+Since $LHS_{i} = RHS_{i}$, the identity is proven to be true.
 
 %Seperator
 %Seperator
