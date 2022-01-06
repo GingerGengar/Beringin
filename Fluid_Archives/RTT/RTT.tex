@@ -18,10 +18,43 @@
 \chapter{Reynold's Transport Theorem}
 \begin{comment}
 Liebnitz Theorem
+
+In the middle of additions:
+
+
 \end{comment}
 One variation of Liebniz Rule applicable for volumetric integrals is shown below. for the variable $T$ wherein $T$ may represent a time dependent scalar, vector, or tensor.
 $$\f{d}{dt}\iiint_{R(t)}T\,dV_o = \iiint_{R(t)}\f{\p}{\p t}[T]dV_o + \iint_{S(t)}T\b{v_s}\b{n}dS$$
 wherein $R(t)$ represents an arbitray region of space, $V_o$ represents volume, $S(t)$ represents the surface of the region defined by $R(t)$, $\b{v_s}$ represents the velocity of the moving surface, $\b{n}$ represents normal vector of the surface. Depending on the variable type $T$, the operation $\dst{T\b{v_s}\b{n}}$ would depend on a case to case basis.
+
+Using a change of variables,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \frac{d}{dt}\iiint^{}_{\Gamma} \phi J \,dV_{o,i}$$
+wherein $V_{s}(t)$ represents a control mass region, $\phi$ may represent some time changing scalar variable, but in general, could represent the elements of an arbitrary tensor as well. $dV_{o}$ represents infinitesmial volume. Since the vector field is evolving with time, all the points inside $V_{s}(t)$ is at some place initially at time $t = 0$. The region that contains all the points inside $V_{s}(t)$ at time $t = 0$ is considered to be $\Gamma$. Since we are considering the general case wherein volume may expand or contract, we declare $dV_{o,i} $ to represent infinitesmial volume initially at time $t = 0$. The relationship between infinitesmial volume at the present time $dV_{o}$ and infinitesmial volume initially,
+$$dV_{o} = J\,dV_{o,i}$$
+wherein $J$ represents the Jacobian, which is the determinant of the velocity gradient tensor (more on this later). From all these information, the change of variables could be performed as shown above. $\epsilon$ is a region that is not varying with time $t$. Since the bounds of integration is now unchanging with time, the time derivative operation is now commutative with the volumetric integral. Therefore,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{\Gamma}\frac{d}{dt}[\phi J] \,dV_{o,i}$$
+Without loss of generality, assuming that $\phi$ changes with coordinates $x_{i}$ and time, the time derivative is equivalent to the substantive or material derivative. Therefore,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{\Gamma}\frac{D}{Dt}[\phi J] \,dV_{o,i}$$
+Using product rule,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{\Gamma}\phi\frac{D}{Dt}[J] + J\frac{D}{Dt}[\phi] \,dV_{o,i}$$
+By a tedious mathematical proof,
+$$\frac{D}{Dt}[J] = (\nabla \cdot\bar{v}_{s})J$$
+wherein $\bar{v_{s}}$ represents the velocity of the moving surface. $\bar{v}_{s}$ is not to be confused with $V_{s}$. $V_{s}$ represents the control mass region earlier meanwhile $\bar{v}_{s}$ represents the velocity of the moving boundaries of $V_{s}$. Substituting,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{\Gamma}\phi(\nabla \cdot\bar{v}_{s})J + J\frac{D}{Dt}[\phi] \,dV_{o,i}$$
+Making a change of variables once again to revert back to the region $V_{s}(t)$ from the initial positions $\Gamma$,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{\Gamma}\left\{\phi(\nabla \cdot\bar{v}_{s}) + \frac{D}{Dt}[\phi]\right\} \,JdV_{o,i}$$
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{V_{s}(t)} \phi(\nabla \cdot\bar{v}_{s}) + \frac{D}{Dt}[\phi]  \,dV_{o}$$
+Expanding the substantive derivative of $\phi$ as $\displaystyle \frac{D}{Dt}[\phi] = \frac{\partial}{\partial t}[\phi] + \bar{v_{s}}\cdot\nabla\phi$,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{V_{s}(t)} \phi(\nabla \cdot\bar{v}_{s}) + \frac{\partial}{\partial t}[\phi] + \bar{v_{s}}\cdot\nabla\phi \,dV_{o}$$
+Using the divergence of scalar vector product identity,
+$$\nabla \cdot(\phi\bar{v}_{s}) = \phi(\nabla \cdot\bar{v}_{s}) + \bar{v_{s}}\cdot\nabla\phi$$
+Substituting,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{V_{s}(t)} \frac{\partial}{\partial t}[\phi] + \nabla \cdot(\phi\bar{v}_{s}) \,dV_{o}$$
+Parsing out the integral,
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{V_{s}(t)} \frac{\partial}{\partial t}[\phi] \,dV_{o}  +  \iiint^{}_{V_{s}(t)}\nabla \cdot(\phi\bar{v}_{s}) \,dV_{o}$$
+Using divergence theorem, $\displaystyle \iiint^{}_{V_{s}(t)}\nabla \cdot(\phi\bar{v}_{s}) \,dV_{o} = \iint^{}_{S_{s}(t)}\phi\bar{v}_{s} \cdot\,\hat{n}dS$. Substituting,
+%Shouldnt we be defining a new generalized inner product operator? What happens if phi is a tensor, then phi v_s is not even defined, neither is phi v_s dot n dS.
+$$\frac{d}{dt}\iiint^{}_{V_{s}(t)}\phi \,dV_{o} = \iiint^{}_{V_{s}(t)} \frac{\partial}{\partial t}[\phi] \,dV_{o}  +  \iint^{}_{S_{s}(t)}\phi\bar{v}_{s} \cdot\,\hat{n}dS$$
 %Seperator
 %Seperator
 %Seperator

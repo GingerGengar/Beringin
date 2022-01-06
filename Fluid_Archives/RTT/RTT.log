@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.28)  5 JAN 2022 13:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.28)  6 JAN 2022 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,36 +458,36 @@ LaTeX Info: Redefining \nameref on input line 9.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Chapter 1.
 Excluding 'comment' comment.
-LaTeX Font Info:    Trying to load font information for U+esint on input line 22.
+LaTeX Font Info:    Trying to load font information for U+esint on input line 26.
  (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) Excluding 'comment' comment. [2
+) [2
 
-] Excluding 'comment' comment. [3] (./RTT.aux)
+] Excluding 'comment' comment. [3] Excluding 'comment' comment. [4] (./RTT.aux)
 Package rerunfilecheck Info: File `RTT.out' has not changed.
 (rerunfilecheck)             Checksum: B961E39320AA6A67F07489E122060FC4;498.
  ) 
 Here is how much of TeX's memory you used:
- 13996 strings out of 478353
- 220724 string characters out of 5854634
- 522974 words of memory out of 5000000
+ 13997 strings out of 478353
+ 220730 string characters out of 5854634
+ 525974 words of memory out of 5000000
  31876 multiletter control sequences out of 15000+600000
  409488 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 140i,8n,134p,368b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb>
-Output written on RTT.pdf (3 pages, 91073 bytes).
+ 140i,8n,134p,741b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb>
+Output written on RTT.pdf (4 pages, 107142 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 85 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
