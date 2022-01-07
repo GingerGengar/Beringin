@@ -38,6 +38,9 @@
 \subpreamble{../PDE_Examples/1D_Wave.tex}
 \usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
 \endsubpreamble
+\subpreamble{../Thomas_Algorithm/Thomas.tex}
+\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
+\endsubpreamble
 \subpreamble{../Tensor/Tensor.tex}
 \usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
 \endsubpreamble

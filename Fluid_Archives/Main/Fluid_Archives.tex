@@ -1,4 +1,5 @@
 %Type of Document
+%\documentclass[class=report, crop=false]{standalone}
 \documentclass[a4paper, 12pt]{report}
 
 
@@ -9,6 +10,25 @@
 
 \begin{comment}
 Document Philosophy
+
+
+Navier Stokes Equations (c) (done)
+    Hiemenz Flow (s) (done)
+        Cartesian Version (done)
+        Polar Version (done)
+    Alternate Forms (s) (done)
+        Strain \& Rotation Forms (ss) (done)
+        Vorticity Equation (ss) (done)
+Numerical Methods (c) (done)
+    Potential Flows (s) (done)
+        Conformal Mapping
+        Gauss-Siedel Grid Method (done)
+    Unsteady Diffusion (s) (done)
+    Fourier Stability Analysis (s) (done)
+
+
+REMEMBER conformal mapping has not been included
+
 \end{comment}
 
 \begin{document}
@@ -29,7 +49,7 @@ Document Philosophy
 %Seperator
 %Seperator
 %Seperator
-\import{../Terminology/}{Terminology.tex}
+\subimport{../Terminology/}{Terminology.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -44,7 +64,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../RTT/}{RTT.tex}
+\subimport{../RTT/}{RTT.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -59,7 +79,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../NS_GE/}{NS_GE.tex}
+\subimport{../NS_GE/}{NS_GE.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -74,7 +94,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Hiemenz/}{Hiemenz.tex}
+\subimport{../Hiemenz/}{Hiemenz.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -89,7 +109,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Potential_Flow/}{Potential_Flow.tex}
+\subimport{../Potential_Flow/}{Potential_Flow.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -104,7 +124,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Numerical_Methods/Potential_Flow/}{Gauss_Siedel.tex}
+\subimport{../Numerical_Methods/Potential_Flow/}{Gauss_Siedel.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -119,7 +139,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Aerodynamics/Incompressible/}{Incompressible.tex}
+\subimport{../Aerodynamics/Incompressible/}{Incompressible.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -134,7 +154,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Aerodynamics/Compressible/}{Compressible.tex}
+\subimport{../Aerodynamics/Compressible/}{Compressible.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -149,7 +169,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Creeping_Flow/}{Creeping_Flow.tex}
+\subimport{../Creeping_Flow/}{Creeping_Flow.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter

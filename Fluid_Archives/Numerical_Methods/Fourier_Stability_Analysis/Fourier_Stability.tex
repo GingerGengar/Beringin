@@ -14,12 +14,9 @@
 %Seperator
 %Seperator
 %Seperator
-\section{Preliminary Theoretical Basis}
+\subsection{Discretization of Wave Equation}
 \begin{comment}
 \end{comment}
-%Seperator
-%Seperator
-\subsection{Discretization of Wave Equation}
 The one-dimensional wave equation is shown below,
 $$0 = \f{\p\phi}{\p t} + u\f{\p\phi}{\p x}$$
 Integrating with time and space,
@@ -48,14 +45,9 @@ Placing the new time step quantities on $LHS$ and the old time step quantities o
 $$-\g\phi_{P} + \t\phi_{w} - \t\phi_{e} = - \g\phi_{P,o} + (1-\t)\phi_{e,o} - (1-\t)\phi_{w,o}$$
 %Seperator
 %Seperator
-%Seperator
-\section{Problem 1}
+\subsection{Cubic Polynomial Spatial Scheme}
 \begin{comment}
 \end{comment}
-%Seperator
-%Seperator
-\subsection{Part b}
-
 
 The discretization of the pure convection problem with a generalized time advancement scheme and a cubic polynomial spatial advancement scheme is shown below,
 \begin{equation*}
@@ -83,11 +75,8 @@ Points at the old time step would be given the time component shown below,
 $$\h{\phi}(t) = \h{\phi}_o$$
 
 Following convention, the coordinate system considers eastern direction of the grid points to be positive $x$ and western direction of the grid points to be negative $x$. The point of interest $P$ would be given a spatial component $e^{ikx}$. Following the coordinate system definition, the west point would be given spatial component $e^{ik(x-\Delta x)}$. The east point would be given spatial component $e^{ik(x+\Delta x)}$. The diagram below summarizes the coordinate system used in this derivation,
-\\~\\\includegraphics[scale=\sized]{Mambah.jpg}
-\\~\\Uniform grid spacing is assumed in the following derivation. Parsing the original expression into several parts. 
-
-
-
+%\\~\\~\\\includegraphics[scale=\sized]{Mambah.jpg}
+\\~\\~\\Uniform grid spacing is assumed in the following derivation. Parsing the original expression into several parts. 
 For the discrete derivative of $\phi$ with respect to time,
 $$\f{\phi_{P} - \phi_{P,o}}{\Delta t} = \f{1}{\Delta t}\l[\phi_{P} - \phi_{P,o}\r] = \f{1}{\Delta t}\l[\h{\phi}e^{ikx} - \h{\phi}_oe^{ikx}\r] = \f{e^{ikx}}{\Delta t}\l[\h{\phi} - \h{\phi}_o\r]$$
 
@@ -166,7 +155,7 @@ $$\f{\h{\phi}}{\h{\phi}_o} = \f{\g - \a + \t\a}{\g + \t\a}$$
 
 %Seperator
 %Seperator
-\subsection{Part c}
+\subsection{Upwind Differencing Scheme}
 The theoretical section shows that discretizing the $1$-dimensional wave equation yields the following expression,
 $$-\g\phi_{P} + \t\phi_{w} - \t\phi_{e} = - \g\phi_{P,o} + (1-\t)\phi_{e,o} - (1-\t)\phi_{w,o}$$
 Assuming upwing differencing,

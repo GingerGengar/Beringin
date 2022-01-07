@@ -60,21 +60,23 @@
 \contentsline {chapter}{\numberline {17}One-Dimensional Wave Equation}{50}{chapter.17}%
 \contentsline {section}{\numberline {17.1}Derivative Homogenous Case}{51}{section.17.1}%
 \contentsline {section}{\numberline {17.2}Displacement Homogenous Case}{51}{section.17.2}%
-\contentsline {chapter}{\numberline {18}Tensors}{52}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Tensor Index Notation}{52}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Kronecker-Delta \& Permutation Tensor}{52}{section.18.2}%
-\contentsline {section}{\numberline {18.3}Common Vector Operations}{53}{section.18.3}%
-\contentsline {subsection}{\numberline {18.3.1}Scalar Multiplication}{53}{subsection.18.3.1}%
-\contentsline {subsection}{\numberline {18.3.2}Dot Product}{53}{subsection.18.3.2}%
-\contentsline {subsection}{\numberline {18.3.3}Cross Product}{53}{subsection.18.3.3}%
-\contentsline {section}{\numberline {18.4}Tensor Index Identities}{53}{section.18.4}%
-\contentsline {subsection}{\numberline {18.4.1}Symmetric-Antisymmetric Tensor}{54}{subsection.18.4.1}%
-\contentsline {subsection}{\numberline {18.4.2}Double Permutation Tensor}{54}{subsection.18.4.2}%
-\contentsline {subsection}{\numberline {18.4.3}Kronecker-Delta Renaming}{54}{subsection.18.4.3}%
-\contentsline {subsection}{\numberline {18.4.4}Curl of Scalar Gradient}{54}{subsection.18.4.4}%
-\contentsline {subsection}{\numberline {18.4.5}Divergence of Vector Curl}{55}{subsection.18.4.5}%
-\contentsline {subsection}{\numberline {18.4.6}Curl of $2$ Vector Cross Products}{55}{subsection.18.4.6}%
-\contentsline {subsection}{\numberline {18.4.7}Double Curl of Vector}{56}{subsection.18.4.7}%
-\contentsline {subsection}{\numberline {18.4.8}Curl of Vector Scalar}{57}{subsection.18.4.8}%
-\contentsline {subsection}{\numberline {18.4.9}Triple Curl of Vector}{58}{subsection.18.4.9}%
-\contentsline {subsection}{\numberline {18.4.10}Divergence of Vector Scalar}{59}{subsection.18.4.10}%
+\contentsline {chapter}{\numberline {18}Numerical Methods}{52}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Thomas Method: Tridiagonal Systems}{52}{section.18.1}%
+\contentsline {chapter}{\numberline {19}Tensors}{54}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Tensor Index Notation}{54}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Kronecker-Delta \& Permutation Tensor}{54}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Common Vector Operations}{55}{section.19.3}%
+\contentsline {subsection}{\numberline {19.3.1}Scalar Multiplication}{55}{subsection.19.3.1}%
+\contentsline {subsection}{\numberline {19.3.2}Dot Product}{55}{subsection.19.3.2}%
+\contentsline {subsection}{\numberline {19.3.3}Cross Product}{55}{subsection.19.3.3}%
+\contentsline {section}{\numberline {19.4}Tensor Index Identities}{55}{section.19.4}%
+\contentsline {subsection}{\numberline {19.4.1}Symmetric-Antisymmetric Tensor}{56}{subsection.19.4.1}%
+\contentsline {subsection}{\numberline {19.4.2}Double Permutation Tensor}{56}{subsection.19.4.2}%
+\contentsline {subsection}{\numberline {19.4.3}Kronecker-Delta Renaming}{56}{subsection.19.4.3}%
+\contentsline {subsection}{\numberline {19.4.4}Curl of Scalar Gradient}{56}{subsection.19.4.4}%
+\contentsline {subsection}{\numberline {19.4.5}Divergence of Vector Curl}{57}{subsection.19.4.5}%
+\contentsline {subsection}{\numberline {19.4.6}Curl of $2$ Vector Cross Products}{57}{subsection.19.4.6}%
+\contentsline {subsection}{\numberline {19.4.7}Double Curl of Vector}{58}{subsection.19.4.7}%
+\contentsline {subsection}{\numberline {19.4.8}Curl of Vector Scalar}{59}{subsection.19.4.8}%
+\contentsline {subsection}{\numberline {19.4.9}Triple Curl of Vector}{60}{subsection.19.4.9}%
+\contentsline {subsection}{\numberline {19.4.10}Divergence of Vector Scalar}{61}{subsection.19.4.10}%

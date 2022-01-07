@@ -13,15 +13,13 @@
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-%Seperator
-
-\section{Problem 1}
+\subsection{Strain \& Rotation}
 \begin{comment}
 \end{comment}
 %Seperator
 %Seperator
-\subsection{Part a}
+%Seperator
+\subsubsection{Continuity: Index Notation}
 \begin{comment}
 \end{comment}
 The continuity and momentum equations in vector form,
@@ -34,7 +32,8 @@ Converting the momentum equation into index form,
 $$\f{\p u_i}{\p t} + u_j\f{\p u_i}{\p x_j} = -\f{1}{\rho}\f{\p p}{\p x_i} + \nu\f{\p}{\p x_j}\f{\p}{\p x_j}(u_i)$$
 %Seperator
 %Seperator
-\subsection{Part b}
+%Seperator
+\subsubsection{Momentum: Velocity Gradient}
 \begin{comment}
 \end{comment}
 Renaming the dummy indices in the index momentum equation $j\to k$,
@@ -61,7 +60,8 @@ $$\f{\p}{\p t}e_{ij} + u_k\f{\p }{\p x_k}e_{ij} = -\f{1}{\rho}\f{\p^2}{\p x_j\p 
 $$\f{\p}{\p t}(e_{ij}) + u_k\f{\p }{\p x_k}(e_{ij}) - \nu\f{\p}{\p x_k}\f{\p}{\p x_k}(e_{ij}) = -\f{1}{\rho}\f{\p^2}{\p x_j\p x_i}(p) - e_{ik}e_{kj}$$
 %Seperator
 %Seperator
-\subsection{Part c}
+%Seperator
+\subsubsection{Strain Rate Form}
 \begin{comment}
 \end{comment}
 Reiterating the momentum equation in index form,
@@ -81,7 +81,8 @@ $$\l\{\f{\p}{\p t} + u_k\f{\p }{\p x_k} - \nu\f{\p}{\p x_k}\f{\p}{\p x_k}\r\}S_{
 $\dst{\f{\p}{\p t} + u_k\f{\p }{\p x_k}}$ represents the substantive derivative in index notation meanwhile $\dst{\f{\p}{\p x_k}\f{\p}{\p x_k}}$ represents the laplacian in index notation.
 %Seperator
 %Seperator
-\subsection{Part d}
+%Seperator
+\subsubsection{Rotation Rate Form}
 \begin{comment}
 \end{comment}
 Performing the same steps as the previous part but instead of adding $2$ equations together, the equations are subtracted off each other,
@@ -95,7 +96,6 @@ Substituting the rotation rate tensor,
 $$\f{\p}{\p t}\l[\Omega_{ij}\r] + u_k\f{\p }{\p x_k}\l[\Omega_{ij}\r] - \nu\f{\p}{\p x_k}\f{\p}{\p x_k}\l[\Omega_{ij}\r] = - \f{1}{2}\l[e_{ik}e_{kj} - e_{jk}e_{ki}\r]$$
 $$\l\{\f{\p}{\p t} + u_k\f{\p }{\p x_k} - \nu\f{\p}{\p x_k}\f{\p}{\p x_k}\r\}\Omega_{ij} = - \f{1}{2}\l[e_{ik}e_{kj} - e_{jk}e_{ki}\r]$$
 Just as before, $\dst{\f{\p}{\p t} + u_k\f{\p }{\p x_k}}$ represents the substantive derivative in index notation meanwhile $\dst{\f{\p}{\p x_k}\f{\p}{\p x_k}}$ represents the laplacian in index notation. Interestingly, here the expression is independent of the pressure gradient tensor sinc ethe pressure gradient tensor is symmetric.
-%Seperator
 %Seperator
 %Seperator
 %Seperator

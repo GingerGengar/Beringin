@@ -13,9 +13,7 @@
 %Seperator
 %Seperator
 %Seperator
-%Seperator
-%Seperator
-\chapter{Vorticity Equation}
+\subsection{Vorticity Equation}
 \begin{comment}
 
 It is important that in the other works, the body acceleration is denoted as \b{F_b}, CHANGE IT TO \b{g_b}. This is important because \b{F_b} is misleading. We don't mean force, we mean the acceleration vector. So use \b{g_b} instead.
@@ -33,11 +31,12 @@ Things to automate:
     includegraphics commands
 
 \end{comment}
-
-
-
-
-
+%Seperator
+%Seperator
+%Seperator
+\subsubsection{Derivation}
+\begin{comment}
+\end{comment}
 
 %Node 1a
 The substantive derivative of fluid velocity $\b{v_f}$ appears in the non-conservative form of the momentum equation. The substantive derivative of fluid velocity $\b{v_f}$ in vector form,
@@ -298,12 +297,48 @@ Converting into index notation,
 $$\na\times\l[\f{1}{\rho}\na\d\db{T_f}\r] =  \f{1}{\rho^2}\na\rho\times\na P_r + \na\times\l[\f{1}{\rho}\na\d\db{\tau_f}\r]$$
 Substituting into the basic vorticity equation,
 $$\rho\f{D}{Dt}\l[\f{\b{\w_f}}{\rho}\r] = \b{\w_f} \d \db{S_f} + \f{1}{\rho^2}\na\rho\times\na P_r + \na\times\l[\f{1}{\rho}\na\d\db{\tau_f}\r] + \na\times\l[\f{1}{\rho}\b{g_b}\r]$$
-
-
-
-
 %Seperator
 %Seperator
+%Seperator
+\subsubsection{Summary}
+\begin{comment}
+\end{comment}
+\begin{tikzpicture}\draw
+(0,0) node[depend](main-1){Basic Substantive derivative of fluid velocity \\[\vdist] $\displaystyle \f{D \b{v_f}}{Dt} = \f{\p \b{v_f}}{\p t} + \b{v_f}\d\na\b{v_f}$}
+
+(main-1.south) -- node[process]{Kinematic Relations} ++ (0,-1.3) 
+
+node[become](main-2){Intermediate derivative kinetic energy form \\[\vdist] $\displaystyle \f{D \b{v_f}}{Dt} = \f{\p \b{v_f}}{\p t} + \b{v_f}\d\na\b{v_f} = \f{\p \b{v_f}}{\p t} + \b{\w_f}\times \b{v_f} + \na\l(\f{1}{2}\b{v_f}\d\b{v_f}\r)$}
+
+(main-2.south) -- node[process]{Double $\epsilon\epsilon$ Identity \\[\vdist] $\nabla\times\nabla\phi = 0,\quad \nabla \cdot(\nabla\times v) = 0$} ++ (0,-2) 
+
+node[become](main-3){Vorticity $1^{st}$ relation \\[\vdist] $\displaystyle \na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{\p \b{\w_f}}{\p t} + \b{v_f}\d\na \b{\w_f} + \b{\w_f}\na\d \b{v_f} - \b{\w_f}\d\na \b{v_f}$}
+
+(main-3.south) -- node[process]{Definition of material derivative} ++ (0,-1.5) 
+
+node[become](main-4){$3$ term equation part $1$ \\[\vdist] $\displaystyle \na\times\l(\f{D \b{v_f}}{Dt}\r) = \f{D \b{\w_f}}{Dt} + \b{\w_f}\na\d \b{v_f} - \b{\w_f}\d\na \b{v_f}$}
+
+(main-4.south) -- node[process]{} ++ (0,-1.5) 
+
+node[become](main-5){}
+
+(main-5.south) -- node[process]{} ++ (0,-1.5) 
+
+node[become](main-6){}
+
+(main-6.south) -- node[process]{} ++ (0,-1.5) 
+
+node[become](main-6){}
+
+(main-6.south) -- node[process]{} ++ (0,-1.5) 
+
+node[become](main-7){}
+
+(main-7.south) -- node[process]{} ++ (0,-1.5) 
+
+node[become](main-8){}
+;\end{tikzpicture}
+
 %Seperator
 %Seperator
 %Seperator

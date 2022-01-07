@@ -1,4 +1,5 @@
 %Type of Document
+%\documentclass[class=report, crop=false]{standalone}
 \documentclass[a4paper, 12pt]{report}
 
 %Load Pre-ambles
@@ -47,7 +48,7 @@ This calls for the implementation of a series of supposed rules that govern the 
 %Seperator
 %Seperator
 %Seperator
-\import{../Linear_DE}{Differential_Operator.tex}
+\subimport{../Linear_DE}{Differential_Operator.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -62,7 +63,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Systems_DE/}{Matrix_DE.tex}
+\subimport{../Systems_DE/}{Matrix_DE.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -77,7 +78,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Fourier/}{Fourier_Series.tex}
+\subimport{../Fourier/}{Fourier_Series.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -92,7 +93,7 @@ Aditional Comments:
 %Seperator
 %Seperator
 %Seperator
-\import{../Laplace/}{Laplace.tex}
+\subimport{../Laplace/}{Laplace.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter
@@ -115,7 +116,7 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../Del/}{Del.tex}
+\subimport{../Del/}{Del.tex}
 %Seperator
 %Seperator
 %Seperator
@@ -130,7 +131,7 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../PDE/}{PDE.tex}
+\subimport{../PDE/}{PDE.tex}
 %Seperator
 %Seperator
 %Seperator
@@ -146,7 +147,7 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../PDE_Examples/}{2D_Heat.tex}
+\subimport{../PDE_Examples/}{2D_Heat.tex}
 %Seperator
 %Seperator
 %Seperator
@@ -160,7 +161,7 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../PDE_Examples/}{Bar_Vibrations.tex}
+\subimport{../PDE_Examples/}{Bar_Vibrations.tex}
 %Seperator
 %Seperator
 %Seperator
@@ -174,7 +175,7 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../PDE_Examples/}{2D_Wave.tex}
+\subimport{../PDE_Examples/}{2D_Wave.tex}
 %Seperator
 %Seperator
 %Seperator
@@ -188,22 +189,7 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../PDE_Examples/}{Spherical_Harmonics.tex}
-%Seperator
-%Seperator
-%Seperator
-%Seperator
-%Seperator
-%Seperator
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Start Level: Chapter
-End Level: Chapter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Aditional Comments:
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{comment}
-\import{../Sturm/}{Sturm.tex}
+\subimport{../PDE_Examples/}{Spherical_Harmonics.tex}
 %Seperator
 %Seperator
 %Seperator
@@ -218,7 +204,7 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../PDE_Examples/}{1D_Heat_Eqn.tex}
+\subimport{../Sturm/}{Sturm.tex}
 %Seperator
 %Seperator
 %Seperator
@@ -233,14 +219,44 @@ End Level: Chapter
 Aditional Comments:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{comment}
-\import{../PDE_Examples/}{1D_Wave.tex}
+\subimport{../PDE_Examples/}{1D_Heat_Eqn.tex}
 %Seperator
 %Seperator
 %Seperator
 %Seperator
 %Seperator
 %Seperator
-\import{../Tensor/}{Tensor.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+\subimport{../PDE_Examples/}{1D_Wave.tex}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subimport{../Thomas_Algorithm/}{Thomas.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: Chapter
+End Level: Chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subimport{../Tensor/}{Tensor.tex}
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Start Level: Chapter

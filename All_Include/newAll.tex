@@ -1,0 +1,142 @@
+%Type of Document
+\documentclass[class=report, 12pt, crop=false]{standalone}
+
+
+%Multi-File Packages
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+
+%Math Relevant Packages
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{commath}
+
+
+%Electrical Relevant Packages
+\usepackage[siunitx]{circuitikz}
+
+%Document Layout Packages
+\usepackage{geometry}
+\usepackage{multicol}
+
+
+%Miscellaneous
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+
+
+
+
+
+
+
+
+
+
+
+%Margins of the entire document
+\geometry{portrait, margin=0.8in}
+
+%For sections of the document
+\let\stdsection\section
+%\renewcommand\section{\newpage\stdsection}
+
+%Tikz Flowcharts
+\tikzstyle{depend} = [rectangle, rounded corners, draw=black, align=center]
+\tikzstyle{process} = [anchor = east, align=center]
+\tikzstyle{become} = [anchor = north, rectangle, draw=black, align=center]
+\tikzstyle{output} = [trapezium, trapezium left angle=70, trapezium right angle=110, draw=black, align=center]
+\def\vdist{5pt}
+
+%Programming Color Scheme
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Modifying Listing to Accomodate Programming
+\lstset{
+    columns=fullflexible,
+    frame=single,
+    breaklines=true,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    keepspaces=true,                 
+    numbersep=5pt,                  
+    showspaces=false,               
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+
+%Personal Preferred Math defines
+\def\t{\theta}
+\def\w{\omega}
+\def\a{\alpha}
+\def\be{\beta}
+\def\la{\lambda}
+\def\g{\gamma}
+\def\f{\frac}
+\def\l{\left}
+\def\r{\right}
+\def\dst{\displaystyle}
+\def\b{\bar}
+\def\h{\hat}
+\def\ph{\phi}
+\def\d{\cdot}
+
+%For Del Operators
+\def\na{\nabla}
+
+%For Partial derivatives
+\def\p{\partial}
+
+%For Laplace Transform
+\def\lap{\mathcal{L}}
+
+%For Tensor double bar notation
+\newcommand*{\db}[1]{\bar{\bar{#1}}}
+
+%Make Matrix large enough
+\setcounter{MaxMatrixCols}{20}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{4}
+
+%For Table Sizings
+\def\tabsize{2.5cm}
+\def\tabsizel{5cm}
+
+
+
+
+\begin{document}
+
+\begin{center}
+
+
+\part{Mathematics}
+\import{../Math_Archives/Main/}{Math_Archives.tex}
+\part{Fluid Dynamics}
+\import{../Fluid_Archives/Main/}{Fluid_Archives.tex}
+\part{Control Systems}
+\import{../Control_Archives/Main/}{Control_Archives.tex}
+\part{Newtonian Physics}
+\import{../Physics_Archives/Main/}{Physics_Archives.tex}
+
+
+\end{center}
+
+\end{document}
+
