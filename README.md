@@ -1,5 +1,25 @@
 # Rationale:
-    This shall serve the theoretical basis for Project River
+
+    Document Philosophy:
+    Part of the original intention of the Archives Series Project began in an effort to preserve some of the most general and powerful mathematical techniques I learned. The Project began as a way of archiving oneself's skills at the peak of performance in case it would ever be needed again one day. Along the way, I was posed with a few important question "Why is this Archive Necessary?", "Couldn't we just refer back to the original textbooks and sources of the Archives?" "What sets such an Archive different than the multitudes of other textbooks that exist out there?"
+
+    In my humble opinion I believe that writing and giving names to mathematical objects is a pre-requisite to mathematics. It is impossible to do mathematics without definition of terms, and the notation of the terms are closely related to the definition of terms. Since the intimate relationship between notation and definition is so important, uniting various sources with differing notations under a unified consistent notation style ensures that the information discussed in this document is easily readable provided one learns the notation convention defined along the discussion. This guarantees an ease of information absorption and allows the powerful general mathematical theorem in this document to reach its maximum ease of use without compromising generality.
+
+    This calls for the implementation of a series of supposed rules that govern the document. Although not all parts of the documents currently adhere to said rules, this should be a kind of standard that should be achieved in due time for this document to fully implement the principles stated above:
+
+    1.) Theorems presented in the document must contain Proofs
+
+    2.) Each difference in line or after an = sign, there should be a maximum of 2 similar mathematical operations algebraic operations performed.
+
+    3.) Observations should be explained and the types of variables as mathematical objects must be defined within the scope of the theory (Is x a vector? Matrix? Tensor? Real? Complex?) (Is \times a cross product or an algebraic multiplication?)
+
+    4.) The inputs and outputs of the functions produced as a consequence of the mathematical theorems must be clearly defined as said mathematical objects.
+
+    5.) The Document must not include any examples to make it concise and helpful. Examples may be defined in a seperate document. But not this one, because it has to be concise.
+
+    6.) The proof of theorems found in this document should be replaced if a more elegant proof appears.
+
+    Now an interesting bit: Why should I care if this is private or not? I mean it did cost me a lot of effort to produce this but I did write for myself. Distributing it costs me nothing so if it brings advantage, why shouldn't I? This project may serve as the theoretical basis for project River, to be discussed some other time.
 
 
 # Objectives:
