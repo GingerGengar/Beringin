@@ -32,13 +32,3 @@
 \subpreamble{../Numerical_Methods/Potential_Flow//../Fourier_Stability_Analysis/Fourier_Stability.tex}
 \usepackage {../../Environment/Packages}\usepackage {../../Environment/Conventions}\usepackage {../../Environment/Hyahoos}\def \sized {0.14}
 \endsubpreamble
-\subpreamble{../Aerodynamics/Incompressible/Incompressible.tex}
-\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
-\endsubpreamble
-\subpreamble{../Aerodynamics/Compressible/Compressible.tex}
-\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
-\endsubpreamble
-\subpreamble{../Creeping_Flow/Creeping_Flow.tex}
-\usepackage {../Environment/Packages}\usepackage {../Environment/Conventions}\usepackage {../Environment/Hyahoos}
-\endsubpreamble
-\endstandalonepreambles

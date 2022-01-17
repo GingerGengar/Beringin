@@ -1,5 +1,5 @@
 %Type of Document
-\documentclass[class=report, 12pt, crop=false]{standalone}
+\documentclass[a4paper, 12pt]{report}
 
 %Load Pre-ambles
 \usepackage{../../Environment/Packages}
@@ -9,15 +9,15 @@
 \begin{document}
 
 \begin{center}
-
-
-\section{Alternate Forms}
-
-\subimport{../Stress_Rate/}{Strain_Tensor_NS.tex}
-
+%
+%
+%\section{Alternate Forms}
+%
+\subimport{../Stress_Rate/}{Strain_Tensor_NS}
+%
 \subimport{../Vorticity_Eqn/}{Vorticity.tex}
-
-
+%
+%
 \end{center}
 
 \end{document}

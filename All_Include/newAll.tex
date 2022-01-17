@@ -1,9 +1,8 @@
 %Type of Document
-\documentclass[class=report, 12pt, crop=false]{standalone}
-
+\documentclass[a4paper, 12pt]{report}
 
 %Multi-File Packages
-\usepackage[subpreambles=true]{standalone}
+\usepackage{standalone}
 \usepackage{import}
 
 %Math Relevant Packages
@@ -96,6 +95,8 @@
 \def\h{\hat}
 \def\ph{\phi}
 \def\d{\cdot}
+\def\ov{\overset}
+\def\n{\nabla}
 
 %For Del Operators
 \def\na{\nabla}
@@ -119,9 +120,15 @@
 \def\tabsizel{5cm}
 
 
-
-
 \begin{document}
+
+\title{Knowledge Archives}
+\author{Ginger Gengar}
+\date{$17^{th}$ January 2022}
+\maketitle
+\newpage
+
+\tableofcontents
 
 \begin{center}
 
