@@ -19,7 +19,6 @@
 
     6.) The proof of theorems found in this document should be replaced if a more elegant proof appears.
 
-    Now an interesting bit: Why should I care if this is private or not? I mean it did cost me a lot of effort to produce this but I did write for myself. Distributing it costs me nothing so if it brings advantage, why shouldn't I? This project may serve as the theoretical basis for project River, to be discussed some other time.
 
 
 # Objectives:
@@ -72,7 +71,9 @@
 
     Of course, more content need to be added, especially structures is very very lacking. Math archives need to be revamped for the PDEs, this is so embarassing.
 
+# Folders
 
+    The Utility folder contains certain scripts that can clear the build files from the latex compiler.
 
 
 

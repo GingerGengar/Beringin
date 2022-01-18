@@ -1,7 +1,0 @@
-\contentsline {chapter}{\numberline {1}Binary Object Systems}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Orbit Trajectory}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Time Dependent Quantities}{7}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Gauss Law}{10}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Gravitational Fields}{10}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Radial Fields}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Curl and Circulation}{14}{section.3.1}%
