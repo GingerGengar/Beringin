@@ -28,6 +28,8 @@ The famous Galuret's integral is shown below,
 %Seperator
 \section{Biot-Savart Law}
 \begin{comment}
+Haven't added various images
+
 \end{comment}
 
 %Seperator
@@ -46,9 +48,6 @@ The variable definitions are reiterated below for reference,
 \item $\beta_{v}$ represents the angle between the vector $\bar{r_{r}}$ and the vortex line
 \item $\hat{k}$ represents a unit vector into the page
 \item $\delta_{r}$ represents a scalar which represents the perpendicular distance between the point of interest and the vortex line.
-\item 
-\item 
-\item 
 \end{itemize}
 
 %Seperator
@@ -217,7 +216,10 @@ The variable definitions are reiterated below for reference,
 \item $c_{w}(y_{0})$ represents the chord of the wing at some spanwise location along the wing
 \item $b$ represents the total span of the wing
 \item $A_{w}$ represents the area of the wing
-\item 
+\item $$A_{R}$$ represents the aspect ratio of a particular wing
+\item $c_{0}$ represents the root chord, which is the maximum chord for a wing with an elliptical planform
+\item $D_{i}$ represents induced drag force
+\item $C_{D,i}$ represents induced drag coefficient
 \end{itemize}
 
 
@@ -503,7 +505,7 @@ $$\sin^{2}(\alpha) + \cos^{2}(\alpha) = 1$$
 $$\sin^{2}(\alpha) = 1 - \cos^{2}(\alpha)$$
 $$\Gamma_{0}\sqrt{1-\left(\frac{2}{b}y\right)^{2}} = \Gamma_{0}\sqrt{\sin^{2}(\theta)}$$
 \begin{equation}
-\Gamma_{0}\sqrt{1-\left(\frac{2}{b}y\right)^{2}} = \Gamma_{0}\sin(\theta)
+\Gamma_{w} = \Gamma_{0}\sqrt{1-\left(\frac{2}{b}y\right)^{2}} = \Gamma_{0}\sin(\theta)
 \label{elliptical circulation distribution th coordinates}
 \end{equation}
 From a previous algebraic manipulation, When $y = b/2$,
@@ -519,6 +521,27 @@ $$\frac{dy}{d\theta} = \frac{b}{2}\sin(\theta)$$
 \begin{equation}
 dy = \frac{b}{2}\sin(\theta)\,d\theta
 \label{dy in terms of th lifting line coordinates}
+\end{equation}
+Reiterating the Fourier Series used to represent arbitrary vortex distribution (equation $\ref{Fourier Sine Circulation Distribution}$) 
+$$\Gamma_{w} = 2bv_{\infty}\sum^{\infty}_{k = 1}\left[A_{k}\sin(k\theta)\right]$$
+Substituting the expression above into the "Fundamental Equation of Lifting Line Theory" produces the result below (equation $\ref{System of Equations Lifting Line Theory General}$)
+$$\alpha_{0} + \sum^{\infty}_{k = 1}\left\{A_{k}\left[\left(\frac{2b}{\pi c_{w}} + \frac{k}{\sin(\theta_{0})}\right)\sin(k\theta_{0})\right]\right\} = \alpha_{Geo}$$
+For a wing with an elliptical vortex distribution,
+$$\Gamma_{w} = \Gamma_{0}\sin(\theta) = 2bv_{\infty}\sum^{\infty}_{k = 1}\left[A_{k}\sin(k\theta)\right]$$
+From this, $A_{2} = A_{3} = \dots = 0$. That is the only way the equality above is true. Therefore,
+$$\Gamma_{w} = \Gamma_{0}\sin(\theta) = 2bv_{\infty}A_{1}\sin(\theta)$$
+$$\Gamma_{0} = 2bv_{\infty}A_{1}$$
+$$\frac{\Gamma_{0}}{2bv_{\infty}} = A_{1}$$
+Truncating equation $\ref{System of Equations Lifting Line Theory General}$ for just $k = 1$,
+$$\alpha_{0} + A_{1}\left[\left(\frac{2b}{\pi c_{w}} + \frac{1}{\sin(\theta_{0})}\right)\sin(\theta_{0})\right] = \alpha_{Geo}$$
+$$\alpha_{0} + A_{1}\left[\left(\frac{2b}{\pi c_{w}}\sin(\theta_{0}) + \frac{\sin(\theta_{0})}{\sin(\theta_{0})}\right)\right] = \alpha_{Geo}$$
+$$\alpha_{0} + A_{1}\left[\frac{2b}{\pi c_{w}}\sin(\theta_{0}) + 1\right] = \alpha_{Geo}$$
+$$A_{1}\left[\frac{2b}{\pi c_{w}}\sin(\theta_{0}) + 1\right] = \alpha_{Geo} - \alpha_{0}$$
+Substituting for $A_{1}$,
+$$\frac{\Gamma_{0}}{2bv_{\infty}}\left[\frac{2b}{\pi c_{w}}\sin(\theta_{0}) + 1\right] = \alpha_{Geo} - \alpha_{0}$$
+\begin{equation}
+\Gamma_{0} = \frac{2bv_{\infty}}{\displaystyle \frac{2b}{\pi c_{w}}\sin(\theta_{0}) + 1}\left(\alpha_{Geo} - \alpha_{0}\right)
+\label{gamma0 in terms of alphas lifting line}
 \end{equation}
 
 
@@ -544,7 +567,6 @@ $$L_{w} = \frac{1}{4}\rho_{\infty}v_{\infty}\Gamma_{0}b \left[\theta - \frac{1}{
 L_{w} = \frac{1}{4}\rho_{\infty}v_{\infty}\Gamma_{0}b\pi
 \label{Elliptical Distribution Lift Force}
 \end{equation}
-\begin{comment}
 Using the definition for coefficient of lift,
 $$C_{L} = \frac{L_{w}}{\displaystyle \frac{1}{2}\rho_{\infty}v_{\infty}^{2}A_{w}}$$
 wherein $A_{w}$ represents the area of the wing. Manipulating the expression,
@@ -555,11 +577,44 @@ $$\frac{1}{2}v_{\infty}A_{w} C_{L} = \frac{1}{4}\Gamma_{0}b\pi$$
 $$\frac{4}{2}v_{\infty}A_{w} C_{L} = \Gamma_{0}b\pi$$
 $$2 v_{\infty}A_{w} C_{L} = \Gamma_{0}b\pi$$
 $$\frac{2 v_{\infty}A_{w} C_{L}}{b\pi} = \Gamma_{0}$$
-Susbtituting the constant $\Gamma_{0}$ out to equation $\ref{Elliptical Distribution Lift Force}$ to eliminate dependency on unknown factor $\Gamma_{0}$,
-$$L_{w} = \frac{1}{4}\rho_{\infty}v_{\infty}b\pi\times \frac{2 v_{\infty}A_{w} C_{L}}{b\pi}$$
-$$L_{w} = \frac{1}{4}\rho_{\infty}v_{\infty}\times \frac{2 v_{\infty}A_{w} C_{L}}{}$$
-\end{comment}
-
+\begin{equation}
+\Gamma_{0} = \frac{2 v_{\infty}A_{w} C_{L}}{b\pi}
+\label{Maximum Vortex Distribution in terms of CL Lifting Line}
+\end{equation}
+Reiterating equation $\ref{gamma0 in terms of alphas lifting line}$
+$$\Gamma_{0} = \frac{2bv_{\infty}}{\displaystyle \frac{2b}{\pi c_{w}}\sin(\theta_{0}) + 1}\left(\alpha_{Geo} - \alpha_{0}\right)$$
+The ellitpical vortex distribution,
+$$\Gamma_{w} = \Gamma_{0}\sqrt{1-\left(\frac{2}{b}y\right)^{2}} = \Gamma_{0}\sin(\theta)$$
+For a wing with an elliptical planform,
+$$c_{w} = c_{0}\sqrt{1-\left(\frac{2}{b}y\right)^{2}} = c_{0}\sin(\theta)$$
+wherein $c_{0}$ represents the root chord, which is the maximum chord for a wing with an elliptical planform. Substituting chord $c_{w}$ into equation $\ref{gamma0 in terms of alphas lifting line}$,
+$$\Gamma_{0} = \frac{2bv_{\infty}}{\displaystyle \frac{2b}{\pi c_{0}\sin(\theta_{0})}\sin(\theta_{0}) + 1}\left(\alpha_{Geo} - \alpha_{0}\right)$$
+$$\Gamma_{0} = \frac{2bv_{\infty}}{\displaystyle \frac{2b}{\pi c_{0}} + 1}\left(\alpha_{Geo} - \alpha_{0}\right)$$
+$$\Gamma_{0} = \frac{2bv_{\infty}}{\displaystyle \frac{2b}{\pi c_{0}} + \frac{\pi c_{0}}{\pi c_{0}}}\left(\alpha_{Geo} - \alpha_{0}\right)$$
+$$\Gamma_{0} = \frac{2bv_{\infty}}{\displaystyle \frac{2b + \pi c_{0}}{\pi c_{0}}}\left(\alpha_{Geo} - \alpha_{0}\right)$$
+$$\Gamma_{0} = \frac{2bv_{\infty}\pi c_{0}}{2b + \pi c_{0}}\left(\alpha_{Geo} - \alpha_{0}\right)$$
+Substituting equation $\ref{Maximum Vortex Distribution in terms of CL Lifting Line}$
+$$\Gamma_{0} = \frac{2bv_{\infty}\pi c_{0}}{2b + \pi c_{0}}\left(\alpha_{Geo} - \alpha_{0}\right) = \frac{2 v_{\infty}A_{w} C_{L}}{b\pi}$$
+$$\frac{b\pi c_{0}}{2b + \pi c_{0}}\left(\alpha_{Geo} - \alpha_{0}\right) = \frac{A_{w} C_{L}}{b\pi}$$
+$$\frac{b^{2}\pi^{2} c_{0}}{2b + \pi c_{0}}\left(\alpha_{Geo} - \alpha_{0}\right) = A_{w} C_{L}$$
+$$\frac{b^{2}}{A_{w}}\times\frac{\pi^{2} c_{0}}{2b + \pi c_{0}}\left(\alpha_{Geo} - \alpha_{0}\right) =  C_{L}$$
+Using the definition of aspect ratio,
+$$A_{R} \frac{\pi^{2} c_{0}}{2b + \pi c_{0}}\left(\alpha_{Geo} - \alpha_{0}\right) =  C_{L}$$
+$$A_{R} \frac{\displaystyle \pi^{2} \frac{c_{0}}{b}}{\displaystyle 2 + \pi \frac{c_{0}}{b}}\left(\alpha_{Geo} - \alpha_{0}\right) =  C_{L}$$
+The area of an ellipse is,
+$$A_{w} = \frac{\pi}{4}bc_{0}$$
+Using the definition for aspect ratio,
+$$A_{R} = \frac{b^{2}}{A_{w}} = \frac{4}{\pi}\frac{1}{bc_{0}}b^{2}$$
+$$A_{R} = \frac{4}{\pi}\frac{b}{c_{0}}$$
+$$\frac{c_{0}}{b} = \frac{4}{\pi}\frac{1}{A_{R}}$$
+Substituting,
+$$A_{R} \frac{\displaystyle \pi^{2} \frac{4}{\pi}\frac{1}{A_{R}}}{\displaystyle 2 + \pi \frac{4}{\pi}\frac{1}{A_{R}}}\left(\alpha_{Geo} - \alpha_{0}\right) =  C_{L}$$
+$$\frac{4\pi}{\displaystyle 2 + 4\frac{1}{A_{R}}}\left(\alpha_{Geo} - \alpha_{0}\right) =  C_{L}$$
+$$ \frac{2\pi}{\displaystyle 1 + \frac{2}{A_{R}}}\left(\alpha_{Geo} - \alpha_{0}\right) =  C_{L}$$
+\begin{equation}
+C_{L} = \frac{2\pi}{\displaystyle 1 + (2/A_{R})}\left(\alpha_{Geo} - \alpha_{0}\right)
+\label{Lift Coefficient in terms of alphas and aspect ratio lifting line}
+\end{equation}
 
 %Seperator
 %Seperator
@@ -567,8 +622,72 @@ $$L_{w} = \frac{1}{4}\rho_{\infty}v_{\infty}\times \frac{2 v_{\infty}A_{w} C_{L}
 \subsubsection{Downwash}
 \begin{comment}
 \end{comment}
-Reiterating the experssion for downwash produced by a wing, $\ref{Downwash in Lifting Line Theory}$
+Reiterating the expression for downwash produced by a wing, $\ref{Downwash in Lifting Line Theory}$
 $$\bar{w_{i}} = -\frac{1}{4\pi} \int^{b/2}_{-b/2}\frac{1}{y_{0}-y}\frac{d\Gamma_{w}}{dy} \,dy\hat{z}$$
+Reiterating the elliptical vortex distribution (equation $\ref{elliptical circulation distribution th coordinates}$)
+$$\Gamma_{w} = \Gamma_{0}\sqrt{1-\left(\frac{2}{b}y\right)^{2}} = \Gamma_{0}\sin(\theta)$$
+wherein the coordinate transformation used is shown below (equation $\ref{Recurring Coordinate Transformation Lifting Line}$),
+$$y = -\frac{b}{2}\cos(\theta)$$
+Taking derivative of the elliptical vortex distribution with respect to $y$,
+$$\frac{d\Gamma_{w}}{dy} = \frac{d\Gamma_{w}}{d\theta}\times\frac{d\theta}{dy}$$
+$$\frac{d\Gamma_{w}}{d\theta} = \Gamma_{0}\frac{d}{d \theta}\left[\sin(\theta)\right]$$
+$$\frac{d\Gamma_{w}}{d\theta} = \Gamma_{0}\cos(\theta)$$
+Reiterating the relation of the differentials $dy$ and $d\theta$ (equation $\ref{dydth Common Coordinate Transformation}$)
+$$\frac{dy}{d\theta} = \frac{b}{2}\sin(\theta)$$
+$$\frac{d\theta}{dy} = \frac{2}{b\sin(\theta)}$$
+Therefore,
+$$\frac{d\Gamma_{w}}{dy} = \Gamma_{0}\cos(\theta) \times\frac{2}{b\sin(\theta)}$$
+$$\frac{d\Gamma_{w}}{dy} = \frac{2\Gamma_{0}}{b}\frac{\cos(\theta)}{\sin(\theta)}$$
+Reiterating the differentials again,
+$$\frac{dy}{d\theta} = \frac{b}{2}\sin(\theta)$$
+$$dy = \frac{b}{2}\sin(\theta)\, d\theta$$
+Therefore,
+$$\frac{d\Gamma_{w}}{dy}\,dy = \frac{2\Gamma_{0}}{b}\frac{\cos(\theta)}{\sin(\theta)}\times\frac{b}{2}\sin(\theta)\, d\theta$$
+$$\frac{d\Gamma_{w}}{dy}\,dy = \frac{2\Gamma_{0}}{b}\cos(\theta) \times \frac{b}{2}\, d\theta$$
+$$\frac{d\Gamma_{w}}{dy}\,dy = \Gamma_{0}\cos(\theta) \,d\theta$$
+Reiterating the coordinate transformation used,
+$$y = -\frac{b}{2}\cos(\theta)$$
+$$y_{0} = -\frac{b}{2}\cos(\theta_{0})$$
+Therefore,
+$$\frac{1}{y_{0}-y} = \frac{1}{\displaystyle -\frac{b}{2}\cos(\theta_{0})+ \frac{b}{2}\cos(\theta)}$$
+$$\frac{1}{y_{0}-y} = \frac{2}{b}\frac{1}{\cos(\theta) - \cos(\theta_{0})}$$
+Taking the product with the previous result,
+$$ \frac{1}{y_{0}-y}\frac{d\Gamma_{w}}{dy}\,dy = \frac{2\Gamma_{0}}{b}\frac{1}{\cos(\theta) - \cos(\theta_{0})}\cos(\theta) \,d\theta$$
+$$\frac{1}{y_{0}-y}\frac{d\Gamma_{w}}{dy}\,dy = \frac{2\Gamma_{0}}{b}\frac{\cos(\theta)}{\cos(\theta) - \cos(\theta_{0})}\,d\theta$$
+Susbtituting the equation above into the expression for downwash velocity, 
+$$\bar{w_{i}} = -\frac{1}{4\pi} \int^{b/2}_{-b/2}\frac{1}{y_{0}-y}\frac{d\Gamma_{w}}{dy} \,dy\hat{z}$$
+%Maybe enter change of bounds but IDK sounds pretty wasteful
+Using the change of bounds that was discussed earlier, 
+$$\bar{w_{i}} = -\frac{1}{4\pi} \int^{\pi}_{0} \frac{2\Gamma_{0}}{b}\frac{\cos(\theta)}{\cos(\theta) - \cos(\theta_{0})}\,d\theta\hat{z}$$
+$$\bar{w_{i}} = -\frac{\Gamma_{0}}{2\pi b} \int^{\pi}_{0} \frac{\cos(\theta)}{\cos(\theta) - \cos(\theta_{0})}\,d\theta\hat{z}$$
+Reiterating Glauret's integral (equation $\ref{Galuret's Integral}$)
+$$\int^{\pi}_{0} \frac{\cos(n\theta_{0})}{\cos(\theta_{0}) - \cos(\theta)} \,d\theta_{0} = \frac{\pi \sin(n\theta)}{\sin(\theta)} \quad,\quad n = 0,1,2,3,\dots$$
+When $n = 1$,
+$$\int^{\pi}_{0} \frac{\cos(\theta_{0})}{\cos(\theta_{0}) - \cos(\theta)} \,d\theta_{0} = \frac{\pi \sin(\theta)}{\sin(\theta)}$$
+$$\int^{\pi}_{0} \frac{\cos(\theta_{0})}{\cos(\theta_{0}) - \cos(\theta)} \,d\theta_{0} = \pi$$
+Making the change of variables, $\theta_{0} \to \theta$, and $\theta \to \theta_{0}$,
+$$\int^{\pi}_{0} \frac{\cos(\theta)}{\cos(\theta) - \cos(\theta_{0})} \,d\theta = \pi$$
+Substituting into the expression for downwash,
+$$\bar{w_{i}} = -\frac{\Gamma_{0}}{2\pi b}\times \pi\hat{z}$$
+\begin{equation}
+\bar{w_{i}} = -\frac{\Gamma_{0}}{2b}\hat{z}
+\label{downwash lifting line thry}
+\end{equation}
+Susbtituting the maximum vortex strength $\Gamma_{0}$ in equation $\ref{Maximum Vortex Distribution in terms of CL Lifting Line}$ to the equation above,
+$$\Gamma_{0} = \frac{2 v_{\infty}A_{w} C_{L}}{b\pi}$$
+$$\bar{w_{i}} = -\frac{1}{2b}\times\frac{2 v_{\infty}A_{w} C_{L}}{b\pi}\hat{z}$$
+$$\bar{w_{i}} = -\frac{v_{\infty}C_{L}A_{w}}{\pi b^{2}}\hat{z}$$
+$$\bar{w_{i}} = -\frac{v_{\infty}C_{L}}{\pi}\frac{A_{w}}{b^{2}}\hat{z}$$
+The definition of aspect ratio for a wing,
+$$A_{R} = \frac{b^{2}}{A_{w}}$$
+$$\frac{1}{A_{R}} = \frac{A_{w}}{b^{2}}$$
+Therefore,
+$$\bar{w_{i}} = -\frac{v_{\infty}C_{L}}{\pi}\frac{1}{A_{R}}\hat{z}$$
+\begin{equation}
+\bar{w_{i}} = -\frac{v_{\infty}C_{L}}{\pi A_{R}}\hat{z}
+\label{downwash lifting line in terms of aspect ratio and CL}
+\end{equation}
+
 
 %Seperator
 %Seperator
@@ -576,10 +695,64 @@ $$\bar{w_{i}} = -\frac{1}{4\pi} \int^{b/2}_{-b/2}\frac{1}{y_{0}-y}\frac{d\Gamma_
 \subsubsection{Induced Drag}
 \begin{comment}
 \end{comment}
+Reiterating the elliptical vortex distribution (equation $\ref{elliptical circulation distribution th coordinates}$)
+$$\Gamma_{w} = \Gamma_{0}\sqrt{1-\left(\frac{2}{b}y\right)^{2}} = \Gamma_{0}\sin(\theta)$$
+wherein the coordinate transformation used is shown below (equation $\ref{Recurring Coordinate Transformation Lifting Line}$),
+$$y = -\frac{b}{2}\cos(\theta)$$
 Reiterating the expression for induced angle of attack produced by the trailing vortices, 
 $$\alpha_{i} \approx \frac{|\bar{w_{i}}|}{v_{\infty}}$$
+Reiterating the expression for the downwash experienced by a wing with an elliptical lift distribution (equation $\ref{downwash lifting line thry}$),
+$$\bar{w_{i}} = -\frac{\Gamma_{0}}{2b}\hat{z}$$
+The magnitude of the downwash,
+$$|\bar{w_{i}}| = \frac{\Gamma_{0}}{2b}$$
+Therefore,
+$$\frac{|\bar{w_{i}}|}{v_{\infty}} = \frac{\Gamma_{0}}{2bv_{\infty}}$$
+$$\alpha_{i} = \frac{\Gamma_{0}}{2bv_{\infty}}$$
 Reiterating the expression for induced drag experienced by a wing, $\ref{Induced Drag Lifting Line Theory}$
 $$D_{i} = \rho_{\infty}v_{\infty}\int^{b/2}_{-b/2}\alpha_{i}\Gamma_{w}\,dy$$
+Substituting the induced angle of attack into the drag expression,
+$$D_{i} = \rho_{\infty}v_{\infty}\int^{b/2}_{-b/2} \frac{\Gamma_{0}}{2bv_{\infty}} \Gamma_{w}\,dy$$
+$$D_{i} = \frac{\Gamma_{0}\rho_{\infty}v_{\infty}}{2bv_{\infty}} \int^{b/2}_{-b/2} \Gamma_{w}\,dy$$
+Substituting the elliptical vortex distribution (equation $\ref{elliptical circulation distribution th coordinates}$),
+$$D_{i} = \frac{\Gamma_{0}\rho_{\infty}v_{\infty}}{2bv_{\infty}} \int^{b/2}_{-b/2} \Gamma_{0}\sin(\theta) \,dy$$
+Reiterating the relation of the differentials $dy$ and $d\theta$ (equation $\ref{dydth Common Coordinate Transformation}$)
+$$\frac{dy}{d\theta} = \frac{b}{2}\sin(\theta)$$
+$$dy = \frac{b}{2}\sin(\theta)\,d\theta$$
+Using the change of coordinates and change of bounds,
+$$D_{i} = \frac{\Gamma_{0}\rho_{\infty}v_{\infty}}{2bv_{\infty}} \int^{\pi}_{0} \Gamma_{0}\sin(\theta) \frac{b}{2}\sin(\theta)\,d\theta$$
+$$D_{i} = \frac{\Gamma_{0}^{2}\rho_{\infty}v_{\infty}}{4v_{\infty}} \int^{\pi}_{0} \sin(\theta)\sin(\theta) \,d\theta$$
+$$D_{i} = \frac{\Gamma_{0}^{2}\rho_{\infty}v_{\infty}}{4v_{\infty}} \int^{\pi}_{0} \sin^{2}(\theta) \,d\theta$$
+Using the double angle identity,
+$$\cos(2\theta) = 1 - 2\sin^{2}(\theta)$$
+$$2\sin^{2}(\theta) + \cos(2\theta) = 1$$
+$$2\sin^{2}(\theta) = 1 - \cos(2\theta)$$
+$$\sin^{2}(\theta) = \frac{1}{2}\left[1 - \cos(2\theta)\right]$$
+$$D_{i} = \frac{\Gamma_{0}^{2}\rho_{\infty}v_{\infty}}{4v_{\infty}} \times \frac{1}{2}\int^{\pi}_{0}   1 - \cos(2\theta)   \,d\theta$$
+$$D_{i} = \frac{\Gamma_{0}^{2}\rho_{\infty}v_{\infty}\pi}{8v_{\infty}}$$
+\begin{equation}
+D_{i} = \frac{\Gamma_{0}^{2}\rho_{\infty}\pi}{8}
+\label{Induced Drag lifting line Thry}
+\end{equation}
+Susbtituting the maximum vortex strength $\Gamma_{0}$ in equation $\ref{Maximum Vortex Distribution in terms of CL Lifting Line}$ to the equation above,
+$$\Gamma_{0} = \frac{2 v_{\infty}A_{w} C_{L}}{b\pi}$$
+$$D_{i} = \frac{\rho_{\infty}\pi}{8} \times \Gamma_{0}^{2}$$
+$$D_{i} = \frac{\rho_{\infty}\pi}{8} \times \left(\frac{2 v_{\infty}A_{w} C_{L}}{b\pi}\right)^{2}$$
+$$D_{i} = \frac{\rho_{\infty}\pi}{8} \times  \frac{4 v_{\infty}^{2}A_{w}^{2} C_{L}^{2}}{b^{2}\pi^{2}} $$
+$$D_{i} = \frac{1}{2}  \frac{\rho_{\infty}v_{\infty}^{2}A_{w}^{2} C_{L}^{2}}{b^{2}\pi} $$
+$$D_{i} = \frac{1}{2}\rho_{\infty}v_{\infty}^{2}A_{w} \times \frac{A_{w} C_{L}^{2}}{b^{2}\pi} $$
+$$\frac{D_{i}}{\displaystyle \frac{1}{2}\rho_{\infty}v_{\infty}^{2}A_{w}} = \frac{C_{L}^{2}}{\pi} \times\frac{A_{w}}{b^{2}}$$
+Using the definition for coefficient of drag,
+$$C_{D,i} = \frac{C_{L}^{2}}{\pi} \times\frac{A_{w}}{b^{2}}$$
+Using the definition for aspect ratio of a wing,
+$$C_{D,i} = \frac{C_{L}^{2}}{\pi} \times\frac{A_{w}}{b^{2}}$$
+$$\frac{1}{A_{R}} = \frac{A_{w}}{b^{2}}$$
+$$C_{D,i} = \frac{C_{L}^{2}}{\pi} \times\frac{1}{A_{R}}$$
+\begin{equation}
+C_{D,i} = \frac{C_{L}^{2}}{\pi A_{R}}
+\label{Coefficient of Drag in terms of Coefficient of Lift Lifting Line Theory}
+\end{equation}
+
+
 
 %Seperator
 %Seperator
@@ -588,7 +761,6 @@ $$D_{i} = \rho_{\infty}v_{\infty}\int^{b/2}_{-b/2}\alpha_{i}\Gamma_{w}\,dy$$
 \subsection{Elliptical Distribution Proofs}
 \begin{comment}
 \end{comment}
-
 
 
 

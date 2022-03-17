@@ -1,3 +1,7 @@
+Written, but not assimilated yet:
+    Aerodynamics lifting Line Theory
+
+
 Winter Tasks:
 
 Content Addition
@@ -144,5 +148,6 @@ Take down the proof of compressible potential flow
 https://en.wikipedia.org/wiki/Potential_flow
 Take down 514 Boundary Layer Equations
 Explore the Possibility of Using Quaternions for 3D conformal Mapping
+
 
 
