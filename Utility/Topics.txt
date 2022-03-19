@@ -1,6 +1,6 @@
 Written, but not assimilated yet:
     Aerodynamics lifting Line Theory
-
+    Grid Transformation
 
 Winter Tasks:
 
