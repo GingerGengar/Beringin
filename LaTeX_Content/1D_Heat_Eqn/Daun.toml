@@ -1,0 +1,4 @@
+Description = "PDE Example of the Famous 1D Heat Equation"
+Pre_Requisites = ["PDE",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

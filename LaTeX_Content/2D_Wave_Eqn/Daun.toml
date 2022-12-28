@@ -1,0 +1,5 @@
+Description = "Solutions to solving the famous 2-dimensional wave equation"
+Pre_Requisites = ["1D_Wave_Eqn",]
+Organization = "B"
+Authors = ["Ginger Gengar",]
+
