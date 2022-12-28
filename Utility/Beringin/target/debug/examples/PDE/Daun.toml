@@ -1,0 +1,4 @@
+Description = "Introduction to Partial Differential Equations"
+Pre_Requisites = ["ODE",]
+Organization = "C"
+Authors = ["Ginger Gengar", "HoneyBadger59",]
