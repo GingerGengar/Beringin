@@ -4,7 +4,7 @@ use std::collections::HashMap; //Allow the creation and usage of hash maps
 use crate::Trees; //Read in the structure definitions of single Nodes and all asociated functions
 
 /*Uses the given path to a file to extract file's contents and put it in a string*/
-fn ExtractFile (RelPath: &std::path::Path, Holder: &mut String){
+pub fn ExtractFile (RelPath: &std::path::Path, Holder: &mut String){
     //Error message that shows if the file cannot be opened
     let ErrMsg = "Cannot Open File...";
     //Open the file using the given path and set it to the file object
