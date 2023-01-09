@@ -8,7 +8,10 @@ fn main() {
     let FullMetadata: Vec<Trees::Node> = Loading::LoadAllNodes();
     Loading::ShowInputData(&FullMetadata); //TODO: Delete This
     //USER: Figure out where the node we want is located at in the vector
-    let NodeSel: usize = 1;
+    let mut NodeSel: Vec<usize> = Vec::new();
+    NodeSel.push(0); NodeSel.push(1); NodeSel.push(2); NodeSel.push(3); NodeSel.push(4); NodeSel.push(5); NodeSel.push(6); NodeSel.push(7); NodeSel.push(8); NodeSel.push(9); NodeSel.push(10);
+    NodeSel.push(11); NodeSel.push(12); NodeSel.push(13); NodeSel.push(14);
+
     //Declaration of vector that has the build order
     let mut BuildOrder: Vec<usize> = Vec::new();
     //Produce a Path based on the User Selection
@@ -19,11 +22,9 @@ fn main() {
 }
 
 /*
-TODO: We have base nodes and top nodes. Is there a way to print not just a single target Node, but multiple target nodes?
+TODO: We need to desperately add a linear algebra topic
+TODO: Currently our File is set to Appending all the time. Is there some way to give it mode of appending sometimes but not appending so our output file does not keep on having to be deleted every time?
 TODO: The File optional names have not been implemented, so a single directory of a single Node cannot have its contents be anything other than Theory.tex.
 TODO: We need to integrate these topics with UBI somehow and give it some kind of terminal user interface
-TODO: Currently our File is set to Appending all the time. Is there some way to give it mode of appending sometimes but not appending so our output file does not keep on having to be deleted every time?
-TODO: We need to get rid of all of our old macros like \l \r \f and so on on our older projects
-TODO: We need to desperately add a linear algebra topic
 TODO: Port the rest of the archives
 */

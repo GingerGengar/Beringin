@@ -10,7 +10,7 @@ EntryPoint: usize, Map: &mut HashMap<usize, bool>){
         //Iterate over the pre-requisite of a given node first before doing contents this node
         for i in &TreeRepr[EntryPoint].Pre_Req{
         //Only Enter Recursion if a given pre-requisite has not been added yet
-        if Map.get(&EntryPoint) == Option::None {//Enter Recursion
+        if Map.get(&i) == Option::None {//Enter Recursion
             PathRecurse(TreeRepr, BuildOrder, i.clone(), Map);}}}
     //Append the Current Node to the hash map
     Map.insert(EntryPoint, true);
@@ -19,8 +19,11 @@ EntryPoint: usize, Map: &mut HashMap<usize, bool>){
 }
 
 /*This function is just a setup for the entry point and hash map for the recursion path function*/
-pub fn FormPath(FullMetadata: &Vec<Trees::Node>, BuildOrder: &mut Vec<usize>, NodeSel: &usize){
+pub fn FormPath(FullMetadata: &Vec<Trees::Node>, BuildOrder: &mut Vec<usize>, NodeSel: & Vec<usize>){
     //Declare a Hash Map for a simple search algorithm
     let mut IndexSearch: HashMap<usize, bool> = HashMap::new();
-    //Use the location of the node as entry point
-    PathRecurse(FullMetadata, BuildOrder, NodeSel.clone(), &mut IndexSearch);}
+    //Use the location of the node as entry point and iterate over the selected Nodes
+    for i in NodeSel{
+        if IndexSearch.get(i) == Option::None {
+        PathRecurse(FullMetadata, BuildOrder, i.clone(), &mut IndexSearch);}
+    }}
