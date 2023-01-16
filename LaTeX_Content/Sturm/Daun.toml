@@ -1,5 +1,0 @@
-Description = "Allows us to prove that solutions to certain PDE's can be expressed as infinite series"
-Pre_Requisites = ["PDE",]
-Organization = "B"
-Authors = ["Ginger Gengar",]
-

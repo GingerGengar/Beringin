@@ -1,4 +1,0 @@
-Description = "Basic Control Theory"
-Pre_Requisites = ["ODE",]
-Organization = "C"
-Authors = ["Ginger Gengar",]

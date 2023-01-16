@@ -1,4 +1,0 @@
-Description = "Example of a structural bar vibration"
-Pre_Requisites = ["PDE",]
-Organization = "B"
-Authors = ["Ginger Gengar",]
