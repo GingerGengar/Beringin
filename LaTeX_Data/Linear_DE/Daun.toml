@@ -1,0 +1,4 @@
+Description = "Basic Ordinary Differential Equation Topics"
+Pre_Requisites = ["Base",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

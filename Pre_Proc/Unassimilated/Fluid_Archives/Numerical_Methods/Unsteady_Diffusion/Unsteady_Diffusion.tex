@@ -1,0 +1,242 @@
+%Type of Document
+\documentclass[a4paper, 12pt]{report}
+
+%Load Pre-ambles
+\usepackage{../../Environment/Packages}
+\usepackage{../../Environment/Conventions}
+\usepackage{../../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Unsteady Diffusion}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+Consider the grid definition shown below,
+%\\~\\\includegraphics[scale=\sizes]{Mojojojo.jpg}
+\\~\\Consider the general form the of the unsteady diffusion problem shown below,
+$$\f{\p}{\p t}(\rho \phi) + \na\d(\rho u \phi) = \na\d(\Gamma \na\phi) + S_\phi$$
+$\dst{\f{\p}{\p t}(\rho \phi)}$ represents the unsteady term, $\dst{\na\d(\rho u \phi)}$ represents the convection term, $\dst{\na\d(\Gamma \na\phi)}$ represents the diffusion term and $\dst{S_\phi}$ represents the source term. If the convection term is neglected, $\dst{\na\d(\rho u \phi)=0}$. Substituting for this,
+$$\f{\p}{\p t}(\rho \phi) = \na\d(\Gamma \na\phi) + S_\phi$$
+Integrating the unsteady diffusion equation over a small time step $\dst{\Delta t}$ as well as over the control volume $CV$,
+$$\int^{t+\Delta t}_{t}\int_{CV}\f{\p}{\p t}(\rho \phi)\,dV_o\,dt = \int^{t+\Delta t}_{t}\int_{CV}\na\d(\Gamma \na\phi) + S_\phi\,dV_o\,dt$$
+For the $1$-dimensional case $\dst{\na\phi} = \f{\p}{\p x}(\phi)$. Substituting for the gradient of $\phi$, $\dst{\na\d \na\phi = \f{\p^2}{\p x^2}(\phi)}$. Substituting for this,
+$$\int^{t+\Delta t}_{t}\int_{CV}\f{\p}{\p t}(\rho \phi)\,dV_o\,dt = \int^{t+\Delta t}_{t}\int_{CV}\f{\p}{\p x}\l[\Gamma \f{\p}{\p x}(\phi)\r] + S_\phi\,dV_o\,dt$$
+
+The order of integration is commutative for the independent spatial and time variables. Therefore,
+$$\int_{CV}\int^{t+\Delta t}_{t}\f{\p}{\p t}(\rho \phi)\,dt\,dV_o = \int^{t+\Delta t}_{t}\int_{CV}\f{\p}{\p x}\l[\Gamma \f{\p}{\p x}(\phi)\r] + S_\phi\,dV_o\,dt$$
+$$\int_{CV}\int^{t+\Delta t}_{t}\f{\p}{\p t}(\rho \phi)\,dt\,dV_o = \int^{t+\Delta t}_{t}\int_{CV}\f{\p}{\p x}\l[\Gamma \f{\p}{\p x}(\phi)\r]\,dV_o\,dt + \int^{t+\Delta t}_{t}\int_{CV}S_\phi\,dV_o\,dt$$
+The differential for volume $dV_o = A dx$. Substituting for this,
+$$\int_{CV}\int^{t+\Delta t}_{t}\f{\p}{\p t}(\rho \phi)\,dt\,dV_o = \int^{t+\Delta t}_{t}\int_{CV}\f{\p}{\p x}\l[\Gamma \f{\p}{\p x}(\phi)\r]\,A\,dx\,dt + \int^{t+\Delta t}_{t}\int_{CV}S_\phi\,dV_o\,dt$$
+Due to the exact differential simplification for $dx$,
+$$\int_{CV}\int^{t+\Delta t}_{t}\f{\p}{\p t}(\rho \phi)\,dt\,dV_o = \int^{t+\Delta t}_{t}\l[\Gamma A\f{\p}{\p x}(\phi)\r]^{e}_{w}\,dt + \int^{t+\Delta t}_{t}\int_{CV}S_\phi\,dV_o\,dt$$
+Due to the exact differential simplification for $dt$,
+$$\int_{CV}\l[\rho \phi\r]^{t+\Delta t}_{t}\,dV_o = \int^{t+\Delta t}_{t}\l[\Gamma A\f{\p}{\p x}(\phi)\r]_{e} - \l[\Gamma A\f{\p}{\p x}(\phi)\r]_{w}\,dt + \int^{t+\Delta t}_{t}\int_{CV}S_\phi\,dV_o\,dt$$
+$$\int_{CV}\l[\rho \phi\r]_{t+\Delta t} - \l[\rho \phi\r]_{t}\,dV_o = \int^{t+\Delta t}_{t}\l[\Gamma A\f{\p}{\p x}(\phi)\r]_{e} - \l[\Gamma A\f{\p}{\p x}(\phi)\r]_{w}\,dt + \int^{t+\Delta t}_{t}\int_{CV}S_\phi\,dV_o\,dt$$
+
+Assuming that the value of $\phi_P$ is the value of $\phi$ throughout the entirety of a single cell, then $\phi$ would be a constant with respect to the volumetric integral. Substituting for this,
+$$\l\{\l[\rho \phi\r]_{t+\Delta t} - \l[\rho \phi\r]_{t}\r\}\Delta V_o = \int^{t+\Delta t}_{t}\l[\Gamma A\f{\p}{\p x}(\phi)\r]_{e} - \l[\Gamma A\f{\p}{\p x}(\phi)\r]_{w}\,dt + \int^{t+\Delta t}_{t}\int_{CV}S_\phi\,dV_o\,dt$$
+Assuming uniformity throughout the grid, that $\rho$, $A$ and $\Gamma$ is constant from one cell to the next,
+$$\l\{\l[\rho \phi\r]_{t+\Delta t} - \l[\rho \phi\r]_{t}\r\}\Delta V_o = \rho \l[\phi_{t+\Delta t} - \phi_{t}\r]\Delta V_o$$
+With a slight abuse of notation, let $\phi_{t}$ be represented as $\phi_{t,o}$ and $\phi_{t+\Delta t}$ be represented as $\phi_{t}$. Substituting for this,
+$$\l\{\l[\rho \phi\r]_{t+\Delta t} - \l[\rho \phi\r]_{t}\r\}\Delta V_o = \rho\Delta V_o \l[\phi_{t} - \phi_{t,o}\r]$$
+With the uniformity assumption,
+$$\l[\Gamma A\f{\p}{\p x}(\phi)\r]_{e} - \l[\Gamma A\f{\p}{\p x}(\phi)\r]_{w} = \Gamma A\l[\f{\p}{\p x}(\phi)\r]_{e} - \Gamma A\l[\f{\p}{\p x}(\phi)\r]_{w} = \Gamma A\l\{\l[\f{\p}{\p x}(\phi)\r]_{e} - \l[\f{\p}{\p x}(\phi)\r]_{w}\r\}$$
+The source term is assumed to be uniform throughout a single grid much like $\phi$ and is then simplified to,
+$$\int^{t+\Delta t}_{t}\int_{CV}S_\phi\,dV_o\,dt = \int^{t+\Delta t}_{t} S_\phi\Delta V_o\,dt$$
+Substituting for all of these simplifications,
+$$\rho \l[\phi_{t+\Delta t} - \phi_{t}\r]\Delta V_o = \int^{t+\Delta t}_{t}\Gamma A\l\{\l[\f{\p}{\p x}(\phi)\r]_{e} - \l[\f{\p}{\p x}(\phi)\r]_{w}\r\}\,dt + \int^{t+\Delta t}_{t} S_\phi\Delta V_o\,dt$$
+$$\rho \l[\phi_{t+\Delta t} - \phi_{t}\r]\Delta V_o = \Gamma A\int^{t+\Delta t}_{t}\l[\f{\p}{\p x}(\phi)\r]_{e} - \l[\f{\p}{\p x}(\phi)\r]_{w}\,dt + \Delta V_o\int^{t+\Delta t}_{t} S_\phi\,dt$$
+%Seperator
+\subsubsection{Interior Cells}
+For the interior cells, the spatial derivative $\dst{\f{\p}{\p x}(\phi)}$ is computed using central differencing. Therefore, 
+$$\l[\f{\p}{\p x}(\phi)\r]_{e} = \f{\phi_E - \phi_P}{\delta x_{EP}} \quad,\quad \l[\f{\p}{\p x}(\phi)\r]_{w} = \f{\phi_P - \phi_W}{\delta x_{PW}}$$
+Substituting for the definitions of these spatial derivatives,
+$$\rho \l[\phi_{t+\Delta t} - \phi_{t}\r]\Delta V_o = \Gamma A\int^{t+\Delta t}_{t}\f{\phi_E - \phi_P}{\delta x_{EP}} - \f{\phi_P - \phi_W}{\delta x_{PW}}\,dt + \Delta V_o\int^{t+\Delta t}_{t} S_\phi\,dt$$
+Re-arranging the equation,
+$$\rho \l[\phi_{t+\Delta t} - \phi_{t}\r]\Delta V_o = \Gamma A\int^{t+\Delta t}_{t} \f{1}{\delta x_{EP}}\phi_E - \f{1}{\delta x_{EP}}\phi_P - \f{1}{\delta x_{PW}}\phi_P + \f{1}{\delta x_{PW}}\phi_W\,dt + \Delta V_o\int^{t+\Delta t}_{t} S_\phi\,dt$$
+$$\rho \l[\phi_{t+\Delta t} - \phi_{t}\r]\Delta V_o = \Gamma A\int^{t+\Delta t}_{t} \f{1}{\delta x_{EP}}\phi_E - \l[\f{1}{\delta x_{EP}} + \f{1}{\delta x_{PW}}\r]\phi_P + \f{1}{\delta x_{PW}}\phi_W\,dt + \Delta V_o\int^{t+\Delta t}_{t} S_\phi\,dt$$
+The time integration approximation for $\phi$ with respect to time is shown below,
+$$\int^{t+\Delta t}_{t} \phi\,dt = [\t\phi_{t+\Delta t} + (1-\t)\phi_{t}]\Delta t$$
+Using a change of notation,
+$$\int^{t+\Delta t}_{t} \phi_{i}\,dt = [\t\phi_{i} + (1-\t)\phi_{i,o}]\Delta t$$
+wherein the subscript $i$ would represent some point in the grids, $\phi_{i}$ represents the value of $\phi$ at the new time step meanwhile $\phi_{i,o}$ represents the value of $\phi$ at the old time step. Substituting for the integration scheme,
+\begin{equation*}
+\begin{split}
+\rho \l[\phi_{t} - \phi_{t,o}\r]\Delta V_o = & \Gamma A\Delta t\l\{\f{1}{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]  - \l[\f{1}{\delta x_{EP}} + \f{1}{\delta x_{PW}}\r][\t\phi_{P} + (1-\t)\phi_{P,o}]  \right.\\ & \left. + \f{1}{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}]\r\} + \Delta V_o\int^{t+\Delta t}_{t} S_\phi\,dt
+\end{split}
+\end{equation*}
+The finite volume could be expressed in terms of area $A$ and grid size, $\Delta V_o = A\delta_{ew}$. Substituting for this,
+\begin{equation*}
+\begin{split}
+\rho \l[\phi_{t} - \phi_{t,o}\r]A\delta_{ew} = & \Gamma A\Delta t\l\{\f{1}{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]  - \l[\f{1}{\delta x_{EP}} + \f{1}{\delta x_{PW}}\r][\t\phi_{P} + (1-\t)\phi_{P,o}]  \right.\\ & \left. + \f{1}{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}]\r\} + A\delta_{ew}\int^{t+\Delta t}_{t} S_\phi\,dt
+\end{split}
+\end{equation*}
+Dividing both sides by $A\Delta t$,
+\begin{equation*}
+\begin{split}
+\rho \l[\phi_{t} - \phi_{t,o}\r]\f{\delta_{ew}}{\Delta t} = & \Gamma \l\{\f{1}{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]  - \l[\f{1}{\delta x_{EP}} + \f{1}{\delta x_{PW}}\r][\t\phi_{P} + (1-\t)\phi_{P,o}]  \right.\\ & \left. + \f{1}{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}]\r\} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt
+\end{split}
+\end{equation*}
+Re-arranging the equation,
+\begin{equation*}
+\begin{split}
+\f{\rho\delta_{ew}}{\Delta t}\phi_{t} - \f{\rho\delta_{ew}}{\Delta t}\phi_{t,o} = & \Gamma \l\{\f{1}{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}] - \l[\f{1}{\delta x_{EP}} + \f{1}{\delta x_{PW}}\r][\t\phi_{P} + (1-\t)\phi_{P,o}]  \right.\\ & \left.  + \f{1}{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}]\r\} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+\f{\rho\delta_{ew}}{\Delta t}\phi_{t} - \f{\rho\delta_{ew}}{\Delta t}\phi_{t,o} + \l[\f{\Gamma}{\delta x_{EP}} + \f{\Gamma}{\delta x_{PW}}\r][\t\phi_{P}] = & \Gamma \l\{\f{1}{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]  \right.\\ & \left. - \l[\f{1}{\delta x_{EP}} + \f{1}{\delta x_{PW}}\r][(1-\t)\phi_{P,o}]  \right.\\ & \left. + \f{1}{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}]\r\} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt
+\end{split}
+\end{equation*}
+Here $\phi_{t}$ represents $\phi_{P}$, because the value of $\phi$ is assumed to be uniform throughout the cell.
+\begin{equation*}
+\begin{split}
+\f{\rho\delta_{ew}}{\Delta t}\phi_{P} + \l[\f{\Gamma}{\delta x_{EP}} + \f{\Gamma}{\delta x_{PW}}\r][\t\phi_{P}] = & \Gamma \l\{\f{1}{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]\right.\\ & \left. - \l[\f{1}{\delta x_{EP}} + \f{1}{\delta x_{PW}}\r][(1-\t)\phi_{P,o}] \right.\\ & \left.  + \f{1}{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}]\r\} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt + \f{\rho\delta_{ew}}{\Delta t}\phi_{P,o} 
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+\f{\rho\delta_{ew}}{\Delta t}\phi_{P} + \l[\f{\Gamma}{\delta x_{EP}} + \f{\Gamma}{\delta x_{PW}}\r][\t\phi_{P}] = & \l\{\f{\Gamma }{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]\right.\\ & \left. - \l[\f{\Gamma }{\delta x_{EP}} + \f{\Gamma }{\delta x_{PW}}\r][(1-\t)\phi_{P,o}] \right.\\ & \left.  + \f{\Gamma }{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}]\r\} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt + \f{\rho\delta_{ew}}{\Delta t}\phi_{P,o} 
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{EP}}\t + \f{\Gamma}{\delta x_{PW}}\t\r][\phi_{P}] = & \f{\Gamma }{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{EP}}(1-\t) - \f{\Gamma }{\delta x_{PW}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}] + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+Let 
+$$a_W = \f{\Gamma}{\delta x_{PW}} \quad,\quad a_E = \f{\Gamma}{\delta x_{EP}} \quad,\quad a_{P,0} = \f{\rho\delta_{ew}}{\Delta t} \quad,\quad a_{P} = a_{P,0} + a_E\t + a_W\t$$
+Under the substitutions above, the expression becomes,
+\begin{equation*}
+\begin{split}
+a_P\phi_{P} = & a_E[\t\phi_{E} + (1-\t)\phi_{E,o}] + \l[a_{P,0} - a_E(1-\t) - a_W(1-\t)\r][\phi_{P,o}] \\ & + a_W[\t\phi_{W} + (1-\t)\phi_{W,o}] + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+When evaluating $\phi$ at the new time step, the old time step would be considered a known quantity. Re-arranging the equation to place all of the known variables on $LHS$ and the unknown variables at the $RHS$,
+\begin{equation*}
+\begin{split}
+a_P\phi_{P} = & a_E\t\phi_{E} + a_E(1-\t)\phi_{E,o} + \l[a_{P,0} - a_E(1-\t) - a_W(1-\t)\r][\phi_{P,o}] \\ & + a_W\t\phi_{W} + a_W(1-\t)\phi_{W,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+ - a_E\t\phi_{E} + a_P\phi_{P}  - a_W\t\phi_{W} = & a_E(1-\t)\phi_{E,o} + \l[a_{P,0} - a_E(1-\t) - a_W(1-\t)\r][\phi_{P,o}] \\ & + a_W(1-\t)\phi_{W,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+
+%Seperator
+\subsubsection{Dirichlet Western Boundary Conditions}
+The expression for the interior cells before the declaration of definitions of $a_W$, $a_E$ and substitution is shown below,
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{EP}}\t + \f{\Gamma}{\delta x_{PW}}\t\r][\phi_{P}] = & \f{\Gamma }{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{EP}}(1-\t) - \f{\Gamma }{\delta x_{PW}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}] + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+
+When applying dirichlet boundary conditions to the cell that is closest to the origin of the coordinate system, several modifications must be made to the expression for the interior cells. Finite difference instead of central differencing is used at the left boundary of the first cell. This would mean the following change of variables to allow the formulation to be suitable at the boundaries,
+$$\delta x_{PW}\to \delta x_{Pw} \quad,\quad \phi_{W} \to \phi_{A} \quad,\quad \phi_{W,o} \to \phi_{A,o}$$
+The first change is to accomodate for the one-sided finite differencing at the west face, the second change is to accomodate for the boundary condition of $\phi_{A}$ at the wall at the new time step and the third change is to accomodate for the boundary condition of $\phi_{A,o}$ at the wall for the old time step. Substituting these changes into the expression,
+
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{EP}}\t + \f{\Gamma}{\delta x_{Pw}}\t\r][\phi_{P}] = & \f{\Gamma }{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{EP}}(1-\t) - \f{\Gamma }{\delta x_{Pw}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{Pw}}[\t\phi_{A} + (1-\t)\phi_{A,o}] + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+
+Placing the unknwon variables to the $LHS$ and the known variables to $RHS$,
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{EP}}\t + \f{\Gamma}{\delta x_{Pw}}\t\r][\phi_{P}] = & \f{\Gamma }{\delta x_{EP}}\t\phi_{E} + \f{\Gamma }{\delta x_{EP}}(1-\t)\phi_{E,o}\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{EP}}(1-\t) - \f{\Gamma }{\delta x_{Pw}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{Pw}}\t\phi_{A} + \f{\Gamma }{\delta x_{Pw}}(1-\t)\phi_{A,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{EP}}\t + \f{\Gamma}{\delta x_{Pw}}\t\r][\phi_{P}]  -\f{\Gamma }{\delta x_{EP}}\t\phi_{E} = &\f{\Gamma }{\delta x_{EP}}(1-\t)\phi_{E,o}\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{EP}}(1-\t) - \f{\Gamma }{\delta x_{Pw}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{Pw}}\t\phi_{A} + \f{\Gamma }{\delta x_{Pw}}(1-\t)\phi_{A,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+Let
+$$a_W = 0 \quad,\quad a_E = \f{\Gamma}{\delta x_{EP}} \quad,\quad a_{P,0} = \f{\rho\delta_{ew}}{\Delta t} \quad,\quad S_P = -\f{\Gamma}{\delta x_{Pw}} \quad,\quad a_{P} = a_{P,0} + \t(a_E + a_W - S_P)$$
+Substituting these variables into the expression above,
+\begin{equation*}
+\begin{split}
+ - a_E\t\phi_{E} + a_P\phi_{P} - a_W\phi_W = & a_E(1-\t)\phi_{E,o} +\l[a_{P,0} - a_E(1-\t) + S_P(1-\t)\r]\phi_{P,o} \\ &  - S_P\t\phi_{A} - S_P(1-\t)\phi_{A,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+
+
+%Seperator
+\subsubsection{Dirichlet Eastern Boundary Conditions}
+The expression for the interior cells before the declaration of definitions of $a_W$, $a_E$ and substitution is shown below,
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{EP}}\t + \f{\Gamma}{\delta x_{PW}}\t\r][\phi_{P}] = & \f{\Gamma }{\delta x_{EP}}[\t\phi_{E} + (1-\t)\phi_{E,o}]\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{EP}}(1-\t) - \f{\Gamma }{\delta x_{PW}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}] + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+
+Much like in determining the eastern boundary condition, one-sided finite difference is employed to find the approximate derivative of $\phi$ with respect to displacement $x$ at the boundary. For the eastern boundary, the unknown boundary would be at the east face of the last cell. The change of variables would then be,
+$$\delta x_{EP}\to \delta x_{eP} \quad,\quad \phi_{E} = \phi_{B} \quad,\quad \phi_{E,o} = \phi_{B,o}$$
+The first change of variable is to accomodate for the one-sided finite difference wherein the distance between the node point $P$ and the eastern face is $\delta x_{eP}$ instead of the previous case wherein the distance between the node point $P$ and the eastern node is $\delta x_{EP}$. The second change of variable is to accomodate for the boundary condition wherein the value of $\phi$ at the right face of the last cell is $\phi_{B}$. $\phi_{B}$ represents the value of $\phi$ at the new time step meanwhile $\phi_{B,o}$ represents the value of $\phi$ at the old time step at the right boundary of the last cell. Substituting these change of variables to modify the interior cell formulation for the right boundary condition,
+
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{eP}}\t + \f{\Gamma}{\delta x_{PW}}\t\r][\phi_{P}] = & \f{\Gamma }{\delta x_{eP}}[\t\phi_{B} + (1-\t)\phi_{B,o}]\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{eP}}(1-\t) - \f{\Gamma }{\delta x_{PW}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{PW}}[\t\phi_{W} + (1-\t)\phi_{W,o}] + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{eP}}\t + \f{\Gamma}{\delta x_{PW}}\t\r][\phi_{P}] = & \f{\Gamma }{\delta x_{eP}}[\t\phi_{B} + (1-\t)\phi_{B,o}]\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{eP}}(1-\t) - \f{\Gamma }{\delta x_{PW}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{PW}}\t\phi_{W} + \f{\Gamma }{\delta x_{PW}}(1-\t)\phi_{W,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+Placing the unknown variables at $LHS$ and the known variables at $RHS$,
+\begin{equation*}
+\begin{split}
+\l[\f{\rho\delta_{ew}}{\Delta t} + \f{\Gamma}{\delta x_{eP}}\t + \f{\Gamma}{\delta x_{PW}}\t\r][\phi_{P}]  - \f{\Gamma }{\delta x_{PW}}\t\phi_{W} = & \f{\Gamma }{\delta x_{eP}}[\t\phi_{B} + (1-\t)\phi_{B,o}]\\ & +\l[\f{\rho\delta_{ew}}{\Delta t} - \f{\Gamma }{\delta x_{eP}}(1-\t) - \f{\Gamma }{\delta x_{PW}}(1-\t)\r][\phi_{P,o}] \\ &  + \f{\Gamma }{\delta x_{PW}}(1-\t)\phi_{W,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+Let
+$$a_W = \f{\Gamma }{\delta x_{PW}} \quad,\quad a_E = 0 \quad,\quad a_{P,0} = \f{\rho\delta_{ew}}{\Delta t} \quad,\quad S_P = -\f{\Gamma}{\delta x_{eP}} \quad,\quad a_{P} = a_{P,0} + \t(a_E + a_W - S_P)$$
+\begin{equation*}
+\begin{split}
+-a_E\t\phi_E + a_{P}\phi_{P}  - a_W\t\phi_{W} = & -S_P[\t\phi_{B} + (1-\t)\phi_{B,o}] + \l[a_{P,0} + S_P(1-\t) - a_W(1-\t)\r][\phi_{P,o}] \\ &  + a_W(1-\t)\phi_{W,o} + \f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt 
+\end{split}
+\end{equation*}
+%Seperator
+%Seperator
+\subsection{Part c}
+The workings in the previous section is performed with the arbitray scalar function $\phi$, and the arbitrary variables $\rho$ and $\Gamma$. The source term $\dst{\int^{t+\Delta t}_{t} S_\phi\,dt}$ has not been specified. In this section, the arbitrary variables will be mapped to the problem variables to apply all the formulations to the fortran program.
+\\~\\Geometrically, the variable $x$ could be re-interpreted in this problem to be vertical displacement $y$. This would set the western boundary condition of the arbitray $\phi$ case to be the bottom boundary condition in the momentum diffusion problem. The eastern boundary condition of the arbitrary $\phi$ case would be set to the top boundary condition in the momentum diffusion problem. Let positive direction of $y$ then also be interpreted going "up" in the vertical direction. The top wall of the channel would be at positive $H$ $y$-value. The unsteady momentum governing equation for this problem is shown below,
+$$\f{\p u}{\p t} = \nu\f{\p^2 u}{\p y^2} -\f{1}{\rho}\f{\p p}{\p x}$$
+wherein $\rho$ represents density and $\nu$ represents viscosity. The unsteady diffusion equation that is the basis of the previous formulation is shown below,
+$$\f{\p}{\p t}(\rho \phi) = \na\d(\Gamma \na\phi) + S_\phi$$
+Under the $1$-dimensional assumption and uniformity of $\rho$ as well as $\Gamma$,
+$$\rho\f{\p}{\p t}(\phi) = \na\d(\Gamma \na\phi) + S_\phi = \f{\p}{\p x}\l[\Gamma \f{\p}{\p x}(\phi)\r] + S_\phi = \Gamma \f{\p^2}{\p x^2}(\phi) + S_\phi$$
+$$\f{\p}{\p t}(\phi) = \f{\Gamma}{\rho} \f{\p^2}{\p x^2}(\phi) + \f{S_\phi}{\rho}$$
+
+By comparing the differential forms of the unsteady diffusion equation and unsteady momentum governing equation,
+$$\phi = u \quad,\quad x = y \quad,\quad \f{\Gamma}{\rho_\phi} = \nu \quad,\quad \f{S_\phi}{\rho_\phi} = -\f{1}{\rho_{prob}}\f{\p p}{\p x}$$
+Distinction has been made between $\rho_{\phi}$ and $\rho_{prob}$. $\rho_\phi$ represents the value of the arbitrary variable $\rho$ in the general unsteady diffusion equation meanwhile $\rho_{prob}$ represents the fluid density in the momentum diffusion problem. Since $\phi$ is a sclar field, and velocity $u$ is typically a sclar, here $u$ is assumed to be the magnitude of the horizontal velocity of the fluid, so that it could be represented by $\phi$. In the momentum diffusion problem, the density of the fluid is assumed to remain constant and the derivative of pressure along the horizontal distance of the channel is assumed to be constant. Therefore, $S_\phi$ must also be a constant,
+$$\f{S_\phi}{\rho_\phi} = -\f{1}{\rho_{prob}}\f{\p p}{\p x}$$
+$$S_\phi = -\f{\rho_\phi}{\rho_{prob}}\f{\p p}{\p x}$$
+
+Given that $S_{\phi}$ is some constant that could be determined by the momentum diffusion problem definition,
+$$\f{\delta_{ew}}{\Delta t}\int^{t+\Delta t}_{t} S_\phi\,dt = \f{\delta_{ew}}{\Delta t} S_\phi\l[t\r]^{t+\Delta t}_{t} = \f{\delta_{ew}}{\Delta t} S_\phi\l[(t+\Delta t) - (t)\r] = \f{\delta_{ew}}{\Delta t} S_\phi\Delta t = \delta_{ew} S_\phi$$
+
+There exists a non-unique way to choose the variable mappings for $\rho_{\phi}$, $\Gamma$. For a simple implementation of the general diffusion problem into the momentum diffusion, let $\rho_{\phi} = 1$. Therefore,
+$$\phi = u \quad,\quad x = y \quad,\quad \Gamma = \nu \quad,\quad S_\phi = -\f{1}{\rho_{prob}}\f{\p p}{\p x}$$
+
+
+The code was modified to simulate unsteady diffusion of momentum and given a few additional features. The modified fortran code is shown below,
+
+
+\end{center}
+
+\end{document}

@@ -1,0 +1,4 @@
+Description = "Laplace Transform Introduction"
+Pre_Requisites = ["Base",]
+Organization = "C"
+Authors = ["Ginger Gengar", "Dark Star 34",]

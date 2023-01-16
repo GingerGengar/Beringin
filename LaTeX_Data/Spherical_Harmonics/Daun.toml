@@ -1,0 +1,4 @@
+Description = "Example of Spherical Harmonics in Ocean Waves"
+Pre_Requisites = ["PDE",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

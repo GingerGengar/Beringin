@@ -1,0 +1,4 @@
+Description = "Introduction to Partial Differential Equations"
+Pre_Requisites = ["Linear_DE", "Del"]
+Organization = "B"
+Authors = ["Ginger Gengar",]

@@ -1,0 +1,81 @@
+%Type of Document
+\documentclass[a4paper, 12pt]{report}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+%Determine Document Sizing
+\geometry{portrait, margin=0.8in}
+
+\begin{comment}
+\end{comment}
+
+\begin{document}
+
+%%Title
+\title{Physics Exploratory Notes}
+\author{Ginger Gengar}
+\date{16th January 2020}
+\maketitle
+\newpage
+
+\tableofcontents
+
+\begin{center}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subimport{../Binary_System/}{Binary_Orbit.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: chapter
+End Level: chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subimport{../Gauss_Law/}{Gauss_Law.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: chapter
+End Level: chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subimport{../Radial_Fields/}{Radial_Fields.tex}
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Start Level: chapter
+End Level: chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aditional Comments:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\end{comment}
+
+\end{center}
+\end{document}
+

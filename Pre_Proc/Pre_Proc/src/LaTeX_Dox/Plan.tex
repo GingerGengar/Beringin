@@ -1,0 +1,321 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{commath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{float}
+
+\geometry{portrait, margin= 0.5in}
+\setcounter{MaxMatrixCols}{30}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+	columns=fullflexible,
+	frame=single,
+	breaklines=true,
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	keepspaces=true,                 
+	numbersep=5pt,                  
+	showspaces=false,               
+	showtabs=false,                  
+	tabsize=2
+}
+
+\title{Archives Package Management}
+\author{Hans C. Suganda}
+\date{$21^{st}$ June 2022}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\begin{center}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Rationale}
+\begin{comment}
+\end{comment}
+As the Archives project gets larger and larger, it became necessary to organize the content. 
+A good document must contain a high density of useful information, which is defined as the amount of useful information divided by page number.
+If the information density is too low, the reader will get disinterested.
+%Seperator
+\\~\\Since the Archives project is meant to cater to a large variety of audience whose technical backgrounds vary from experts to beginners, the Archives project needs capabilities to display the "depth" of a certain topic.
+For example, a beginner might need an explanation to the most basic pre-requisite concepts to an advanced topic, but an expert might not need this since they already know from heart the basics of the topic.
+%Seperator
+\\~\\The reader can be thought of something similar to a computational engine in logical capability, and the Archives can be thought of something akin to source code.
+What is needed now is a package manager that compiles the content/source code into useful readable format with all the necessary pre-requisites and is conflict-free.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Learning Model}
+\begin{comment}
+\end{comment}
+How do humans really learn? From experience, it seems that academic knowledge should be treated like some kind of game. 
+This seems odd. Really? A game? Let me explain. 
+%Seperator
+\\~\\A game is typically iterable over long periods of time. 
+A game ideally should be non-deterministic because if it was deterministic then everyone would know the final outcome of the game based on the initial setup.
+If everyone could predict the final outcome of the game, there is no point in playing it and hence, the game is not iterable over time.
+This is an important quality that makes games "fun" because it is really difficult to tell who is going to "win" or "what" is going to happen. 
+Academic knowledge is somewhat like this. 
+Because of the complexities and difficulty within it, it is essentially impossible to tell what would happen in the future, which means that academic knowledge first the iterable criteria.
+%Seperator
+\\~\\A game has to have rules. These rules are important because it constrains the players in a way such that their interactions become interesting. If there were no rules, then the game quickly devolves to a more predictable and less interesting state. Academic knowledge is constrained to be grounded in objective truth. The rules to academic knowledge is basically the rules of the universe itself, and the universe is unpredictable.
+This means investigators to these types of games have a high chance of discovering unexpected behaviours and patterns which makes academic knowledge very interesting.
+This means that academic knowledge satisfies the rules constrains.
+%Seperator
+\\~\\A game typically involves multiple parties. A game that is played alone can be fun, but it would be more fun to play with friends.
+Academic knowledge is highly collaborative because of the sheer vastness of it. It is impossible for someone to know all the sum of human knowledge all at the same time, so having collaboration is the only viable way to proceed more effectively. This nature certainly encourages collaboration and hence ties the community aspect of games into academic knowledge.
+%Seperator
+
+\begin{comment}
+I would argue that academic knowledge is a much more important game that typical games out there because it has the side effect of producing technological advancements.
+Technological advancements will certainly benefit our current lives and so this useful side effect of academic knowledge would make academic knowledge a superior form of game compared to others.
+
+The downside of academic knowledge is that it has a high overhead. Studying for the initial rules before getting to the manipulation part is an incredibly time-consuming and difficult process.
+Therefore, this is a high effort, high stakes, high reward type of game.
+Unlike the normal video games that require very little investment to be able to play.
+\end{comment}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Human Motivation}
+\begin{comment}
+\end{comment}
+Humans are not machines. We have an intrinsic will and frankly learning a new subject is very difficult.
+Before we even begin to ask that a learner make the appropriate sacrifices in time and effort, we must show "why" they should. 
+A vision that is powerful enough and inspiring enough is necessary to push through the difficulties of learning. 
+It is not sufficient to just "command" that we all should learn a topic and sink so much time and rescources if there is not much to be ultimately gained.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Understanding New Concepts}
+\begin{comment}
+\end{comment}
+From experience, it seems that there are $2$ primary ways someone could learn a particular topic. 
+The first one is to learn the "game" by being told explicitly what the rules are and then playing the "game".
+The second one is to learn the "game" by first playing it and based on what works and fails, infer the rules that dictate the "game".
+There are advantages and disadvantages to both methods.
+%Seperator
+\\~\\Learning a concept by looking at the derivation is a very direct and general way to learn a particular topic.
+If this process is completed succesfully, the learner would have a complete picture and is able to understand all the possible cases.
+However, this method requires extreme attention to detail and requires alot of mental effort. 
+Moreover, not everyone has the necessary pre-requisite to attempt such a direct assault on the topic.
+%Seperator
+\\~\\Learning a concept by looking at the examples and then trying to "infer" the theory is a widely used method.
+This method typically requires less mental effort, but would fail in letting the learner know why and how the theory came to be.
+Moreover, if the example does not cover all possible cases, then it is possible that the learner later be exposed to a case not covered in the examples part and they would be left confused and unable to do anything.
+%Seperator
+\\~\\It is also very common to learn the rules first by looking at the examples, and then reading the theory behind it.
+This is a good method provided examples do exist because it combines the initial speed and ease of learning by example, with the generality and completeness of the theory/derivation.
+A purely leraning by theory approach and purely learning by example approach seems inadequate.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Reinforcement \& Adjustments}
+\begin{comment}
+\end{comment}
+Human beings are creatures of habits and repetition. 
+To really decrease the overhead of thinking about something and increase speed, humans need repetition at a particular task.
+This is very applicable to learning. Without applying what we learn, we would simply forget what was learnt and would have to rebuild from scratch again.
+This is why it is incredibly important to reinforce the concept using repetition.
+Understanding the concept is halfway, the other half is repetition to truly remember everything. 
+Eventually with sufficient reptition, even the hardest concepts are as easy as flipping out like $2+3 = 5$. Remember that once upon a time a very long time ago, we all had difficulty with additions.
+There is no difference back then and now, only the names of the topics have changed.
+%Seperator
+\\~\\No matter how perfectly we try to understand new novel information, it is very likely we would not understand it completely correctly at first. 
+This is limited by alot of factors but primarily by language and context. A particular word like say "value" would mean many different things to many different people from a variety of life contexts.
+Therefore for a learner to truly grasp a particular concept as perfectly as possible, the last stage would be to correct all of the misconceptions about a particular topic.
+%Seperator
+\\~\\The most effective way to figure out all the misconceptions is to try out practise problems and checking with the solution. 
+Practising the problems force the learner to apply what they know so that any misconceptions can be revealed.
+Checking against the solution verifies any major discrepancies and mistakes. These mistakes can be used by the learner as feedback to correct their own understanding.
+By the end of the process, the learner should have a complete understanding of the concept with as few misconceptions as possible.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Structure of Archives Project}
+\begin{comment}
+\end{comment}
+The Archives Project is essentially made of Nodes.
+Conceptually, a Node is the most indivisible unit of content.
+A Node should contain all of the following files, in the same directory.
+This makes sense because why would you want to spread a single Node's content over differing directories?
+Splitting the content this way allows us to focus on one aspect at a time.
+Apart from the metadata, all the files listed below should contain valid \LaTeX content but without the pre-amble.
+This means the pure content is not compilable on its own but with the correct pre-amble, is compilable.
+\begin{enumerate}
+\item Metadata: This contains information on how this particular depends on other Nodes, and which other Nodes depend on this particular Node.
+\item Rationale: Why should you learn this topic? Why is this topic important? What are the implications to this topic?
+\item Theory file: The derivation, and the most abstract generalized theory the entire concept is based on. This is for learners who learn the game by being told what the rules are.
+\item Examples: This is how the theory is applied. This is a realization of the Theory to a specific set of cases. This is for learners who learn the game by playing it first and then inferring the rules.
+\item Problems: These are problem sets which are similar to the examples which helps learners train for a particular concept. These in conjunction to the solution can be used for extra examples.
+\item Solutions: These are the exact solutions to the problems posed. This is important to give feedback on particular mistakes.
+\end{enumerate}
+The file structure is translated directly from the human learning model.
+The rationale covers the human motivational aspect. 
+Without the rationale, humans do not have anything they can hold on to in withstanding the difficulty of learning a new subject.
+\\~\\The Theory \& Example are files which corresponds to the Understanding New Concepts part.
+Both files support learning the game by playing it or learning the game by reading its explicit rules. 
+This makes the Archives a very versatile environment.
+\\~\\The Problems \& Solutions correspond to the Reinforcement-Adjustment aspect.
+The Problems \& Solutions ensure that learners can test their undertanding and be corrected in a constructive and helpful environment.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Pre-Processor}
+\begin{comment}
+\end{comment}
+We take inspiration of the pre-processor from the pre-processor of the \texttt{C} language whose primary function is copy-pasting source code. 
+The pre-processor for \texttt{Beringin} is written in \texttt{Rust} for a high performance and memory safety in handling nodes and so on.
+Currently, the pre-processor contains $4$ separate modules:
+\begin{itemize}
+\item Tree: this is where a single node structure is defined. Helper functions pertaining to the initialization, and printing of a node structure are implemented in this module.
+\item Loading: this handles going through all the directories in Beringin and loading the node representations into main working memory.
+\item Assembly: given the intended node target, this handles the printing queue order of all the relevant nodes.
+\item Output: given the printing queue order, this handles copy pasting the node contents in order into a designated output file.
+\end{itemize}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Trees.rs}
+\begin{comment}
+\end{comment}
+The Node data is obtained from the Metadata file. Programmatically, the Node is an object which contains the information listed below:
+\begin{itemize}
+\item Topic Name: A unique name to identify this Node or content. This is the only way to identify a Node. No two Node can have the same name.
+\item Description: This is a short description of the topic contained in this Node. This 
+\item Pre-Requisites: What are the other Nodes does this particular Node depend on? The other Nodes will be identified by their unique topic name.
+\item Builds-Into: What are other Nodes uses this particular Node as a pre-requisite? The other Nodes will be identified by their unique topic name.
+\item File List: What are the names of the files containing the Rationale, Theory, Examples, Problems, and Solutions? If this is left blank, then a default name is assumed.
+\item Organizational Hierarchy Level: Relative level of the Node. This can only hold the values between $1-7$ which corresponds to the default maximum organizational hierarchy \LaTeX has.
+\item Author: Who wrote this particular piece. This is not really necessary, it is just for fun. This can be left blank.
+\end{itemize}
+The source code implementation of a node from our previous discussion is shown below,
+\lstinputlisting[language=C]{../Trees.rs}
+The source code above also implements an \texttt{enum} named \texttt{OrgHier} that is used to represent the organizational hierarchy level of a certain node as discussed.
+The source code above also implements debugging functions to display the Node data structure from the command line so that debugging can be more convenient.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Loading.rs}
+\begin{comment}
+\end{comment}
+All \LaTeX nodes within Beringin are placed in a single main directory.
+Each node resides in its own node-specific directory whose name is going to represesnt the Node name in main memory.
+All of the metadata files and the \LaTeX file specifically for a single node is going to be placed inside each individual node-specific directory.
+Nodes are NEVER to be hidden inside the directory of another node. 
+This means that all of the nodes in the archive is explicit and the directory structure is very shallow.
+No recursion is needed to traverse ALL of the nodes in the project.
+%Seperator
+\\~\\The source code that handles the node loading is shown below,
+\lstinputlisting[language=C]{../Loading.rs}
+%Include Image for clarity
+\\~\\Each \LaTeX node has a metadata file named \texttt{Daun.toml} . 
+When the pre-processor is run, the pre-processor only loads the information presented in the metadata file into main memory.
+The pre-processor will go through every node-specific directory within the singe main directory and then initialize a node object and append it to a rust vector.
+Each node that has been read will reside within this rust vector.
+This mmeans that all loaded nodes can be identified by their position in the rust vector.
+This is the reason why all the pre-requiste and build-to vectors are of type \texttt{usize}: because they reference other nodes based on position in the node vector.
+%Seperator
+\\~\\Loading the nodes only require a single pass through all of the directories.
+Nodes are initialized with their pre-requiste and build-to lists as empty vectors.
+The pre-requiste list and the build-to list of the metadata file are loaded into string vectors.
+We then used a hash map to match the string vectors to the actual names of the nodes and "bind" the pre-requiste node and the build node.
+Binding is a process where we append the pre-requiste list of the build-to node and we also append the build-to list of the pre-requistie node.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Assembly.rs}
+\begin{comment}
+In principle, the Algorithm the pre-processor is quite simple. Given the Node and certain user-specific settings, the algorithm will navigate through all of the possible directories and files all throughout the Archives to then fetch all of the Nodes which are pre-requisites to the Given Node. The algorithm will then dump all of those data into a fully fledge \LaTeX file at which the user can compile to see the final result. This way, if the user wants to make notes or whatever, they can directly modify the source code of the document they are seeing.
+\end{comment}
+Complicated topics have a "deep" dependency, requiring alot of other nodes meanwhile some simple topics might have a "shallow" dependency, only requiring just a few other nodes. 
+The "depth" that the pre-processor has to travel to is changing based on which node the pre-processor is asked to run.
+This is the perfect problem to apply recursion to.
+The source code below handles building the nodes in the correct order by using recursion,
+\lstinputlisting[language=C]{../Assembly.rs}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Output.rs}
+\begin{comment}
+\end{comment}
+Producing an output is relatively easy.
+Once we have the build-order which is basically a vector of \texttt{usize} indicating which nodes to print and in which order, we can begin copy pasting all the required nodes to a specified output file.
+The copy pasting function works by loading the contents of the original \LaTeX file onto main memory and then appending the contents to the target file.
+After appending the contents of one file, the content of the already copied file is freed from main memory and the process begins again.
+This makes the pre-processor very memory efficient because it only loads the content one node at a time instead of loading the contents of ALL NODES.
+\lstinputlisting[language=C]{../Output.rs}
+
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Further Features}
+\begin{comment}
+\end{comment}
+%Seperator
+There are a few important realizations. Each run of the algorithm will choose Nodes such that their organizational Hierarchy Level is going to be consecutive. 
+Not every single Node will have a complete File-List. This is because there will be some Nodes which are just sections, which will contain the rationale, but then not contain practise problems.
+There will be the subsubsections which are specific and may not contain rationale but then contains problems and solution so not every node will have one.
+%Seperator
+\\~\\Why do we do it this way? because there are certain classes of nodes that rely on the same rationale or that its not possible for you to have questions from such a broad topic. For example you have differential equations, but which type do you want? Certainly the study of differential equations has a good rationale, but do you want practise problems literally placed at the section before the different types of odes are even explained?
+%Seperator
+\\~\\Suppose we have a run that produces Nodes with organizational hierarchy lists: 7, 6, 5, 4, the user should also have some way of reducing all of them by a set amount so we dont have parts and chapters for a small document. So the organizational hierarchy list after modification becomes 5, 4, 3, 2 or something like that.
+%Seperator
+\\~\\We may also need a package checker, to make sure that the dependencies are done correctly.
+Introduce variable definitions locally
+Introduce variable definitions at the start of the document like mark drela's book
+Its okay if it is repetitive
+
+
+\end{center}
+\end{document}
+

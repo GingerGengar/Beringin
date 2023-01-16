@@ -1,0 +1,171 @@
+%Type of Document
+\documentclass[a4paper, 12pt]{report}
+
+%Load Pre-ambles
+\usepackage{../../Environment/Packages}
+\usepackage{../../Environment/Conventions}
+\usepackage{../../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{Inviscid Compressible Flow}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Thermodynamic Relations}
+\begin{comment}
+\end{comment}
+For an ideal gas, 
+$$p = \rho R T$$ 
+wherein $p$ represents pressure, $\rho$ represents density, and $T$ represents temperature in Kelvins.To compute the $c_v$ and $c_p$ constants,
+$$c_p = \f{\g R}{\g - 1}\quad,\quad c_v = \f{R}{\g-1}$$
+wherein $\dst{\g = \f{c_p}{c_v}}$. The expression for enthalphy $h$,
+$$h = e + pv$$
+Under the assumption that $c_v$ and $c_p$ as are constants,
+$$e = c_v T\quad,\quad h = c_p T$$
+Assuming no entropy generation via diffusion and that the coefficients $c_v$ and $c_p$ are constant,
+$$s_2-s_1 = c_p\ln\l(\f{T_2}{T_1}\r)-R\ln\l(\f{p_2}{p_1}\r) \quad,\quad s_2-s_1 = c_v\ln\l(\f{T_2}{T_1}\r) + R\ln\l(\f{v_2}{v_1}\r)$$
+wherein the subscript denotes the state of the fluid,a nd $v$ represents specific volume, the reiprocral of density. Only for isentropic processes, the following is true,
+$$\f{p_2}{p_1} = \l(\f{\rho_2}{\rho_1}\r)^\g = \l(\f{T_2}{T_1}\r)^{\g/(\g-1)}$$
+For flow that is steady, adiabatic, and inviscid, the following equation holds true,
+$$h_0 = h + \f{1}{2}v_f^2$$
+wherein $h_0$ represents stagnation enthalphy, $h$ represents current enthalphy, and $v_f$ represents fluid velocity. The equation above holds true for any two points in a single streamline that follows the conditions stated above.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Shock Relations}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Normal Shocks}
+\begin{comment}
+\end{comment}
+For normal shocks, there are $3$ governing equations and $2$ thermodynamical relationships that is applicable. For continuity, momentum and energy,
+$$\rho_1u_1 = \rho_2u_2 \quad,\quad p_1 + \rho_1 u_1^2 = p_2 + \rho_2 u_2^2 \quad,\quad h_1 + \f{1}{2}u_1^2 = h_2 + \f{1}{2}u_2^2$$
+The thermodynamic relations,    
+$$h_2 = c_pT_2 \quad,\quad p_2 = \rho_2 RT_2$$
+The speed of sound $a$ as well as the Mach number $M$ is given by the following equations,$$a = \sqrt{\f{\g p}{\rho}} = \sqrt{\g RT} \quad,\quad M = \f{v_f}{a}$$
+The $0$ subscript is often used to symbolize stagnation conditions, wherein the small element of fluid is brought to rest adiabatically, the $*$ subscript is used to represent sonic conditions, wherein the small element of fluid is brought to sonic conditions. The equation relating speed of sound and the relationship between speed of sound and sonic speed of sound, as well as Mach and sonic Mach number,
+$$\f{a^2}{\g-1} + \f{1}{2}u^2 = \f{\g+1}{2(\g-1)}a_*^2\quad,\quad M_*^2 = \f{(\g+1)M^2}{2 + (\g-1)M^2}$$
+For calorically perfect gases, which is the assumption that $c_v$ and $c_p$ remain as constants, the general relations between temperature, pressure and density to their respective stagnation conditions,
+$$\f{T_0}{T} = 1 + \f{\g-1}{2}M^2 \quad,\quad \f{p_0}{p} = \l[1 + \f{\g-1}{2}M^2\r]^{\g/(\g-1)} \quad,\quad \f{\rho_0}{\rho} = \l[1 + \f{\g-1}{2}M^2\r]^{1/(\g-1)}$$
+The temperature, pressure and density relations between sonic conditions and stagnant conditions,
+$$\f{T_*}{T_0} = \f{2}{\g+1} \quad,\quad \f{p_*}{p_0} = \l[\f{2}{\g+1}\r]^{\g/(\g-1)} \quad,\quad \f{\rho_*}{\rho_0} = \l[\f{2}{\g+1}\r]^{1/(\g-1)}$$
+The Mach number before and after shock,
+$$M_2^2 = \f{1+[(\g-1)/2]M_1^2}{\g M_1^2-(\g-1)/2}$$
+The density, velocity, and pressure relations before and after shock,
+$$\f{\rho_2}{\rho_1} = \f{u_1}{u_2} = \f{(\g+1)M_1^2}{2+(\g-1)M_1^2} \quad,\quad \f{p_2}{p_1} = 1 + \f{2\g}{\g+1}(M_1^2 - 1)$$
+wherein the subscript $1$ is used to represent quantities before the shock and $2$ is after the shock. The relations for temperature and enthalphy,
+$$\f{T_2}{T_1} = \f{h_2}{h_1} = \l[1 + \f{2\g}{\g+1}(M_1^2 - 1)\r]\l[\f{2+(\g-1)M_1^2}{(\g+1)M_1^2}\r]$$
+For the stagnation temperature and pressure before and after the shock,
+$$T_{0,1} = T_{0,2} \quad,\quad \f{p_{0,2}}{p_{0,1}} = e^{-(s_2-s_1)/R} = \l[1+\f{2\g}{\g+1}(M_1^2-1)\r]^{-1/(\g-1)}\l[\f{(\g+1)M_1^2}{(\g-1)M_1^2+2}\r]^{\g/(\g-1)}$$
+The ratio of nozzle cross-section at any arbitrary point of the nozzle to the nozzle cross-section at sonic conditions as a function of Mach number,
+$$\l(\f{A}{A_*}\r)^2 = \f{1}{M^2}\l[\f{2}{\g+1}\l(1+\f{\g-1}{2}M^2\r)\r]^{(\g+1)/(\g-1)}$$
+For choked flows, the exit Mach number $M_e$ with or without shock,
+$$M_e^2 = \f{1}{(\g-1)}\l\{-1 + \l[1 + 2(\g-1)\l(\f{2}{\g+1}\r)^{\dst{\f{\g+1}{\g-1}}}\l(\f{p_{0,1}A_t}{p_e A_e}\r)\r]^{1/2}\r\}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Oblique Shocks}
+\begin{comment}
+\end{comment}
+The mathematical expression used relating Mach number, $\t$ and $\be$ is shown below,
+$$\tan(\t) = 2\cot(\be)\l\{\f{M_1^2\sin^2(\be) - 1}{M_1^2[\g+\cos(2\be)]+2}\r\}$$
+Reiterating the relation shown in the previous problem,
+$$M_{n,1} = M_1\sin\be \quad,\quad M_{n,2} = M_2\sin(\be-\t)$$
+The relationship of the quantities between at $M_{n,1}$ and $M_{n,2}$ could be found using the relations at the normal shock relations. The only minor modification is that the stagnant relations for the normal shocks are no longer applicable to oblique shocks due to the tangential velocity of the fluid being conserved across the oblique shock.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Prantdl-Meyer Expansion Theory}
+\begin{comment}
+\end{comment}
+An interesting property of the Prandtl Meyer function $\nu(M)$ wherein $M$ represents Mach number,
+$$\t = \nu(M_2) - \nu(M_1)$$
+wherein $M_2$ represents Mach number after expansion meanwhile $M_1$ represents Mach number before expansion. Manipulating this relation for convenience,
+$$\nu(M_2) = \t + \nu(M_1)$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Shock-Expansion Theory}
+\begin{comment}
+\end{comment}
+The coefficient of lift $c_L$ and coefficient of drag $c_D$ in terms of coefficient of pressures $c_{p3}$ and $c_{p2}$ is shown below,
+$$c_L = (c_{p3}-c_{p2})\cos\a \quad,\quad c_D = (c_{p3}-c_{p2})\sin\a$$
+The coefficient of pressure by definition,
+$$c_p = \f{p-p_\infty}{\f{1}{2}\rho_\infty U_\infty^2} = \f{2(p-p_\infty)}{\rho_\infty U_\infty^2} = \f{2 p_\infty}{\rho_\infty U_\infty^2}\l(\f{p}{p_\infty}-1\r)$$
+wherein $U_\infty$ is used to indicate velocity infinitely far away from the wing. Other relations for Mach number and speed of sound,
+$$M=\f{U}{a} \quad,\quad a = \sqrt{\g RT} \quad,\quad p=\rho R T$$
+Manipulating the Mach number relation and the ideal gas relation,
+$$M_\infty a_\infty = U_\infty \quad,\quad \f{p_\infty}{R T_\infty} = \rho_\infty $$
+Substituting both relations into each other,
+$$\rho_\infty U_\infty^2 = \f{p_\infty}{R T_\infty}\times M_\infty^2 a_\infty^2$$
+Substituting for the speed of sound $a_\infty$ in terms of temperature and ratio of specific heats,
+$$\rho_\infty U_\infty^2 = \f{p_\infty}{R T_\infty}\times M_\infty^2 \g R T_\infty = p_\infty M_\infty^2 \g $$
+Substituting into the expression for coefficient of pressures,
+$$c_p = \f{2 p_\infty}{p_\infty \g M_\infty^2}\l(\f{p}{p_\infty}-1\r) = \f{2 }{\g M_\infty^2}\l(\f{p}{p_\infty}-1\r)$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Linear Theory}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Supersonic}
+\begin{comment}
+\end{comment}
+The coefficient of pressure in supersonic linear theory is shown below,
+$$c_{p,u} = -\f{2\t}{\sqrt{M_\infty^2-1}} \quad,\quad c_{p,l} = \f{2\t}{\sqrt{M_\infty^2-1}}$$
+The important equations for the coefficients in supersonic linear theory are listed below,
+$$c_L = \f{4(\a+\Delta \a)}{\sqrt{M_\infty^2-1}} \quad,\quad c_D = \f{4}{\sqrt{M_\infty^2-1}}[(\a+\Delta \a)^2+K_2+K_3]$$
+$$c_{m,le} = \f{4}{\sqrt{M_\infty^2-1}}\l[-\f{1}{2}\a+K_1\r] \quad,\quad c_{m,ac} = \f{4}{\sqrt{M_\infty^2-1}}\l[K_1+\f{\Delta\a}{2}\r]$$
+wherein the various constants $K$ as well as $\Delta \a$,
+$$K_1 = \int^{1}_{0}\l(\f{d\h{y_c}}{d\h{x}}\r)\h{x}\,d\h{x} \quad,\quad K_2 = \int^{1}_{0}\l(\f{d\h{y_c}}{d\h{x}}\r)^2\,d\h{x} \quad,\quad K_3 = \int^{1}_{0}\l(\f{d\h{y_t}}{d\h{x}}\r)^2\,d\h{x}$$
+$$\Delta \a = -\int^{1}_{0}\f{d\h{y_c}}{d\h{x}}\,d\h{x} = -(\h{y_{te}}-\h{y_{le}})$$
+wherein the various $y$-values are further expressed below,
+$$y_c = \f{1}{2}[y_u(x)+y_l(x)] \quad,\quad y_t = \f{1}{2}[y_u(x)-y_l(x)]$$
+The areodynamic centers and variables of integration are shown below,
+$$\h{x} = \f{x}{c} \quad,\quad \h{y} = \f{y}{c} \quad,\quad \f{x_{ac}}{x}=\f{1}{2}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Subsonic}
+\begin{comment}
+\end{comment}
+Based on the Prandtl-Glauert Rule
+$$c_L = \f{c_{L,0}}{\be} \quad,\quad c_{m,le}= \f{c_{m,le,0}}{\be} \quad,\quad c_D = 0$$
+wherein the variable $\be = \sqrt{1-M_\infty^2}$. Let $c_p$ represet coefficient of pressure in compressible flow meanwhile $c_{p0}$ represent the corresponding coefficient of pressure in the incompressible flow. The Prandtl-Glauert rule relating $c_P$ to $c_{p0}$,
+$$c_p = \f{c_{p0}}{\sqrt{1-M^2}}$$
+The Karman-Tsien rule relating $c_P$ to $c_{p0}$,
+$$c_p = \f{c_{p0}}{\dst{\sqrt{1-M^2} + \l(\f{M^2}{1+\sqrt{1-M^2}}\r)\l(\f{c_{p0}}{2}\r)}}$$
+The Laitone's rule relating $c_P$ to $c_{p0}$,
+$$c_p = \f{c_{p0}}{\dst{\sqrt{1-M^2} + c_{p0} M^2\l[1+\l(\f{\g-1}{2}\r)M^2\r]\l[\f{\sqrt{1-M^2}}{2}\r]}}$$
+The equation for critical Mach number $M_{cr}$ is shown below,
+$$c_{p,cr} = \f{2}{\g M_{cr}^2}\l\{\l[\f{\dst{1+\l(\f{\g-1}{2}\r)M_{cr}^2}}{\dst{\f{\g+1}{2}}}\r]^{\g/(\g-1)} - 1\r\}$$
+The minimum coefficient of pressure at critical Mach number could then be expressed by the Prandtl-Glauert rule shown below,
+$$c_{p,cr} = \f{c_{p0,min}}{\sqrt{1-M_{cr}^2}}$$
+Other rules could potentially be used such as the Laitone or the Karman-Tsien for the expression of $c_{p,cr}$. Equating $c_{p,cr}$ would produce an equation whose solution of $M_{cr}$ represents the critical Mach number.
+\end{center}
+
+\end{document}

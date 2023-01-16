@@ -1,0 +1,342 @@
+%Type of Document
+\documentclass[a4paper, 12pt]{report}
+
+%Load Pre-ambles
+\usepackage{../../Environment/Packages}
+\usepackage{../../Environment/Conventions}
+\usepackage{../../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+%Seperator
+%Seperator
+%Seperator
+\section{Problem 1}
+\begin{comment}
+\end{comment}
+
+Reiterating Euler's law,
+$$\b{\Gamma}^{c} = {}^{e}\dot{\b{H}}^{c}$$
+wherein $c$ represents the center of mass of the system of particles or a stationary point in the inertial reference frame. Reiterating the definition of angular momentum $H$,
+$$\b{H} = I \b{\w}$$
+Here, the angular momentum $\b{H}$ is taken with respect to the origin of the body fitted coordinates. The reference for $\b{H}$ may or may not be the center of mass in the definition of angular momentum based on the inertia matrix. To prove Euler's equations of motion, it is necessary to take the angular momentum with respect to the center of mass of the rigid body. Therefore,
+$$\b{H}^{c} = I_c \b{\w}$$
+wherein $I_c$ represents the inertia matrix of the body taken with respect to the center of mass. Applying
+ the kinematic relations for the vector $\b{H}^c$,
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = \ov{n}{\f{\p}{\p t}}\l(\b{H}^c\r) + {}^i\b{\w}^n\times\b{H}^{c}$$
+wherein $i$ represents the inertia reference frame here and $n$ represents the non-inertial reference fram
+e. Substituting for angular momentum in terms of angular velocity at $RHS$,
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = \ov{n}{\f{\p}{\p t}}\l(I_c \b{\w}\r) + {}^i\b{\w}^n\times (I_c \b{\w})$$
+Considering that the inertia matrix $I_c$ is unchanging with respect to the body-fitted coordinates,
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = I_c\ov{n}{\f{\p}{\p t}}\l(\b{\w}\r) + {}^i\b{\w}^n\times (I_c \b{\w})$$
+Due to the definition of the body-fitted coordinates, the angular velocity $\b{w}$ would be identical to $
+{}^i\b{w}^n$ which is the rotation of the non-inertial body-fitted coordinates $n$ with respect to the inertial coordinates $i$. Substituting,
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = I_c\ov{n}{\f{\p}{\p t}}\l({}^i\b{\w}^n\r) + {}^i\b{\w}^n\times (I_c {}^i\b{\w}^n)$$
+Let ${}^i\b{\w}^n$ be declared as a linear combination of the basis vectors in the body fitted coordinate
+system $n$. If ${}^i\b{\w}^n$ is declared natively in the body fitted coordinate the derivative of ${}^i\b{\w}^n$ with respect to the body fitted coordinate be a trivial case of taking the derivative of the all components of the vector.  Let the angular velocity vector have its components be specified below,
+$${}^i\b{\w}^n = \begin{bmatrix}\w_x && \w_y && \w_z\end{bmatrix}^T$$
+wherein $\h{x}$, $\h{y}$, and $\h{z}$ are the basis vectors of the body-fitted coordinates,
+
+Analyzing the first term, in the expression above,
+$$I_c\ov{n}{\f{\p}{\p t}}\l({}^i\b{\w}^n\r) = \begin{bmatrix}
+I_{xx} && I_{xy} && I_{xz} \\
+I_{yx} && I_{yy} && I_{yz} \\
+I_{zx} && I_{zy} && I_{zz}
+\end{bmatrix} \begin{bmatrix}
+\dot{\w_x} \\ \dot{\w_y} \\ \dot{\w_z}
+\end{bmatrix} = \begin{bmatrix} 
+I_{xx}\dot{\w_x} + I_{xy}\dot{\w_y} + I_{xz}\dot{\w_z} \\
+I_{yx}\dot{\w_x} + I_{yy}\dot{\w_y} + I_{yz}\dot{\w_z} \\
+I_{zx}\dot{\w_x} + I_{zy}\dot{\w_y} + I_{zz}\dot{\w_z}
+\end{bmatrix}$$
+
+Analyzing the second term in the expression above,
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n) = \begin{bmatrix}
+\w_x \\ \w_y \\ \w_z
+\end{bmatrix}\times\begin{bmatrix}
+I_{xx} && I_{xy} && I_{xz} \\
+I_{yx} && I_{yy} && I_{yz} \\
+I_{zx} && I_{zy} && I_{zz}
+\end{bmatrix}\begin{bmatrix}
+\w_x \\ \w_y \\ \w_z
+\end{bmatrix} = \begin{bmatrix}
+\w_x \\ \w_y \\ \w_z
+\end{bmatrix}\times\begin{bmatrix}
+I_{xx}\w_x + I_{xy}\w_y + I_{xz}\w_z \\
+I_{yx}\w_x + I_{yy}\w_y + I_{yz}\w_z \\
+I_{zx}\w_x + I_{zy}\w_y + I_{zz}\w_z
+\end{bmatrix}$$
+Declaring $\h{i}$, $\h{j}$ and $\h{k}$ as dummy variables for the cross-product operations,
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n) = \l|\begin{bmatrix}
+\h{i} && \h{j} && \h{k} \\
+\w_x && \w_y && \w_z \\
+I_{xx}\w_x + I_{xy}\w_y + I_{xz}\w_z && I_{yx}\w_x + I_{yy}\w_y + I_{yz}\w_z && I_{zx}\w_x + I_{zy}\w_y + I_{zz}\w_z
+\end{bmatrix}\r|$$
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n) = \h{i}|A| - \h{j}|B| + \h{k}|C|$$
+
+For the $A$ matrix,
+$$\h{i}|A| = \h{i}\l|\begin{bmatrix}
+\w_y && \w_z \\
+I_{yx}\w_x + I_{yy}\w_y + I_{yz}\w_z && I_{zx}\w_x + I_{zy}\w_y + I_{zz}\w_z
+\end{bmatrix}\r|$$
+$$\h{i}|A| = \h{i}[\w_y(I_{zx}\w_x + I_{zy}\w_y + I_{zz}\w_z) - \w_z(I_{yx}\w_x + I_{yy}\w_y + I_{yz}\w_z)]$$
+$$\h{i}|A| = \h{i}[\w_yI_{zx}\w_x + \w_yI_{zy}\w_y + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y - \w_zI_{yz}\w_z]$$
+Due to the symmetric properties of the inertia tensor,
+$$\h{i}|A| = \h{i}[\w_yI_{zx}\w_x + (\w_y\w_y - \w_z\w_z)I_{yz} + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y]$$
+
+For the $B$ matrix,
+$$\h{j}|B| = \h{j}\l|\begin{bmatrix}
+\w_x && \w_z \\
+I_{xx}\w_x + I_{xy}\w_y + I_{xz}\w_z && I_{zx}\w_x + I_{zy}\w_y + I_{zz}\w_z
+\end{bmatrix}\r|$$
+$$\h{j}|B| = \h{j}[\w_x(I_{zx}\w_x + I_{zy}\w_y + I_{zz}\w_z) - \w_z(I_{xx}\w_x + I_{xy}\w_y + I_{xz}\w_z)]$$
+$$-\h{j}|B| = \h{j}[-\w_x(I_{zx}\w_x + I_{zy}\w_y + I_{zz}\w_z) + \w_z(I_{xx}\w_x + I_{xy}\w_y + I_{xz}\w_z)]$$
+$$-\h{j}|B| = \h{j}[-\w_xI_{zx}\w_x - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y + \w_zI_{xz}\w_z]$$
+Due to the symmetric properties of the inertia tensor,
+$$-\h{j}|B| = \h{j}[-(\w_x\w_x - \w_z\w_z)I_{xz} - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y]$$
+
+For the $C$ matrix,
+$$\h{k}|C| = \h{k}\l|\begin{bmatrix}
+\w_x && \w_y \\
+I_{xx}\w_x + I_{xy}\w_y + I_{xz}\w_z && I_{yx}\w_x + I_{yy}\w_y + I_{yz}\w_z
+\end{bmatrix}\r|$$
+$$\h{k}|C| = \h{k}[\w_x(I_{yx}\w_x + I_{yy}\w_y + I_{yz}\w_z) - \w_y(I_{xx}\w_x + I_{xy}\w_y + I_{xz}\w_z)]$$
+$$\h{k}|C| = \h{k}[\w_xI_{yx}\w_x + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xy}\w_y  - \w_yI_{xz}\w_z]$$
+Due to the symmetric properties of the inertia tensor,
+$$\h{k}|C| = \h{k}[(\w_x\w_x - \w_y\w_y)I_{xy} + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xz}\w_z]$$
+
+Substituting the various components together,
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n) = \h{i}|A| - \h{j}|B| + \h{k}|C|$$
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n) = \begin{bmatrix}
+\w_yI_{zx}\w_x + (\w_y\w_y - \w_z\w_z)I_{yz} + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y \\
+-(\w_x\w_x - \w_z\w_z)I_{xz} - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y \\
+(\w_x\w_x - \w_y\w_y)I_{xy} + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xz}\w_z
+\end{bmatrix}$$
+
+Substituting the first term and second term to obtain the full form,
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = 
+\begin{bmatrix} 
+I_{xx}\dot{\w_x} + I_{xy}\dot{\w_y} + I_{xz}\dot{\w_z} \\
+I_{yx}\dot{\w_x} + I_{yy}\dot{\w_y} + I_{yz}\dot{\w_z} \\
+I_{zx}\dot{\w_x} + I_{zy}\dot{\w_y} + I_{zz}\dot{\w_z}
+\end{bmatrix} + \begin{bmatrix}
+\w_yI_{zx}\w_x + (\w_y\w_y - \w_z\w_z)I_{yz} + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y \\
+-(\w_x\w_x - \w_z\w_z)I_{xz} - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y \\
+(\w_x\w_x - \w_y\w_y)I_{xy} + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xz}\w_z
+\end{bmatrix}$$
+
+Reiterating Euler's law,
+$$\b{\Gamma}^{c} = {}^{e}\dot{\b{H}}^{c}$$
+Since the angular momentum is now taken with respect to center of mass and the time derivative of the angular momentum is taken with respect to an inertial reference frame,
+$$\b{\Gamma}^{c} = \ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r)$$
+Let the moments $\b{\Gamma}^{c}$ be defined to have components below,
+$$\b{\Gamma}^{c} = \ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = \begin{bmatrix}M_x && M_y && M_z\end{bmatrix}^T$$
+Substituting for the moments and simplifying,
+$$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = 
+\begin{bmatrix} 
+I_{xx}\dot{\w_x} + I_{xy}\dot{\w_y} + I_{xz}\dot{\w_z}  + \w_yI_{zx}\w_x + (\w_y\w_y - \w_z\w_z)I_{yz} + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y\\
+I_{yx}\dot{\w_x} + I_{yy}\dot{\w_y} + I_{yz}\dot{\w_z} - (\w_x\w_x - \w_z\w_z)I_{xz} - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y\\
+I_{zx}\dot{\w_x} + I_{zy}\dot{\w_y} + I_{zz}\dot{\w_z} + (\w_x\w_x - \w_y\w_y)I_{xy} + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xz}\w_z
+\end{bmatrix}$$
+
+%Seperator
+%Seperator
+%Seperator
+\section{Problem 2}
+\begin{comment}
+\end{comment}
+Reiterating Euler's law for an arbitrary body-fitted coordinate with origin nested at the center of mass,
+$$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = 
+\begin{bmatrix} 
+I_{xx}\dot{\w_x} + I_{xy}\dot{\w_y} + I_{xz}\dot{\w_z}  + \w_yI_{zx}\w_x + (\w_y\w_y - \w_z\w_z)I_{yz} + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y\\
+I_{yx}\dot{\w_x} + I_{yy}\dot{\w_y} + I_{yz}\dot{\w_z} - (\w_x\w_x - \w_z\w_z)I_{xz} - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y\\
+I_{zx}\dot{\w_x} + I_{zy}\dot{\w_y} + I_{zz}\dot{\w_z} + (\w_x\w_x - \w_y\w_y)I_{xy} + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xz}\w_z
+\end{bmatrix}$$
+For the case of principal axes, the products of inertia evaluate to zero. Substituting,
+$$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = 
+\begin{bmatrix} 
+I_{xx}\dot{\w_x} + \w_yI_{zz}\w_z - \w_zI_{yy}\w_y\\
+I_{yy}\dot{\w_y} - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x\\
+I_{zz}\dot{\w_z} + \w_xI_{yy}\w_y - \w_yI_{xx}\w_x
+\end{bmatrix} = \begin{bmatrix} 
+I_{xx}\dot{\w_x} + \w_z\w_yI_{zz} - \w_z\w_yI_{yy}\\
+I_{yy}\dot{\w_y} - \w_x\w_zI_{zz} + \w_x\w_zI_{xx}\\
+I_{zz}\dot{\w_z} + \w_x\w_yI_{yy} - \w_x\w_yI_{xx}
+\end{bmatrix}$$
+$$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = 
+\begin{bmatrix} 
+I_{xx}\dot{\w_x} + (I_{zz} - I_{yy})\w_z\w_y\\
+I_{yy}\dot{\w_y} - (I_{zz} - I_{xx})\w_x\w_z\\
+I_{zz}\dot{\w_z} + (I_{yy} - I_{xx})\w_x\w_y
+\end{bmatrix} = \begin{bmatrix} 
+I_{xx}\dot{\w_x} + (I_{zz} - I_{yy})\w_z\w_y\\
+I_{yy}\dot{\w_y} + (I_{xx} - I_{zz})\w_x\w_z\\
+I_{zz}\dot{\w_z} + (I_{yy} - I_{xx})\w_x\w_y
+\end{bmatrix}$$
+Earlier, the body-fitted coordinates were declared to be arbitrary as long as the origin of the body-fitted coordinates were nested in the center of mass of the rigid body. To simplify Euler's euqations of motions, the body-fitted coordinates' axes were set to the principal axes. Though this is merely one case of the general case, and it would be reasonable to leave the notations as is, for clarity's sake, the notation for the general moments of inertia are changed to specify moments of inertia with respect to the principal axes,
+$$I_{xx}\to I_x \quad,\quad I_{yy}\to I_y \quad,\quad I_{zz}\to I_z$$
+Hence, Euler's equations of motions with the constraint of the body-fitted coordinates must have an origin at the center of mass and the axes of the body-fitted coordinates must be the principal axes,
+$$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = \begin{bmatrix} 
+I_{x}\dot{\w_x} + (I_{z} - I_{y})\w_z\w_y\\
+I_{y}\dot{\w_y} + (I_{x} - I_{z})\w_x\w_z\\
+I_{z}\dot{\w_z} + (I_{y} - I_{x})\w_x\w_y
+\end{bmatrix}$$
+
+
+%Seperator
+%Seperator
+%Seperator
+\section{Problem 7}
+\begin{comment}
+\end{comment}
+Euler's law for a fixed inertia tensor was derived earlier. Reiterating the step before assuming the inertia tensor is unchanging with time,
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = \ov{n}{\f{\p}{\p t}}\l(I_c \b{\w}\r) + {}^i\b{\w}^n\times (I_c \b{\w})$$
+If the inertia tensor is changing with time,
+$$\ov{n}{\f{\p}{\p t}}\l(I_c \b{\w}\r) = I_c\ov{n}{\f{\p}{\p t}}\l(\b{\w}\r) + \ov{n}{\f{\p}{\p t}}\l(I_c \r)\b{\w}$$
+Reiterating the definition of the inertia tensor,
+$$I = \begin{bmatrix}
+I_{xx} && I_{xy} && I_{xz} \\
+I_{yx} && I_{yy} && I_{yz} \\
+I_{zx} && I_{zy} && I_{zz}
+\end{bmatrix}$$
+Assuming that the inertia tensor is taken with respect to center of mass, the inertia tensor simplifies to,
+$$I_c = \begin{bmatrix}
+I_x && 0 && 0 \\
+0 && I_y && 0 \\
+0 && 0 && I_z
+\end{bmatrix}$$
+Substituting the inertia tensor along with its derivatives while making the same assumption of $\b{\w} = {}^i\b{\w}^n$ and is declared natively in $n$ coordinate system,
+
+$$\ov{n}{\f{\p}{\p t}}\l(I_c \b{\w}\r) = 
+\begin{bmatrix}
+I_x && 0 && 0 \\
+0 && I_y && 0 \\
+0 && 0 && I_z
+\end{bmatrix}\begin{bmatrix}
+\dot{\w_x} \\ \dot{\w_y} \\ \dot{\w_z}
+\end{bmatrix}
++ \begin{bmatrix}
+\dot{I_x} && 0 && 0 \\
+0 && \dot{I_y} && 0 \\
+0 && 0 && \dot{I_z}
+\end{bmatrix}\begin{bmatrix}
+\w_x \\ \w_y \\ \w_z
+\end{bmatrix}$$
+$$\ov{n}{\f{\p}{\p t}}\l(I_c \b{\w}\r) = 
+\begin{bmatrix}
+I_x\dot{\w_x} \\
+I_y\dot{\w_y} \\
+I_z\dot{\w_z}
+\end{bmatrix} + \begin{bmatrix}
+\dot{I_x}\w_x \\
+\dot{I_y}\w_y \\
+\dot{I_z}\w_z
+\end{bmatrix} = \begin{bmatrix}
+I_x\dot{\w_x}+\dot{I_x}\w_x \\
+I_y\dot{\w_y}+\dot{I_y}\w_y \\
+I_z\dot{\w_z}+\dot{I_z}\w_z
+\end{bmatrix}$$
+
+Reiterating the second term that was determined earlier,
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n) = \begin{bmatrix}
+\w_yI_{zx}\w_x + (\w_y\w_y - \w_z\w_z)I_{yz} + \w_yI_{zz}\w_z - \w_zI_{yx}\w_x - \w_zI_{yy}\w_y \\
+-(\w_x\w_x - \w_z\w_z)I_{xz} - \w_xI_{zy}\w_y - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x + \w_zI_{xy}\w_y \\
+(\w_x\w_x - \w_y\w_y)I_{xy} + \w_xI_{yy}\w_y + \w_xI_{yz}\w_z - \w_yI_{xx}\w_x  - \w_yI_{xz}\w_z
+\end{bmatrix}$$
+Taking the products of inertia to be zero,
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n) = \begin{bmatrix}
+\w_yI_{zz}\w_z - \w_zI_{yy}\w_y \\
+ - \w_xI_{zz}\w_z + \w_zI_{xx}\w_x \\
+\w_xI_{yy}\w_y - \w_yI_{xx}\w_x
+\end{bmatrix} = \begin{bmatrix}
+(I_{zz} - I_{yy})\w_y\w_z \\
+(I_{xx} - I_{zz})\w_x\w_z \\
+(I_{yy} - I_{xx})\w_x\w_y
+\end{bmatrix}$$ 
+Susbtituting the moment of inertia to their principal notations,
+$${}^i\b{\w}^n\times (I_c {}^i\b{\w}^n)= \begin{bmatrix}
+(I_{z} - I_{y})\w_y\w_z \\
+(I_{x} - I_{z})\w_x\w_z \\
+(I_{y} - I_{x})\w_x\w_y
+\end{bmatrix}$$
+
+Substituting the terms together to obtain the full form,
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = \ov{n}{\f{\p}{\p t}}\l(I_c \b{\w}\r) + {}^i\b{\w}^n\times (I_c \b{\w})$$
+
+$$\ov{i}{\f{\p}{\p t}}\l(\b{H}^c\r) = 
+\begin{bmatrix}
+I_x\dot{\w_x}+\dot{I_x}\w_x \\
+I_y\dot{\w_y}+\dot{I_y}\w_y \\
+I_z\dot{\w_z}+\dot{I_z}\w_z
+\end{bmatrix} + \begin{bmatrix}
+(I_{z} - I_{y})\w_y\w_z \\
+(I_{x} - I_{z})\w_x\w_z \\
+(I_{y} - I_{x})\w_x\w_y
+\end{bmatrix}$$
+Just as before, the time derivative of $\b{H}^c$ is the moment acting on the body. Substituting,
+$$\begin{bmatrix}
+M_x \\ M_y \\ M_z
+\end{bmatrix} = \begin{bmatrix}
+I_x\dot{\w_x}+\dot{I_x}\w_x + (I_{z} - I_{y})\w_y\w_z\\
+I_y\dot{\w_y}+\dot{I_y}\w_y + (I_{x} - I_{z})\w_x\w_z\\
+I_z\dot{\w_z}+\dot{I_z}\w_z + (I_{y} - I_{x})\w_x\w_y
+\end{bmatrix}$$
+
+
+
+
+
+
+
+
+%Seperator
+%Seperator
+%Seperator
+\section{Problem 1}
+\begin{comment}
+\end{comment}
+Reiterating Euler's equations of motion,
+$$\begin{bmatrix}M_x \\ M_y \\ M_z\end{bmatrix} = \begin{bmatrix} 
+I_{x}\dot{\w_x} + (I_{z} - I_{y})\w_z\w_y\\
+I_{y}\dot{\w_y} + (I_{x} - I_{z})\w_x\w_z\\
+I_{z}\dot{\w_z} + (I_{y} - I_{x})\w_x\w_y
+\end{bmatrix}$$
+Parsing out the scalar quantities,
+$$M_x=I_{x}\dot{\w_x} + (I_{z} - I_{y})\w_z\w_y \quad,\quad M_y=I_{y}\dot{\w_y} + (I_{x} - I_{z})\w_x\w_z \quad,\quad M_z=I_{z}\dot{\w_z} + (I_{y} - I_{x})\w_x\w_y$$
+Making $\dot{\w_i}$ subject of the equations,
+$$M_x - (I_{z} - I_{y})\w_z\w_y=I_{x}\dot{\w_x} \quad,\quad M_y - (I_{x} - I_{z})\w_x\w_z=I_{y}\dot{\w_y} \quad,\quad M_z - (I_{y} - I_{x})\w_x\w_y=I_{z}\dot{\w_z}$$
+$$M_x+(I_{y}-I_{z})\w_z\w_y = I_{x}\dot{\w_x} \quad,\quad M_y+(I_{z}-I_{x})\w_x\w_z = I_{y}\dot{\w_y} \quad,\quad M_z+(I_{x}-I_{y})\w_x\w_y = I_{z}\dot{\w_z}$$
+$$\f{1}{I_{x}}\l[M_x+(I_{y}-I_{z})\w_z\w_y\r] = \dot{\w_x} ,\quad \f{1}{I_{y}}\l[M_y+(I_{z}-I_{x})\w_x\w_z\r] = \dot{\w_y} ,\quad \f{1}{I_{z}}\l[M_z+(I_{x}-I_{y})\w_x\w_y\r] = \dot{\w_z}$$
+
+
+Let $\b{F_b}$ represent the force vector represented in a body-fitted coordinate system. According to Newton's second law,
+$$\b{F_b} = m\b{a_b}$$
+The direction cosine matrix $A_{313}(\psi,\t,\phi)$ is defined to have the following property,
+$$\b{a_b} = A_{313}(\psi,\t,\phi) \b{a_i}$$
+wherein $\b{a_i}$ represent acceleration perceived in the inertial coordinate system and $\b{a_b}$ represent acceleration perceived in the body-fitted coordinate system. Making $\b{a_b}$ subject of Newton's second law,
+$$\b{a_b} = \f{1}{m}\b{F_b}$$
+The direction cosine matrix $A_{313}(\psi,\t,\phi)$ was actually formed as a series of rotation transformations in the perceding sections. The rotation matrices are orthogonal matrice. Therefore, the direction cosine matrix $A_{313}(\psi,\t,\phi)$ is also orthogonal. One property of orthogonal matrices,
+$$A_{313}(\psi,\t,\phi)^{-1} = A_{313}(\psi,\t,\phi)^T$$
+Therefore, 
+$$\b{a_i} = A_{313}(\psi,\t,\phi)^{-1}\b{a_b} = A_{313}(\psi,\t,\phi)^T\b{a_b}$$
+Substituting Newton's second law for $\b{a_b}$,
+$$\b{a_i} = \f{1}{m}A_{313}(\psi,\t,\phi)^T\b{F_b}$$
+
+The script \url{Main.m} handles the initial condition, the integrator call, the plotting, and other small utilities. \url{Main.m} is shown below,
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{center}
+
+\end{document}

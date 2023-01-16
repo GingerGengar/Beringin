@@ -1,0 +1,265 @@
+Written, but not assimilated yet:
+    Aerodynamics lifting Line Theory
+    Grid Transformation
+    Alternate Navier Stokes Numerical Formulation
+
+AAE 511 -> Fluids
+    Use RTT to rederive continuity and momentum
+    Prove that Complex Analysis satisfies condinuity
+    Use Milne-Thompson Circle Theorem for Cylinder
+    Record Blasius Integral Laws
+    Maybe prove kutta circulation law this way
+    Record Hiemenz Flow for 2D Cartesian 
+
+AAE 340 -> Controls & Dynamics
+    Find the formulation for inertia tensor
+    Prove Euler's Laws of motion
+        General case
+
+AAE 412 -> Computational Fluid Dynamics
+    Record some numerical schemes
+        first order upwind
+        second order upwind
+        central differencing
+        quick
+    Iterative solvers
+
+Math Archives
+    General nabla operation for cartesian cylindrical spherical
+        gradient
+        divergence
+        curl
+        distance dr
+        surface nds
+
+AAE 364 Study:
+    Topics:
+        Block Diagram Algebra
+        Laplace Transforms
+        Inverse Laplace Transforms
+        Solve ODE using Laplace Transforms
+        1st Order System Transient Response
+        2nd Order System Transient Response
+        Steady State Response
+        FVT and IVP
+        Routh Stability Criterion
+        System Types
+        Inverse the maximum overshoot and solve for zeta
+    Study Problems:
+        Homework 2
+            All Questions
+        Homework 3
+            All Questions
+        Homework 4
+            All Questions
+        Homework 5
+            All Questions
+        Homework 6
+            All Questions
+
+AAE 514 Study:
+    Topics:
+        Thin Airfoil Theory
+            Continuous Airfoil
+        Basic Potential Flows
+            Discrete Vortex Method
+        Boundary Layers
+            Laminar
+                Velocity Profile Fitting
+                Thwaite's Method
+            Turbulent
+                Empirical Profile Fitting
+                Head's method (numerical)
+        Finite Wings
+            Elliptical Wing Distribution
+            General Lift Distribution (Limited)
+    Study Problems:
+        Homework 1
+            Problem 1 (Thin Airfoil Theory)
+            Problem 2 (Discrete Vortex Method)
+            Problem 3 (Discrete Vortex Method)
+            Problem 4 (Thin Airfoil Theory)(v long)
+        Homework 2
+            Problem 1 (Symmetric Thin Airfoil)
+            Problem 3 (Laminar Boundary Layer)
+            Problem 4 (Velocity Profile Fitting)
+        Homework 3
+            Problem 1 (Velocity Profile Fitting)
+            Problem 2 (Thwaite's Method)
+            Problem 3 (Thwaite's Method)
+        Homework 4
+            Problem 1 (Empirical Profile Fitting)
+            Problem 2 (Transition)(maybe skip)
+        Homework 5
+            Problem 3 (Elliptical Wing Distribution)
+
+AAE 512 Study:
+    Topics:
+        Find Truncation Error (Taylor Analysis)
+        Stability Analysis (Von Neumann Analysis)
+        Classify PDE (2^nd order PDEs)
+        Solve PDE (Separation of Variables)
+        Simple Pseudo Code
+    Study Problems:
+        Homework 1
+            Problem 2 (Classify PDE)
+            Problem 3 (Solve PDE)
+            Problem 4 (Pseudo Code)
+        Homework 2
+            Problem 1 (Classify PDE)
+            Problem 2 (Find TE)
+            Problem 3 (Solve PDE)
+            Problem 4 (Pseudo Code)
+        Homework 3
+            Problem 1 (Truncation Error)
+            Problem 2 (Von Neumann Stability)
+        Homework 4
+            Problem 1a (Truncation Error)
+            Problem 1b (Von Neumann Stability)
+
+AAE 339 Exam Study 
+    Generalized Turbofan Cycle Analysis
+    Redo the homework problems
+        Homework 5
+        Homework 6
+        Homework 7
+        Homework 8
+
+AAE 36400 Exam 2 Study:
+    Homework Problems
+        Homework 7 (done)
+        Homework 8 (done)
+        Homework 9 (done)
+    General
+        Input: Uncompensated Open Loop Transfer Function
+        Draw the Root Locus with positive gain
+        Draw the Root Locus with negative gain
+        Verify: Use Algorithm
+        Input: Settling Time and Maximum Overshoot
+        Determine the desired closed loop poles
+        Verify: Use Algorithm
+        Input: Settling Time and Damping Ratio
+        Determine the desired closed loop poles
+        Verify: Use Algorithm
+    Lead-Lag Compensators
+        Design a Lead compensator with desired poles
+        Find out the gain K
+        Verify: Draw Root Locus using Algorithm
+        Find out the static velocity constant
+        Input: Make a target
+        Design Lag Compensator
+        Find out gain K
+        Verify: Run Algorithm
+    PID Compensator
+        Determine PD compensator
+        Verify: use Algorithm
+        Determine PI compensator
+
+AAE 51200 (Sel-Rab, Sen)
+    Scope (Most Important to Least):
+        Solving PDE using Similarity Transformation
+        Conservation form and Flux Jacobians
+        Von Neumann Stability Analysis
+        Taylor Series, Find Truncation Error, Modified Equation
+        Classifying PDE
+    Reread Notes:
+        Conservation form and Flux Jacobians
+            Lecture 24 Handwritten (Flux Jacobians)*
+    Homeworks Problems:
+        Blasius Solution Problem (Similarity variables)*
+        Homework 5
+            Problem 1 (Conservation form and Flux Jacobians)*
+        Homework 4
+            Problem 1a (Truncation Error)*
+            Problem 1b (Von Neumann Stability Analysis)*
+        Homework 3
+            Problem 1 (Truncation Error)*
+            Problem 2 (Von Neumann Stability Analysis)*
+            Problem 3 (Similarity variables)**
+        Homework 2
+            Problem 1a (Classifying PDE)*
+            Problem 1b (Classifying PDE)*
+            Problem 1c (Classifying PDE)*
+            Problem 1d (Classifying PDE)*
+            Problem 1e (Classifying PDE)*
+            Problem 2 (Truncation Error)*
+        Homework 1
+            Problem 2 (Classifying PDE)*
+
+AAE 51400 (Kam-Jum, Rab-Kam)
+    Majority Bulk in Compressible Flows
+        Linearized Subsonic Theory
+        Linearized Supersonic Theory
+        Standard Shocks & Isentropic Flows
+    Small Portion of Midterm topics:
+        Thin Airfoil Theory
+        Boundary Layers
+        Finite Wings
+    No Iterative Problems
+    Copy the important equations from the slides
+    Redo Exam 1 *
+    Homework Problems:
+        Homework 10:
+            Problem 1a (Linearized Supersonic Theory)**
+            Problem 1b (Linearized Supersonic Theory)**
+            Problem 2a (Linearized Supersonic Theory)**
+            Problem 2b (Linearized Supersonic Theory)**
+            Problem 2c (Linearized Supersonic Theory)**
+        Homework 9:
+            Problem 1a (Linearized Subsonic Theory)**
+        Homework 8:
+            Problem 1a (Standard Shocks & Isentropic Flows)**
+            Problem 3a (Standard Shocks & Isentropic Flows)**
+        Homework 7:
+            Problem 2a (Standard Shocks & Isentropic Flows)**
+            Problem 3a (Standard Shocks & Isentropic Flows)**
+            Problem 3b (Standard Shocks & Isentropic Flows)**
+            Problem 3c (Standard Shocks & Isentropic Flows)**
+            Problem 4a (Standard Shocks & Isentropic Flows)**
+
+Homework 2 - Homework 4 contains information about Boundary Layers
+
+AAE 36400 (Sab-Min)
+    Scope (Most Important to Least):
+        Bode Plotting
+        Nyquist Plot
+        Nyquist Stability Criterion
+        Determining Gain and Phase Margin of System
+        Root Locus Plots
+    Homework Problems:
+
+AAE 33900 (Sen-Sel)
+    Watch the Unwatched videos first
+    Topics:
+        Solid Rocket Motors
+        Electric Propulsion
+        Rocket Stage Sizings
+        Engine Sizings
+        Engine parameters
+        Engine Cycle Analysis
+    Homework Problems:
+        Homework 9 (partial)
+        Homework 10
+        Homework 11
+
+
+AAE 51400 Thin Airfoil Theory notes
+Take down the proof of compressible potential flow
+https://en.wikipedia.org/wiki/Potential_flow
+Take down 514 Boundary Layer Equations
+Explore the Possibility of Using Quaternions for 3D conformal Mapping
+
+Recommended Curvilinear coordiantes
+
+Learn how to use Inkscape
+    Have not added diagrams in PDE classification
+    Have not added algorithm plans to Hyperbolic Wave equation
+        Discuss the difference between certain algo plannings
+    Have not added diagrams to Hyperbolic Wave equation
+        Add the scheme diagram
+        Add the copy diagram
+Hyperbolic PDE Simulation
+
+
+
+

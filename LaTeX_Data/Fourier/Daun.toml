@@ -1,0 +1,4 @@
+Description = "Introduction to the basics of Fourier Series"
+Pre_Requisites = ["Base",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

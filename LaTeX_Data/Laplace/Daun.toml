@@ -1,0 +1,4 @@
+Description = "Introduction to the Basis and Basics of Laplace Transforms"
+Pre_Requisites = ["Base",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

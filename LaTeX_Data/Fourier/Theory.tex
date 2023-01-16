@@ -1,0 +1,191 @@
+\chapter{Fourier Series}
+\begin{comment}
+Fourier Transform Header
+The Fourier Series in Trigonometric form,$$f(t) = \frac{1}{2}a_0 + \sum_{n = 1}^{\infty}\left[a_n \cos\left(\frac{n\pi}{L}t\right) + b_n \sin\left(\frac{n\pi}{L}t\right)\right]$$
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+\section{Definition of Inner Product}
+\begin{comment}
+\end{comment}
+Let f and h be complex valued vectors,$$f = \begin{bmatrix}f_1\\f_2\\\vdots \\f_n \end{bmatrix}\quad,\quad h = \begin{bmatrix}h_1\\h_2\\\vdots \\h_n \end{bmatrix}$$
+The inner product is formally defined as:
+$$(f,h) = \sum_{k = 1}^{n}\left[f_k\bar{h_k}\right]$$
+wherein $\bar{h_k}$ represents the complex conjugate of the $k^{th}$ element of the vector $h$. There are some properties of the inner product:
+$$(f,h) = \overline{(h,f)}\quad,\quad (\alpha f + \beta g,h) = \alpha(f,h) + \beta(g,h) \quad,\quad (f,f)\geq0$$
+$(f,f) = 0$ if and only if $f_k = 0$ for all $k$ of the vector elements. The magnitude of $n^{th}$ dimensional vectors:
+$$\norm{f} = \left(\sum_{k = 1}^{n}|f_k|^2\right)^{\frac{1}{2}}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Definition of Lebesgue Space}
+\begin{comment}
+\end{comment}
+A function would be in Lebesgue space if
+$$\int^{\tau}_{0}|f(t)|^2dt < \infty$$
+The inner product of a function on the Lebesgue space $L^2(0,\tau)$:
+$$(f,g) = \frac{1}{\tau}\int^{\tau}_{0}f(t)\overline{g(t)}dt$$
+The norm of a function in Lebesgue space:
+$$\norm{f} = \left[\frac{1}{\tau}\int^{\tau}_{0}|f(t)|^2dt\right]^\frac{1}{2}$$
+Therefore, it follows that 
+$$\norm{f}^2 = (f,f) = \frac{1}{\tau}\int^{\tau}_{0}|f(t)|^2dt$$
+Distance between two functions defined in Lebesgue space:
+$$\norm{f - g} = \left[\frac{1}{\tau}\int^{\tau}_{0}|f(t) - g(t)|^2dt\right]^\frac{1}{2}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Exponential Fourier Series}
+\begin{comment}
+\end{comment}
+Fourier series in exponential form:
+$$f(t) = \sum^{\infty}_{k = -\infty}\left[a_ke^{-ik\omega_0t}\right]$$
+wherein $k$ represent integers and the coefficients $a_k$ could be found by,
+$$a_k = \frac{1}{\tau}\int^{\tau}_{0}e^{ik\omega_0t}f(t)dt$$
+wherein $\omega_0 = 2\pi/\tau$. An orthonormal set in Lebesgue space is defined as a collection of functions that are orthonormal to each other in Lebesgue space and have a magnitude of one. The proof below shows that the complex exponential $e^{ik\omega_0t}$ forms an orthonormal set. If two functions are orthogonal, then their inner products in Lebesgue space must be zero.
+$$(f,g) = \frac{1}{\tau}\int^{\tau}_{0}f(t)\overline{g(t)}dt$$
+Substituting for the complex exponential functions, $f(t) = e^{-ik_1\omega_0t}\quad,\quad g(t) = e^{-ik_2\omega_0t}$,
+$$(f,g) = \frac{1}{\tau}\int^{\tau}_{0}e^{-ik_1\omega_0t} e^{ik_2\omega_0t}dt = \frac{1}{\tau}\int^{\tau}_{0}e^{i(k_2-k_1)\omega_0t}dt$$
+For the case wherein $k_2 = k_1$, 
+$$(f,g) = \frac{1}{\tau}\int^{\tau}_{0}1dt = \frac{1}{\tau} \left[t\right]^{\tau}_{0} = \frac{1}{\tau}(\tau) = 1$$
+Using the previous definition of function magnitudes in Lebesgue space, $\norm{f}^2 = (f,f)\quad,\quad\norm{f} = \sqrt{(f,f)}$. Therefore, $\norm{f} = 1$ which shows that the complex exponential function has a magnitude of $1$ in Lebesgue space. For the case wherein $k_2 \neq k_1$, the subtraction of the two integers yields another non-zero integer.
+$$(f,g) = \frac{1}{\tau}\int^{\tau}_{0} \cos\left[(k_2-k_1)\omega_0t\right] + i\sin\left[(k_2-k_1)\omega_0t\right]dt$$
+$$(f,g) = \frac{1}{\tau(k_2-k_1)\omega_0}\left\{\sin\left[(k_2-k_1)\omega_0t\right] - i\cos\left[(k_2-k_1)\omega_0t\right]\right\}^{t = \tau}_{t = 0}$$
+Substituting for $\displaystyle{\omega_0 = \frac{2\pi}{\tau}}$ 
+$$\left\{\sin\left[\frac{2\pi(k_2-k_1)t}{\tau}\right]\right\}^{t = \tau}_{t = 0} = \sin\left[2\pi(k_2-k_1)\right] - \sin\left[0\right] = 0$$
+$$\left\{\cos\left[\frac{2\pi(k_2-k_1)t}{\tau}\right]\right\}^{t = \tau}_{t = 0} = \cos\left[2\pi(k_2-k_1)\right] - \cos\left[0\right] = 1 - 1 = 0$$
+Therefore, for the case wherein $k_2 \neq k_1$, $(f,g) = 0$. This shows that complex exponentials are form an orthogonal set in Lebesgue space. Since $e^{ik\omega_0t}$ forms an orthonormal set, $e^{ik\omega_0t}$ could be used as a basis to represent any function that is in Lebesgue space. The proof below shows the method to find the complex coefficients $a_k$ for an arbitrary function $f(t)$ in Lebesgue space.
+$$f(t) = \sum^{\infty}_{k = -\infty}\left[a_ke^{-ik\omega_0t}\right]$$
+For some particular integer $k_2$,
+$$\frac{1}{\tau}\int^{\tau}_{0}e^{ik_2\omega_0t}f(t)dt= \frac{1}{\tau}\int^{\tau}_{0}e^{ik_2\omega_0t}\sum^{\infty}_{k = -\infty}\left[a_ke^{-ik\omega_0t}\right]dt = \sum^{\infty}_{k = -\infty}\left[\frac{a_k}{\tau}\int^{\tau}_{0}e^{-ik\omega_0t}e^{ik_2\omega_0t}dt\right]$$
+The above working is true due to the integral operation being a linear operation. Linear operations are discussed earlier in this document. From the previous findings,
+$$(f,g) = \frac{1}{\tau}\int^{\tau}_{0}e^{-ik_1\omega_0t} e^{ik_2\omega_0t}dt = \frac{1}{\tau}\int^{\tau}_{0}e^{i(k_2-k_1)\omega_0t}dt$$
+$(f,g) = 1$ only when $f$ and $g$ are identical to each other. For all other cases, $(f,g) = 0$. Following this, $\displaystyle{\frac{1}{\tau}\int^{\tau}_{0}e^{-ik_1\omega_0t} e^{ik_2\omega_0t}dt} = 1$ only when $k = k_2$, otherwise, $\displaystyle{\frac{1}{\tau}\int^{\tau}_{0}e^{-ik_1\omega_0t} e^{ik_2\omega_0t}dt} = 0$. Therefore,
+$$\frac{1}{\tau}\int^{\tau}_{0}e^{ik_2\omega_0t}f(t)dt = \sum^{\infty}_{k = -\infty}\left[a_k\times\frac{1}{\tau}\int^{\tau}_{0}e^{-ik\omega_0t}e^{ik_2\omega_0t}dt\right] = a_k$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Trigonometric Fourier Series}
+\begin{comment}
+\end{comment}
+Any arbitrary function $f(t)$ with a periodicity of $L$ could be expressed as a linear combination of sinusoids of varying frequencie. $a_n$ and $b_n$, but $n$ are integers $n = 1,2,3,4\dots$. The abritrary function $f(t)$ expressed as a linear combination of trigonometric functions:
+$$f(t) = \frac{1}{2}a_0 + \sum_{n = 1}^{\infty}\left[a_n \cos\left(\frac{n\pi}{L}t\right) + b_n \sin\left(\frac{n\pi}{L}t\right)\right]$$
+The three equations below is correct and serves as a method to find coefficients $a_0$, $a_n$ and $b_n$,
+$$a_0 = \frac{1}{L}\int_{-L}^{L}f(t)dt$$
+$$a_n = \frac{1}{L}\int_{-L}^{L}f(t)\cos\left(\frac{n\pi}{L}t\right)dt$$
+$$b_n = \frac{1}{L}\int_{-L}^{L}f(t)\sin\left(\frac{n\pi}{L}t\right)dt$$
+The proof of each of the three equations is showb. Below is written the list of trigonometric identities relating multiplication of trigonometric functions of differing frequencies that will be important for the proof:
+$$2\cos(\theta)\cos(\phi) = \cos(\theta - \phi) + \cos(\theta + \phi)$$ 
+$$2\sin(\theta)\sin(\phi) = \cos(\theta - \phi) - \cos(\theta + \phi)$$
+$$2\sin(\theta)\cos(\phi) = \sin(\theta + \phi) + \sin(\theta - \phi)$$
+For coefficient $a_0$,
+$$\int_{-L}^{L}f(t)dt = \frac{1}{2} \int_{-L}^{L}a_0dt + \sum_{n = 1}^{\infty}\left[a_n \int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)dt + b_n \int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)dt\right]$$
+$$\frac{1}{2} \int_{-L}^{L}a_0dt = \frac{1}{2}a_0\times2L$$
+$$\frac{1}{2} \int_{-L}^{L}a_0dt = a_0L$$
+$$\int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)dt = \frac{L}{n\pi}\left[\sin\left(\frac{n\pi}{L}t\right)\right]^{t = L}_{t = -L}$$
+$$\int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)dt = \frac{L}{n\pi}\left[\sin\left(n\pi\right) - \sin\left(-n\pi\right)\right]$$
+Considering that $n$ is an integer, $\sin\left(n\pi\right) = \sin\left(-n\pi\right) = 0$. Therefore, 
+$$\int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)dt = 0$$
+By similar reasoning, it could be seen that $\displaystyle{\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right) = 0}$, but the integral is evaluated below anyways,
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)dt = -\frac{L}{n\pi}\left[\cos\left(\frac{n\pi}{L}t\right)\right]^{t = L}_{t = -L}$$
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)dt = -\frac{L}{n\pi}\left[\cos\left(n\pi\right) - \cos\left(-n\pi\right)\right]$$
+By the even property of the cosine function, $\cos(\theta) = \cos(-\theta)$. Therefore,
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)dt = -\frac{L}{n\pi}\left[\cos\left(n\pi\right) - \cos\left(n\pi\right)\right]$$
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)dt = 0$$
+By reiterating the integration of $f(t)$ from $t = -L$ until $t = L$
+$$\int_{-L}^{L}f(t)dt = a_0L + \sum_{n = 1}^{\infty}\left[a_n\times 0 + b_n \times 0\right]$$
+$$\int_{-L}^{L}f(t)dt = a_0L$$
+$$a_0 = \frac{1}{L}\int_{-L}^{L}f(t)dt$$
+For coefficient $a_n$, let $m$ be some particular integer, either $1$, $2$, or $3$. For some of the terms of the Fourier Series, $m = n$. However, for all other terms, $m\neq n$.
+\begin{align*}
+\int_{-L}^{L}f(t)\cos\left(\frac{m\pi}{L}t\right)dt = &\sum_{n = 1}^{\infty}\left[a_n \int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt + b_n \int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt\right] \\ &+ \frac{1}{2}a_0 \int_{-L}^{L}\cos\left(\frac{m\pi}{L}t\right)dt
+\end{align*}
+$$2\cos\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right) = \cos\left[\frac{(n-m)\pi}{L}t\right] + \cos\left[\frac{(n+m)\pi}{L}t\right]$$
+$$\cos\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right) = \frac{1}{2}\cos\left[\frac{(n-m)\pi}{L}t\right] + \frac{1}{2}\cos\left[\frac{(n+m)\pi}{L}t\right]$$
+$$\int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt = \frac{1}{2}\int_{-L}^{L}\cos\left[\frac{(n-m)\pi}{L}t\right]dt + \frac{1}{2}\int_{-L}^{L}\cos\left[\frac{(n+m)\pi}{L}t\right]dt$$
+Consider the case wherein $m = n$,
+$$\int_{-L}^{L}\cos^2\left(\frac{n\pi}{L}t\right)dt = \frac{1}{2}\int_{-L}^{L}\cos\left(\frac{2n\pi}{L}t\right) + 1dt$$
+$$\int_{-L}^{L}\cos^2\left(\frac{n\pi}{L}t\right)dt = \frac{1}{2}\left[\frac{L}{2n\pi}\sin\left(\frac{2n\pi}{L}t\right) + t\right]^{t = L}_{t = -L}$$
+$$\int_{-L}^{L}\cos^2\left(\frac{n\pi}{L}t\right)dt = \frac{1}{2}\left[\frac{L}{2n\pi}\left(\sin\left(2n\pi\right) - \sin\left(-2n\pi\right)\right) + 2L\right]$$
+$$\int_{-L}^{L}\cos^2\left(\frac{n\pi}{L}t\right)dt = \frac{1}{2}\left[2L\right] = L$$
+Consider the case wherein $m\neq n$,
+\begin{align*}
+\int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt = & \frac{L}{2(n-m)\pi}\left\{\sin\left[\frac{(n-m)\pi}{L}t\right]\right\}_{t = -L}^{t = L} \\ & + \frac{L}{2(n+m)\pi}\left\{\sin\left[\frac{(n+m)\pi}{L}t\right]\right\}_{t = -L}^{t = L}
+\end{align*}
+By similar argument mentioned previously that sine of a multiple of $\pi$ yields $0$, then
+$$\int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt = 0$$
+For the second term in the summation notation,
+$$2\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right) = \sin\left[\frac{(n+m)\pi}{L}t\right] + \sin\left[\frac{(n-m)\pi}{L}t\right]$$
+$$\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right) = \frac{1}{2}\sin\left[\frac{(n+m)\pi}{L}t\right] + \frac{1}{2}\sin\left[\frac{(n-m)\pi}{L}t\right]$$
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt = \frac{1}{2}\int_{-L}^{L}\sin\left[\frac{(n+m)\pi}{L}t\right]dt + \frac{1}{2}\int_{-L}^{L}\sin\left[\frac{(n-m)\pi}{L}t\right]dt$$
+For the case wherein $m\neq n$,
+\begin{align*}
+\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt = &-\frac{L}{2(n+m)\pi}\left\{\cos\left[\frac{(n+m)\pi}{L}t\right]\right\}_{t = -L}^{t = L} \\ & - \frac{L}{2(n-m)\pi}\left\{\cos\left[\frac{(n-m)\pi}{L}t\right]\right\}_{t = -L}^{t = L}
+\end{align*}
+Since $\cos(x)$ is an even function, the integral evaliuates to 0. Therefore,
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt = 0$$
+For the case wherein $m = n$, the second sine function is irrelevant because $\sin(0) = 0$, due to $n-m=0$. The following is just a degenerate case of the case wherein $m\neq n$.
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt = \frac{1}{2}\int_{-L}^{L}\sin\left[\frac{(n+m)\pi}{L}t\right]dt$$
+Since the integral above is just a degenerate case of $m\neq n$, then the integral just evaluates to $0$. Therefore,
+$$\int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{n\pi}{L}t\right)dt = 0$$
+For coefficient $b_n$,
+$$\int_{-L}^{L}f(t)dt = \frac{1}{2} \int_{-L}^{L}a_0dt + \sum_{n = 1}^{\infty}\left[a_n \int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)dt + b_n \int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)dt\right]$$
+For the final term in the expression describing the integral of $\displaystyle{f(t)\cos\left(\frac{n\pi}{L}t\right)}$, 
+$$\int_{-L}^{L}\cos\left(\frac{m\pi}{L}t\right)dt = \frac{L}{m\pi}\left[\sin\left(\frac{m\pi}{L}t\right)\right]^{t=L}_{t=-L}$$
+Since $m$ is an integer,
+$$\int_{-L}^{L}\cos\left(\frac{m\pi}{L}t\right)dt = 0$$
+A reiteration of the integral of $\displaystyle{f(t)\cos\left(\frac{n\pi}{L}t\right)}$,
+ \begin{align*}
+\int_{-L}^{L}f(t)\cos\left(\frac{m\pi}{L}t\right)dt = &\sum_{n = 1}^{\infty}\left[a_n \int_{-L}^{L}\cos\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt + b_n \int_{-L}^{L}\sin\left(\frac{n\pi}{L}t\right)\cos\left(\frac{m\pi}{L}t\right)dt\right] \\ &+ \frac{1}{2}a_0 \int_{-L}^{L}\cos\left(\frac{m\pi}{L}t\right)dt
+\end{align*}
+By substituing all the known parts from the previous workings, 
+$$\int_{-L}^{L}f(t)\cos\left(\frac{m\pi}{L}t\right)dt = a_m L$$
+wherein $m = n$. Therefore,
+$$a_m = \frac{1}{L}\int_{-L}^{L}f(t)\cos\left(\frac{m\pi}{L}t\right)dt$$
+for $n=1,2,3\dots$
+$$a_n = \frac{1}{L}\int_{-L}^{L}f(t)\cos\left(\frac{n\pi}{L}t\right)dt$$
+The proof for the coefficient $b_n$ could be done in a similar way as for the coefficient $a_n$. These two coefficients are analogous to each other.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Discrete Fourier Transform}
+\begin{comment}
+\end{comment}
+The usage of the Discrete Fourier Transform Matrix is given below.
+$$\begin{bmatrix}p(t_0) \\ p(t_1) \\ p(t_2 )\\ \vdots \\ p(t_{v-3}) \\ p(t_{v-2}) \\ p(t_{v-1}) \end{bmatrix} = 
+\begin{bmatrix}
+ 1 && 1 && 1 && 1 && \cdots && 1 && 1 && 1 \\
+ 1 && \lambda_{1}^{1} && \lambda_{1}^{2} && \lambda_{1}^{3} && \cdots && \lambda_{1}^{-3} && \lambda_{1}^{-2} && \lambda_{1}^{-1}  && \\
+ 1 && \lambda_{2}^{1} && \lambda_{2}^{2} && \lambda_{2}^{3} && \cdots && \lambda_{2}^{-3} && \lambda_{2}^{-2} && \lambda_{2}^{-1}  && \\
+ \vdots && \vdots && \vdots && \vdots && \cdots && \vdots && \vdots && \vdots && \\
+ 1 && \lambda_{v-3}^{1} && \lambda_{v-3}^{2} && \lambda_{v-3}^{3} && \cdots && \lambda_{v-3}^{-3} && \lambda_{v-3}^{-2} && \lambda _{v-3}^{-1} && \\
+ 1 && \lambda_{v-2}^{1} && \lambda_{v-2}^{2} && \lambda_{v-2}^{3} && \cdots && \lambda_{v-2}^{-3} && \lambda_{v-2}^{-2} && \lambda _{v-2}^{-1} && \\
+ 1 && \lambda_{v-1}^{1} && \lambda_{v-1}^{2} && \lambda_{v-1}^{3} && \cdots && \lambda_{v-1}^{-3} && \lambda_{v-1}^{-2} && \lambda _{v-1}^{-1} && \\
+\end{bmatrix}
+\begin{bmatrix} a_{0} \\ a_{1} \\ a_{2} \\ \vdots \\ a_{-3} \\ a_{-2} \\ a_{-1} \end{bmatrix} $$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Higher-Dimensional Fourier Series}
+\begin{comment}
+\end{comment}
+The Fourier Series in complex exponential form,
+$$f(t) = \sum^{\infty}_{k_i = -\infty}\left[a_{k_i}e^{-ik_i\omega_{k_i}t}\right]\quad,\quad \omega_{k_i} = 2\pi/\tau_{k_i}$$
+wherein $k_i$ represent integers. Let the two-dimensional Fourier Series be defined as the total expression of a Fourier Series nested in the coefficients of another Fourier Series,
+$$f_2(x_1,x_2) = \sum^{\infty}_{k_1 = -\infty}\left[\sum^{\infty}_{k_2 = -\infty}\left(a_{k_1,\,k_2}e^{-ik_2\omega_{k_2}x_2}\right)e^{-ik_1\omega_{k_1}x_1}\right] = \sum^{\infty}_{k_1 = -\infty}\sum^{\infty}_{k_2 = -\infty}\left(a_{k_1,\,k_2}e^{-ik_2\omega_{k_2}x_2}e^{-ik_1\omega_{k_1}x_1}\right)$$
+$$f_2(x_1,x_2) = \sum^{\infty}_{k_1 = -\infty}\sum^{\infty}_{k_2 = -\infty}\left[a_{k_1,\,k_2}e^{-i(k_1\omega_{k_1}x_1+k_2\omega_{k_2}x_2)}\right]$$
+wherein the natural frequency $\omega$ are defined as,
+$$\omega_{k_1} = 2\pi/\tau_{k_1} \quad,\quad \omega_{k_2} = 2\pi/\tau_{k_2}$$
+wherein $\tau_{k_1}$ represent the outer Fourier interval, and $\tau_{k_2}$ represent the inner Fourier interval. Therefore, generalizing to $n$ dimensions,
+$$f_m(x_1,x_2,\dots,x_n) = \prod^{n}_{m=1}\left\{\sum^{\infty}_{k_m = -\infty}\left[a_{k_1,\,k_2,\dots,k_n}e^{-i\left[\sum^{n}_{r=1}\left(k_r\omega_{k_r}x_r\right)\right]}\right]\right\}$$
+wherein $\displaystyle{\prod^{n}_{m=1}\left[\sum^{\infty}_{k_m = -\infty}(obj)\right]}$ represents $n$ summations of mathematiical objects nested in each other. The expression above does not represent consecutive multiplications of the product notation. The product notation is just used to represent summation notations placed side by side and implemented consecutively in any order. 

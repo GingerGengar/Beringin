@@ -1,0 +1,67 @@
+%Type of Document
+\documentclass[a4paper, 12pt]{report}
+
+%Load Pre-ambles
+\usepackage{../Environment/Packages}
+\usepackage{../Environment/Conventions}
+\usepackage{../Environment/Hyahoos}
+
+\begin{document}
+
+\begin{center}
+\chapter{Radial Fields}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\stdsection{Curl and Circulation}
+\begin{comment}
+\end{comment}
+Let the general equation denoting force produced by a radial field be: $\dst{\b{F} = kr^n\h{r}}$ wherein k and n are arbitrary constants. Since $\dst{\h{r}}$ represents a unit vector in the radial direction, 
+$$\h{r} = \f{1}{\sqrt{x^2 + y^2 + z^2}}\begin{pmatrix}x \\ y \\ z \end{pmatrix}$$
+$$r = \l(x^2 +y ^2 + z^2\r)^\f{1}{2}$$
+$$r^n = \l(x^2 +y ^2 + z^2\r)^\f{n}{2}$$
+$$\b{F} = \f{k\l(x^2 +y ^2 + z^2\r)^\f{n}{2}}{\sqrt{x^2 + y^2 + z^2}}\begin{pmatrix} x\\y\\z \end{pmatrix}$$
+$$\b{F} = k(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)}\begin{pmatrix} x\\y\\z \end{pmatrix}$$
+$$\b{F} = \begin{pmatrix} kx(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)}\\ky(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)}\\kz(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)} \end{pmatrix}$$
+\\Stokes theorem states: $\dst{\oint_R  \b{F} \cdot \b{dr} = \oiint_S \nabla \times \b{F} \cdot \h{n}dS}$ wgereub $R$ represents a closed path in $\mathbb{R}^3$ and $S$ represents the corresponding surface bounded by the closed path similarly in $\mathbb{R}^3$. In  conservative vector field, the circulation, $\dst{\oint_R  \b{F} \cdot \b{dr}} = 0$, therefore, the curl, $\nabla \times \b{F} = 0$.
+\\Let $\dst{\b{F} = \begin{pmatrix} f\\g\\h \end{pmatrix}}$
+\renewcommand\arraystretch{1.5}
+$$\nabla \times \b{F} = \begin{pmatrix} \f{\p h}{\p y} - \f{\p g}{\p z} \\ \f{\p f}{\p z} - \f{\p h}{\p x} \\ \f{\p g}{\p x} - \f{\p f}{\p y}\end{pmatrix}$$
+\renewcommand\arraystretch{1.0}
+$$\f{\p h}{\p y} = kyz(n - 1)(x^2 + y^2 + z^2)^{\f{1}{2}(n-3)}$$
+$$\f{\p g}{\p z} = kyz(n - 1)(x^2 + y^2 + z^2)^{\f{1}{2}(n-3)}$$
+$$\f{\p h}{\p y} - \f{\p g}{\p z} = 0$$
+$$\f{\p f}{\p z} = kxz(n - 1)(x^2 + y^2 + z^2)^{\f{1}{2}(n-3)}$$
+$$\f{\p h}{\p x} = kxz(n - 1)(x^2 + y^2 + z^2)^{\f{1}{2}(n-3)}$$
+$$\f{\p f}{\p z} - \f{\p h}{\p x} = 0$$
+$$\f{\p g}{\p x} = kxy(n - 1)(x^2 + y^2 + z^2)^{\f{1}{2}(n-3)}$$
+$$\f{\p f}{\p y} = kxy(n - 1)(x^2 + y^2 + z^2)^{\f{1}{2}(n-3)}$$
+$$\f{\p g}{\p x} - \f{\p f}{\p y} = 0$$
+Therefore, $\dst{\nabla\times \b{F} = \begin{pmatrix}0\\0\\0 \end{pmatrix}}$. Any radial vector field with the following expression $\b{F} = kr^n\h{r}$ is conservative. Since radial vector fields are considered as conservative force fields, a potential function must exist with the following conditions: 
+$$f = \f{\p p}{\p x}\qquad g = \f{\p p}{\p y}\qquad h = \f{\p p}{\p z}$$
+$$p = \int  kx(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)} dx$$
+$$p = \f{k}{n+1}(x^2+y^2+z^2)^{\f{1}{2}(n+1)} + C(y,z) + k_1$$
+\\$C(y,z)$ represents functions strictly in terms of $y$ and $z$ and $k_1$ represents some arbitrary numerical integration constant.
+$$\f{\p p}{\p y} = ky(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)} + C'(y,z)$$
+\\The potential function's partial derivative with respect to $y$ represents $y$ component of the force field. Therefore,
+$$ky(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)} + C'(y,z) = ky(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)}$$
+$$C'(y,z) = 0$$
+$$\int dC(y,z) = 0\times\int dy$$
+$$C(y,z) = C_2(z) + k_2$$
+$$p = \f{k}{n+1}(x^2+y^2+z^2)^{\f{1}{2}(n+1)} + C_2(z) + k_1 + k_2$$
+$$\f{\p p}{\p z} = kz(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)} + C_2'(z) = kz(x^2 + y^2 + z^2)^{\f{1}{2}(n-1)}$$
+$$C'_2(z) = 0$$
+$$C_2(z) = k_3$$
+$$p = \f{k}{n+1}(x^2+y^2+z^2)^{\f{1}{2}(n+1)} + k_1 + k_2 + k_3$$
+By convention, the potential of a force field is defined as 0 infinitely away from the origin. Therefore, 
+$$0 =p = \f{k}{n + 1}\lim_{(x,y,z)\to\infty} \l[(x^2+y^2+z^2)^{\f{1}{2}(n+1)}\r] + k_1 + k_2 + k_3$$
+$$0 = k_1 + k_2 + k_3$$
+\\Therefore, the potential function for any given radial force field is given as:
+$$p = \f{k}{n+1}(x^2+y^2+z^2)^{\f{1}{2}(n+1)} $$
+\end{center}
+
+\end{document}

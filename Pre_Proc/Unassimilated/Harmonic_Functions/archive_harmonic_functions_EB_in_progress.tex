@@ -1,0 +1,142 @@
+\documentclass[titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{amssymb, amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage[mathscr]{eucal} % Zapf's Euler script
+\renewcommand{\labelenumi}{\alph{enumi}} % letter bullets
+\renewcommand{\;}{\:\:\:} % more space
+\newcommand{\f}[2]{\frac{#1}{#2}} % fraction
+\renewcommand{\v}[1]{\mathbf{#1}} % vector
+\newcommand{\R}{\mathbb{R}} % real numbers
+\renewcommand{\tilde}[1]{\widetilde{#1}} % tilde
+\renewcommand{\bar}[1]{\overline{#1}} % bar above
+\newcommand{\eps}{\epsilon} % epsilon
+\newcommand{\p}{\partial} % del
+\usepackage{esint} % bar integrals \fint
+
+\usepackage{amsthm} % theorem labels
+\usepackage{comment}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\theoremstyle{theorem}
+\newtheorem*{theorem}{Theorem}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\theoremstyle{lemma}
+\newtheorem*{lemma}{Lemma}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\fontsize{18}{10} \selectfont MA 523 Partial Differential Equations}
+\lhead{\fontsize{18}{10} \selectfont Some notes}
+
+\begin{comment}
+Author: Ethan Brady
+\end{comment}
+
+\begin{document}
+
+\section*{Laplace's equation}
+This important partial differential equation implies a surprising number of specific properties. We overview theorems that specify its variability, smoothness, and extremal points. First, we establish the function in question.
+\begin{equation} \label{def u}
+    U \subset \R^n \text{ open, bounded} \qquad  u:U \rightarrow \R \qquad u(x) \in C^2(U) 
+\end{equation}
+In words, $u$ is a function of several variables defined on a domain $U$ with a boundary. The vector $x \in R^n$ typically represents space, but we can allow higher dimensional variables too. The condition $C^2$ means that all second order partials of $u$ are continuous in the domain $U$, which justifies the derivatives in Laplace's equation.
+\begin{equation} \label{Laplace}
+    \Delta u := \f{\p^2 u}{\p x_1^2} + ... + \f{\p^2 u}{\p x_n^2} = 0
+\end{equation}
+The Laplacian $\Delta$ arises in application by taking the divergence of a gradient $\Delta u = \text{div}(Du)$. This equation signifies a diffusive quantity in equilibrium, including chemical concentration, temperature, and electrostatic potential.
+
+\subsection*{Mean value property}
+In the physical context of diffusion, one might expect that $u$ is the average of neighboring values. Not only this, every value of $u$ is the average in a ball and on a sphere of any radius in its domain. The elegant part is that this condition is equivalent to the differential form of Laplace's equation. First though, we establish notation regarding n-dimensional balls.
+\begin{lemma}[Balls]
+Let $B_r(x)$ denote the open ball centered at $x$ with radius $r$, implicitly in the space $R^n$. Let $\alpha_n$ denote the volume of the unit ball.
+$$ B_r(x) := \{y \in R^n : |y - x| < r\} \qquad \alpha_n := \int_{B_1(0)} dS(y) $$
+Then the volume of the ball is given by the gamma function, and its surface area relates to the volume.
+$$ \alpha_n = \f{\sqrt{\pi^n}}{\Gamma(\frac{n}{2} + 1)} = \begin{cases}
+\f{\sqrt{\pi^n}}{(\f{n}{2})!} & n \text{ even} \\
+\f{\sqrt{\pi^{n-1}}}{\f{n}{2} \left(\f{n}{2}-1\right) \cdot ... \cdot \f12} & n \text{ odd} \end{cases} \qquad
+\int_{B_r(x)} dS(y) = \alpha_n r^n \qquad
+\int_{\p B_r(x)} dS(y) = \alpha_n n r^{n-1} $$
+\end{lemma}
+We omit the proof of this lemma, which is based on induction and spherical coordinates. For intuition by example, we consider small cases. The ball in $n=3$ has volume $\f{\sqrt{\pi^2}}{\f32 \f12} r^3 = \f43 \pi r^3$ and surface area $4 \pi r^2$. The ball in $n=2$ has volume (area) $\f{\sqrt{\pi^2}}{1!} r^2 = \pi r^2$ and surface area (perimeter) $2\pi r$. In addition, we provide an incomplete derivation a calculus III identity.
+\begin{lemma}[Gauss-Green identities]
+Let $f:\Omega\rightarrow\R^n$ and $g:\Omega\rightarrow\R^n$ be functions in $C^1(\bar{\Omega})$. The domain $\Omega \subset \R^n$ has smooth $C^1$ boundary, and denote the normal vector $\nu$ to $\p \Omega$. Equation (\ref{GG:1}) is a version of the fundamental theorem of calculus, equation (\ref{GG:2}) is the generalized by parts integration formula, which lead to the goal of ($\ref{GG:3}$) involving the Laplacian.
+\begin{subequations}
+\begin{align}
+    \int_{\Omega} f_{x_i} &= \int_{\p \Omega} f \nu_i dS \label{GG:1} \\
+    \int_{\Omega} f_{x_i} g &= -\int_{\Omega} f g_{x_i} + \int_{\p \Omega} f g \nu_i dS \label{GG:2} \\
+    \int_{\Omega} \Delta f &= \int_{\p \Omega} \f{\p f}{\p \nu} dS \label{GG:3}
+\end{align}
+\end{subequations}
+\end{lemma}
+\begin{proof}
+For brevity, we take (\ref{GG:1}) as given and prove the other two. Taking $(fg)_{x_i} = f_{x_i}g + fg_{x_i}$ into (\ref{GG:1}) for $f$ proves (\ref{GG:2}). Taking $f_{x_i}$ and $1$ for $f$ and $g$ in (\ref{GG:2}) gives $\int_\Omega (f_{x_i})_{x_i} = \int_{\p \Omega} f_{x_i} \nu_i dS$ since $\f{\p}{\p x_i} 1 = 0$. Summing over $i=1,...,n$ gives formula (\ref{GG:3}), using the definition of the normal derivative $\f{\p f}{\p \nu} := Df \cdot \nu$.
+\end{proof}
+\begin{theorem}[Mean value property]
+Let $u$ defined by (\ref{def u}). Then $u$ satisfies (\ref{Laplace}) if and only if $u$ satisfies the following equation (\ref{mvp}).
+\begin{equation} \label{mvp}
+    \forall B_r(x) \subset U \qquad
+    u(x) = \fint_{\p B_r(x)} u(y) dS(y) = \fint_{B_r(x)} u(y) dS(y)
+\end{equation}
+\end{theorem}
+\begin{proof}
+We proceed with only two-sided implications to stress the equivalence in the theorem. Let $B_r(x) \subset U$ be arbitrary. We treat the average over the sphere as a function of $r$, denoted $\phi$.
+\begin{equation}
+    \phi(r) = \fint_{\p B_r(x)} u(y) dS(y)
+    = \f{1}{\alpha_n n r^{n-1}} \int_{\p B_r(x)} u(y) dS(y)
+\end{equation}
+The trick is that differentiating with respect to $r$ creates a $\Delta u$ term. We differentiate by changing variables $y = x + rz$ to move $r$ into integrand. The correcting factor $r^{n-1}$ is intuitive since this sphere has dimension $n-1$, though it seems nontrivial to write out the Jacobian. Differentiation through the integral can be formally justified through an incremental quotient argument and the Lebesgue Dominated Convergence theorem.
+$$ \phi(r) = \f{1}{\alpha_n n} \int_{\p B_1(0)} u(x+rz) dS(z) \qquad
+\phi'(r) = \f{1}{\alpha_n n} \int_{\p B_1(0)} \big(Du(x+rz) z\big) dS(z) $$
+To simplify $\phi'(r)$, we see that $z$ is the normal vector to $\p B_1(0)$ and notate it as $\nu$. We undo the change of variables after manipulation of $r$. Then, we apply a Gauss-Green identity (\ref{GG:3}) to create the Laplacian term.
+$$ \phi'(r) =  \f{1}{\alpha_n n} \int_{\p B_1(0)} \f{\p u}{\p \nu}(x+rz) dS(z)
+= \f{1}{\alpha_n n r^{n-1}} \int_{\p B_r(x)} \f{\p u}{\p \nu}(y) dS(y)
+= \f{1}{\alpha_n n r^{n-1}} \int_{B_r(x)} \Delta u(y) dy $$
+\begin{itemize}
+    \item % forward
+For the forward implication, let $\Delta u(y) = 0$. Then $\phi(r)$ is constant, and we can evaluate $\phi(r)$ by taking $r \rightarrow 0$. In this limit, $u(y) \approx u(x)$ since $u$ is continuous, then the average integral simplifies to 1 since $u(x)$ is constant with respect to $y$. We show this more formally using an integral bound.
+$$ \phi(r) = \Big|\fint_{\p B_r(x)} u(y) dS(y) - u(x) \Big|
+\leq \fint_{\p B_r(x)} dS(y) \sup_{\p B_r(x)} |u(y) - u(x)| \rightarrow 0 \text{ as } r \rightarrow 0 $$
+Thus, we have $\phi(r) = u(x)$, which is the first equality of (\ref{mvp}). We prove the second equality from the first by using spherical coordinates.
+$$ \int_{B_r(x)} u(y) dy = \int_0^r \int_{\p B_s(x)} u(y) dS(y) ds 
+= \int_0^r \left(\int_{\p B_s(x)} dS(y)\right) u(x) ds 
+= u(x) \int_{B_r(x)} dy $$
+    \item % reverse
+For the reverse implication, let $u(x) = \fint_{\p B_r(x)} u(y) dS(y)$. Then $\phi'(r) = 0$ since it is constant. Suppose $\exists\: y \in U$ such that $\Delta u(y) \neq 0$ for the sake of contradiction. Since $u(y) \in C^2(U)$, the function $\Delta u(y)$ is continuous and there exists a region where $\Delta u(y) > 0$ or $\Delta u(y) < 0$ throughout. However, this contradicts $\phi'(r) = 0$ due to the prior calculations.
+$$ \exists B_r(x) \; s.t. \; \phi'(r) 
+= \f{1}{\alpha_n n r^{n-1}} \int_{B_r(x)} \Delta u(y) dy > 0 $$
+\end{itemize}
+\end{proof}
+In essence, the connection between the Laplacian and the normal derivative lets us shrink the average over a ball to the integral of a single point, the center of the ball. The statement for the average on the sphere is the same as the average on the ball here, but the sphere statement is easier to work with in this proof. The mean value property is used to prove further powerful statements about harmonic functions.
+
+%%% Unfinished
+
+% Some example solutions to Laplace's equation are trivial $u(x) = 0$, linear $u(x) = ax + b$, the so-called fundamental solution for $n=2$ and $x \neq 0$ $u(x) = \log(|x|)$, and fundamental solution for $n=3$ $u(x) = \f{1}{|x|^{n-2}}$.
+
+% \begin{theorem}[Harnack's inequality]
+% \end{theorem}
+
+% \subsection*{Regularity}
+
+% \begin{theorem}[Arbitrary smoothness]
+% \end{theorem}
+
+% \begin{theorem}[Real analyticity]
+% \end{theorem}
+
+% \subsection*{Maximum principles}
+
+% \begin{theorem}[Harmonic maximum principle]
+% \end{theorem}
+
+% \begin{theorem}[Elliptic maximum principle]
+% \end{theorem}
+
+% Further content concerns the Dirichlet problem, where values of $u$ are enforced at the boundary as $g$ and representation formulas for Green's function can solve special cases. Furthermore, similar theorems hold for another important PDE, the heat equation.
+
+\end{document}
