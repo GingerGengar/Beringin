@@ -1,5 +1,0 @@
-Description = "Systems of Differential Equations"
-Pre_Requisites = ["Linear_DE",]
-Organization = "B"
-Authors = ["Ginger Gengar",]
-

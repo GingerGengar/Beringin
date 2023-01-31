@@ -9,7 +9,7 @@ fn main() {
     Loading::ShowInputData(&FullMetadata); //TODO: Delete This
     //USER: Figure out where the node we want is located at in the vector
     let mut NodeSel: Vec<usize> = Vec::new();
-    NodeSel.push(8);
+    NodeSel.push(21);
     //Declaration of vector that has the build order
     let mut BuildOrder: Vec<usize> = Vec::new();
     //Produce a Path based on the User Selection
@@ -25,4 +25,7 @@ TODO: Currently our File is set to Appending all the time. Is there some way to 
 TODO: The File optional names have not been implemented, so a single directory of a single Node cannot have its contents be anything other than Theory.tex.
 TODO: We need to integrate these topics with UBI somehow and give it some kind of terminal user interface
 TODO: Port the rest of the archives
+TODO: Give some utilities like renaming a Node such that not only the directory name has changed but all Daun.toml files change their names accordingly.
+TODO: Give some ability to check the integrity of the packages, noting which pre-requisite names do not match
+TODO: Handle images!!!! Copy paste them over!!!
 */

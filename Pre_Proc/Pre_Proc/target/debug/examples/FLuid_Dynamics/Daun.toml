@@ -1,4 +1,0 @@
-Description = "Basic Fluid Dynamics"
-Pre_Requisites = ["PDE", ]
-Organization = "C"
-Authors = ["Ginger Gengar",]

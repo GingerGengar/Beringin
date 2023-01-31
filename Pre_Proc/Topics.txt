@@ -260,6 +260,18 @@ Learn how to use Inkscape
         Add the copy diagram
 Hyperbolic PDE Simulation
 
+Navier Stokes Equations (c) (done)
+    Hiemenz Flow (s) (done)
+        Cartesian Version (done)
+        Polar Version (done)
+    Alternate Forms (s) (done)
+        Strain \& Rotation Forms (ss) (done)
+        Vorticity Equation (ss) (done)
+Numerical Methods (c) (done)
+    Potential Flows (s) (done)
+        Conformal Mapping
+        Gauss-Siedel Grid Method (done)
+    Unsteady Diffusion (s) (done)
+    Fourier Stability Analysis (s) (done)
 
-
-
+REMEMBER conformal mapping has not been included

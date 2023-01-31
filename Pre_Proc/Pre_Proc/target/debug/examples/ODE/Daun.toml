@@ -1,4 +1,0 @@
-Description = "Ordinary Differential Equations Introduction"
-Pre_Requisites = ["LA", "LT"]
-Organization = "C"
-Authors = ["Ginger Gengar","DarkStar34", "Sasha78"]
