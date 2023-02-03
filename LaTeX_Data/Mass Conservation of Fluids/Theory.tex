@@ -1,0 +1,25 @@
+
+The conservation of mass states that mass cannot be created or destroyed.
+If we follow a volume that always contains the same set of fluid particles, then that particular volume we are following must always have the same amount of mass.
+Mathematically, this just means that the substantive derivative of a volume deforming and moving with the fluid must evaluate to zero.
+Re-iterating the tensor form of the Reynold's transport theorem (equation $\ref{Reynolds Transport Theorem Tensor Index Notation}$),
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} + \frac{\partial}{\partial x_{k}} (\phi v_{k}) \,dV_{o}$$
+Remmeber that $\phi$ was some arbitrary quantity. 
+This time, let us consider $\phi$ to be the density of the fluid and we choose this so that the left hand side volumetric integral just implies total mass contained within our deforming volume $V_{m}(t)$.
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \,dV_{o}$$
+wherein $\rho$ represents the density of the fluid.
+The volumetric integral on the left hand side is just the total mass contained within our deforming volume,
+$$M = \iiint^{}_{V_{m}(t)} \rho \,dV_{o}$$
+Substituting this,
+$$\frac{DM}{Dt} = \iiint^{}_{V_{m}(t)} \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \,dV_{o}$$
+Based on conservation of mass, the mass contained within our deforming volume must always be constant because the deforming volume contains the same set of particles at all times.
+Therefore, the left hand side of the equation above evaluates to zero.
+$$0 = \iiint^{}_{V_{m}(t)} \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \,dV_{o}$$
+We need to remember that the volume $V_{m}(t)$ is defined purely as a function of time $t$ because once we have chosen the volume initially, its deformation will deterministically change to always accomodate the same set of fluid particles.
+However, the initial selection of our volume $V_{m}$ at time $t = 0$ was arbitrary. 
+Since $V_{m}(0)$ can be chosen arbitrarily, we know that the volumetric integral can be performed over ANY region in the fluid.
+This must only be possible if the integrand in the equation above evaluates to zero.
+Therefore,
+\begin{equation}0 = \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \label{Governing Equation Fluid Conservation of Mass}\end{equation}
+We have finally arrived at our first governing equation, conservation of mass.
+

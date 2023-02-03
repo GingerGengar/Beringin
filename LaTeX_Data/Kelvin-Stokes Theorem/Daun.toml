@@ -1,0 +1,4 @@
+Description = "Stokes theorem is an incredibly important mathematical theorem that is used in fluid dynamics, electromagnetism, and has many other relationships to other continuum phenomena. In fluid mechanics, the concept of a curl is used to describe vorticity."
+Pre_Requisites = ["Base", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]

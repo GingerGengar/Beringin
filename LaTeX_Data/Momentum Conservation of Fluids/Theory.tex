@@ -1,0 +1,152 @@
+
+The general method of deriving the conservation of momentum is the same as the one for deriving the mass conservation.
+This time, instead of performing a volumetric integral of density over volume (as was the case for our mass conservation), we instead perform a volumetric integral of fluid density $\rho$ multiplied by fluid velocity vector $v_{i}$.
+Such a volumetric integral would represent the total linear momentum within a deforming volume containing the same fluid particles $V_{m}(t)$,
+$$ Total \,\,Momentum = \iiint^{}_{V_{m}(t)} \rho \bar{v} \,dV_{o}$$
+wherein  $dV_{o}$ represents an infinitesmially small amount of volume and $\bar{v}$ represents the velocity vector of the fluid.
+Now let's take the substantive derivative of the total momentum in the equation above,
+$$\frac{D}{Dt}(Total \,\,Momentum) = \frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \bar{v} \,dV_{o}$$
+Remember what we said way earlier in the Reynold's Transport Theorem about combining the physics occuring with a moving fluid and the reference frame of a stationary observer?
+This is where we are going to do \textbf{exactly that}. 
+The time rate of change of momentum for the same set of fluid particles is going to be the total external forces acting on the set of fluid particles.
+\begin{equation}F_{ext} = \frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \bar{v} \,dV_{o} \label{F External Momentum Equation LHS}\end{equation}
+wherein $F_{ext}$ represents the external forces acting on the set of fluid particles.
+We divide this total external force into one that is acting on the surface of the volume and one that acts on the body of the volume.
+\begin{equation}F_{ext} = \iint^{}_{S_{m}(t)} \bar{\sigma} \,dS + \iiint^{}_{V_{m}(t)} \bar{F}_{bod} \,dV_{o} \label{F External Momentum Equation RHS}\end{equation}
+wherein $\bar{\sigma}$ represents the surface force acting on the volume and $\bar{F}_{bod}$ represents the body force acting on the volume.
+Examples of surface forces are viscous effects where the movement of a fluid particle exerts a force on its neighbours. 
+Another example of a surface force would be something like thermodynamic pressure where a fluid particle exerts a force on its neighbouring particle to push or pull against each other.
+Example of body forces include gravity, electromagnetic forces, centrifugal acceleration or any other fields interacting with the fluid.
+For example, we would need to consider electromagnetic forces if we are dealing with ferrofluids or we might want to consider centrifugal acceleration or other fictitious acceleration when we are dealing with jet engines or ocean currents.
+We can substitute the external force out of equation $\ref{F External Momentum Equation RHS}$ and equation $\ref{F External Momentum Equation LHS}$,
+\begin{equation}F_{ext} = \frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \bar{v} \,dV_{o} = \iint^{}_{S_{m}(t)} \bar{\sigma} \,dS + \iiint^{}_{V_{m}(t)} \bar{F}_{bod} \,dV_{o} \label{Finite Volume External Force Expression}\end{equation}
+Now let us consider the case where our volume $V_{m}(t)$ is infinitesmially small,
+$$\lim_{V_{m}  \to 0}\left[\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \bar{v} \,dV_{o}\right] = \lim_{V_{m} \to 0}\left[\iint^{}_{S_{m}(t)} \bar{\sigma} \,dS\right] + \lim_{V_{m} \to 0}\left[\iiint^{}_{V_{m}(t)} \bar{F}_{bod} \,dV_{o}\right] $$
+Now all the volumetric integral terms in the equation above scale proportionally to $(\delta l)^{3}$, wherein $\delta l$ represents the length "size" of the volume.
+Now the surface integral term in the equation above scales proprtionally to $(\delta l)^{2}$.
+So, as $\delta l$ approaches $0$, we can tell that all of the volumetric integral terms will evalueate closer $0$ faster than the surface integral term evaluating to $0$.
+Thefore as we take the limit of $\delta l \to 0$, we can tell that,
+\begin{equation}0 = \lim_{V_{m} \to 0}\left[\iint^{}_{S_{m}(t)} \bar{\sigma} \,dS\right] \label{Stress Equilibrium}\end{equation}
+The equation above states that the integral of the surface forces on infinitesmially small volumes must evaluate to zero, and it is sometimes known as "the principle of stress equilibrium".
+Now you might wonder that equation $\ref{Stress Equilibrium}$ is only true when the volume is infinitesmially small.
+How is this result applicable to when our volume is not infinitesmially small in equation $\ref{Finite Volume External Force Expression}$?
+%Seperator
+\\~\\What the principle of stress equilibrium is trying to say is that the stress vector is a vector that is attributed to a single point in space (infinitesmially small volume).
+We will introduce soon the decomposition of our stress vector and a way to compute an equivalent stress vector if we consider different planes (surfaces). 
+Therefore, for the case wherein we have a finite non-negligible volume, we would integrate the constantly differing stress vector over the entire surface of the volume.
+This is not important, but the main takeaway from equation $\ref{Stress Equilibrium}$ is that the surface stress is not varying across a surface, but is uniquely define for a single point.
+\begin{figure}[H]\centering
+\def\svgwidth{400px}
+\subimport{Images/}{Tetrahedral_Stresses.pdf_tex}
+\caption{Surface Stresses on an infinitesmially small volume of fluid}
+\label{Stress Tensors Momentum Conservation}
+\end{figure}
+The surface forces or stress vectors are depicted in Figure $\ref{Stress Tensors Momentum Conservation}$ as $\bar{\sigma}_{i}$, wherein the subscript corresponds to which surface the stress vector is acting on.
+The tetrahedral of Figure $\ref{Stress Tensors Momentum Conservation}$ is supposed to show that any arbitrary plane surface (Surface 4) can be decomposed into $3$ surface that is orthogonal to the unit vectors that make up the coordinate system.
+Since our tetrahedral is infinitesmially small, we can assume that the surface stress vectors are constant within the infinitesmially small surface area of the element.
+Using equation $\ref{Stress Equilibrium}$ and also remembering that the stress vectors are forces per unit area,
+\begin{equation}0 = \bar{\sigma_{4}}(\delta A_{4}) - \bar{\sigma_{1}}(\delta A_{1}) - \bar{\sigma_{2}}(\delta A_{2}) - \bar{\sigma_{3}}(\delta A_{3}) \label{Stress Vectors Momentum Conservation Primitive q}\end{equation}
+wherein $\delta A_{1}$ represents the small area of face 1,  $\delta A_{2}$ represents the small area of face 2, and so $\delta A_{i}$ represents the infinitesmially small area of the $i^{th}$ surface.
+These areas $\delta A_{i}$ are incredibly small, which is why we added the $\delta$ sign.
+Now we can express the infinitesmially small areas with respect to each other. 
+Think of $\delta A_{i}$ as a projection of $\delta A_{4}$ on the $i^{th}$ plane.
+$$\delta A_{1} = (\delta A_{4})(\hat{n_{1}}\cdot \hat{n_{4}}) \quad,\quad \delta A_{2} = (\delta A_{4})(\hat{n_{2}}\cdot \hat{n_{4}}) \quad,\quad \delta A_{3} = (\delta A_{4})(\hat{n_{3}}\cdot \hat{n_{4}})$$
+We are going to rewrite $\delta A_{i}$ in terms of $\delta A_{4}$ and then due to $\delta A_{4}$ being non-zero, we can divide both sides of the equation using $\delta A_{4}$ and then arrive at an expression fully in terms of $\sigma_{i}$.
+This will give us some important realizations.
+Substituting into equation $\ref{Stress Vectors Momentum Conservation Primitive q}$,
+$$0 = \bar{\sigma_{4}}(\delta A_{4}) 
+- \bar{\sigma_{1}}(\delta A_{4})(\hat{n_{1}}\cdot \hat{n_{4}})
+- \bar{\sigma_{2}}(\delta A_{4})(\hat{n_{2}}\cdot \hat{n_{4}})
+- \bar{\sigma_{3}}(\delta A_{4})(\hat{n_{3}}\cdot \hat{n_{4}})$$
+Although $\delta A_{4}$ is infinitesmially small, it is still non-zero. 
+Therefore, we can divide both sides of the equation by $\delta A_{4}$,
+$$0 = \bar{\sigma_{4}} - \bar{\sigma_{1}}(\hat{n_{1}}\cdot \hat{n_{4}}) - \bar{\sigma_{2}}(\hat{n_{2}}\cdot \hat{n_{4}}) - \bar{\sigma_{3}}(\hat{n_{3}}\cdot \hat{n_{4}})$$
+$$\bar{\sigma_{4}} = \bar{\sigma_{1}}(\hat{n_{1}}\cdot \hat{n_{4}}) + \bar{\sigma_{2}}(\hat{n_{2}}\cdot \hat{n_{4}}) + \bar{\sigma_{3}}(\hat{n_{3}}\cdot \hat{n_{4}})$$
+
+%TODO: PLEASE ENTER vector vetor multiplication as a second order tensor
+
+\begin{equation}\bar{\sigma_{4}} = [\bar{\sigma_{1}}\hat{n_{1}} + \bar{\sigma_{2}}\hat{n_{2}} + \bar{\sigma_{3}}\hat{n_{3}}] \cdot \hat{n_{4}} \label{Stress Tensor Definition Primitive b}\end{equation}
+Now we can define the second order tensor $\bar{\bar{\sigma}}$ to be as follows,
+\begin{equation}\bar{\bar{\sigma}} = \bar{\sigma_{1}}\hat{n_{1}} + \bar{\sigma_{2}}\hat{n_{2}} + \bar{\sigma_{3}}\hat{n_{3}} \label{Stress Tensor Definition Primitive a}\end{equation}
+This second order tensor is often called the stress tensor and it would be a $3\times 3$ tensor in $3$ dimensions and just a $2\times 2$ tensor in $2$ dimensions.
+We can combine equation $\ref{Stress Tensor Definition Primitive a}$ and equation $\ref{Stress Tensor Definition Primitive b}$ to then arrive at the following equation,
+\begin{equation}\bar{\sigma_{4}} = \bar{\bar{\sigma}}\cdot \hat{n_{4}} \label{Usage of Stress Tensor}\end{equation}
+This means that if we know the stress tensor everywhere in the fluid and we were given a point and an arbitrarily chosen unit vector normal to an arbitrarily chosen surface, we can use equation $\ref{Usage of Stress Tensor}$ to compute the surface stress at that particular surface on that particular given point.
+%Seperator
+\\~\\Now let us pause and think back at look at what we have done.
+Equation $\ref{Stress Equilibrium}$ is basically saying that if our volume is infinitesmially small, any mass contained in that volume is negligible and therefore, we can have $0$ force to accelerate negligible mass to some velocity.
+This means that at such infinitesmial scales the forces come from our surface stresses, it must mean that the summation of the forces due to our surfaces must net zero.
+%Seperator
+\\~\\All of the math from equation $\ref{Stress Vectors Momentum Conservation Primitive q}$ to equation $\ref{Usage of Stress Tensor}$ is just trying to say that since we know the surface stresses must cancel each other out, if we are given some arbitrary surface and a stress acting on that surface, we should be able to decompose that given surface stress into an equivalent stress acting on $3$ planes normal to our coordinate system.
+The decomposition of the given surface stress into $3$ planes is described by the stress tensor $\bar{\bar{\sigma}}$.
+Our given arbitrary surface is described by its unit normal vector $\hat{n_{4}}$ and our given arbitrary stress vector is given as $\bar{\sigma_{4}}$.
+%Seperator
+\\~\\Remember that the principle of stress equilibrium is saying that surface stress will vary across a surface, but is uniquely defined and non-varying on a single point.
+Since we inscribed all our information mathematically, we can also say that if we know the decomposition of our stresses in $3$ dimensions, given some arbitrary plane at some point, we should be able to compute the corresponding stress vector acting on that plane.
+This is an elegant concept.
+
+
+Knowing what we now know, we should convert equation $\ref{Finite Volume External Force Expression}$ into index notation so that we can inscribe the stress tensor $\bar{\bar{\sigma}}$ in.
+Re-iterating equation $\ref{Finite Volume External Force Expression}$,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \bar{v} \,dV_{o} = \iint^{}_{S_{m}(t)} \bar{\sigma} \,dS + \iiint^{}_{V_{m}(t)} \bar{F}_{bod} \,dV_{o}$$
+$$\left\{\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \bar{v} \,dV_{o}\right\}_{i} = \frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho v_{i} \,dV_{o} \quad,\quad
+\left\{\iint^{}_{S_{m}(t)} \bar{\sigma} \,dS\right\}_{i} = \iint^{}_{S_{m}(t)} \sigma_{ij}n_{j} \,dS$$
+$$\left\{\iiint^{}_{V_{m}(t)} \bar{F}_{bod} \,dV_{o}\right\}_{i} = \iiint^{}_{V_{m}(t)} \rho g_{i} \,dV_{o}$$
+wherein $g_{i}$ represents the \textbf{total body force acceleration}.
+$g_{i}$ is not meant to represent normal gravitational acceleration.
+We lumped all the body forces (gravity, electromagnetic, centrifugal) all into $g_{i}$.
+Here we also express $\sigma$ as the second order tensor instead of just a normal vector like in the earlier equation $\ref{Finite Volume External Force Expression}$.
+Now re-writing equation $\ref{Finite Volume External Force Expression}$ in tensor index notation,
+\begin{equation}\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho v_{i} \,dV_{o} = \iint^{}_{S_{m}(t)} \sigma_{ij}n_{j} \,dS + \iiint^{}_{V_{m}(t)} \rho g_{i} \,dV_{o} \label{Tensor Index Notation Momentum Primitive 1}\end{equation}
+We have already incorporated the physics of the problem, now it's time to transform the left hand side of the equation above into one that is dependent on the eulerian reference frame instead of one dependent on the lagrangian reference frame.
+To do that, we use the Reynold's Transport Theorem (equation $\ref{Reynolds Transport Theorem Tensor Index Notation}$)
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} + \frac{\partial}{\partial x_{k}} (\phi v_{k}) \,dV_{o}$$
+We are going to substitute $\phi$ with $\rho v_{i}$,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho v_{i} \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial }{\partial t}(\rho v_{i}) + \frac{\partial}{\partial x_{k}} (\rho v_{i} v_{k}) \,dV_{o}$$
+Let's substitute the equation above into the left hand side of equation $\ref{Tensor Index Notation Momentum Primitive 1}$
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho v_{i} \,dV_{o} = \iint^{}_{S_{m}(t)} \sigma_{ij}n_{j} \,dS + \iiint^{}_{V_{m}(t)} \rho g_{i} \,dV_{o} $$
+$$\iiint^{}_{V_{m}(t)} \frac{\partial }{\partial t}(\rho v_{i}) + \frac{\partial}{\partial x_{k}} (\rho v_{i} v_{k}) \,dV_{o} = \iint^{}_{S_{m}(t)} \sigma_{ij}n_{j} \,dS + \iiint^{}_{V_{m}(t)} \rho g_{i} \,dV_{o} $$
+Now the surface integral on the right hand side of the equation above is problematic for us. 
+If we can somehow convert the surface integral to a volumetric integral, then we can have a simpler expression which is just based on the integrand of the volumetric integrals.
+Fortunately, we have the divergence theorem as a method for us to convert the surface integral into a volumetric integral.
+Re-iterating the divergence theorem (equation $\ref{Tensor Index Notation Divergence Theorem}$)
+$$\iiint^{}_{R(t)} \frac{\partial F_{j}}{\partial x_{j}} \,dV_{o} = \iint^{}_{S(t)} F_{j}n_{j} \,dS$$
+We are going to use our arbitrary region as our moving volume, so $R(t) = V_{m}(t)$. 
+Since our region is our moving volume, then our corresponding surface is going to be $S(t) = S_{m}(t)$.
+We are going to replace our arbitrary vector $F_{j}$ with our stress tensor of rank 2, $\sigma_{ij}$.
+Applying all these changes,
+$$\iiint^{}_{V_{m}(t)} \frac{\partial \sigma_{ij}}{\partial x_{j}} \,dV_{o} = \iint^{}_{S_{m}(t)} \sigma_{ij}n_{j} \,dS$$
+Substituting to our primitive momentum equation to convert the surface integral into a volumetric integral,
+$$\iiint^{}_{V_{m}(t)} \frac{\partial }{\partial t}(\rho v_{i}) + \frac{\partial}{\partial x_{k}} (\rho v_{i} v_{k}) \,dV_{o} = \iint^{}_{S_{m}(t)} \sigma_{ij}n_{j} \,dS + \iiint^{}_{V_{m}(t)} \rho g_{i} \,dV_{o} $$
+$$\iiint^{}_{V_{m}(t)} \frac{\partial }{\partial t}(\rho v_{i}) + \frac{\partial}{\partial x_{k}} (\rho v_{i} v_{k}) \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \sigma_{ij}}{\partial x_{j}} \,dV_{o} + \iiint^{}_{V_{m}(t)} \rho g_{i} \,dV_{o} $$
+Now we can combine the integrands of our right hand side into a single volumetric integral,
+$$\iiint^{}_{V_{m}(t)} \frac{\partial }{\partial t}(\rho v_{i}) + \frac{\partial}{\partial x_{k}} (\rho v_{i} v_{k}) \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i} \,dV_{o} $$
+Since we have volumetric interals on both sides, we can just compare the integrands,
+$$ \frac{\partial }{\partial t}(\rho v_{i}) + \frac{\partial}{\partial x_{k}} (\rho v_{i} v_{k}) = \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i} $$
+This might seem like a good place to stop, but we might be able to simplify this equation further. 
+We are going to expand the partial derivative product terms on the left hand side,
+$$ \rho\frac{\partial v_{i}}{\partial t} + v_{i}\frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{i} v_{k}) = \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i} $$
+$$ \rho\frac{\partial v_{i}}{\partial t} + v_{i}\frac{\partial \rho}{\partial t} + v_{i}\frac{\partial}{\partial x_{k}} (\rho v_{k}) + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i} $$
+We are going to re-arrange the terms a bit,
+$$v_{i}\frac{\partial \rho}{\partial t} + v_{i}\frac{\partial}{\partial x_{k}} (\rho v_{k}) + \rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i} $$
+$$v_{i}\left[\frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k})\right] + \rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i} $$
+Now we can actually apply the fluid mass conservation equation to the left hand side of the equation above.
+Re-iterating the fluid mass conservation (equation $\ref{Governing Equation Fluid Conservation of Mass}$),
+$$0 = \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) $$
+Therefore, we can simplify our expression because some terms evaluated to zero due to mass conservation,
+\begin{eqnarray}
+\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i} 
+\label{Conservation of Momentum Fluid General}
+\end{eqnarray}
+We have finally arrived at the most general equation for our conservation of linear momentum in our fluid continuum.
+This is as far as we can go without using empirical relations assuming more things about the fluid such as the fluid being Newtonian or non-Newtonian and so on.
+%Seperator
+\\~\\The equation above has a really good physical significance for all the terms. 
+We got this equation from applying Newton's second law where the rate of change of momentum for a system is the summation of all external forces applied to the system.
+On the left hand side, we have $2$ terms denoting the rate of change of momentum.
+The first term represent the linear acceleration of a fluid and the second term is supposed to represent the convective accelerations of the fluid like acceleration around round objects even when the fluid flow is steady.
+%Seperator
+\\~\\The right hand side represents the external forces acting on the fluid.
+The first term on the right hand side just means the gradient of the surface shear stresses and the second term represents all the contributions of body forces like electromagnetic forces and gravity that act on the "mass" of the fluid.
+
+

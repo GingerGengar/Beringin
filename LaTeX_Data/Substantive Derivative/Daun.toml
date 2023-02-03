@@ -1,0 +1,4 @@
+Description = "Concepts of Eulerian and Lagrangian Reference Frames are Introduced along with the very fundamental fluid substantive derivative. This is the corner stone basis of ALL fluid mechanics."
+Pre_Requisites = ["Tensor Index Notation", "Fluid Dynamics"]
+Organization = "B"
+Authors = ["Ginger Gengar",]

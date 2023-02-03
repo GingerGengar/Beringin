@@ -1,0 +1,138 @@
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Eulerian Reference Frame}
+\begin{comment}
+\end{comment}
+We need to introduce two reference frames to properly analyze continuum phenomena. 
+The first reference frame is called the "Eulerian" reference frame where an observer is fixed in some time and space based on an inertial reference frame.
+Imagine a river as our fluid and we have a floating probe that we put at some location in the river (maybe the center).
+The probe is anchored to the bottom of that river and it just takes measurements (temperature, velocity, whatever you want) from its fixed location in space and in the river.
+If we are the observer fixed to such a probe, then that corresponds to the eulerian reference frame.
+\begin{figure}[H]\centering
+\def\svgwidth{500px}
+\import{Images/}{Eulerian_Reference_Frame.pdf_tex}
+\caption{Illustration of an eulerian reference frame}
+\label{eulerian reference frame fluid}
+\end{figure}
+Whatever quantity we are measuring such as temperature or velocity in some direction can be uniquely determined a function of position $x$, $y$, $z$ and time $t$ in the eulerian reference frame.
+This just means that if we have a point in space and a certain time, that is enough information to determine whatever quantity we are interested in like temperature or velocity.
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Lagrangian Reference Frame}
+\begin{comment}
+\end{comment}
+The second reference frame is called the "Lagrangian" reference frame where the observer is moving along with a group of fluid particles and keeps tracking of just those specific group of fluid particles.
+Imagine the same river but this time the probe is freely floating and not anchored to the bottom of the river.
+The probe follows the same fluid particles down the river and takes measurements (whatever quantity we want) of the same group of fluid particles.
+If we are the observer fixed to the probe that is moving downstream along with the fluid, then that corresponds to the lagrangian reference frame.
+\begin{figure}[H]\centering
+\def\svgwidth{500px}
+\import{Images/}{Lagrangian_Reference_Frame.pdf_tex}
+\caption{Illustration of a lagrangian reference frame}
+\label{lagrangian reference frame fluid}
+\end{figure}
+Since the lagrangian reference frame follows a package of particles travelling downstream, then whatever quantity we are interested in (temperature or velocity or whatever you want) is instead functions of its initial position and time. 
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Reconcilliation of Time Derivatives}
+\begin{comment}
+\end{comment}
+Let's consider some quantity $\phi$ in some fluid. 
+This quantity is arbitrary, so it can represent temperature, pressure, density, velocity in one direction or whatever we want. 
+The concept of a substantive derivative is to relate the time derivative in the eulerian reference frame to the time derivative in the lagrangian reference frame.
+In other words, the substantive derivative seeks to answer the question: "Given that we know what the time derivative for some quantity is based on an observer at a fixed location, can we tell what the time derivative is for the same quantity based on an observer that is moving along with the fluid?"
+\begin{figure}[H]\centering
+\def\svgwidth{500px}
+\import{Images/}{Substantive_Derivative.pdf_tex}
+\caption{Difference between the time derivative of the eulerian and lagrangian reference frame}
+\label{eulerian-lagrangian reference frame derivative}
+\end{figure}
+We can express the arbitrary quantity $\phi$ in terms of the eulerian reference frame as functions of spatial position $x_{1}$, $x_{2}$, $x_{3}$ and time $t$ or we can express the same quantity $\phi$ in terms of its initial positions $x_{in,1}$, $x_{2,in}$, $x_{3,in}$ and time $t$.
+\begin{equation}\phi = \phi_{E}(x_{1,},x_{2},x_{3},t) = \phi_{L}(x_{in,1},x_{in,2},x_{in,3},t) \label{Substantive Derivative Functional Representation}\end{equation}
+wherein $\phi_{E}$ is a function that is used to describe $\phi$ in the eulerian reference frame and $\phi_{L}$ is a function that is used to describe $\phi$ in the lagrangian reference frame.
+In general, $\phi_{E}$ is going to be different than $\phi_{L}$.
+We are going to define a mapping $M_{el}$ that maps the current fluid at position $x_{1}$, $x_{2}$, $x_{3}$, to its initial position $x_{in,1}$, $x_{in,2}$, $x_{in,3}$.
+So this mapping works in the following way,
+\begin{equation}x_{1} = M_{el,1}(x_{in,1}, x_{in,2}, x_{in,3}, t) \quad,\quad x_{2} = M_{el,2}(x_{in,1}, x_{in,2}, x_{in,3}, t) \quad,\quad x_{3} = M_{el,3}(x_{in,1}, x_{in,2}, x_{in,3}, t) \label{Definition of Lagrangian to Euler Reference Frame Mapping}\end{equation}
+As a shorthand with the tensor index notation,
+$$x_{i} = M_{el,i}(x_{in,1}, x_{in,2}, x_{in,3}, t)$$
+We are going to take the time derivative of equation $\ref{Substantive Derivative Functional Representation}$ to try to gain a relationship between the time derivative in the eulerian reference frame and the lagrangian reference frame.
+However, the representation in equation $\ref{Substantive Derivative Functional Representation}$ has one part in initial position and another part in a fixed spatial position.
+In order to reconcile these two representations, we need to express them as functions of the same variables.
+Therefore, we need to apply the mapping $M_{el,i}$, to equation $\ref{Substantive Derivative Functional Representation}$ first before taking time derivative.
+Applying the mapping to equation $\ref{Substantive Derivative Functional Representation}$,
+$$\phi_{E}(M_{el,1}, M_{el,2}, M_{el,3}, t) = \phi_{L}(x_{in,1},x_{in,2},x_{in,3},t) $$
+Note that we didn't write down the arguments to $M_{el,i}$ just because its tedious and long, but we have to remember that each $M_{el,i}$ are functions with inputs $x_{in,1}$, $x_{in,2}$, $x_{in,3}$, and $t$.
+We are now going to take the time derivative of both sides of the equation above,
+$$\phi_{L}(x_{in,1},x_{in,2},x_{in,3},t) = \phi_{E}(M_{el,1}, M_{el,2}, M_{el,3}, t)$$
+$$\frac{d}{d t}\left[\phi_{L}(x_{in,1},x_{in,2},x_{in,3},t)\right] = \frac{d}{d t}\left[\phi_{E}(M_{el,1}, M_{el,2}, M_{el,3}, t)\right]$$
+Now we need to understand that both left hand side and right hand side of our equation only depends on initial positions $x_{in,1}$, $x_{in,2}$, $x_{in,3}$, and time $t$.
+The initial positions and the time variable are all independent variables.
+Therefore, the left hand side of our equation is just going to be the partial derivative with respect to time,
+$$\frac{d}{d t}\left[\phi_{L}(x_{in,1},x_{in,2},x_{in,3},t)\right] = \frac{\partial}{\partial t}\left[\phi_{L}(x_{in,1},x_{in,2},x_{in,3},t)\right]$$
+Substituting for our left hand side,
+\begin{equation}\frac{\partial}{\partial t}\left[\phi_{L}(x_{in,1},x_{in,2},x_{in,3},t)\right] = \frac{d}{d t}\left[\phi_{E}(M_{el,1}, M_{el,2}, M_{el,3}, t)\right] \label{Almost Done Substantive Derivative primitive 1}\end{equation}
+Now our right hand side can be expanded using chain rule in partial derivatives,
+$$\frac{d}{d t}\left[\phi_{E}(M_{el,1}, M_{el,2}, M_{el,3}, t)\right] = \frac{\partial \phi_{E}}{\partial t} + \frac{\partial \phi_{E}}{\partial M_{el,1}}\frac{\partial M_{el,1}}{\partial t} + \frac{\partial \phi_{E}}{\partial M_{el,2}}\frac{\partial M_{el,2}}{\partial t} + \frac{\partial \phi_{E}}{\partial M_{el,3}}\frac{\partial M_{el,3}}{\partial t}$$
+Based on equation $\ref{Definition of Lagrangian to Euler Reference Frame Mapping}$, we can express $M_{el,i}$ as $x_{i}$ which is spatial coordinates in the eulerian reference frame,
+$$\frac{d}{d t}\left[\phi_{E}(x_{1}, x_{2}, x_{3}, t)\right] = \frac{\partial \phi_{E}}{\partial t} + \frac{\partial \phi_{E}}{\partial x_{1}}\frac{\partial x_{1}}{\partial t} + \frac{\partial \phi_{E}}{\partial x_{2}}\frac{\partial x_{2}}{\partial t} + \frac{\partial \phi_{E}}{\partial x_{3}}\frac{\partial x_{3}}{\partial t}$$
+Now our right hand side is no longer in terms of initial spatial positions $x_{in,i}$ but is now in terms of eulerian spatial positions $x_{i}$.
+Let's examine one of the time derivatives of spatial position $x_{i}$,
+$$\frac{\partial x_{1}}{\partial t} = \frac{\partial }{\partial t}\left[M_{el,1}(x_{in,1}, x_{in,2}, x_{in,3}, t)\right]$$
+Remember that the mapping above takes all of the initial position of a certain point fluid particle to tell the location of the same fluid particle at some time $t$. 
+This means that the time derivative of our mapping is just our $x_{1}$ velocity of the fluid particle.
+$$\frac{\partial x_{1}}{\partial t} = v_{1}$$
+wherein $v_{1}$ represents the velocity of our fluid particle in the $x_{1}$ direction.
+\begin{figure}[H]\centering
+\def\svgwidth{400px}
+\import{Images/}{Particle_Trajectory.pdf_tex}
+\caption{The trajectory of a particle from its initial position to some position at time $t$}
+\label{particle trajectory substantive derivative}
+\end{figure}
+Generalizing this to all directions, we can say that,
+$$\frac{\partial x_{i}}{\partial t} = v_{i}$$
+Substituting this realization of the time derivatives,
+$$\frac{d}{d t}\left[\phi_{E}(x_{1}, x_{2}, x_{3}, t)\right] = \frac{\partial \phi_{E}}{\partial t} + \frac{\partial \phi_{E}}{\partial x_{1}}v_{1} + \frac{\partial \phi_{E}}{\partial x_{2}}v_{2} + \frac{\partial \phi_{E}}{\partial x_{3}}v_{3}$$
+Substituting the equation above into the right hand side of equation $\ref{Almost Done Substantive Derivative primitive 1}$,
+$$\frac{\partial}{\partial t}\left[\phi_{L}(x_{in,1},x_{in,2},x_{in,3},t)\right] = \frac{d}{d t}\left[\phi_{E}(M_{el,1}, M_{el,2}, M_{el,3}, t)\right]$$
+$$\frac{\partial}{\partial t}\left[\phi_{L}(x_{in,1},x_{in,2},x_{in,3},t)\right] = \frac{\partial \phi_{E}}{\partial t} + \frac{\partial \phi_{E}}{\partial x_{1}}v_{1} + \frac{\partial \phi_{E}}{\partial x_{2}}v_{2} + \frac{\partial \phi_{E}}{\partial x_{3}}v_{3}$$
+Shortening the notation of the equation above by implying the input arguments to $\phi_{L}$,
+$$\frac{\partial \phi_{L}}{\partial t} = \frac{\partial \phi_{E}}{\partial t} + \frac{\partial \phi_{E}}{\partial x_{1}}v_{1} + \frac{\partial \phi_{E}}{\partial x_{2}}v_{2} + \frac{\partial \phi_{E}}{\partial x_{3}}v_{3}$$
+We have finally arrived at the definition of substantive derivative which relates time derivative in the eulerian reference frame to the time derivative in the lagrangian reference frame.
+Now the expression above can be re-written in more compact vector form,
+\begin{equation}\frac{\partial \phi_{L}}{\partial t} = \frac{\partial \phi_{E}}{\partial t} + \bar{v}\cdot(\nabla \phi_{E}) \label{Substantive Derivative Final Vector Notation}\end{equation}
+wherein $\bar{v}$ is the velocity vector defined below,
+$$\bar{v} = \begin{bmatrix}
+v_{1} && v_{2} && v_{3}
+\end{bmatrix}^{T}$$
+The substantive derivative could also be expressed compactly in tensor index notation,
+\begin{equation}\frac{\partial \phi_{L}}{\partial t} = \frac{\partial \phi_{E}}{\partial t} + v_{i}\frac{\partial \phi_{E}}{\partial x_{i}} \label{Substantive Derivative Final Tensor Index Notation}\end{equation}
+For better visualization, we might manipulate the equation above into the following form,
+$$\frac{\partial \phi_{E}}{\partial t} = \frac{\partial \phi_{L}}{\partial t} - v_{i}\frac{\partial \phi_{E}}{\partial x_{i}}$$
+\begin{figure}[H]\centering
+\def\svgwidth{480px}
+\import{Images/}{Substantive_Derivative_Term_Explanations.pdf_tex}
+\caption{Moving Fluid Particles with Respect to Volume Fixed in Space}
+\label{Control Volume Eulerian Lagrangian Substantive Derivative}
+\end{figure}
+The term $\partial \phi_{L}/\partial t$ represents diffusion of the quantity of interest into or out of the main fluid particle.
+The term $-v_{i}\partial \phi_{E}/\partial x_{i}$ represents convection of the quantity of itnerest out or into the volume that is fixed in some space in the eulerian reference frame.
+It just comes to show that the substantive derivative actually has a good physical interpretation.
+The figure above is an exaggeration in that the main fluid particle should not be that far out of the control volume.
+The figure also displays a square volume and this is exaggerated.
+In reality, the substantive derivative is used on points and not volumes.
+The square volume is just an extremely zoomed out image of a particle so just imagine the figure above, but shrink it infinitely to the size of a single particle, and that would be an accurate representation of the substantive derivative.
+Even so, the figure shows a good illustration of both the diffusive term and the convective term at play on a point in space in the substantive derivative.
+The time derivative of some arbitrary quantity moving along with the fluid in the lagrangian reference frame (substantive derivative) is often considered with a separate notation shown below,
+\begin{equation}\frac{D \phi}{Dt} = \frac{\partial \phi_{L}}{\partial t} = \frac{\partial \phi_{E}}{\partial t} + v_{i}\frac{\partial \phi_{E}}{\partial x_{i}} \label{Substantive Derivative Extra Notation}\end{equation}
+

@@ -1,0 +1,67 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Particle_Trajectory.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{320.44048587bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.1041234)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Particle_Trajectory.pdf}}%
+    \put(0.88260271,0.4635043){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$x_{1}$\end{tabular}}}}%
+    \put(0.35836417,1.08212091){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$x_{2}$\end{tabular}}}}%
+    \put(0.04849318,0.01214309){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$x_{3}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Particle_Trajectory.pdf}}%
+    \put(0.09796284,0.50536699){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$(x_{in,1}, x_{in,2}, x_{in,3})$\end{tabular}}}}%
+    \put(0.44418358,0.91974685){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$(M_{el,1}, M_{el,2}, M_{el,3})$\end{tabular}}}}%
+    \put(-0.00203821,0.62151398){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Particle at time $t=0$\end{tabular}}}}%
+    \put(0.60505289,0.82900952){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Particle at time $t$\end{tabular}}}}%
+    \put(0.44564953,0.67858163){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Particle Trajectory\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

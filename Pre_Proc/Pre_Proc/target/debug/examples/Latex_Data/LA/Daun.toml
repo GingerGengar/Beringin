@@ -1,0 +1,4 @@
+Description = "Basic Linear Algebra Topics"
+Pre_Requisites = ["Base",]
+Organization = "C"
+Authors = ["Ginger Gengar",]

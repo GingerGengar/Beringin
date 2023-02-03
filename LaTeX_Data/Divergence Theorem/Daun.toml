@@ -1,0 +1,4 @@
+Description = "The Divergence theorem is an incredibly fundamental theorem in many continuum phenomena such as fluid mechanics, solid mechanics, electromagnetism and more. In fluid dynamics it is often used to describe compressibility of a fluid."
+Pre_Requisites = ["Base", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]

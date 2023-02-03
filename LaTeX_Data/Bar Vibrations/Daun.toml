@@ -1,0 +1,4 @@
+Description = "Example of a structural bar vibration"
+Pre_Requisites = ["Partial Differential Equations",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

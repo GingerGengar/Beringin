@@ -1,0 +1,4 @@
+Description = "We introduce the local kinematics of a fluid which is vital in understanding additional relations we employ for the stress tensor of a fluid"
+Pre_Requisites = ["Momentum Conservation of Fluids",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

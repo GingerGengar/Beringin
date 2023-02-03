@@ -1,0 +1,4 @@
+Description = "Introduction to Partial Differential Equations"
+Pre_Requisites = ["Linear Differential Equations", "Del Operator in Various Coordinate Systems"]
+Organization = "B"
+Authors = ["Ginger Gengar",]

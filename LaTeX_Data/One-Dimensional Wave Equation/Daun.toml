@@ -1,0 +1,5 @@
+Description = "Solutions to solving the famous 1-dimensional wave equation"
+Pre_Requisites = ["Partial Differential Equations",]
+Organization = "B"
+Authors = ["Ginger Gengar",]
+

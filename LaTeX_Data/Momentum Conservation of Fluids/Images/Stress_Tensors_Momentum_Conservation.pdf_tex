@@ -1,0 +1,74 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Stress_Tensors_Momentum_Conservation.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{379.30867108bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.99760473)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Stress_Tensors_Momentum_Conservation.pdf}}%
+    \put(0.78183783,0.4599212){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$x_{1}$\end{tabular}}}}%
+    \put(0.25991599,0.97901699){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$x_{2}$\end{tabular}}}}%
+    \put(0.00845247,0.00615635){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$x_{3}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Stress_Tensors_Momentum_Conservation.pdf}}%
+    \put(0.81511209,0.38222556){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{11}$\end{tabular}}}}%
+    \put(0.57312738,0.25923345){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{13}$\end{tabular}}}}%
+    \put(0.65286624,0.54686687){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{12}$\end{tabular}}}}%
+    \put(0.44741767,0.29060908){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{31}$\end{tabular}}}}%
+    \put(0.25236441,0.14585001){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{33}$\end{tabular}}}}%
+    \put(0.31750218,0.43536815){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{32}$\end{tabular}}}}%
+    \put(0.31077538,0.52885737){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{23}$\end{tabular}}}}%
+    \put(0.53937983,0.65051582){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{21}$\end{tabular}}}}%
+    \put(0.38811388,0.80653941){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\sigma_{22}$\end{tabular}}}}%
+    \put(0.64636974,0.32713587){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Surface 1\end{tabular}}}}%
+    \put(0.321883,0.22793582){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Surface 3\end{tabular}}}}%
+    \put(0.38670171,0.59913479){\color[rgb]{0,0,0}\transparent{0.99991101}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Surface 2\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

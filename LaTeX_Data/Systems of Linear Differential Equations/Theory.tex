@@ -1,0 +1,236 @@
+\chapter{Dynamical Systems: Eigenvalues and Eigenvectors}
+\begin{comment}
+\end{comment}
+Let A represent a $n \times n$ matrix (a matrix with n rows and n columns), $x$ represent a column vector of $n$ variables and $x'$ represent the derivative of the column vector $x$. The system below is known as a dynamical system:
+$$x' = Ax$$
+\\Consider the dynamical system $x' = kx$ wherein k is some arbitrary constant. Therefore,
+$$\frac{dx}{dt} = kx$$
+$$dt = \frac{1}{kx}dx$$
+$$\int dt = \int \frac{1}{kx}dx$$
+$$t = \frac{1}{k}\ln{x}+ C$$
+$$\ln{x} = kt + C$$
+$$x = Ce^{kt}$$
+Wherein C is a constant determined by the initial conditions.
+%Seperator
+%Seperator 
+%Seperator
+%Seperator
+%Seperator
+\section{Non-Repeated Real Eigenvalues of n $\times$ n Case}
+\begin{comment}
+\end{comment}
+The previous working gives the conjecture that the general solution set $x(t)$ to the dynamical system $x' = Ax$ is the linear combination of exponential functions analogous to the example shown above. Consider the possibility that one solution to the dynamical system takes the form below:
+$$x(t) = \bar{v_i}e^{\lambda_i t}$$
+\\wherein $\bar{v_i}$ represents a vector and $\lambda_i$ represents a constant. By taking derivative of the solution, 
+$$x'(t) = \lambda_i\bar{v_i}e^{\lambda_i t}$$
+$$Ax(t) = A\bar{v_i}e^{\lambda_i t}$$
+\\By considering that $x(t)$ represents a solution to the dynamical system, $\displaystyle{x' = Ax}$
+$$\lambda_i\bar{v_i}e^{\lambda_i t} = A\bar{v_i}e^{\lambda_i t}$$
+Since $e^{\lambda_i t} \neq 0$ for all values of $t$,
+$$A\bar{v_i} = \lambda_i\bar{v_i}$$
+\\This is a familiar equation for eigenvalues and eigenvectors. This shows that each eigenvalue-eigenvector pairs of the matrix $A$ represents a solution set. Therefore, the general solution set is:
+$$x(t) = span[\bar{v_1}e^{\alpha_1 t}, \bar{v_2}e^{\alpha_2 t}, \dots \bar{v_n}e^{\alpha_n t}]$$
+$$x(t) = \sum_{i = 1}^{n} \left[c_i\bar{v_i}e^{\lambda_i t}\right]$$
+wherein $c_i$ are constants determined by the initial value of the problem. 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Non-Repeated Complex Eigenvalues of 2 $\times$ 2 Case}
+\begin{comment}
+\end{comment}
+Consider the special case wherein the matrix A is a $2\times2$ matrix and that the eigenvalues are complex, by conjecture,
+$$x(t) = c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = k_1Re[\bar{v_1}e^{\lambda_1 t}] + k_2Im[\bar{v_1}e^{\lambda_1 t}]$$
+\\wherein $c_1$ and $c_2$ are complex values meanwhile $k_1$ and $k_2$ are real values. There must always be some choice of complex values $c_1$ and $c_2$ such that the expression above is true. The proof is shown below,
+\\~\\Let 
+$$\bar{v_1} = \bar{v_r} + i\bar{v_i}\qquad \lambda_1 = a + bi$$
+$$x(t) = (\bar{v_r} + i\bar{v_i})e^{(a+bi)t}$$
+$$x(t) = e^{at}(\bar{v_r} + i\bar{v_i})[\cos{(bt)} + i\sin{(bt)}]$$
+$$x(t) = e^{at}[\bar{v_r}\cos{(bt)} + i\bar{v_r}\sin{(bt)} + i\bar{v_i}\cos{(bt)} - \bar{v_i}\sin{(bt)}]$$
+$$x(t) = e^{at}[\bar{v_r}\cos{(bt)} - \bar{v_i}\sin{(bt)}]+ ie^{at}[\bar{v_r}\sin{(bt)} + \bar{v_i}\cos{(bt)}]$$
+$$Re[\bar{v_1}e^{\lambda_1 t}] = e^{at}[\bar{v_r}\cos{(bt)} - \bar{v_i}\sin{(bt)}]$$
+$$Im[\bar{v_1}e^{\lambda_1 t}] = e^{at}[\bar{v_r}\sin{(bt)} + \bar{v_i}\cos{(bt)}]$$
+$$LHS = k_1Re[\bar{v_1}e^{\lambda_1 t}] + k_2Im[\bar{v_1}e^{\lambda_1 t}]$$
+$$LHS = k_1e^{at}[\bar{v_r}\cos{(bt)} - \bar{v_i}\sin{(bt)}] + k_2e^{at}[\bar{v_r}\sin{(bt)} + \bar{v_i}\cos{(bt)}]$$
+$$LHS = e^{at}[k_1\bar{v_r}\cos{(bt)} - k_1\bar{v_i}\sin{(bt)} + k_2\bar{v_r}\sin{(bt)} + k_2\bar{v_i}\cos{(bt)}]$$
+$$LHS = e^{at}\{[k_1\bar{v_r}+ k_2\bar{v_i}]\cos{(bt)}  + [k_2\bar{v_r}- k_1\bar{v_i}]\sin{(bt)}\}$$
+$$LHS = e^{at}[k_1\bar{v_r}+ k_2\bar{v_i}]\cos{(bt)}  + e^{at}[k_2\bar{v_r}- k_1\bar{v_i}]\sin{(bt)}$$
+\\It is important to note that eigenvalues and their corresponding eigenvectors occur in conjugate pairs. Therefore, if $\lambda_1 = a+bi$, then $\lambda_2 = \lambda_1^\ast = a - bi$ and if the eigenvector $\bar{v_1} = \bar{v_r} + i\bar{v_i}$, then $\bar{v_2} =\bar{v_1}^\ast= \bar{v_r} - i\bar{v_i}$.
+\\~\\Let
+$$c_1 = f_1 + g_1i\qquad c_2 = f_2 + g_2i$$
+$$c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = (f_1 + g_1i)(\bar{v_r} + i\bar{v_i})e^{(a+bi)t} + (f_2 + g_2i)(\bar{v_r} - i\bar{v_i})e^{(a-bi)t}$$
+\\For ease of notation,
+$$A(t) = (f_1 + g_1i)(\bar{v_r} + i\bar{v_i})e^{(a+bi)t}\qquad B(t) = (f_2 + g_2i)(\bar{v_r} - i\bar{v_i})e^{(a-bi)t}$$
+%Restatement of the original LHS of the equation
+$$c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = A(t) + B(t)$$
+%Beginning of the script for the "A" components
+$$A(t) = e^{at}(f_1 + g_1i)(\bar{v_r} + i\bar{v_i})\left[\cos{(bt)} + i \sin{(bt)}\right]$$
+$$A(t) = e^{at}(f_1\bar{v_r} + if_1\bar{v_i} + ig_1\bar{v_r} - g_1\bar{v_i})\left[\cos{(bt)} + i \sin{(bt)}\right]$$
+$$A(t) = e^{at}[f_1\bar{v_r} - g_1\bar{v_i}+ i(f_1\bar{v_i} + g_1\bar{v_r})]\left[\cos{(bt)} + i \sin{(bt)}\right]$$
+$$A(t) = e^{at}[(f_1\bar{v_r} - g_1\bar{v_i})\cos{(bt)} + i(f_1\bar{v_i} + g_1\bar{v_r})\cos{(bt)} + i(f_1\bar{v_r} - g_1\bar{v_i})\sin{(bt)} - (f_1\bar{v_i} + g_1\bar{v_r})\sin{(bt)}]$$
+%Beginning of the script for the "B" components
+$$B(t) = (f_2 + g_2i)(\bar{v_r} - i\bar{v_i})e^{(a-bi)t}$$
+$$B(t) = e^{at}(f_2\bar{v_r} - if_2\bar{v_i} + ig_2\bar{v_r} + g_2\bar{v_i})\left[\cos{(-bt)} + i\sin{(-bt)}\right]$$
+$$B(t) = e^{at}[(f_2\bar{v_r} + g_2\bar{v_i}) + i(g_2\bar{v_r} - f_2\bar{v_i})]\left[\cos{(bt)} - i\sin{(bt)}\right]$$
+$$B(t) = e^{at}[(f_2\bar{v_r} + g_2\bar{v_i})\cos{(bt)} + i(g_2\bar{v_r} - f_2\bar{v_i})\cos{(bt)} + i(-f_2\bar{v_r} - g_2\bar{v_i})\sin{(bt)} + (g_2\bar{v_r} - f_2\bar{v_i})\sin{(bt)}]$$
+%End of the script for the "B" components
+$$c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = Re[A(t)] + Re[B(t)] + i\{Im[A(t)] + Im[B(t)]\}$$
+$$0 = Im[A(t)] + Im[B(t)]$$
+$$0 = (f_1\bar{v_i} + g_1\bar{v_r})\cos{(bt)} + (f_1\bar{v_r} - g_1\bar{v_i})\sin{(bt)} + (g_2\bar{v_r} - f_2\bar{v_i})\cos{(bt)} - (f_2\bar{v_r} + g_2\bar{v_i})\sin{(bt)}$$
+$$0 = (f_1\bar{v_i} + g_1\bar{v_r} + g_2\bar{v_r} - f_2\bar{v_i})\cos{(bt)} + (f_1\bar{v_r} - g_1\bar{v_i} -f_2\bar{v_r} - g_2\bar{v_i})\sin{bt}$$
+$$0 = [(g_1 + g_2)\bar{v_r} + (f_1 - f_2)\bar{v_i}]\cos{(bt)} + [(f_1 - f_2)\bar{v_r} - (g_1 + g_2)\bar{v_i}]\sin{(bt)}$$
+\\For as long as the condition below is met, the imaginary component of $A(t) + B(t)$ is negligible.
+$$g_1 = -g_2 \qquad f_1 = f_2$$
+$$c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = Re[A(t)] + Re[B(t)] $$
+\begin{equation*}
+\begin{split}c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t}  = &e^{at}(f_1\bar{v_r} - g_1\bar{v_i})\cos{(bt)} - (f_1\bar{v_i} + g_1\bar{v_r})\sin{(bt)}  \\ &+ (f_2\bar{v_r} + g_2\bar{v_i})\cos{(bt)} + (g_2\bar{v_r} - f_2\bar{v_i})\sin{(bt)}
+\end{split}
+\end{equation*}
+$$c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = e^{at}(f_1\bar{v_r} - g_1\bar{v_i} + f_2\bar{v_r} + g_2\bar{v_i})\cos{(bt)} + (g_2\bar{v_r} - f_2\bar{v_i}-f_1\bar{v_i} - g_1\bar{v_r})\sin{(bt)} $$
+$$c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = e^{at}[(f_1 + f_2)\bar{v_r} +(g_2- g_1)\bar{v_i}]\cos{(bt)} + [(g_2 - g_1\b)\bar{v_r} - (f_1 + f_2)\bar{v_i}]\sin{(bt)} $$
+$$RHS = c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t}$$
+$$RHS = e^{at}[(f_1 + f_2)\bar{v_r} +(g_2- g_1)\bar{v_i}]\cos{(bt)} + e^{at}[(g_2 - g_1)\bar{v_r} - (f_1 + f_2)\bar{v_i}]\sin{(bt)}$$
+$$LHS = e^{at}[k_1\bar{v_r}+ k_2\bar{v_i}]\cos{(bt)}  + e^{at}[k_2\bar{v_r}- k_1\bar{v_i}]\sin{(bt)}$$
+\\If the conditions below are met, therefore $LHS = RHS$ and the statement $\displaystyle{x(t) = c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = k_1Re[\bar{v_1}e^{\lambda_1 t}] + k_2Im[\bar{v_1}e^{\lambda_1 t}]}$ is true. 
+$$g_1 + g_2 =0 \qquad f_1 + f_2 - k_1 = 0 \qquad f_1 - f_2 = 0 \qquad g_2 - g_1 - k_2 = 0$$
+\\The corresponding augmented matrix of the following conditions is
+\begin{equation*}
+\begin{split}
+\begin{matrix}f_1 & f_2 & g_1 & g_2 & k_1 & k_2 & C \end{matrix} \\ \begin{pmatrix}1 & 1 & 0 &0 &-1 &0 &0 \\1 &-1 &0 &0 &0 &0 &0 \\ 0&0 &1 &-1 &0 &1 &0  \\ 0&0 &1 &1 &0 &0 &0 \end{pmatrix}
+\end{split}
+\end{equation*}
+\\The row-reduced echelon form of the corresponding augmented matrix is
+$$\begin{matrix} f_1 & f_2 & g_1 & g_2 & k_1 & k_2 & C \end{matrix}$$
+$$\begin{pmatrix}1 &0 &0 &0 &-\frac{1}{2} &0 &0 \\ 0& 1&0 &0 &-\frac{1}{2} &0 &0 \\0 &0 &1 &0 &0 &\frac{1}{2} & 0\\0 &0 &0 &1 &0 &-\frac{1}{2} &0 \end{pmatrix}$$
+\\The row-reduced echelon form is unique and is consistent, therefore the system has a consistent solution. This proves that for some special choice of $c_1$ and $c_2$, the expression below is correct.
+$$x(t) = c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} = k_1Re[\bar{v_1}e^{\lambda_1 t}] + k_2Im[\bar{v_1}e^{\lambda_1 t}]$$
+A restatement of the general real solution set is:
+$$x(t)=k_1e^{at}[\bar{v_r}\cos{(bt)} - \bar{v_i}\sin{(bt)}] + k_2e^{at}[\bar{v_r}\sin{(bt)} + \bar{v_i}\cos{(bt)}]$$
+The solution set for all real numbers could be better expressed as a matrix multiplication
+$$x(t) = e^{at}\begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix} \begin{pmatrix} \cos{(bt)}& -\sin{(bt)} \\ \sin{(bt)}& \cos{(bt)} \end{pmatrix} \begin{pmatrix} k_2 \\ k_1\end{pmatrix}$$
+\\The real and imaginary components of the eigenvector $v_1$ form a linearly independent set. Therfore, the matrix $\displaystyle{\begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}}$ must be invertible. Through the invertible matrix theorem, the matrix $\displaystyle{\begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}}$ must have a suitable inverse. 
+ $$x(t) = e^{at}\begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix} \begin{pmatrix} \cos{(bt)}& -\sin{(bt)} \\  \sin{(bt)}& \cos{(bt)} \end{pmatrix} \begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}^{-1}  \begin{pmatrix}  x_2 \\ x_1\end{pmatrix}$$
+ $$x(t) = e^{at}\begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix} \begin{pmatrix} \cos{(bt)}& -\sin{(bt)} \\  \sin{(bt)}& \cos{(bt)} \end{pmatrix} \begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}^{-1}  x_0$$
+$$\begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}^{-1}x(t) = e^{at} \begin{pmatrix} \cos{(bt)}& -\sin{(bt)} \\ \sin{(bt)}& \cos{(bt)} \end{pmatrix} \begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}^{-1}  x_0$$
+By considering the substitution $\displaystyle{y = \begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}^{-1}x(t)}$ and $\displaystyle{y_0 = \begin{pmatrix}\bar{v_i} & \bar{v_r} \end{pmatrix}^{-1}  x_0}$,
+$$y = e^{at} \begin{pmatrix} \cos{(bt)}& -\sin{(bt)} \\ \sin{(bt)}& \cos{(bt)} \end{pmatrix} y_0$$
+\\wherein $e^{at}$ represents a scaling transformation and $\displaystyle{\begin{pmatrix} \cos{(bt)}& -\sin{(bt)} \\ \sin{(bt)}& \cos{(bt)} \end{pmatrix}}$ represents a rotation. Therefore, for a suitable substitution, the general real solution set of the dynamical system $\displaystyle{x' = Ax}$ will form a rotation with a scaling component. The rotation is sometimes known as the "hidden rotation". Some possibilities of the solution set may be ellipses, circles, and spirals. 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Non-Repeated Complex Eigenvalues of 3 $\times$ 3 Case}
+\begin{comment}
+\end{comment}
+Consider the case wherein $n = 3$
+$$x(t) = \sum_{i=1}^{3}\left[c_i\bar{v_i}e^{\lambda_i t}\right]$$
+$$x(t) = c_1\bar{v_1}e^{\lambda_1 t} + c_2\bar{v_2}e^{\lambda_2 t} + c_3\bar{v_3}e^{\lambda_3 t}$$
+\\Complex eigenvalues occure in conjugate pairs. When A is a $3 \times 3$ matrix, $2$ of the eigenvalues will be complex conjugate pairs and the third one will be a real value. Therefore, two of the eigenvectors must be complex vectors with the third eigenvector being a real vector. Therefore, through the similar argument and proof written above, 
+$$x(t) = k_1Re\left[\bar{v_1}e^{\lambda_1 t}\right] + k_2Re\left[\bar{v_1}e^{\lambda_1 t}\right] + k_3\bar{v_3}e^{\lambda_3 t}$$
+$$x(t)=k_1e^{at}[\bar{v_r}\cos{(bt)} - \bar{v_i}\sin{(bt)}] + k_2e^{at}[\bar{v_r}\sin{(bt)} + \bar{v_i}\cos{(bt)}] + k_3\bar{v_3}e^{\lambda_3 t}$$
+\\The following solution set could be factorised as matrix multiplications
+$$x(t) = e^{at} \begin{pmatrix} \bar{v_i}&\bar{v_r} &\bar{v_3} \end{pmatrix} \begin{pmatrix}\cos{(bt)} &-\sin{(bt)} &0\\\sin{(bt)}&\cos{(bt)} & 0\\0& 0& e^{(\lambda_3 - a)t}\end{pmatrix} \begin{pmatrix} k_2 \\k_1 \\ k_3 \end{pmatrix}$$
+The vectors $\bar{v_i},\bar{v_r},\bar{v_3}$ form a linearly independent set, therefore, the matrix $\displaystyle{\begin{pmatrix} \bar{v_i}&\bar{v_r} &\bar{v_3} \end{pmatrix}}$ is invertible and its inverse must exist.
+\\Let $\displaystyle{y_0 = \begin{pmatrix} k_2\\k_1 \\k_3 \end{pmatrix}}$ 
+$$\begin{pmatrix} \bar{v_i}&\bar{v_r} &\bar{v_3} \end{pmatrix} ^{-1 }x(t) = e^{at} \begin{pmatrix}\cos{(bt)} &-\sin{(bt)} &0\\\sin{(bt)}&\cos{(bt)} & 0\\0& 0& e^{(\lambda_3 - a)t}\end{pmatrix} y_0$$
+\\Let $\displaystyle{y(t) = \begin{pmatrix} \bar{v_i}&\bar{v_r} &\bar{v_3} \end{pmatrix} ^{-1 }x(t)}$
+$$y(t) = e^{at} \begin{pmatrix}\cos{(bt)} &-\sin{(bt)} &0\\\sin{(bt)}&\cos{(bt)} & 0\\0& 0& e^{(\lambda_3 - a)t}\end{pmatrix} y_0$$
+\\$y_0$ is dependent on the system's initial conditions. This shows that for some suitable substitution, the general solution set forms a helix. The geometrical implication of the solution set is a spiral around the z-axis while it is moving away from the xy plane. The substitution back into the conventional axis $x_1,x_2,x_3$ could be considered as a transformation that "distorts" the helix. 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Repeated Eigenvalues}
+\begin{comment}
+\end{comment}
+Given the matrix $A$ in the system $x' = Ax$ is a matrix with repeated eigenvalues with multiplicity k, a reasonable conjecture is the solution to the system is similar in form to the repeated roots case in the linear differential equation. By conjecture,
+$$x(t) = \sum_{i = 0}^{k - 1}\left[\bar{v_i} t^{k - 1 - i}e^{\lambda t}\right]$$
+$$x'(t) = \sum_{i = 0}^{k - 1}\left[\bar{v_i} \frac{d}{dt}\left[t^{k - 1 - i}e^{\lambda t}\right] \right]$$
+$$\frac{d}{dt}\left[t^{k - 1 - i}e^{\lambda t}\right] = (k - 1 - i)t^{k - 2 - i}e^{\lambda t} + \lambda t^{k - 1 - i}e^{\lambda t} $$
+$$x'(t) = \sum_{i = 0}^{k - 1}\left[(k - 1 - i)t^{k - 2 - i}\bar{v_i}e^{\lambda t} + \lambda t^{k - 1 - i}\bar{v_i}e^{\lambda t} \right]$$
+Remembering $x'(t) = Ax(t)$,
+$$\sum_{i = 0}^{k - 1}\left[A\bar{v_i} t^{k - 1 - i}e^{\lambda t}\right] = \sum_{i = 0}^{k - 1}\left[ (k - 1 - i)t^{k - 2 - i}\bar{v_i}e^{\lambda t} + \lambda t^{k - 1 - i}\bar{v_i}e^{\lambda t} \right]$$
+Considering that $e^{\lambda t} \neq 0$, therefore, 
+$$\sum_{i = 0}^{k - 1}\left[A\bar{v_i} t^{k - 1 - i}\right] = \sum_{i = 0}^{k - 1}\left[ \lambda t^{k - 1 - i}\bar{v_i} + (k - 1 - i)t^{k - 2 - i}\bar{v_i}\right]$$
+\\For the $0^{th}$ element,
+$$A\bar{v_0}t^{k - 1} = \lambda t^{k - 1}\bar{v_0}$$
+Considering that $t^{k - 1} \neq 0$ for as long as $t \neq 0$,
+$$A\bar{v_0} = \lambda \bar{v_0}$$
+For the $\alpha^{th}$ element, 
+$$A\bar{v_\alpha} t^{k - 1 - \alpha} = \lambda t^{k - 1 - \alpha}\bar{v_\alpha} +  \left[k - 1 - (\alpha - 1)\right]t^{k - 2 - (\alpha - 1)}\bar{v_{\alpha - 1}}$$
+$$A\bar{v_\alpha} t^{k - 1 - \alpha} = \lambda t^{k - 1 - \alpha}\bar{v_\alpha} +  \left[k - \alpha \right]t^{k - 1 - \alpha}\bar{v_{\alpha - 1}}$$
+For as long as $t\neq 0$,  $t^{k - 1- \alpha}\neq 0$. Therefore, 
+$$A\bar{v_\alpha} = \lambda \bar{v_\alpha} +  \left[k - \alpha \right]\bar{v_{\alpha - 1}}$$
+$$\frac{1}{\left[k - \alpha \right]} (A - \lambda I)\bar{v_\alpha} = \bar{v_{\alpha - 1}}$$
+\\By applying definition recursively,
+$$\frac{1}{\displaystyle{\prod_{i = 0}^{j - 1}\left[k - i \right]}} (A - \lambda I)^j \bar{v_\alpha} = \bar{v_{\alpha - j}}$$
+For when $j = \alpha$,
+$$\frac{1}{\displaystyle{\prod_{i = 0}^{\alpha - 1}\left[k - i \right]}} (A - \lambda I)^\alpha \bar{v_\alpha} = \bar{v_{0}}$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Simple First Order Non-Homogenous System}
+\begin{comment}
+\end{comment}
+Suppose, for a non-homogeneous dynamical system, $x' = Ax + k$. The non-homogenous dynamical system could be reduced to a homogenous dynamical system, $y' = Ay$ by an appropriate substitution shown below:  
+$$y_1 = x_1 + c_1 \qquad y_2 = x_2 + c_2 \qquad \dots \qquad y_n = x_n + c_n $$
+\\wherein $c_1, c_2, c_3 \dots c_n$ are constants
+$$y_1' = x_1' \qquad y_2' = x_2' \qquad \dots \qquad y_n' = x_n'$$
+\\Let the columns of matrix $A$ be denoted as $a_1, a_2, a_3,\dots a_n$
+$$A = \begin{bmatrix} \bar{a_1} & \bar{a_2} &\dots & \bar{a_n} \end{bmatrix}$$
+$$Ay = \begin{bmatrix} \bar{a_1} & \bar{a_2} &\dots & \bar{a_n} \end{bmatrix} \begin{bmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}$$
+$$Ay = \sum_{i = 1} ^ {n} \left[\bar{a_i}y_i\right]$$
+$$Ay = \sum_{i = 1} ^ {n} \left[\bar{a_i}(x_i +c_i)\right]$$
+$$Ay = \sum_{i = 1} ^ {n} \left[\bar{a_i}x_i + \bar{a_i}c_i\right]$$
+$$Ay = \sum_{i = 1} ^ {n} \left[\bar{a_i}x_i\right] + \sum_{i = 1} ^ {n} \left[\bar{a_i}c_i\right]$$
+$$Ax + k= \begin{bmatrix} \bar{a_1} & \bar{a_2} &\dots & \bar{a_n} \end{bmatrix} \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} + \begin{bmatrix} k_1 \\k_2 \\\vdots \\k_n\end{bmatrix}$$
+$$Ax + k = \sum_{i = 1}^{n} \left[\bar{a_i}x_i\right] + k$$
+$$Ay = Ax + k$$
+$$\sum_{i = 1} ^ {n} \left[\bar{a_i}x_i\right] + \sum_{i = 1} ^ {n} \left[\bar{a_i}c_i\right] = \sum_{i = 1}^{n} \left[\bar{a_i}x_i\right] + k$$
+$$\sum_{i = 1} ^ {n} \left[\bar{a_i}c_i\right] =  k$$
+The system above is equivalent to an augmented matrix whose first column until nth column is the columns of the matrix A and its lsat column is the column vector k. Therefore, the augmented matrix is written below:
+$$\begin{matrix}c_1 & c_2 & \dots & c_n& K \end{matrix}$$
+$$\begin{bmatrix} \bar{a_1} & \bar{a_2} & \dots &\bar{a_n} &k \end{bmatrix}$$
+\\The solution to the augmented matrix will be the values for the constants $c_1,c_2,\dots,c_n$ that would be used in the substitution process in transforming the non-homogenous dynamical system into a homogenous dynamical system. The augmented matrix above would only have a solution for all k in $\mathbb{R}^{n}$ if the matrix A is invertible. If the matrix A is non-invertible , then k must be in $col[A]$, otherwise, then the augmented system forms an inconsistent system. In otherwords, a substitution with the above methods may not exist for an aribtrary choice of $n\times n$ matrix A and arbitrary column vector k. 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Simple Higher Order System}
+\begin{comment}
+\end{comment}
+Suppose the dynamical system follows the expression $\displaystyle{\overset{m}{x} = Ax}$, a similar technique with eigenvalues and eigenvectors may be employed along with the roots of unity. By conjecture, the partial solution to the dynamical system $\displaystyle{\overset{m}{x} = Ax}$ follows
+$$x_p = \bar{v_i}e^{\alpha_i t}$$
+$$\dot{x_p} = \alpha_i\bar{v_i}e^{\alpha_i t}$$
+$$\ddot{x_p} = \alpha_i^2\bar{v_i}e^{\alpha_i t}$$
+$$\overset{m}{x_p} = \alpha_i^m\bar{v_i}e^{\alpha_i t}$$
+$$Ax_p = \overset{m}{x_p}$$
+$$A \bar{v_i}e^{\alpha_i t}= \alpha_i^m\bar{v_i}e^{\alpha_i t}$$
+$$A \bar{v_i}= \alpha_i^m\bar{v_i}$$
+\\Since $\displaystyle{A \bar{v_i}= \alpha_i^m\bar{v_i}}$ wherein $\displaystyle{\lambda_i}$ are eigenvalues of $A$, then $\lambda_i = \alpha_i^m$. Since $\lambda_i$ may be a complex number, $\alpha_i$ must be the roots of unity to the complex number $\lambda_i$. If $\lambda_i = a+bi$
+$$\alpha_n = (a^2 + b^2)^{\frac{1}{2m}}cis\left[\frac{1}{m}arctan\left(\frac{b}{a}\right) + \frac{2 \pi n}{m}\right]$$
+The general solution to the problem must be the linear combination of the partial solutions $\displaystyle{\sum_{i = 1}^m\left[c_i\bar{v_i}e^{\alpha_{in} t}\right]}$ wherein $c_i$ are constants determined by the initial conditions and $\alpha_{in}$ represents the $n^{th}$ root of unity of the $i^{th}$ eigenvalue albeit complex or real. 
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Simple $n^{th}$ Order Homogenous System}
+\begin{comment}
+\end{comment}
+Suppose the differential equation follows the expression:
+$$0 = \sum_{i = 0}^{m}{[A_i \overset{i}{x}]} = A_0 x + A_1 \dot{x} + A_2 \ddot{x}+ \dots + A_{i - 1} \overset{i -  1}{x} + A_{i} \overset{i}{x}$$
+\\The general solution to the system above is a linear combination of the partial solutions, $\displaystyle{x(t) = \sum_{j = 1}^{n}{[c_j \bar{v_j}e^{\lambda_j t}]}}$ wherein partial solutions are defined as $\displaystyle{x_{partial}(t) = c_j \bar{v_j}e^{\lambda_j t}}$ and $c_1, c_2 \dots c_n$ are constants determined by the initial value of the problem. 
+$$x_{p}(t) = c_j \bar{v_j}e^{\lambda_j t}$$
+$$\overset{k}{x_{p}(t)} = c_j \bar{v_j}\lambda_{j}^k e^{\lambda_j t}$$
+$$0 = \sum_{i = 0}^{m}{[A_i \bar{v_j} c_j \lambda_{j}^i e^{\lambda_j t}]} =A_0 \bar{v_j} c_j e^{\lambda_j t} + A_1 \bar{v_j} c_j \lambda_{j} e^{\lambda_j t} + \dots + A_m \bar{v_j} c_j \lambda_{j}^m e^{\lambda_j t}$$
+\\For the non-trivial solutions to the homoegenous system of differential equations, $\displaystyle{c_j, \bar{v_j}, \lambda_j \neq 0}$. The function $\displaystyle{e^{\lambda_j t}}\neq 0$ for all time. Therefore, 
+$$0 = \left\{ \sum_{i = 0}^{m}{[A_i \lambda_{j}^i]} \right\} \bar{v_j}$$
+\\For $\displaystyle{\bar{v_j} \neq 0}$, the matrix $\displaystyle{\sum_{i = 0}^{m}{[A_i \lambda_{j}^i]}}$ must be non-invertible. Therefore, $\displaystyle{det\left\{ \sum_{i = 0}^{m}{[A_i \lambda_{j}^i]} \right\} = 0}$
+\\The expressions for $\displaystyle{\lambda_j ^ i}$ could be substituted to the expression $\displaystyle{A_i \lambda_{j}^i} \bar{v_j} = 0$ to express vector $\displaystyle{\bar{v_j}}$ explicitly.

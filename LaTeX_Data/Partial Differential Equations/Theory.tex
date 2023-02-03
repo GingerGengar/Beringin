@@ -1,0 +1,42 @@
+\chapter{Partial Differential Equations}
+\begin{comment}
+Currently, only discussions of the Sturm -Liouville, the other applications are placed elsewhere, such as Physics Archives or Fluid Archives
+modified gradient operators need to be revised very closely!!!!!!
+\end{comment}
+The conventional gradient operator in cartesian coordinates is typically defined as,
+$$\nabla_{xyz} = \begin{pmatrix}\displaystyle{\frac{\partial}{\partial x}} & \displaystyle{\frac{\partial}{\partial y}} & \displaystyle{\frac{\partial}{\partial z}}\end{pmatrix}^T\quad,\quad \nabla^n_{xyz} = \begin{pmatrix}\displaystyle{\frac{\partial^n}{\partial x^n}} & \displaystyle{\frac{\partial^n}{\partial y^n}} & \displaystyle{\frac{\partial^n}{\partial z^n}}\end{pmatrix}^T$$
+Let the modified gradient operator $\displaystyle{({}_{m}\nabla)}$ in cartesian coordinates be defined as,
+$${}_{m}\nabla_{xyz} = \begin{pmatrix}\displaystyle{\alpha_1\frac{\partial}{\partial x}} & \displaystyle{\alpha_2\frac{\partial}{\partial y}} & \displaystyle{\alpha_3\frac{\partial}{\partial z}}\end{pmatrix}^T\quad,\quad {}_{m}\nabla^n_{xyz} = \begin{pmatrix}\displaystyle{\beta_1\frac{\partial^n}{\partial x^n}} & \displaystyle{\beta_2\frac{\partial^n}{\partial y^n}} & \displaystyle{\beta_3\frac{\partial^n}{\partial z^n}}\end{pmatrix}^T$$
+This modification allows the gradient operator to be more general. The modified gradient operator for $m$ dimensional cartesian coordinates,
+$${}_{m}\nabla_{xyz} = \begin{pmatrix}\displaystyle{\alpha_1\frac{\partial}{\partial x_1}} & \displaystyle{\alpha_2\frac{\partial}{\partial x_2}} & \dots & \displaystyle{\alpha_n\frac{\partial}{\partial x_m}}\end{pmatrix}^T\quad,\quad {}_{m}\nabla^n_{xyz} = \begin{pmatrix}\displaystyle{\beta_1\frac{\partial^n}{\partial x_1^n}} & \displaystyle{\beta_2\frac{\partial^n}{\partial x_2^n}} & \dots & \displaystyle{\beta_3\frac{\partial^n}{\partial x_m^n}}\end{pmatrix}^T$$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Methods in Generalized Cartesian Coordinates}
+\begin{comment}
+Massive Fault in Theoretical Understanding. IN NEED OF EXTREME REVISION
+\end{comment}
+$$\frac{\partial^2u}{\partial t^2} + a\frac{\partial u}{\partial t} = {}_{m_1}\nabla^2_{x_1\dots x_q}(u) + {}_{m_2}\nabla_{x_1\dots x_q}(u) = \sum^{q}_{i=1}\left[b_i\,\frac{\partial^2u}{\partial x^2_{i}} + c_i\frac{\partial u}{\partial x_{i}}\right]$$
+wherein $\displaystyle{{}_{m_1}\nabla^2_{x_1\dots x_q}(u) = {}_{m_1}\nabla_{x_1\dots x_q} \cdot \nabla_{x_1\dots x_q}u}$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Methods in Cylindrical Coordinates}
+\begin{comment}
+Massive Fault in Theoretical Understanding. IN NEED OF EXTREME REVISION
+\end{comment}
+$$\frac{\partial^2u}{\partial t^2} + a\frac{\partial u}{\partial t} = {}_{m_1}\nabla^2_{r\theta z}(u) + {}_{m_2}\nabla_{r\theta z}\cdot(u) = $$
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Methods in Spherical Coordinates}
+\begin{comment}
+Massive Fault in Theoretical Understanding. IN NEED OF EXTREME REVISION
+\end{comment}
+$$\frac{\partial^2u}{\partial t^2} + a\frac{\partial u}{\partial t} = {}_{m_1}\nabla^2_{r\theta\phi}(u) + {}_{m_2}\nabla_{r\theta\phi}(u) = $$

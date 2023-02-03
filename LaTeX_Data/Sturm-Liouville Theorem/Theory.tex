@@ -1,0 +1,49 @@
+\chapter{Sturm-Liouville Problems}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Definition of Stum-Liouville Problems}
+A Sturm-Liouville Problem is a problem that satisfies the following equation with the following boundary conditions,
+$$0 = \frac{d}{dx}\left[p(x)\frac{dy}{dx}\right]-q(x)y+\lambda r(x)y$$
+Alternately,
+$$0 = \frac{dy}{dx}\frac{d}{dx}\left[p(x)\right] + p(x)\frac{d^2y}{dx^2}-q(x)y+\lambda r(x)y$$
+$$0 = p(x)\frac{d^2y}{dx^2} + p'(x)\frac{dy}{dx}-q(x)y+\lambda r(x)y$$
+The initial conditions are shown below,
+$$0 = \alpha_1y(a) - \alpha_2y'(a)\quad,\quad 0 = \beta_1y(b) + \beta_2y'(b)$$
+wherein neither $\alpha_1$ and $\alpha_2$ both zero nor $\beta_1$ and $\beta_2$ both zero. The parameter $\lambda$ is the “eigenvalue” whose possible (constant) values are sought usually via the application of the boundary conditions.    
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Eigenvalue Theorem of Sturm-Liouville Problems}
+\begin{comment}
+\end{comment}
+Suppose that the functions $p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous on the closed interval $[a,b]$ and that $p(x)>0$ and $r(x)>0$ at each point of $[a,b]$. Then the eigenvalues of the Sturm–Liouville problem constitute an increasing sequence,
+$$\lambda_1 < \lambda_2 < \lambda_3 < \dots <\lambda_\infty$$
+of real numbers with
+$$\lim_{n\to\infty}[\lambda_n] = \infty$$
+To within a constant factor, only a single eigenfunction $y_n(x)$ is associated with each eigenvalue $\lambda_n$. Moreover, if $q(x)\geq0$ on the closed interval $[a,b]$ and the coefficients $\alpha_1$, $\alpha_2$, $\beta_1$, and $\beta_2$ are all non-negative, then the eigenvalues are all non-negative.
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Eigenvalues-Eigenfunctions Series}
+\begin{comment}
+\end{comment}
+If the functions $p(x)$, $q(x)$ and $r(x)$ of the Sturm-Liouville problem satisifes the Eigenvalue Theorem, then eigenfunctions $y_i(x)$ and $y_j(x)$ corresponding to eigenvalues $\lambda_i$ and $\lambda_j$ wherein $j\neq1$ are orthogonal with respect to each other relative to the function $r(x)$,
+$$0 = \int^{b}_{a}y_i(x)y_j(x)r(x)dx$$
+For a sturm-liouville problem with infinite eigenvalues, it is possible to represent an arbitrary function $f(x)$ as the infinite sum of the eigenvalues,
+$$f(x) = \sum^{\infty}_{m=1}\left[c_my_m(x)\right]$$
+wherein $y_m(x)$ represents the $m^{th}$ eigenfunction of the $m^{th}$ eigenvalue $\lambda_m$. Taking the integral in both sides with the product to the eigenfunction $y_n(x)$ relative to the function $r(x)$,
+$$\int^{b}_{a}f(x)y_n(x)r(x)dx = \int^{b}_{a}\sum^{\infty}_{m=1}\left[c_my_m(x)\right]y_n(x)r(x)dx$$
+Using the assumption, $\displaystyle{0 = \int^{b}_{a}y_i(x)y_j(x)r(x)dx}$,
+$$\int^{b}_{a}f(x)y_n(x)r(x)dx = \int^{b}_{a}c_n\left[y_n(x)\right]^2r(x)dx = c_n\int^{b}_{a}\left[y_n(x)\right]^2r(x)dx$$
+Therefore, the constant $c_n$ could be obtained by,
+$$c_n = \frac{\displaystyle{\int^{b}_{a}f(x)y_n(x)r(x)dx}}{\displaystyle{\int^{b}_{a}\left[y_n(x)\right]^2r(x)dx}}$$
+This particular theorem could be used to prove under certain reasonable conditions that there exists an infinite series that would allow the boundary conditions to be implemented analytically into the partial differential equations problems.

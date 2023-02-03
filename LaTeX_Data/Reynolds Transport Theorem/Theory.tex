@@ -1,0 +1,125 @@
+
+We have introduced the two fundamental reference frames: eulerian and lagrangian reference frame previously, wherein the eulerian reference frame is one fixed to some location meanwhile the lagrangian reference frame is one fixed in the fluid flow.
+We have already introduced the concept of the substantive derivative which is the time derivative of some arbitrary quantity of a point particle in the lagrangian reference frame.
+Now do we have enough tools to derive more useful relations? No.
+%Seperator
+\\~\\The substantive derivative relates the rate of change in the eulerian reference frame to the rate of change in the lagrangian reference frame for a point particle.
+If we had an extension of the substantive derivative to volumes, we can replace the lagrangian derivative with relations from physics and then have a useful right hand side that is in terms of eulerian reference frames.
+This allows us to combine the physics that is occuring to a moving fluid volume to the reference frame of a stationary observer.
+Therefore, we need to extend the concept of our substantive derivative to volumetric integrals, and that is exactly what the Reynold's Transport Theorem does.
+This theorem is an incredibly fundamental theorem in deriving the rest of fluid dynamics, so it is worthwhile understanding what it really implies.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Derivation}
+\begin{comment}
+\end{comment}
+Let us consder some arbitrary volume that contains fluid initially.
+This somewhat arbitrary volume is going to contain a finite amount of fluid particles, and let us consider the volume to contain the SAME particles initially and for all time.
+This means that as time progresses and the fluid moves downstream, our initial volume is going to deform and twist in many complicated ways just to contain the same set of initial fluid particles.
+We want our arbitrary volume to contain the SAME particles for all time.
+\begin{figure}[H]\centering
+\def\svgwidth{400px}
+\import{Images/}{Volume_Deforming_Reynolds_Transport_Theorem.pdf_tex}
+\caption{The initially chosen arbitray volume must keep deforming in complex ways to contain the same set of initial fluid particles}
+\label{Volume Deforming Reynolds Transport Theorem}
+\end{figure}
+The lagrangian reference frame uses $x_{in,1}$, $x_{in,2}$, $x_{in,3}$ and $t$ to determine uniquely the value of arbitrary property $\phi$.
+If we choose the initial position $x_{in,1}$, $x_{in,2}$, $x_{in,3}$ of a set of particles within a volume and still track the SAME set of particles, then the only independent variable that is changing for those tracked particles in the lagrangian reference frame is $t$.
+Choosing an arbitrary volume to contain some initial particles and allowing that volume to deform in such a way it only contains the same set of particles corresponds to constraining the initial positions of $x_{in,1}$, $x_{in,2}$, $x_{in,3}$ for both volume and its arbitrary quantity $\phi$ and only allowing $t$ to vary.
+This means that the arbitrary quantity we are integrating over within the volume and the volume itself are just pure functions of time $t$. 
+If we had not made this assumption, then we cannot say that the volume and integrand are just purely functions of time $t$ because there is some convection effects tranporting quantity $\phi$ at the boundaries of the volume and hence we would need to know how eulerian positions $x_{1}$, $x_{2}$, $x_{3}$ as well.
+%Seperator
+\\~\\Remember that due to us constraining that the volume has to move to contain the same particles, the entirety of the right hand side of the equation below is a function of time $t$ purely,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\left[\iiint^{}_{V_{m}(t+\Delta t)} \phi(t+\Delta t) \,dV_{o} - \iiint^{}_{V_{m}(t)} \phi(t) \,dV_{o}\right]\right\}$$
+wherein $dV_{o}$ represents an infinitesmially small volume, $V_{m}(t)$ represents the arbitrary volume moving with the fluid explained earlier and $\phi$ is some arbitrary quantity.
+Now we are going to add $0$ to the right hand side of the expression above,
+\begin{align*}
+\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = &\lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\left[\iiint^{}_{V_{m}(t+\Delta t)} \phi(t+\Delta t) \,dV_{o} - \iiint^{}_{V_{m}(t)} \phi(t) \,dV_{o}\right]\right\} \\ &
++ \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\left[\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o} - \iiint^{}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o}\right]\right\}
+\end{align*}
+We are going to regroup some of the terms based on the similarity of bounds and integrands,
+\begin{align*}
+\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = &\lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\left[\iiint^{}_{V_{m}(t+\Delta t)} \phi(t+\Delta t) \,dV_{o} - \iiint^{}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o}\right]\right\} \\ &
++ \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\left[\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o} - \iiint^{}_{V_{m}(t)} \phi(t) \,dV_{o}\right]\right\}
+\end{align*}
+Now we can combine the first part of the right hand side due to its common integrand,
+\begin{align*}
+\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = &\lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{V_{m}(t+\Delta t)}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o}\right\} \\ &
++ \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\left[\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o} - \iiint^{}_{V_{m}(t)} \phi(t) \,dV_{o}\right]\right\}
+\end{align*}
+Now we can combine the second part of the right hand side into a single integral because of the common integration bounds,
+\begin{equation}
+\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{V_{m}(t+\Delta t)}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o}\right\} + \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) - \phi(t) \,dV_{o}\right\}
+\label{Reynolds Transport Theorem Primitive 1}
+\end{equation}
+Let us examine the second part of the right hand side of equation $\ref{Reynolds Transport Theorem Primitive 1}$.
+$\Delta t$ here is an extremely small number. 
+Since $1/\Delta t$ is just a multiplication, we can perform this multiplication directly inside with the integrand or outside on the whole integral. Therefore,
+$$\lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) - \phi(t) \,dV_{o}\right\} = \lim_{\Delta t \to 0}\left\{\iiint^{}_{V_{m}(t)}\frac{1}{\Delta t}\left[\phi(t+\Delta t) - \phi(t)\right] \,dV_{o}\right\}$$
+$$\lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) - \phi(t) \,dV_{o}\right\} = \lim_{\Delta t \to 0}\left\{\iiint^{}_{V_{m}(t)}\frac{\phi(t+\Delta t) - \phi(t)}{\Delta t} \,dV_{o}\right\}$$
+Since the integration bounds in the equation above are not dependent on $\Delta t$, we can also perform the limit and the volumetric integration of the integrand commutatively (order does not matter).
+So, we can perform the limits directly on the integrand of the volumetric integral above,
+$$\lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) - \phi(t) \,dV_{o}\right\} = \iiint^{}_{V_{m}(t)} \lim_{\Delta t \to 0}\left\{\frac{\phi(t+\Delta t) - \phi(t)}{\Delta t}\right\} \,dV_{o}$$
+The limit on the right hand side is just the definition of a time derivative.
+Therefore, we can shorten that limit into just a partial derivative with respect to time $t$,
+$$\lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{}_{V_{m}(t)} \phi(t+\Delta t) - \phi(t) \,dV_{o}\right\} = \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o}$$
+Substituting the equation above into equation $\ref{Reynolds Transport Theorem Primitive 1}$,
+\begin{equation}\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t}\iiint^{V_{m}(t+\Delta t)}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o}\right\} 
++ \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o} \label{Reynolds Transport Theorem Primitive 2}\end{equation}
+If we examine the first term on the right hand side of the equation above, we can see that the volumetric integral is only performed on the very small volumetric difference between the volume at time $t+\Delta t$ and the volume at time $t$.
+Let us examine this very small difference in volume after a very small time has passed,
+\begin{figure}[H]\centering
+\def\svgwidth{400px}
+\import{Images/}{Two_Volumes_Superimposed.pdf_tex}
+\caption{Super-imposing the deformed volume to its initial shape. The dashed lines are small "chunks" of volume that are depicted in the next figure.}
+\label{Superimposed Deformed Volume Reynolds Transport Theorem}
+\end{figure}
+\begin{figure}[H]\centering
+\def\svgwidth{400px}
+\import{Images/}{Unfurling_Infinitesmial_Volume.pdf_tex}
+\caption{A "curved" infinitesmial volume if small enough is approximately the same as a rectangular volume.}
+\label{Unfurling Infinitesmial Volume Reynolds Transport Theorem}
+\end{figure}
+We can see from Figure $\ref{Superimposed Deformed Volume Reynolds Transport Theorem}$ and Figure $\ref{Unfurling Infinitesmial Volume Reynolds Transport Theorem}$ that the volumetric difference between the volume at time $t+\Delta t$ and the volume at time $t$ could be approximated as follows,
+$$dV_{o} = \bar{v}\cdot \hat{n}\Delta tdS$$
+wherein $\bar{v}$ represents the velocity of the fluid at the boundary of the volume $\hat{n}$ represents the unit normal vector of the volume's boundary, $\Delta t$ is an infinitesmially small fraction of time and $dS$ is a small amount of surface.
+This is true for a very small time passing $\Delta t$, the surface area of the of the volume has remained somewhat constant. 
+We can apply this geometric realization to the first term of the right hand side of equation $\ref{Reynolds Transport Theorem Primitive 2}$,
+$$\iiint^{V_{m}(t+\Delta t)}_{V_{m}(t)} \phi(t+\Delta t) \,dV_{o} = \iint^{}_{S_{m}(t)} \phi(t+\Delta t) \bar{v}\cdot \hat{n}\Delta t\,dS$$
+wherein $S_{m}(t)$ represents the surface of the volume at time $t$.
+We can substitute this simplification to equation $\ref{Reynolds Transport Theorem Primitive 2}$,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \lim_{\Delta t \to 0}\left\{\frac{1}{\Delta t} \iint^{}_{S_{m}(t)}\phi(t+\Delta t) \bar{v}\cdot\hat{n}\Delta t\,dS\right\} + \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o}$$
+The $\Delta t$ cancel out and evaluates to $1$,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \lim_{\Delta t \to 0}\left\{ \iint^{}_{S_{m}(t)}\phi(t+\Delta t) \bar{v}\cdot\hat{n}\,dS\right\} + \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o}$$
+Evaluating the time limit $\Delta t \to 0$,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iint^{}_{S_{m}(t)}\phi(t) \bar{v}\cdot\hat{n}\,dS + \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o}$$
+As a shorthand, we can drop the argument for the arbitrary quantity $\phi(t) \to \phi$,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iint^{}_{S_{m}(t)}\phi \bar{v}\cdot\hat{n}\,dS + \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o}$$
+We now have a surface integral term and a volumetric integral term on the right hand side.
+So that we may derive differential formulations, we need to reconcile our surface integral and volumetric integral terms on the right.
+To do this, we use the divergence theorem,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)}\nabla \cdot (\phi \bar{v})\,dV_{o} + \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o}$$
+Since we have converted the surface integral to the appropriate volumetric integral, we can now combine the integrands together,
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)}\nabla \cdot (\phi \bar{v}) + \frac{\partial \phi}{\partial t} \,dV_{o}$$
+\begin{equation}
+\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} + \nabla \cdot (\phi \bar{v}) \,dV_{o}
+\label{Reynolds Transport Theorem Vector Notation}
+\end{equation}
+We have arrived at the complete Reynolds Tranport Theorem formulation.
+It is also possible to re-write the Reynolds Transport Theorem in index tensor notation,
+\begin{equation}
+\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} + \frac{\partial}{\partial x_{k}} (\phi v_{k}) \,dV_{o}
+\label{Reynolds Transport Theorem Tensor Index Notation}
+\end{equation}
+wherein $v_{k}$ represents the $k^{th}$ component of fluid velocity.
+Since the quantity we chose is arbitrary, we can use the Reynold's Transport Theorem on elements of a tensor.
+\begin{equation}
+\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi_{i} \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \phi_{i}}{\partial t} + \frac{\partial}{\partial x_{k}} (\phi_{i} v_{k}) \,dV_{o} 
+\label{Reynolds Transport Theorem Tensor Index Notation Arbitrary Argument}
+\end{equation}
+The above equation is also valid as $\phi$ is arbitrary and can be anything we desire. 
+
+

@@ -1,0 +1,35 @@
+
+Now that we have an equation set for the shear stresses, we can substitute into the general conservation of momentum equation for fluids (equation $\ref{Conservation of Momentum Fluid General}$) to get a complete description of a Newtonian fluid
+$$\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = \frac{\partial \sigma_{ij}}{\partial x_{j}}  +  \rho g_{i}$$ 
+$$\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = \frac{\partial}{\partial x_{j}}\left\{-p\delta_{ij} + \lambda \delta_{ij}\frac{\partial v_{k}}{\partial x_{k}} + \mu\left[\frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}}\right]\right\}  +  \rho g_{i}$$ 
+$$\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = -\delta_{ij}\frac{\partial p}{\partial x_{j}} + \frac{\partial}{\partial x_{j}}\left\{\lambda \delta_{ij}\frac{\partial v_{k}}{\partial x_{k}}\right\} + \frac{\partial}{\partial x_{j}}\left\{\mu\left[\frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}}\right]\right\}  +  \rho g_{i}$$ 
+Applying the re-naming rules of the kronecker-delta,
+\begin{equation}
+\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = -\frac{\partial p}{\partial x_{i}} + \frac{\partial}{\partial x_{i}}\left\{\lambda\frac{\partial v_{k}}{\partial x_{k}}\right\} + \frac{\partial}{\partial x_{j}}\left\{\mu\left[\frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}}\right]\right\}  +  \rho g_{i} 
+\label{Navier-Stokes Momentum Equation General}
+\end{equation} 
+If the viscosity can be considered constant, then the general momentum equation for a Newtonian fluid can be re-written as the following,
+\begin{equation}
+\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = -\frac{\partial p}{\partial x_{i}} + \lambda\frac{\partial}{\partial x_{i}}\left\{\frac{\partial v_{k}}{\partial x_{k}}\right\} + \mu\frac{\partial}{\partial x_{j}}\left\{ \frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}} \right\}  +  \rho g_{i}
+\label{Navier-Stokes Momentum Constant Viscosity}
+\end{equation} 
+If our flow is not moving near the speed of sound, we can consider the flow to be approximately incompressible.
+Incompressibility means that the fluid has a divergence of $0$. Therefore,
+$$0 = \frac{\partial v_{k}}{\partial x_{k}}$$
+Substituting for the divergence of the flow to be zero,
+$$\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = -\frac{\partial p}{\partial x_{i}} + \mu\frac{\partial}{\partial x_{j}}\left\{ \frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}} \right\}  +  \rho g_{i}$$
+We also have an implied divergence on the second right hand side with coefficien $\mu$,
+$$\frac{\partial}{\partial x_{j}}\left\{ \frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}} \right\} = \frac{\partial}{\partial x_{j}}\frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial}{\partial x_{j}}\frac{\partial v_{j}}{\partial x_{i}}$$
+$$\frac{\partial}{\partial x_{j}}\left\{ \frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}} \right\} = \frac{\partial^{2} v_{i}}{\partial x_{j}^{2}} + \frac{\partial}{\partial x_{j}}\frac{\partial v_{j}}{\partial x_{i}}$$
+The order of partial derivative is commutative, so we can flip the order of taking partial derivatives for the last term on the right hand side,
+$$\frac{\partial}{\partial x_{j}}\left\{ \frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}} \right\} = \frac{\partial^{2} v_{i}}{\partial x_{j}^{2}} + \frac{\partial}{\partial x_{i}}\frac{\partial v_{j}}{\partial x_{j}}$$
+We formed the divergence of velocity on the last term of right hand side and if we assume our fluid to be incompressible that term should evaluate to zero,
+$$\frac{\partial}{\partial x_{j}}\left\{ \frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{i}} \right\} = \frac{\partial^{2} v_{i}}{\partial x_{j}^{2}}$$
+Substituting back into the momentum equation and we finally have the incompressible Navier-Stokes equation,
+\begin{equation}
+\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = -\frac{\partial p}{\partial x_{i}} + \mu \frac{\partial^{2} v_{i}}{\partial x_{j}^{2}} + \rho g_{i} 
+\label{Incompressible Navier-Stokes Momentum Equation}
+\end{equation}
+
+
+
