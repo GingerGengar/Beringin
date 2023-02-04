@@ -1,0 +1,150 @@
+\chapter{Reynolds Averaged Navier Stokes Equations}
+
+
+For incompressible flows, we would only need to concern ourselves with the conservation of mass and the conservation of momentum. 
+Re-iterating mass the governing equation for mass conservation in fluid (equation $\ref{Governing Equation Fluid Conservation of Mass}$),
+$$0 = \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) $$
+For incompressible flows, we know that the density is going to be constant, which is that the density will not vary in time nor in space.
+Okay, so let's first expand the second term in the equation above using product rule for partial derivatives,
+$$0 = \frac{\partial \rho}{\partial t} + \rho \frac{\partial}{\partial x_{k}} (v_{k}) + v_{k}\frac{\partial}{\partial x_{k}} (\rho)$$
+Mathematically, to set the density to be constant in time and space, we say,
+$$\frac{\partial \rho}{\partial t} = 0 \quad,\quad \frac{\partial \rho}{\partial x_{k}} = 0$$ 
+Simplifying the momentum equation,
+$$0 = \rho \frac{\partial}{\partial x_{k}} (v_{k})$$
+We know that the density is going to be a non-zero constant. Therefore,
+\begin{equation}0 = \frac{\partial v_{k}}{\partial x_{k}} \label{Mass Conservation Fluids Incompressible}\end{equation}
+Applying the incompressibility condition that the density is constant in space and time to the mass conservation equation yields the relation that the divergence of velocity has to be zero.
+
+Turbulent flow is full of small fluctuations in the flow, and so it is reasonable to postulate that the flow is just a summation of the time averaged component and a fluctuating random component.
+Let $\phi$ represent some quantity of the flow like velocity or pressure, and ${}_{m}\phi$ represent the time-averaged mean quantity meanwhile ${}_{r}\phi$ represent the time fluctuating random component whose summation of the entire relevant time sample is zero,
+\begin{equation}
+\phi = {}_{m}\phi + {}_{r}\phi 
+\label{Reynolds Averaging Decomposition}
+\end{equation}
+The Reynold's Averaged Navier-Stokes equations refer to a set of time-averaged equations of the Navier-Stokes equations.
+To obtain these equations for a fluid, we apply the Reynolds decomposition above to the Navier-Stokes equations and then take the time average of the entire equation.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Conservation of Mass}
+\begin{comment}
+\end{comment}
+The first thing we are going to do fetch the incompressible mass conservation equation (equation $\ref{Mass Conservation Fluids Incompressible}$),
+$$0 = \frac{\partial v_{k}}{\partial x_{k}}$$
+Now, we are going to apply the Reynold's average decomposition (equation $\ref{Reynolds Averaging Decomposition}$) for velocity on the equation above,
+$$v_{i} = {}_{m}v_{i} + {}_{r}v_{i}$$
+And we also model that the fluctuating component has an average of $0$ with time. Therefore,
+$$0 = \frac{1}{N}\sum^{N}_{l = 1}\left[{}_{r}v_{i}(t_{l})\right]$$
+Performing the averaging decomposition process,
+$$0 = \frac{\partial v_{k}}{\partial x_{k}} = \frac{\partial ({}_{m}v_{k})}{\partial x_{k}} + \frac{\partial ({}_{r}v_{k})}{\partial x_{k}}$$
+After we do this, we take the time average,
+$$0 = \frac{1}{N}\sum^{N}_{l = 1}\left[\frac{\partial }{\partial x_{k}}[{}_{m}v_{k}(t_{l})]\right] + \frac{1}{N}\sum^{N}_{l = 1}\left[\frac{\partial }{\partial x_{k}}[{}_{r}v_{k}(t_{l})]\right]$$
+Partial derivatives and summation operations both commute because both of these are linear operators. 
+Therefore, we can perform the partial derivatives after we perform the averaging process,
+$$0 = \frac{\partial }{\partial x_{k}}\left\{\frac{1}{N}\sum^{N}_{l = 1}\left[{}_{m}v_{k}(t_{l})\right]\right\} + \frac{\partial }{\partial x_{k}}\left\{\frac{1}{N}\sum^{N}_{l = 1}\left[{}_{r}v_{k}(t_{l})\right]\right\}$$
+We know that the average of the velocity fluctutations over time is going to be zero and the partial derivative of constant zero is just zero. 
+Therefore the second term evaluates to zero,
+$$0 = \frac{\partial }{\partial x_{k}}\left\{\frac{1}{N}\sum^{N}_{l = 1}\left[{}_{m}v_{k}(t_{l})\right]\right\}$$
+The time-averaged mean is just a constant that will not change over the time sample it was averaged from. 
+Therefore we can "take out" the mean out of the summation operation,
+$$0 = \frac{\partial }{\partial x_{k}}\left\{{}_{m}v_{k}\frac{1}{N}\sum^{N}_{l = 1}\left[1\right]\right\}$$
+The summation of the number $1$ over $N$ times is just going to evaluate to $N$, so dividing that summation by $N$ is just going to yield $1$.
+$$0 = \frac{\partial }{\partial x_{k}}\left\{{}_{m}v_{k}\right\}$$
+$$0 = \frac{\partial ({}_{m}v_{k})}{\partial x_{k}}$$
+We have obtained the incompressible Reynold's Averaged Navier-Stokes mass conservation equation,
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Conservation of Linear Momentum}
+\begin{comment}
+\end{comment}
+Re-iterating the incompressible fixed viscosity governing equation for conservation of linear momentum in fluids (equation $\ref{Incompressible Navier-Stokes Momentum Equation}$),
+$$\rho\frac{\partial v_{i}}{\partial t} + \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}} = -\frac{\partial p}{\partial x_{i}} + \mu \frac{\partial^{2} v_{i}}{\partial x_{j}^{2}} + \rho g_{i} $$
+We are going to perform the Reynold's averaging process on the quantity of fluid velociy $v_{i}$, and pressure $p$. 
+Since we are dealing with incompressible flows, the density is going to be constant and non-fluctuating. 
+The term $\rho g_{i}$ is just some non flow-dependent constant so can be assumed to have no small fluctuation in time due to turbulence.
+$$v_{i} = {}_{m}v_{i} + {}_{r}v_{i} \quad,\quad p = {}_{m}p + {}_{r}p$$
+Substituting into the incompressible fixed viscosity momentum equation,
+$$\rho\frac{\partial }{\partial t}({}_{m}v_{i} + {}_{r}v_{i}) + \rho ({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i}) = -\frac{\partial }{\partial x_{i}}({}_{m}p + {}_{r}p) + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}({}_{m}v_{i} + {}_{r}v_{i}) + \rho g_{i} $$
+We should now begin the averaging process. 
+We are now going to first take the summation over all of the samples in time while also remembering that summations and partial derivatives commute so we can do one over the other first or second doesnt matter,
+$$\rho\frac{\partial }{\partial t}\sum^{N}_{l = 1}\left[{}_{m}v_{i} + {}_{r}v_{i}\right] + \rho\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right]  = -\frac{\partial }{\partial x_{i}}\sum^{N}_{l = 1}\left[{}_{m}p + {}_{r}p\right] + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}\sum^{N}_{l = 1}\left[{}_{m}v_{i} + {}_{r}v_{i}\right] + \rho g_{i}N $$
+We should always remember that the mean of the random fluctuations are zero and hence the summation of just the random fluctuations over its time samples have to be zero.
+$$\rho\frac{\partial }{\partial t}\sum^{N}_{l = 1}\left[{}_{m}v_{i}\right] + \rho\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right]  = -\frac{\partial }{\partial x_{i}}\sum^{N}_{l = 1}\left[{}_{m}p\right] + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}\sum^{N}_{l = 1}\left[{}_{m}v_{i}\right] + \rho g_{i}N $$
+Now we should also remember that the average of a quantity over its time samples is just a constant over its time samples and unchanging over its time samples. Therefore,
+$$\rho\frac{\partial }{\partial t}({}_{m}v_{i})\sum^{N}_{l = 1}\left[1\right] + \rho\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right]  = -\frac{\partial }{\partial x_{i}}({}_{m}p)\sum^{N}_{l = 1}\left[1\right] + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}({}_{m}v_{i})\sum^{N}_{l = 1}\left[1\right] + \rho g_{i}N $$
+The summations of $1$ over $N$ time samples evaluate to $N$,
+$$\rho\frac{\partial }{\partial t}({}_{m}v_{i})N + \rho\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right]  = -\frac{\partial }{\partial x_{i}}({}_{m}p)N + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}({}_{m}v_{i})N + \rho g_{i}N $$
+Now dividing the equation by $N$ to form the average of the equation,
+\begin{equation}
+\rho\frac{\partial }{\partial t}({}_{m}v_{i}) + \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right]  = -\frac{\partial }{\partial x_{i}}({}_{m}p) + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}({}_{m}v_{i}) + \rho g_{i} 
+\label{RANS Momentum Primitive 1}
+\end{equation}
+The problematic term in the equation above is the second term on the left hand side which was generated by the $\displaystyle \rho v_{k}\frac{\partial v_{i}}{\partial x_{k}}$ term in the original equation.
+That velocity-velocity gradient product term has fluctuating quantities multiplied by another fluctuating quantity.
+Working on just the problematic term the equation above,
+\begin{align*}\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right] = \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i}) + ({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right]\end{align*}
+\begin{align*}
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right] = &
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i}) + ({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right]  
+\\ &+ \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i}) + ({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right]
+\end{align*}
+\begin{align*}
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right] = &
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i})\right] 
++ \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right]   
+\\ & + \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i})\right] 
++ \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right] 
+\end{align*}
+Remembering that since the average of a quantity over the samples it was averaged from must always be constant, we can "move" average related terms "out" of the summation operation and still be correct,
+\begin{align*}
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right] = &
+\rho({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i})\frac{1}{N}\sum^{N}_{l = 1}\left[1\right] 
++ \rho\frac{1}{N}({}_{m}v_{k})\sum^{N}_{l = 1}\left[\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right]   
+\\ & + \rho\frac{1}{N}\frac{\partial }{\partial x_{k}}({}_{m}v_{i})\sum^{N}_{l = 1}\left[({}_{r}v_{k})\right] 
++ \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right] 
+\end{align*}
+Remembering that the summation of a small turbulent fluctuating quantity over the time samples should be zero,
+\begin{align*}
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right] = &
+\rho({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i})\frac{1}{N}\sum^{N}_{l = 1}\left[1\right] 
++ \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right] 
+\end{align*}
+Simplifying the summation of 1's over $N$ operation further,
+\begin{align*}
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right] = &
+\rho({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i})\frac{N}{N}
++ \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right] 
+\end{align*}
+\begin{align*}
+\rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right] = &
+\rho({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i})
++ \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right] 
+\end{align*}
+Now we can finally substitute this problematic term back into equation $\ref{RANS Momentum Primitive 1}$
+$$\rho\frac{\partial }{\partial t}({}_{m}v_{i}) + \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{m}v_{k} + {}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i} + {}_{r}v_{i})\right]  = -\frac{\partial }{\partial x_{i}}({}_{m}p) + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}({}_{m}v_{i}) + \rho g_{i}$$
+$$\rho\frac{\partial }{\partial t}({}_{m}v_{i}) + \rho({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i}) + \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right]  = -\frac{\partial }{\partial x_{i}}({}_{m}p) + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}({}_{m}v_{i}) + \rho g_{i}$$
+Re-arranging the equation and putting the problematic velocity fluctuation terms over to the right hand side,
+$$\rho\frac{\partial }{\partial t}({}_{m}v_{i}) + \rho({}_{m}v_{k})\frac{\partial }{\partial x_{k}}({}_{m}v_{i})  = -\frac{\partial }{\partial x_{i}}({}_{m}p) + \mu \frac{\partial^{2} }{\partial x_{j}^{2}}({}_{m}v_{i}) + \rho g_{i} - \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right]$$
+The $\displaystyle  - \rho\frac{1}{N}\sum^{N}_{l = 1}\left[({}_{r}v_{k})\frac{\partial }{\partial x_{k}}({}_{r}v_{i})\right]$ is often called the "Reynolds stress" and it is problematic because this relies on unknown velocity fluctuations with $2$ free indices.
+This means that in a $3$-dimensional flow, we have $9$ unknowns that we do not have information on.
+But how did this come to be?
+The original incompresible linear momentum equation was solvable and had as many unknowns as there were equations so how did we get all of these extra terms?
+%Seperator
+\\~\\The main issue is that we took the equations and then applied an averaging process.
+The averaging process "destroyed" some information that we were not able to recover.
+The destruction of some information forced all of the unknown terms to appear.
+Since we do not know the velocity flucutations for a given flow, we would need to produce models for these velocity fluctuations.
+The development of a model to give enough information for us to solve the Reynolds Averaged Navier-Stokes equations is often called the "Turbulence Closure Problem".
+
+
+
+
+

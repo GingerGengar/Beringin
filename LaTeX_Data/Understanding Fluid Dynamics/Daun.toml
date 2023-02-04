@@ -1,4 +1,0 @@
-Description = "This is just an overview about the physics that we are inscribing into our mathematical formulations when deriving the basic governing equations for fluid dynamics"
-Pre_Requisites = ["Base", ]
-Organization = "B"
-Authors = ["Ginger Gengar",]

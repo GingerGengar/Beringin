@@ -1,4 +1,62 @@
+\chapter{General Fluid Governing Equations}
 
+
+Now that we have the basic tools, such as the Stokes-Kelvin Theorem, Divergence Theorem, Substantive Derivative, and the Reynold's Transport Theorem it is time to implement some physics into our fluids.
+In classical physics, we have the following conservation laws:
+\begin{enumerate}
+\item Conservation of Mass
+\item Conservation of Linear Momentum
+\item Conservation of Angular Momentum
+\item Conservation of Energy
+\end{enumerate}
+Conservation of angular momentum yields some useful results but is not widely needed.
+This leaves us $3$ main conservation laws that we can describe our fluid in (mass, momentum, and energy).
+%Seperator
+\\~\\The conservation of energy is important in the existence of shocks when we have vehicles flying at supersonic or even hypersonic speeds and also typically in large heat transfer situations like within a gas turbine (jet) engine.
+%Seperator
+\\~\\For many applications where we have incompressible subsonic flow without large heat transfers, we can negelct the energy equation because it does not really yield additional useful information.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Conservation of Mass}
+\begin{comment}
+\end{comment}
+The conservation of mass states that mass cannot be created or destroyed.
+If we follow a volume that always contains the same set of fluid particles, then that particular volume we are following must always have the same amount of mass.
+Mathematically, this just means that the substantive derivative of a volume deforming and moving with the fluid must evaluate to zero.
+Re-iterating the tensor form of the Reynold's transport theorem (equation $\ref{Reynolds Transport Theorem Tensor Index Notation}$),
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} + \frac{\partial}{\partial x_{k}} (\phi v_{k}) \,dV_{o}$$
+Remmeber that $\phi$ was some arbitrary quantity. 
+This time, let us consider $\phi$ to be the density of the fluid and we choose this so that the left hand side volumetric integral just implies total mass contained within our deforming volume $V_{m}(t)$.
+$$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \rho \,dV_{o} = \iiint^{}_{V_{m}(t)} \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \,dV_{o}$$
+wherein $\rho$ represents the density of the fluid.
+The volumetric integral on the left hand side is just the total mass contained within our deforming volume,
+$$M = \iiint^{}_{V_{m}(t)} \rho \,dV_{o}$$
+Substituting this,
+$$\frac{DM}{Dt} = \iiint^{}_{V_{m}(t)} \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \,dV_{o}$$
+Based on conservation of mass, the mass contained within our deforming volume must always be constant because the deforming volume contains the same set of particles at all times.
+Therefore, the left hand side of the equation above evaluates to zero.
+$$0 = \iiint^{}_{V_{m}(t)} \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \,dV_{o}$$
+We need to remember that the volume $V_{m}(t)$ is defined purely as a function of time $t$ because once we have chosen the volume initially, its deformation will deterministically change to always accomodate the same set of fluid particles.
+However, the initial selection of our volume $V_{m}$ at time $t = 0$ was arbitrary. 
+Since $V_{m}(0)$ can be chosen arbitrarily, we know that the volumetric integral can be performed over ANY region in the fluid.
+This must only be possible if the integrand in the equation above evaluates to zero.
+Therefore,
+\begin{equation}0 = \frac{\partial \rho}{\partial t} + \frac{\partial}{\partial x_{k}} (\rho v_{k}) \label{Governing Equation Fluid Conservation of Mass}\end{equation}
+We have finally arrived at our first governing equation, conservation of mass.
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Conservation of Linear Momentum}
+\begin{comment}
+\end{comment}
 The general method of deriving the conservation of momentum is the same as the one for deriving the mass conservation.
 This time, instead of performing a volumetric integral of density over volume (as was the case for our mass conservation), we instead perform a volumetric integral of fluid density $\rho$ multiplied by fluid velocity vector $v_{i}$.
 Such a volumetric integral would represent the total linear momentum within a deforming volume containing the same fluid particles $V_{m}(t)$,
@@ -148,5 +206,33 @@ The first term represent the linear acceleration of a fluid and the second term 
 %Seperator
 \\~\\The right hand side represents the external forces acting on the fluid.
 The first term on the right hand side just means the gradient of the surface shear stresses and the second term represents all the contributions of body forces like electromagnetic forces and gravity that act on the "mass" of the fluid.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Fluid Rotation and Shear}
+\begin{comment}
+\end{comment}
+The velocity gradient tensor $e_{ij}$ is defined below,
+$$e_{ij} = \frac{\partial v_{i}}{\partial x_{k}}$$
+This term appears in the conservation of momentum for fluids, and this velocity gradient tensor has an incredibly important significance.
+The velocity gradient tensor is a tensor of rank 2.
+We can re-write this velocity gradient tensor in the following form,
+$$\frac{\partial v_{i}}{\partial x_{j}} = \frac{\partial v_{i}}{\partial x_{j}} + \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}} - \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}}$$
+$$\frac{\partial v_{i}}{\partial x_{j}} = \frac{1}{2}\frac{\partial v_{i}}{\partial x_{j}} + \frac{1}{2}\frac{\partial v_{i}}{\partial x_{j}} + \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}} - \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}}$$
+Re-arranging the terms a little bit,
+$$\frac{\partial v_{i}}{\partial x_{j}} = \frac{1}{2}\frac{\partial v_{i}}{\partial x_{j}} + \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}} + \frac{1}{2}\frac{\partial v_{i}}{\partial x_{j}} - \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}}$$
+Grouping the terms together,
+$$\frac{\partial v_{i}}{\partial x_{j}} = \left[\frac{1}{2}\frac{\partial v_{i}}{\partial x_{j}} + \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}}\right] + \left[\frac{1}{2}\frac{\partial v_{i}}{\partial x_{j}} - \frac{1}{2}\frac{\partial v_{j}}{\partial x_{k}}\right]$$
+\begin{equation}\frac{\partial v_{i}}{\partial x_{j}} = \frac{1}{2}\left[\frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{k}}\right] + \frac{1}{2}\left[\frac{\partial v_{i}}{\partial x_{j}} - \frac{\partial v_{j}}{\partial x_{k}}\right] \label{raw decomposition of velocity gradient tensor Rotation and Shear}\end{equation}
+We have essentially re-written the velocity gradient tensor in terms of a symmetric tensor and an anti-symmetric tensor. 
+The symmetric tensor (firs term in the right hand side) represents the shear rate of the fluid at a particular point.
+The anti-symmetric tensor (second term in the right hand side) represents the rotation rate of the fluid particle at a particular point.
+By convention, we rename the symmetric strain rate tensor as $S_{ij}$ and we name the anti-symmetric rotation rate tensor as $\Omega_{ij}$,
+$$S_{ij} = \frac{1}{2}\left[\frac{\partial v_{i}}{\partial x_{j}} + \frac{\partial v_{j}}{\partial x_{k}}\right] \quad,\quad \Omega_{ij} = \frac{1}{2}\left[\frac{\partial v_{i}}{\partial x_{j}} - \frac{\partial v_{j}}{\partial x_{k}}\right]$$
+which also if we are feeling a bit circular, means that the velocity gradient tensor may be written as the combination of the local shear strain rate $S_{ij}$ and a local rotation rate $\Omega_{ij}$,
+$$e_{ij} = S_{ij} + \Omega_{ij}$$
 
 

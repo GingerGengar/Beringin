@@ -1,4 +1,0 @@
-Description = "We derive the most general momentum conservation that must hold for any fluid flow. We stricty do not implement the Constitutive equations for the momentum equation."
-Pre_Requisites = ["Mass Conservation of Fluids", ]
-Organization = "B"
-Authors = ["Ginger Gengar",]

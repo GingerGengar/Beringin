@@ -1,3 +1,4 @@
+\chapter{Reynold's Transport Theorem}
 
 We have introduced the two fundamental reference frames: eulerian and lagrangian reference frame previously, wherein the eulerian reference frame is one fixed to some location meanwhile the lagrangian reference frame is one fixed in the fluid flow.
 We have already introduced the concept of the substantive derivative which is the time derivative of some arbitrary quantity of a point particle in the lagrangian reference frame.
@@ -13,7 +14,8 @@ This theorem is an incredibly fundamental theorem in deriving the rest of fluid 
 %Seperator
 %Seperator
 %Seperator
-\subsection{Derivation}
+%Seperator
+\section{Derivation}
 \begin{comment}
 \end{comment}
 Let us consder some arbitrary volume that contains fluid initially.
@@ -102,6 +104,15 @@ We now have a surface integral term and a volumetric integral term on the right 
 So that we may derive differential formulations, we need to reconcile our surface integral and volumetric integral terms on the right.
 To do this, we use the divergence theorem,
 $$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)}\nabla \cdot (\phi \bar{v})\,dV_{o} + \iiint^{}_{V_{m}(t)} \frac{\partial \phi}{\partial t} \,dV_{o}$$
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Final Result}
+\begin{comment}
+\end{comment}
 Since we have converted the surface integral to the appropriate volumetric integral, we can now combine the integrands together,
 $$\frac{D}{Dt}\iiint^{}_{V_{m}(t)} \phi \,dV_{o} = \iiint^{}_{V_{m}(t)}\nabla \cdot (\phi \bar{v}) + \frac{\partial \phi}{\partial t} \,dV_{o}$$
 \begin{equation}
@@ -121,5 +132,4 @@ Since the quantity we chose is arbitrary, we can use the Reynold's Transport The
 \label{Reynolds Transport Theorem Tensor Index Notation Arbitrary Argument}
 \end{equation}
 The above equation is also valid as $\phi$ is arbitrary and can be anything we desire. 
-
 

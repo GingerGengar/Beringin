@@ -1,4 +1,4 @@
 Description = "Here we put everything together to form the general Navier-Stokes Equations"
-Pre_Requisites = ["Newtonian Fluid Constitutive Viscous Relations",]
+Pre_Requisites = ["General Fluid Governing Equations",]
 Organization = "B"
 Authors = ["Ginger Gengar",]

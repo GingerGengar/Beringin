@@ -1,0 +1,4 @@
+Description = "Here we derive the develop and derive the most general governing equations for fluid dynamics"
+Pre_Requisites = ["Reynolds Transport Theorem", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]

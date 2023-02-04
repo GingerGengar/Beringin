@@ -1,0 +1,4 @@
+Description = "We derived the incompressible RANS version, which is suitable for subsonic aircrafts and automotives, and ships, and other slowly moving fluids"
+Pre_Requisites = ["Navier-Stokes Equations", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]
