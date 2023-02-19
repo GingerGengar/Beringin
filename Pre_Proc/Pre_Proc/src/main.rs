@@ -1,3 +1,4 @@
+use std::path::*;
 mod Trees; //Import the structure definitions of a single Node
 mod Loading; //Import the File Loading Module to read directories and create Node Vector
 mod Assembly; //Import the File containing path formation of the project
@@ -15,12 +16,13 @@ fn main() {
     //Produce a Path based on the User Selection
     Assembly::FormPath(&FullMetadata, &mut BuildOrder, & NodeSel);
     println!("{:?}", BuildOrder); //TODO: Delete This
+    //Where the user wants to put the results
+    let UserOutDir = Path::new("/home/hyahoos/Utility/Free");
     //Generate the LaTeX Output
-    Output::BuildLaTeX(&FullMetadata, &BuildOrder);
+    Output::BuildLaTeX(&FullMetadata, &BuildOrder, &UserOutDir);
 }
 
 /*
-TODO: Handle images!!!! Copy paste them over!!!
 TODO: Give some ability to check the integrity of the packages, noting which pre-requisite names do not match
 TODO: Give some utilities like renaming a Node such that not only the directory name has changed but all Daun.toml files change their names accordingly.
 TODO: We need to desperately add a linear algebra topic

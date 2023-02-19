@@ -13,7 +13,7 @@ pub fn ExtractFile (RelPath: &std::path::Path, Holder: &mut String){
     FileObj.read_to_string(Holder);}
 
 /*Function to determine if a file/directory is a dotfile or not*/
-fn is_hidden(entry: &walkdir::DirEntry) -> bool {
+pub fn is_hidden(entry: &walkdir::DirEntry) -> bool {
     entry.file_name().to_str().map(|s| s.starts_with(".")).unwrap_or(false)}
 
 /*Gets toml::value and attempts to parse out the string. returns Option::None if fail*/
