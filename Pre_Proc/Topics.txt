@@ -275,3 +275,15 @@ Numerical Methods (c) (done)
     Fourier Stability Analysis (s) (done)
 
 REMEMBER conformal mapping has not been included
+
+Basic Must-Have Topics
+    How to take the gradient of a function
+    How to take the gradient of a vector
+    How to perform a cross product
+    How to do dot product
+    How to perform curl of a vector
+    How to perform divergence of a vector
+    How to perform a surface integral
+    How to perform a volumetric integral
+    How to perform these computations numerically
+

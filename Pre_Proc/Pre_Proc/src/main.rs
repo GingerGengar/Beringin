@@ -20,12 +20,11 @@ fn main() {
 }
 
 /*
+TODO: Handle images!!!! Copy paste them over!!!
+TODO: Give some ability to check the integrity of the packages, noting which pre-requisite names do not match
+TODO: Give some utilities like renaming a Node such that not only the directory name has changed but all Daun.toml files change their names accordingly.
 TODO: We need to desperately add a linear algebra topic
-TODO: Currently our File is set to Appending all the time. Is there some way to give it mode of appending sometimes but not appending so our output file does not keep on having to be deleted every time?
 TODO: The File optional names have not been implemented, so a single directory of a single Node cannot have its contents be anything other than Theory.tex.
 TODO: We need to integrate these topics with UBI somehow and give it some kind of terminal user interface
 TODO: Port the rest of the archives
-TODO: Give some utilities like renaming a Node such that not only the directory name has changed but all Daun.toml files change their names accordingly.
-TODO: Give some ability to check the integrity of the packages, noting which pre-requisite names do not match
-TODO: Handle images!!!! Copy paste them over!!!
 */
