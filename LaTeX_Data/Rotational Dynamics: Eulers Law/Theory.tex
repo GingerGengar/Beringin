@@ -1,0 +1,733 @@
+\begin{comment}
+Probably should rename rigid body to system of particles. 
+There has to be a distinction between the two. 
+Rigid bodies have the constraint that particles cannot move with respect to one another meanwhile for a system of particles, particles can still move relative to one another. 
+Think of an aircraft as a rigid body meanwhile the earth and moon as a system of particles.
+\end{comment}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\chapter{Rotational Dynamics: Euler's Law}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Point Particle}
+\begin{comment}
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Inertial Reference Frame}
+\label{Eulerslaw inertial ref frame point particle section}
+\begin{comment}
+\end{comment}
+Newton's $2^{nd}$ law could be extended to rotation as well. 
+Taking the cross product of Newton's $2^{nd}$ law with position vector $\bar{r}^{o_{e}p}$,
+$$\bar{r}^{o_{e}p}\times\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+The summation $\displaystyle\sum$ operator and the vector cross-product operator are commutative with one another. 
+Therefore,
+\begin{equation}\sum^{n}_{i = 1}\left[\bar{r}^{o_{e}p}\times{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]\label{euler-sub-1}\end{equation}
+Torque $\bar{\Gamma}$ is defined as shown below,
+\begin{equation}
+{}^{e}\bar{\Gamma}^{o_{e}}_{p,i} = \bar{r}^{o_{e}p}\times{}^{e}\bar{F}^{p}_{i}
+\label{torque-definition}
+\end{equation}
+The 'A' specifier on torque $\bar{\Gamma}$ represents that the torque is perceived in an inertial reference frame. 
+This means ficitious forces should be exluded. 
+The 'B'specifier on torque $\bar{\Gamma}$ represents that the moment is taken with respect to the origin of the inertial reference frame $e$. 
+The 'D' specifier is to represent that the $i^{th}$ torque produced from the $i^{th}$ force is acting on particle $p$. 
+Substituting the definition for torque to equation $\ref{euler-sub-1}$,
+\begin{equation}\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]\label{euler-sub-2}\end{equation}
+
+Here we make the claim,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right] = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+Let $LHS$ and $RHS$ be defined below,
+$$LHS = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right] \quad,\quad RHS = m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+Epxanding $LHS$ based on product rule,
+$$LHS = \bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[ m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right] + \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\right]\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)$$
+The vector crosss-product with itself is zero. 
+Therefore the term $\displaystyle \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\right]\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right) = 0$. 
+Ignorinng the second term in the equation above,
+$$LHS = \bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[ m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right]$$
+Scalar multiplication and frame derivative operations are commutative as long as the scalar remains constant with time. 
+Since mass of particle $m_{p}$ is unchanging in time due to conservation of mass,
+$$LHS =  m_{p}\bar{r}^{o_{e}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right]$$
+Simplifying to $2^{nd}$ order derivative,
+$$LHS =  m_{p}\bar{r}^{o_{e}p}\times \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}\left(\bar{r}^{o_{e}p}\right) $$
+Since $LHS = RHS$, the claim is proven to be true. 
+Since the claim is true, the claim can be substituted into equation $\ref{euler-sub-2}$,
+
+\begin{equation}\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)\right]\label{euler-sub-3}\end{equation}
+
+Let angular momentum $\bar{L}$ be defined below,
+\begin{equation}
+{}^{e}\bar{L}^{o_{e}}_{p} = \bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)
+\label{Angular Momentum Definition for Point Particles}
+\end{equation}
+Angular momentum is dependent on $\displaystyle \overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)$. 
+This term is dependent on the frame derivative operation and which frame the time derivative of $\displaystyle \bar{r}^{o_{e}p}$ is taken with respect to. 
+The frame used for the frame derivative operation when constructing the angular momentum definition is represented in the 'A' specifier. 
+The angular momentum is also dependent on the position vector of particle $p$, $\displaystyle \bar{r}^{o_{e}p}$. 
+$2$ facts can be deduced from the position vector in this form: the point of reference the particle $p$ is taken with respect to, in this case origin of inertial frame $o_{e}$, and the object the position vector is pointing at, particle $p$. 
+Likewise, the angular momentum vector notation needs to be able to express the point of reference and the particle being referenced. 
+The point of reference is represented in the 'B' specifier meanwhile the object being referenced, particle $p$ is represented in the 'D' specifier. 
+Substituting the definition for angular momentum, into equation $\ref{euler-sub-3}$,
+\begin{equation}
+\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p}\right]
+\label{Eulers Law Point Particle Inertial Reference Frame}
+\end{equation}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Non-Inertial Reference Frame}
+\label{Eulers law point particle non-inertial reference frame}
+\begin{comment}
+\end{comment}
+Rotations are incredibly complex and difficult.
+Ok, so far we have Euler's law for rigid bodies in an inertial reference frame (equation $\ref{Eulers Law Point Particle Inertial Reference Frame}$),
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p}\right]$$
+What is interesting here is that angular momentum for a particular object is defined with reference to a reference frame for the velocities and also with reference to a single point for the "arm".
+Torque or moments acting on an object is likewise defined with reference to a frame for the force (to include of exclude fictitious forces) and also a single point for the "arm".
+%Seperator
+%Seperator
+\\~\\What do I mean by this, well take a look at the equation $\ref{Eulers Law Point Particle Inertial Reference Frame}$. 
+The angular momentum ($\bar{L}$) of particle $p$ (left hand side of equation) has its velocity defined as frame derivative in the inertial reference frame $e$, and takes the $\bar{r}$ vector to have a starting point $o_{e}$ which is the origin of the inertial reference frame $e$.
+The $i^{th}$ torque applied on particle $p$ (right hand side of equation) is made of forces defined in the inertial reference frame $e$ (this means exclude all fictitious forces and only include physical forces), and takes the $\bar{r}$ vector to have a starting point at $o_{e}$ which again is the origin of the inertial reference frame $e$.
+The point to take away from this is that rotational dynamics \textbf{has to be defined within a reference frame, and a point of reference}.
+%Seperator
+%Seperator
+\\~\\Now for an observer in a non-inertial reference frame, the observer can vary the reference point and also the reference frame that velocities are taken relative to.
+Here is what a reasonable non-inertial observer might want to consider:
+\begin{enumerate}
+    \item Instead of considering the reference point for Euler's law to be fixed in an inertial reference frame, maybe the observer would want to consider the reference point fixed to a non-inertial one, such as the origin of the non-inertial frame the observer is currently on.
+    \item Instead of considering velocities in the inertial reference frame, perhaps the observer would want to use velocities in its own non-inertial frame of reference.
+    So isntead of taking the velocity as a frame derivative of position in the inertial reference frame, the observer would want to take velocity as a frame derivative of position with respect to its own non-inertial reference frame.
+\end{enumerate}
+%Seperator
+Now if we were the observer, what form of Euler's law would we need to use to properly be able to predict rate of change of angular momentum in our non-inertial reference frame?
+For rotational dynamics the observer can change 2 different things, which is the reference point and the reference frame.
+Compare this to translational dynamics where the observer can only change the reference frame.
+All we had to do to get the governing equations in the non-inertial reference frame fro translation is just apply the kinematic transport theorem and we are done for the translational case.
+Here just applying the kinematic transport theorem will only reconcile the reference frame, but not the reference point.
+This is why I claim that rotations are much nastier and complicated than translational dynamics.
+%Seperator
+%Seperator
+\\~\\Okay, so we are going to do this incremenetally.
+Firstly, we are going to handle the case of having an arbitrary reference point that can move around.
+After that, we are going to handle the case of using a non-inertial reference frame for the definitions of our roational dynamics.
+
+
+We are going to literally start again from Newton's second law in an inertial reference frame for a single particle (equation $\ref{Newtons Second Law}$),
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+The way we arrived at Euler's law for the inertial case is taking the cross product of Newton's second law with the position vector of our particle $p$ relative to the origin of the inertial reference frame.
+Since we are trying to get Euler's law for a non-inertial reference frame, maybe we should instead take the cross product of Newton's second law with the position vector of our particle $p$ \textbf{relative to some arbitrary point} $o_{b}$ instead.
+$$\sum^{n}_{i = 1}\left[\bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}p}]$$
+Well now let's just make the point $o_{b}$ be able to arbitrarily move around and declare a non-inertial reference frame with its origin as $o_{b}$.
+%Insert image of the coordiante system
+Since we already set up another reference frame, now let's just express our particle's position in the inertial reference frame in terms of where the point $o_{b}$ is and also what our particle's position is relative to the new non-inertial reference frame $b$,
+$$\bar{r}^{o_{e}p} = \bar{r}^{o_{e}o_{b}} + \bar{r}^{o_{b}p}$$
+wherein $\bar{r}^{o_{e}o_{b}}$ represents the position of the arbitary point $o_{b}$ in the inertial reference frame $e$ and $\bar{r}^{o_{b}p}$ represents the position of the particle in the non-inertial reference frame. Substituting this,
+$$\sum^{n}_{i = 1}\left[\bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[ \bar{r}^{o_{e}o_{b}} + \bar{r}^{o_{b}p} ]$$
+Let's algebraically expand the equation above,
+\begin{equation}\sum^{n}_{i = 1}\left[\bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] + m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{b}p}] \label{system of particles eulers law non-inertial primitive 1}\end{equation}
+We can always use the same trick on the second term on the left hand side which we used on section $\ref{Eulerslaw inertial ref frame point particle section}$,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = 
+\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]
+ + \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\right]\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})$$
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = 
+\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]
+ + m_{p}\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\right]\times\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})$$
+ Since a vector cross product with itself is going to evaluate to zero,
+$$m_{p}\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\right]\times\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p}) = 0$$
+Substituting for this identity into the equation,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = 
+\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]$$
+Mass of particle $m_{p}$ is unchanging with time.
+Therefore, it can be "moved" out of the frame derivative operator,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial}{\partial t}}\left[\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]$$
+Combining the successive frame derivatives into a scond order frame derivative,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{b}p})$$
+
+We can substitute this into equation $\ref{system of particles eulers law non-inertial primitive 1}$,
+$$\sum^{n}_{i = 1}\left[\bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] + m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{b}p}]$$
+$$\sum^{n}_{i = 1}\left[\bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}\right] = m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] + \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]$$
+The first term on the right hand side kind of looks like a fictitious force so let's just subtract it and "move" it to the left hand side for now,
+\begin{equation}
+\sum^{n}_{i = 1}\left[\bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]
+\label{system of particles eulers law non-inertial primitive 2}
+\end{equation}
+
+Here we need to remember how our torque/moment and angular momentum is defined (equation $\ref{Angular Momentum Definition for Point Particles}$ and $\ref{torque-definition}$ respectively),
+$${}^{e}\bar{\Gamma}^{o_{e}}_{p,i} = \bar{r}^{o_{e}p}\times{}^{e}\bar{F}^{p}_{i} \quad,\quad 
+{}^{e}\bar{L}^{o_{e}}_{p} = \bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right)$$
+Firstly, let's adapt the definition of torque to the one for equation $\ref{system of particles eulers law non-inertial primitive 2}$.
+We are going to keep everything the same but change the reference point that the torque is taken with respect to from point $o_{e}$ to arbitrary moving point $o_{b}$
+\begin{equation}
+{}^{e}\bar{\Gamma}^{o_{e}}_{p,i} = \bar{r}^{o_{e}p}\times{}^{e}\bar{F}^{p}_{i} \quad \text{is analogous to}  \quad 
+{}^{e}\bar{\Gamma}^{o_{b}}_{p,i} = \bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}
+\label{Torque with respect to arbitary point point particle}
+\end{equation}
+${}^{e}\bar{\Gamma}^{o_{b}}_{p,i}$ uses $e$ in its 'A' specifier which just means that the torque is constructed out of forces that are completely physical without any fictitious forces.
+The term also uses $o_{b}$ as its 'B' specifier which means that the $\bar{r}$ vector used as the "moment arm" in creating the torque starts at arbitary point $o_{b}$. 
+This is what is meant when we are "taking a moment with respect to a point".
+The term also uses $p,i$ in its 'D' specifier meaning this torque is the $i^{th}$ torque applying to particle $p$.
+%Seperator
+\\~\\Now, we are going to adapt the definition of angular momentum to the one for equation $\ref{system of particles eulers law non-inertial primitive 2}$,
+We are only going to change the reference point the angular momentum is taken with respect to from $o_{e}$ to $o_{b}$,
+\begin{equation}
+{}^{e}\bar{L}^{o_{e}}_{p} = \bar{r}^{o_{e}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{e}p}\right) \quad \text{is analogous to} \quad 
+{}^{e}\bar{L}^{o_{b}}_{p} = \bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p}\right)
+\label{Angular Momentum with respect to arbitary point particle}
+\end{equation}
+Exameine the angular momentum term ${}^{e}\bar{L}^{o_{b}}_{p}$.
+All the specifiers have the same meaning as the torque case.
+The 'A' specifier here being the inertial reference frame $e$ means that velocity used to construct the angular momentum is a frame derivative of position in the inertial reference frame.
+The 'B' specifier now has been changed to $o_{b}$ to mean that the "arm" that was used to construct the angular momentum vector now does not start at $o_{e}$ but rather now starts at $o_{b}$.
+Just like in the torque case, this is what is meant when we "take angular momentum with respect to a point".
+The 'D' specifier $p$ means that this angular momentum is a property attributed to particle $p$.
+%Seperator
+\\~\\Now substituting equation $\ref{Torque with respect to arbitary point point particle}$ (analogous definition of torque taken with respect to point $o_{b}$) into equation $\ref{system of particles eulers law non-inertial primitive 2}$,
+$$\sum^{n}_{i = 1}\left[\bar{r}^{o_{b}p}\times{}^{e}\bar{F}^{p}_{i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]$$
+\begin{equation}\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{b}}_{p,i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] \label{system of particles eulers law non-inertial primitive 3}\end{equation}
+
+Now substituting equation $\ref{Angular Momentum with respect to arbitary point particle}$ (analogous definition of angular momentum taken with respect to point $o_{b}$) into equation above,
+\begin{equation}
+\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{b}}_{p,i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{b}}_{p}\right]
+\label{Euler's Law Point Particle Non-Inertial Moving Reference Point}
+\end{equation}
+We have arrived at Euler's law when taking into account arbitrary reference points for the moments and angular momentum.
+We are only halfway done because we still have not considered using a non-inertial reference frame to construct the torque and angular momentum definitions.
+%Seperator
+\\~\\Now the \textbf{most} general Euler's law without putting \textbf{assumptions} on the non-inertial reference frame would be very complicated.
+This is not practical for most problems that we are dealing with.
+Most of the time, we would want a coordinate system that would be fixed to our body (rotating with our body) and this kind of reference frame is good enough to solve even complicated problems.
+We will then reconstruct the angular momentum and frame derivative definitions for our non-inertial body fitted coordinates.
+%Seperator
+\\~\\We will perform the final most general case in section $\ref{General Rotation Case Section}$ which is the next section, and this is only performed for completeness sake, it is not really practical to use this form, so it is best to avoid it unless we really need to consider arbitrary reference frames for our intended application.
+Besides it is nice to have the most general form available to us but that is not our focus and is placed on the next section.
+%Seperator
+\\~\\For most practical problems, we would want to consider a reference frame that is fixed to the particle (particle has a fixed position in our body-fitted coordinates).
+Firstly, this is a non-inertial reference frame, because of its rotation.
+Secondly, the particle is not going to move relative to this body-fitted coordinate or reference frame.
+We are going to take our deinition of angular momentum (equation $\ref{Angular Momentum with respect to arbitary point particle}$) and re-write its velocity in the inertial reference frame as the velocity of the particle in this newly constructed body-fitted coordinates using the kinematic transport theorem,
+$${}^{e}\bar{L}^{o_{b}}_{p} = \bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p}\right) = \bar{r}^{o_{b}p}\times m_{p}\left[
+\overset{b}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p}\right) + {}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]$$
+Remember that the particle is going to be fixed with respect to this body fitted coordinate, so basically, $\displaystyle \overset{b}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p}\right) = 0$ .
+Simplifying our equation for angular momentum of the particle, we can write confidently,
+$${}^{e}\bar{L}^{o_{b}}_{p} = \bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p}\right) = \bar{r}^{o_{b}p}\times m_{p}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]$$
+Taking the frame derivative with respect to the inertial reference frame,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{b}}_{p}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p}\right)\right] = \overset{e}{\frac{\partial}{\partial t}}\left[m_{p}\bar{r}^{o_{b}p}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right)\right]$$
+We can substitute this into equation $\ref{Euler's Law Point Particle Non-Inertial Moving Reference Point}$,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{b}}_{p,i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{b}}_{p}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p}\right)\right] = \overset{e}{\frac{\partial}{\partial t}}\left[m_{p}\bar{r}^{o_{b}p}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right)\right]$$
+We are still not satisfied because our frame derivative of the most far right hand side is in the inertial reference frame.
+We can do better than this and use kinematic transport theorem to just completely re-write our most far right hand side in our newly body fitted coordinate system,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{b}}_{p,i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = \overset{e}{\frac{\partial}{\partial t}}\left[m_{p}\bar{r}^{o_{b}p}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right)\right]$$
+\begin{equation}
+\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{b}}_{p,i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = 
+\overset{b}{\frac{\partial}{\partial t}}\left[m_{p}\bar{r}^{o_{b}p}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right)\right] + {}^{e}\bar{\omega}^{b}\times\left[m_{p}\bar{r}^{o_{b}p}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right)\right]
+\label{Euler's Law Point Particle Non-Inertial Body-fitted Coordinate System}
+\end{equation}
+The equation above is going to be important when we consider rigid body dynamic rotations. 
+The right hand side equation is going to be very very analogous to a principle we will "discover" known as Inertia tensor.
+
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Extra: Completely General Arbitrary Reference Frame}
+\label{General Rotation Case Section}
+\begin{comment}
+THERE IS SOMETHING DEEPLY WRONG!!! FIRSTLY WE NEVE ENTERERD PROOF, AND SECONDLY w x (r x (w x r)) is not always necessarily zero!!!
+\end{comment}
+Now why would you want to reconstruct the definition of angular momentum based on a non-inertial reference frame?
+Well if we consider our position on the universe, we are on a planet that is rotating around a star which is itself rotating in part of a larger galaxy.
+Remember from the kinematics transport theorem that any reference frame that has rotation is non-inertial, so measurements we take of the stars and other heavenly bodies are all done through a non-inertial reference frame (ours).
+For that application perhaps it might be useful to have the most general form of Euler's law.
+%Seperator
+\\~\\I wouldn't recommend using these forms though because they are completely unnecessary for most of the engineering scientific problems we will be dealing with on Earth.
+But for the brave, desperate, curious, or insanely obsessed with completeneess, please proceed.
+%Seperator
+\\~\\For this section, let's start with the right hand side of equation $\ref{system of particles eulers law non-inertial primitive 3}$.
+Let's expand the outer frame derivative using the kinematic transport theorem (equation $\ref{KTT-1st-form}$),
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = 
+\overset{b}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] 
++ {}^{e}\bar{\omega}^{b}\times\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]$$
+Now, we are going to expand the inner frame derivative using the kinematix transport theorem (equation $\ref{KTT-1st-form}$)
+\begin{align*}
+\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = &
+\overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[
+\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p}) + {}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}
+\right]\right\} 
+\\ & + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right\}
+\end{align*}
+\begin{align*}
+\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = &
+\overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p}) + {}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\} 
+\\ & + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p}) + {}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\}
+\end{align*}
+We are now going to expand the terms above algebraically,
+\begin{align*}
+\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = &
+\overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]\right\} 
+ + \overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\} 
+\\ & 
+ + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]\right\}
+ + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\}
+\end{align*}
+We can re-arrange the terms a little bit to group some of them more closely based on if they have frame dependent velocity or not,
+\begin{align*}
+\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right] = &
+\overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]\right\} 
+ + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]\right\}
+\\ & 
+ + \overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\} 
+ + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\}
+\end{align*}
+After we are done, we can finally substitute back into equation $\ref{system of particles eulers law non-inertial primitive 3}$ to form our generalized Euler's law for point particles in a completely arbitrary reference frame,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{b}}_{p,i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = 
+\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p}\times m_{p}\overset{e}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]$$
+\begin{align*}
+\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{b}}_{p,i}\right] - m_{p}\bar{r}^{o_{b}p}\times\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}[\bar{r}^{o_{e}o_{b}}] = &
+\overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]\right\} 
+ + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\left[\overset{b}{\frac{\partial}{\partial t}}(\bar{r}^{o_{b}p})\right]\right\}
+\\ & 
+ + \overset{b}{\frac{\partial}{\partial t}}\left\{\bar{r}^{o_{b}p}\times m_{p}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\} 
+ + {}^{e}\bar{\omega}^{b}\times\left\{\bar{r}^{o_{b}p}\times m_{p}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p}\right]\right\}
+\end{align*}
+This is about as far as we can go for for Euler's law for point particles in a completely arbitrary non-inertial reference frame.
+%Seperator
+\\~\\If we take a look, the first two terms on the right hand side have frame-dependent velocities, which means that these two terms are supposed to take into account "angular momentum derivatives" based on the movement of the particle relative to the origin of our completely arbitrary non-inertial reference frame.
+It's easy to see why this is the case.
+If our particles are stationary relative to the origin of our completely arbitrary coordinate system, then the first two terms on the right hand side are going to evaluate to zero.
+As a matter of fact, if we had set the particle to be non-moving to the origin of our arbitrary coordinate system, then our reference frame would be a body-fitted reference frame and we would exactly recover equation $\ref{Euler's Law Point Particle Non-Inertial Body-fitted Coordinate System}$.
+%Seperator
+\\~\\Moving on, the last two terms on the right hand side are "angular momentum derivatives" based on the rotation of our coordinate system itself.
+If we want to neglect or kill the effect of the rotation of our coordinate system on "angular momentum derivatives", just set the angular momentum velocity vector to be in-line with the position vector of our point particle.
+Since the particle would line up perfectly on our arbitrary reference frame's rotation then the rotation of the reference frame would have no effect on "angular momentum".
+Our $\bar{\omega}\times\bar{r}$ terms would evaluate to zero and our last two terms would evaluate to zero as we expect it to.
+%Seperator
+\\~\\Again the equation above isn't exactly the most practical but we have derived it for completeness' sake.
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\section{Rigid Bodies}
+\begin{comment}
+Kind of incomplete, more information about the colinear argument need to be made
+\end{comment}
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Inertial Reference Frame}
+\begin{comment}
+\end{comment}
+EUler's law for a point particle $p$,
+$$\sum^{n}_{i = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p,i}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p}\right]$$
+Since $i$ is just a counting variable, the expression above would still be true if $i$ is renamed to another variable. 
+Let $i \to j$. 
+The expression above assumes that there are $n$ numeber of torque acting on particle $p$. 
+Let $n \to n_{1}$. 
+The expression above is true for the point particle $p$. 
+In a system of rigid bodies however, there are alot of particles. 
+So, let thte equation above hold true for a particular particle $p_{i}$. 
+Substituting these changes,
+\begin{equation}
+\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right] = \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right]
+\label{moments-rigid-1}
+\end{equation}
+Reiterating the definition of torque defined at equation $\ref{torque-definition}$,
+$${}^{e}\bar{\Gamma}^{o_{e}}_{p,i} = \bar{r}^{o_{e}p}\times{}^{e}\bar{F}^{p}_{i}$$
+Performing the same substitutions, $i \to j$, $n \to n_{1}$, and $p \to p_{1}$,
+$${}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j} = \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{j}$$
+Taking the summation for all the torque acting on the $i^{th}$ particle,
+$$\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right] = \sum^{n_{1}}_{j = 1}\left[\bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{j}\right]$$
+Since $\bar{r}^{o_{e}p_{i}}$ does not contain a $j$ index, it can be considered a scalar constant in the summation operation. 
+Therefore,
+$$\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right] = \bar{r}^{o_{e}p_{i}}\times\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{j}\right]$$
+Reiterating the expression for the forces experienced by the $i^{th}$ particle described in equation $\ref{rigid-forces}$,
+$$\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{j}\right] = {}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\label{rigid-forces}$$
+Substituting for the forces experienced by the $i^{th}$ particle described in equation $\ref{rigid-forces}$,
+$$\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right] = \bar{r}^{o_{e}p_{i}}\times\left\{{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\}$$
+$$\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right] =  \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext} + \bar{r}^{o_{e}p_{i}}\times\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{F}^{p_{i}}_{int,j}\right]$$
+The term $\bar{r}^{o_{e}p_{i}}$ is not dependent on the counting variable $j$. 
+Therefore, it acts as a scalar constant in the summation of $j$. 
+Therefore,
+$$\sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right] = \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[\bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{int,j}\right]$$
+Susbtituting $\displaystyle \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right]$ into equation $\ref{moments-rigid-1}$,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right] = \sum^{n_{1}}_{j = 1}\left[{}^{e}\bar{\Gamma}^{o_{e}}_{p_{i},j}\right] = \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[\bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{int,j}\right]$$
+This expression is true for the $i^{th}$ particle. 
+Since the entire rigid body is the summation of all particles, summing the equation above for all particles would yield an equation that is true for the rigid body. 
+Summing the equation above for all particles $n_{2}$,
+$$\sum^{n_{2}}_{i = 1}\left\{ \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right]\right\} = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext} + \sum^{n_{1}}_{j = 1}\left[\bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{int,j}\right]\right\}$$
+$$\sum^{n_{2}}_{i = 1}\left\{ \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right]\right\} = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\} + \sum^{n_{2}}_{i = 1}  \sum^{n_{1}}_{j = 1}\left[\bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{int,j}\right] $$
+
+%Enter more information about the colinear argument
+Due to a colinear argument, $\displaystyle \sum^{n_{2}}_{i = 1}  \sum^{n_{1}}_{j = 1}\left[\bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{int,j}\right] = 0$. 
+Substituting,
+$$\sum^{n_{2}}_{i = 1}\left\{ \overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right]\right\} = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}$$
+The summation and partial derivative operations as commutative. 
+Therefore,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[\sum^{n_{2}}_{i = 1}\left\{{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right\}\right] = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}$$
+$\displaystyle $. 
+We are going to denote $\displaystyle {}^{e}\bar{L}^{o_{e}}_{rb}$ as the total angular momentum of the rigid body $rb$. 
+\begin{equation}
+{}^{e}\bar{L}^{o_{e}}_{rb} = \sum^{n_{2}}_{i = 1}\left\{{}^{e}\bar{L}^{o_{e}}_{p_{i}}\right\}
+\label{angular momentum of rigid body from individual particle angular momentum}
+\end{equation}
+Substituting the concept of the angular momentum of the entire rigid body,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{rb}\right] = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}$$
+Let $\displaystyle {}^{e}\bar{\Gamma}^{o_{e}}_{rb} = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{e}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right\}\label{euler-law-primitive}$, wherein ${}^{e}\bar{\Gamma}^{o_{e}}_{rb}$ represents the torque that is acting on the rigid body as a whole. 
+From the colinear argument made earlier, the internal forces do not contribute to the torque of the rigid body as a whole. 
+Note that ${}^{e}\bar{F}^{p_{i}}_{ext}$ represents the resultant external forces acting on a single particle $p_{i}$ in the rigid body $rb$. 
+Substituting,
+\begin{equation}
+\overset{e}{\frac{\partial}{\partial t}}\left[{}^{e}\bar{L}^{o_{e}}_{rb}\right] = {}^{e}\bar{\Gamma}^{o_{e}}_{rb}
+\label{Eulers Law for Rigid Body in inertial reference frame}
+\end{equation}
+
+%Seperator
+%Seperator
+%Seperator
+%Seperator
+\subsection{Non-Inertial Reference Frame}
+\begin{comment}
+\end{comment}
+Now the procedure we are going to perform here will be incredibly similar to the one performed at section $\ref{Eulers law point particle non-inertial reference frame}$,
+Re-iterating Newton's second law for a rigid body (equation $\ref{Newtons Second Law System of Particles Inertial Reference Frame}$),
+$$\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right] = M{}^{e}\bar{a}^{o_{e}c}$$
+We can re-write the right hand side in its true original primitive form as a summation of all the particles in the system,
+$$\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right] = \sum^{n_{2}}_{i = 1}\left[m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}p_{i}})\right]$$
+wherein $n_{2}$ represents the total number of particles in our body.
+Similarly, this time, we are going to take the cross product with an "arm" vector which for now we are going to leave as arbitrary,
+$$\bar{r}\times\sum^{n_{2}}_{i = 1}\left[{}^{e}\bar{F}^{p_{i}}_{ext}\right] = \bar{r}\times \sum^{n_{2}}_{i = 1}\left[m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}p_{i}})\right]$$
+Since summation and cross-product operations are commutative with respect to each other, we can do the following,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] = \sum^{n_{2}}_{i = 1}\left[\bar{r}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}p_{i}})\right]$$
+The vector $\bar{r}$ here we left as arbitrary which means this vector can be anything we desire. 
+We are going to consider the case where this vector is $\bar{r}^{o_{b}p_{i}}$ which is the position vector of the $i^{th}$ particle with respect to arbitrary point $o_{b}$,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] = \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}p_{i}})\right]$$
+Now very similar to what we did in section $\ref{Eulers law point particle non-inertial reference frame}$, we are going to express the position vector of every single particle $p_{i}$ in our body as a vector from inertial origin $o_{e}$ to $o_{b}$ and then from arbitary reference point $o_{b}$ to the arbitrary particle $p_{i}$.
+$$\bar{r}^{o_{e}p_{i}} = \bar{r}^{o_{e}o_{b}} + \bar{r}^{o_{b}p_{i}}$$
+Substituting for this into our Newton's second law for rigid bodies,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] = \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}} + \bar{r}^{o_{b}p_{i}})\right]$$
+We are going to algebraically expand the equation above,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] = \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}}) + \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{b}p_{i}})\right]$$
+Since addition and the summation operation are commutative with respect to each other,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] = 
+\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})\right] + \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{b}p_{i}})\right]$$
+Drawing parallel from section $\ref{Eulers law point particle non-inertial reference frame}$ we already know that the first term on the right hand side is supposed to represent fictitious forces from the arbitrary point moving around, so we can subtract it from both sides to "move" it to left hand side for better representation,
+\begin{equation}\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] - \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})\right]
+ = \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{b}p_{i}})\right] \label{Eulers Law Rigid Body Non Inertial Primitive 1}\end{equation}
+
+ Now we are going to use a "trick" that we have performed so many times before,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) \right] = 
+\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p_{i}}\right]\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) + 
+\bar{r}^{o_{b}p_{i}}\times\overset{e}{\frac{\partial}{\partial t}}\left[m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]$$
+We know that partial derivative operations and cross product operations are commutative with scalar multiplications with $m_{i}$.
+Therefore, we can do the followingm
+$$\overset{e}{\frac{\partial}{\partial t}}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) \right] = 
+m_{i}\overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p_{i}}\right]\times\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) + 
+\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left[\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]$$
+We also know that a vector cross product with itself is going to evaluate to zero.
+Therefore, we know that $\displaystyle \overset{e}{\frac{\partial}{\partial t}}\left[\bar{r}^{o_{b}p_{i}}\right]\times\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) = 0$.
+Substituting this,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) \right] = 
+\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left[\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]$$
+We can combine two successive frame derivative operations into a single second order frame derivative operation,
+$$\overset{e}{\frac{\partial}{\partial t}}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) \right] = 
+\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}\left(\bar{r}^{o_{b}p_{i}}\right)$$
+
+We are ready to substitute the equation above into equation $\ref{Eulers Law Rigid Body Non Inertial Primitive 1}$
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] - \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})\right]
+ = \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{b}p_{i}})\right] $$
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] - \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})\right]
+ = \sum^{n_{2}}_{i = 1}\left\{\overset{e}{\frac{\partial}{\partial t}}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) \right]\right\}$$
+We know that partial derivative operations are commutative with summation operations so we can do the following as well,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] - \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})\right]
+= \overset{e}{\frac{\partial}{\partial t}}\left\{\sum^{n_{2}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]\right\}$$
+Note that the second term on the left hand side, our fictitious forces, the acceleration or second order frame derivtive of our arbitrary vector is not changing within the summation operation and since scalar multiplication and vector cross-products commute with respect to the summation operation, we can do the following,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right] - \sum^{n_{2}}_{i = 1}\left[m_{i}\bar{r}^{o_{b}p_{i}}\right]\times \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})
+= \overset{e}{\frac{\partial}{\partial t}}\left\{\sum^{n_{2}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]\right\}$$
+Now we can use the definition for the center of mass (equation $\ref{Center of Mass Definition}$)
+$$\bar{r}^{o_{b}c} = \frac{\displaystyle \sum^{n_{2}}_{i = 1}\left[m_{i}\bar{r}^{o_{b}p_{i}}\right]}{\displaystyle \sum^{n_{2}}_{i = 1}\left[m_{i}\right]} \quad,\quad 
+\sum^{n_{2}}_{i = 1}\left[m_{i}\right]\bar{r}^{o_{b}c} = \sum^{n_{2}}_{i = 1}\left[m_{i}\bar{r}^{o_{b}p_{i}}\right]$$
+We can now subtitute the definition of our center of mass into our Euler's law,
+$$\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right]
+- \sum^{n_{2}}_{i = 1}\left[m_{i}\right]\bar{r}^{o_{b}c}\times \overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})
+= \overset{e}{\frac{\partial}{\partial t}}\left\{\sum^{n_{2}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]\right\}$$
+\begin{equation}
+\sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right]
+- \bar{r}^{o_{b}c}\times\sum^{n_{2}}_{i = 1}\left[m_{i}\right]\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})
+= \overset{e}{\frac{\partial}{\partial t}}\left\{\sum^{n_{2}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]\right\}
+\label{Eulers Law Rigid Body Non-Inertial Arbitrary Reference Point Unrefined}
+\end{equation}
+We have arrived at Euler's law for a rigid body with an arbitrary reference point.
+We can do a few notational simplifications to the equation above,
+%Seperator
+\\~\\Firstly, we know that the summation of the $i^{th}$ particle over the entire body is just going to be the mass of the entire body.
+This is an obvious consequence of conservation of mass, so we know that,
+$$\sum^{n_{2}}_{i = 1}\left[m_{i}\right] = M$$
+%Seperator
+\\~\\Now moving on, the first term on the left hand side represents all of the external moments acting on the entire rigid body as a whole.
+Therefore, we can use the notation,
+$${}^{e}\bar{\Gamma}^{o_{b}}_{rb} = \sum^{n_{2}}_{i = 1}\left[\bar{r}^{o_{b}p_{i}}\times{}^{e}\bar{F}^{p_{i}}_{ext}\right]$$
+Here the 'A' specifier is filled with $e$ which means that the torque is asociated to an inertial referenc frame and the torque we are discussing has no fictitious force components.
+The 'B' specifier is filled with $o_{b}$ which means that this torque is taken with the arbitrary reference point $o_{b}$. 
+This is a consequence of our "arm vector" on the right hand side starting at the position $o_{b}$.
+The 'D' specifier is use to represent that this torque is acting on the whole body $rb$.
+%Seperator
+\\~\\Now the term on the right hand side is an interesting one and this is actually the total angular momentum of the rigid body.
+We can use the following notation to represent our right hand side,
+\begin{equation}
+{}^{e}\bar{L}^{o_{b}}_{rb} = \sum^{n_{2}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]
+\label{angular momentum for rigid body}
+\end{equation}
+The 'A' specifier is filled with $e$ which means that the velocity used to construct our angular momentum definition is perceived through an inertial reference frame.
+Examine the right hand side and we see that we have a frame derivative of position vector $\bar{r}^{o_{b}p_{i}}$ within the inertial reference frame $e$.
+This is where the 'A' specifier field is determined from.
+The 'B' specifier is filled with $o_{b}$ which means taking reference point of arbitrary point $o_{b}$.
+Examine the right hand side where our "arm vector" is $\bar{r}^{o_{b}p_{i}}$ which is means that the vector starts at arbitrary position $o_{b}$ where the 'B' specifier is determined from.
+The 'D' specifier just means that this is an angular momentum of the \textbf{entire body} because if we see the right hand side we have a summation operation summing each individual particle's contribution over the whole body.
+%Seperator
+\\~\\Substituting all of our notational simplifications into equation $\ref{Eulers Law Rigid Body Non-Inertial Arbitrary Reference Point Unrefined}$ yields,
+\begin{equation}
+{}^{e}\bar{\Gamma}^{o_{b}}_{rb}
+- \bar{r}^{o_{b}c}\times M\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}})
+= \overset{e}{\frac{\partial}{\partial t}}\left\{{}^{e}\bar{L}^{o_{b}}_{rb}\right\}
+\label{Eulers Law Rigid Body Non-Inertial Arbitary Reference Point Refined}
+\end{equation}
+%Seperator
+Okay now we have set our reference point to be arbitrary and allow it to move around, and that is only half the story because as we recall, rotational dynamics is defined with a reference point and a reference frame.
+So far our reference frame still has to remain fixed in an inertial reference frame.
+We are now going to consider a non-inertial reference frame to construct our definitions for angular momentum.
+%Seperator
+\\~\\Again, the same with the previous rotational dynamics for our point particle, Euler's law for a completely arbitrary generalized non-inertial reference frame is complicated and for most practical problems, we don't really want to consider the most general arbitrary non-inertial reference frame cases.
+Instead, for practical problems, we are going to consider our non-inertial reference frame to be fixed in the body (rotating along with our body).
+Yes, as mentioned before, this is a non-inertial reference frame because it is rotating and we know from kinematics transport theorem that any rotation in a reference frame implies it is non-inertial.
+We are going to focus on our angular momentum definition (equation $\ref{angular momentum for rigid body}$),
+$${}^{e}\bar{L}^{o_{b}}_{rb} = \sum^{n_{2}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times m_{i}\overset{e}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right)\right]$$
+We seek to re-write this angular momentum definition with our body fixed reference frame.
+Currently, the right hand side is based on velocity perceived in the inertia reference frame.
+We seek to change this using kinematic transport theorem,
+$${}^{e}\bar{L}^{o_{b}}_{rb} = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{b}p_{i}}\times m_{i}\left[
+\overset{b}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) + {}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right]\right\}$$
+Note that for our body-fixed coordinates, the points $p_{i}$ are not going to move away from the origin of our body fixed reference frame (this is by definition of a body fixed reference frame) so the term $\displaystyle \overset{b}{\frac{\partial}{\partial t}}\left(\bar{r}^{o_{b}p_{i}}\right) = 0$.
+Substituting for this,
+$${}^{e}\bar{L}^{o_{b}}_{rb} = \sum^{n_{2}}_{i = 1}\left\{ \bar{r}^{o_{b}p_{i}}\times m_{i}\left[{}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right]\right\}$$
+We can re-arrange the scalar multiplication of the mass of the $i^{th}$ particle a little bit better,
+$${}^{e}\bar{L}^{o_{b}}_{rb} = \sum^{n_{2}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right)m_{i}\right]$$
+Now the form above is only for discrete particles, what if we have a continuous distribution of mass like in a solid sphere or a solid cylinder?
+Then instead of a summation operation, we would take the limits,
+$${}^{e}\bar{L}^{o_{b}}_{rb} = \lim_{\Delta m_{i} \to 0}\left\{\sum^{n/\Delta m_{i}}_{i = 1}\left[ \bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right)\Delta m_{i}\right]\right\}$$
+This seemingly complicated expression basically just evaluates to a volumetric integral over the mass of the entire body,
+\begin{equation}{}^{e}\bar{L}^{o_{b}}_{rb} = \iiint^{}_{rb} \bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) \,dm \label{Inertia Tensor Primitive}\end{equation}
+wherein $rb$ is supposed to represent the bounds of integrating over the whole body.
+Let's say our body fixed reference frame has a coordinate system denoted like $x$, $y$, and $z$ so we can write the position vector of the $i^{th}$ particle, and also the angular velocity of the reference frame as,
+$$\bar{r}^{o_{b}p_{i}} = \begin{bmatrix}
+x && y && z
+\end{bmatrix}^{T}\quad,\quad {}^{e}\bar{\omega}^{b} = \begin{bmatrix}
+\omega_{x} && \omega_{y} && \omega_{z}
+\end{bmatrix}^{T}$$
+We can substitute the above notations to simplify our integrand,
+\begin{equation}\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = 
+\begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} \times \left(
+\begin{bmatrix}
+\omega_{x} \\ \omega_{y} \\ \omega_{z}
+\end{bmatrix} \times \begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix}\right) \label{Inertia Tensor Primitive 1}\end{equation}
+We are going to perform the cross product within the brackets first,
+$${}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}} = \begin{bmatrix}
+\omega_{x} \\ \omega_{y} \\ \omega_{z}
+\end{bmatrix} \times \begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} = \begin{vmatrix}
+\hat{i} && \hat{j} && \hat{k} \\
+\omega_{x} && \omega_{y} && \omega_{z} \\
+x && y && z
+\end{vmatrix}$$
+$${}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}} = 
+\hat{i}\begin{vmatrix}
+    \omega_{y} && \omega_{z} \\
+    y && z
+\end{vmatrix}
+-
+\hat{j}\begin{vmatrix}
+    \omega_{x} && \omega_{z} \\
+    x && z
+\end{vmatrix}
++
+\hat{k}\begin{vmatrix}
+    \omega_{x} && \omega_{y} \\
+    x && y
+\end{vmatrix}$$
+$${}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}} = 
+\hat{i}(\omega_{y}z - \omega_{z}y)
+-
+\hat{j}(\omega_{x}z - \omega_{z}x)
++
+\hat{k}(\omega_{x}y - \omega_{y}x)$$
+Aseembling these partial results,
+$${}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}} = \begin{bmatrix}
+(\omega_{y}z - \omega_{z}y) && -(\omega_{x}z - \omega_{z}x) && (\omega_{x}y - \omega_{y}x)
+\end{bmatrix}^{T}$$
+Substituting these results into equation $\ref{Inertia Tensor Primitive 1}$,
+$$\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = 
+\begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} \times 
+\begin{bmatrix}
+(\omega_{y}z - \omega_{z}y) \\ -(\omega_{x}z - \omega_{z}x) \\ (\omega_{x}y - \omega_{y}x)
+\end{bmatrix}$$
+Performing the cross-product operations again,
+$$\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = 
+\begin{vmatrix}
+\hat{i} && \hat{j} && \hat{k} \\
+x && y && z \\
+(\omega_{y}z - \omega_{z}y) && -(\omega_{x}z - \omega_{z}x) && (\omega_{x}y - \omega_{y}x)
+\end{vmatrix}$$
+\begin{align*}\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = &
+\hat{i}\begin{vmatrix}
+y && z \\
+-(\omega_{x}z - \omega_{z}x) && (\omega_{x}y - \omega_{y}x)
+\end{vmatrix}
+\\ & - 
+\hat{j}\begin{vmatrix}
+x && z \\
+(\omega_{y}z - \omega_{z}y) && (\omega_{x}y - \omega_{y}x)
+\end{vmatrix}
+\\ & + 
+\hat{k}\begin{vmatrix}
+x && y \\
+(\omega_{y}z - \omega_{z}y) && -(\omega_{x}z - \omega_{z}x)
+\end{vmatrix}
+\end{align*}
+\begin{align*}
+\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = &
+\hat{i}\left[y(\omega_{x}y - \omega_{y}x) + z(\omega_{x}z - \omega_{z}x)\right]
+\\ & - \hat{j}\left[x(\omega_{x}y - \omega_{y}x) - z(\omega_{y}z - \omega_{z}y)\right]
+\\ & + \hat{k}\left[-x(\omega_{x}z - \omega_{z}x) - y(\omega_{y}z - \omega_{z}y)\right]
+\end{align*}
+Expanding the terms algebraically,
+\begin{align*}
+\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = &
+\hat{i}\left[y^{2}\omega_{x} - xy\omega_{y}  + z^{2}\omega_{x} - xz\omega_{z}\right]
+\\ & - \hat{j}\left[xy\omega_{x} - x^{2}\omega_{y} - z^{2}\omega_{y} + yz\omega_{z}\right]
+\\ & + \hat{k}\left[-xz\omega_{x} + xx\omega_{z} - yz\omega_{y} + y^{2}\omega_{z}\right]
+\end{align*}
+Simplifying and grouping terms with similar $\omega$ components,
+\begin{align*}
+\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = &
+\hat{i}\left[y^{2}\omega_{x} + z^{2}\omega_{x} - xy\omega_{y} - xz\omega_{z}\right]
+\\ & + \hat{j}\left[-xy\omega_{x} + x^{2}\omega_{y} + z^{2}\omega_{y} - yz\omega_{z}\right]
+\\ & + \hat{k}\left[-xz\omega_{x} - yz\omega_{y} + x^{2}\omega_{z} + y^{2}\omega_{z}\right]
+\end{align*}
+\begin{align*}
+\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = &
+\hat{i}\left[(y^{2}+z^{2})\omega_{x} - xy\omega_{y} - xz\omega_{z}\right]
+\\ & + \hat{j}\left[-xy\omega_{x} + (x^{2}+z^{2})\omega_{y} - yz\omega_{z}\right]
+\\ & + \hat{k}\left[-xz\omega_{x} - yz\omega_{y} + (x^{2}+y^{2})\omega_{z}\right]
+\end{align*}
+We can put this into its vector form and simplify this even further by expressing this vector as a matrix multiplication equation,
+$$\bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) = 
+\begin{bmatrix}
+(y^{2}+z^{2})\omega_{x} - xy\omega_{y} - xz\omega_{z} \\ 
+-xy\omega_{x} + (x^{2}+z^{2})\omega_{y} - yz\omega_{z} \\
+-xz\omega_{x} - yz\omega_{y} + (x^{2}+y^{2})\omega_{z}
+\end{bmatrix} = \begin{bmatrix}
+(y^{2}+z^{2}) && - xy &&  - xz \\ 
+-xy && (x^{2}+z^{2}) && - yz \\
+-xz && - yz && (x^{2}+y^{2})
+\end{bmatrix}\begin{bmatrix}
+\omega_{x} \\ \omega_{y} \\ \omega_{z}
+\end{bmatrix}$$
+We can now substitute these results back into equation $\ref{Inertia Tensor Primitive}$,
+$${}^{e}\bar{L}^{o_{b}}_{rb} = \iiint^{}_{rb} \bar{r}^{o_{b}p_{i}}\times\left({}^{e}\bar{\omega}^{b}\times\bar{r}^{o_{b}p_{i}}\right) \,dm $$
+$${}^{e}\bar{L}^{o_{b}}_{rb} = \iiint^{}_{rb} \begin{bmatrix}
+(y^{2}+z^{2}) && - xy &&  - xz \\ 
+-xy && (x^{2}+z^{2}) && - yz \\
+-xz && - yz && (x^{2}+y^{2})
+\end{bmatrix}\begin{bmatrix}
+\omega_{x} \\ \omega_{y} \\ \omega_{z}
+\end{bmatrix} \,dm $$
+The volumetric integral can be performed on each element of the matrix shown above,
+\begin{equation}{}^{e}\bar{L}^{o_{b}}_{rb} = 
+\begin{bmatrix}
+\iiint^{}_{rb} (y^{2}+z^{2}) \,dm && - \iiint^{}_{rb} xy \,dm &&  - \iiint^{}_{rb} xz \,dm \\~\\ 
+-\iiint^{}_{rb} xy \,dm && \iiint^{}_{rb} (x^{2}+z^{2}) \,dm && -\iiint^{}_{rb} yz \,dm \\~\\
+-\iiint^{}_{rb} xz \,dm && - \iiint^{}_{rb} yz \,dm && \iiint^{}_{rb} (x^{2}+y^{2}) \,dm 
+\end{bmatrix}\begin{bmatrix}
+\omega_{x} \\~\\ \omega_{y} \\~\\ \omega_{z}
+\end{bmatrix} \label{Inertia Tensor Primitive 2}\end{equation}
+If we think about our reference frame that is fixed in the body such that the body is unchanging, the matrix integral in the equation above is basically constant for all time.
+Well think about it, the body itself is non-moving with respect to our body-fitted reference frame, so clearly our complicated volumetric integral terms over the entire volume of the body is going to remain constant for all time.
+%Seperator
+\\~\\Therefore, the integral matrix in the equation above can be considered geometry-specific and is a "mass property" of our particular rigid body. 
+For this we have a special name. 
+We call that integral matrix in the equation above as the inertia tensor and we are going to denote our inertia tensor as $\bar{\bar{I}}_{tn}$.
+We are going to define $\bar{\bar{I}}_{tn}$ and its components $I_{ij}$ below,
+$$\bar{\bar{I}}_{tn} = \begin{bmatrix}
+I_{xx} && I_{xy} && I_{xz} \\~\\
+I_{xy} && I_{yy} && I_{yz} \\~\\
+I_{xz} && I_{yz} && I_{zz}
+\end{bmatrix} = \begin{bmatrix}
+\iiint^{}_{rb} (y^{2}+z^{2}) \,dm && - \iiint^{}_{rb} xy \,dm &&  - \iiint^{}_{rb} xz \,dm \\~\\ 
+-\iiint^{}_{rb} xy \,dm && \iiint^{}_{rb} (x^{2}+z^{2}) \,dm && -\iiint^{}_{rb} yz \,dm \\~\\
+-\iiint^{}_{rb} xz \,dm && - \iiint^{}_{rb} yz \,dm && \iiint^{}_{rb} (x^{2}+y^{2}) \,dm 
+\end{bmatrix}$$
+Note that our inertia tensor above is symmetric, which is that the off-diagonal components of the matrix are identical to each other.
+Notationally, we can simplify the definition of our angular momentum vector as the following,
+\begin{equation}
+{}^{e}\bar{L}^{o_{b}}_{rb} = \bar{\bar{I}}_{tn} ({}^{e}_{b}\bar{\omega}^{b})
+\label{Angular Velocity In Terms of Inertia Tensor}
+\end{equation}
+Note that in equation $\ref{Inertia Tensor Primitive 2}$, our angular velocity vector was written in the following form,
+$${}^{e}\bar{\omega}^{b} = \begin{bmatrix}\omega_{x} && \omega_{y} && \omega_{z}\end{bmatrix}^{T}$$
+This representation of angular velocity is representing angular velocity as a \textbf{linear combination of basis vectors in the body-fitted reference frame $b$}.
+Therefore, in equation $\ref{Angular Velocity In Terms of Inertia Tensor}$ we need to specify that our angular velocity $\bar{\omega}$ must be written in terms of the basis vectors of body-fitted reference frame $b$.
+For that, we have used the 'C' specifier and filled it with $b$ to indicate that we need to express this angular velocity vector as basis vectors of the body-fitted reference frame $b$.
+Okay, now that we can express our angular momentum vector as the inertial tensor matrix multiplied with the angular velocity of our rigid body, we can substitute this back into Euler's law (equation $\ref{Eulers Law Rigid Body Non-Inertial Arbitary Reference Point Refined}$)
+$${}^{e}\bar{\Gamma}^{o_{b}}_{rb} - \bar{r}^{o_{b}c}\times M\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}}) = \overset{e}{\frac{\partial}{\partial t}}\left\{{}^{e}\bar{L}^{o_{b}}_{rb}\right\}$$
+$${}^{e}\bar{\Gamma}^{o_{b}}_{rb} - \bar{r}^{o_{b}c}\times M\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}}) = \overset{e}{\frac{\partial}{\partial t}}\left\{\bar{\bar{I}}_{tn} ({}^{e}_{b}\bar{\omega}^{b})\right\}$$
+Now we run into a bit of a problem here.
+Examine our right hand side and we see that our 'C' specifier for the angular velocity is seto to $b$ which means that the angular velocity vectors have to be expresses in terms of basis vectors of our non-inertial reference frame $b$.
+The frame derivative of the right hand side however, is inertial, so we cannot readily take the derivative natively because the basis vectors do not match.
+To reconcile this difference, we will apply the kinematic transport theorem (equation $\ref{KTT-1st-form}$) on our right hand side so that we can frame derivatives natively in our non-inertial reference frame.
+\begin{equation}
+{}^{e}\bar{\Gamma}^{o_{b}}_{rb} - \bar{r}^{o_{b}c}\times M\overset{e}{\frac{\partial^{2}}{\partial t^{2}}}(\bar{r}^{o_{e}o_{b}}) = 
+\overset{b}{\frac{\partial}{\partial t}}\left\{\bar{\bar{I}}_{tn} ({}^{e}_{b}\bar{\omega}^{b})\right\} + {}^{e}_{b}\bar{\omega}^{b}\times\bar{\bar{I}}_{tn} ({}^{e}_{b}\bar{\omega}^{b})
+\label{Euler's Law Rigid Body Non-Inertial Reference Frame Body Fitted Coordiantes}
+\end{equation}
+We have finally arrived at our complete generalized Euler's law for rigid bodies in a non-inertial body-fitted reference frame.
+Now we can take derivatives of the right hand side natively (take scalar derivatives of the vector components) because the angular velocity vector is defined in the non-inertial reference frame $b$ which is also the same frame of reference the frame derivative is using.
+%Seperator
+\\~\\The equation above is extremely important and this is actually also known by another name: "Euler's formula".
+Though the form that we have shown here is more sophisticated and more general than most other representations found in classical textbooks.
+
+
+
+
+
+
+
+
+
+
+
+
+

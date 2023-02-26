@@ -1,0 +1,4 @@
+Description = "This theory relates vector derivatives in one reference frame to another reference frame. It is foundational in understanding the existence of fictitious forces like centrifugal, coriolis and so on."
+Pre_Requisites = ["Control Terminology",]
+Organization = "B"
+Authors = ["Ginger Gengar",]

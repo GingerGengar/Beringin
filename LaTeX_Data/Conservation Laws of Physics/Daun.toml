@@ -1,0 +1,4 @@
+Description = "We disguss the conservation of linear momentum, energy, and angular momentum in this module. It will be foundational in any physics based problems"
+Pre_Requisites = ["Rotational Dynamics: Eulers Law", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]

@@ -1,0 +1,4 @@
+Description = "These are the basic laws of motion for classical physics, where we cover rotation and translational equations of motions"
+Pre_Requisites = ["Translational Dynamics: Newtons Second Law", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]

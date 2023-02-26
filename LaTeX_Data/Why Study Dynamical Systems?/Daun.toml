@@ -1,0 +1,5 @@
+Description = "Reasoning why one should learn classical physics and the asociated dynamics with it"
+Pre_Requisites = ["Base",]
+Organization = "B"
+Authors = ["Ginger Gengar",]
+

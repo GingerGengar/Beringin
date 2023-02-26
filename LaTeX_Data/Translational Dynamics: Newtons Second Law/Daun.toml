@@ -1,0 +1,4 @@
+Description = "These are the basic laws of motion for classical physics for translation"
+Pre_Requisites = ["Kinematic Transport Theorem", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]

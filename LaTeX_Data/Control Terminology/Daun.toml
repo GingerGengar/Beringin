@@ -1,4 +1,4 @@
 Description = "Introduces the Terminology used for controls"
-Pre_Requisites = ["Base",]
+Pre_Requisites = ["Why Study Dynamical Systems?",]
 Organization = "B"
 Authors = ["Ginger Gengar",]

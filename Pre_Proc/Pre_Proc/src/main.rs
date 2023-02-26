@@ -10,6 +10,8 @@ fn main() {
     Loading::ShowInputData(&FullMetadata); //TODO: Delete This
     //USER: Figure out where the node we want is located at in the vector
     let mut NodeSel: Vec<usize> = Vec::new();
+    //NodeSel.push(13);
+    //NodeSel.push(10);
     NodeSel.push(7);
     //Declaration of vector that has the build order
     let mut BuildOrder: Vec<usize> = Vec::new();

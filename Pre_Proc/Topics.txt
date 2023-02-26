@@ -287,3 +287,25 @@ Basic Must-Have Topics
     How to perform a volumetric integral
     How to perform these computations numerically
 
+
+Circuit Standards:
+each intersection crossing has to be shown, there should be no ambiguous case whether two wires crossing each other like a + are connected to each other or is just a crossing. If the wires are connected a node[circ]{} will be used
+
+Each Circuit should be anchored at the input. This allows the snippet of code to be portable ie, the input of a certain circuit could be placed at the output of another circuit. EG: circuit1 -> circuit2-> circuit3 -> .... -> circuitn
+
+All necessary terminals such as the source voltage and drain voltage of an operational amplifier must be shown, as well as the corresponding voltages at those terminal. For example a device who theoretically works with 5 terminals must be represented with a figure with 5 terminals, for example, the op amp: source voltage, drain voltage, positive terminal, negative terminal, output terminal. 
+
+As much as possible, use the same scaling for all of the circuits. Instead of making figures smaller to fit more complex circuits, instead assign a symbollic representation of the sub-system units, for example a low pass filter represented by a box with inside labelled "LP"
+
+
+
+
+Rigid body Rotational Dynamics (chapter)
+    Euler Equations (sections)
+    Inertia Tensor (sections)
+
+Rigid body Rotational Kinematics (chapter)
+    Direction Cosine matrix (sections)
+    Euler Angles (sections)
+
+

@@ -1,0 +1,4 @@
+Description = "We should already derive Euler's Formula in Rotational Dynamics but here we are simplifying it and making it more verbose as a vector equation. Also we are considering some of the more common cases here"
+Pre_Requisites = ["Rotational Dynamics: Eulers Law", ]
+Organization = "B"
+Authors = ["Ginger Gengar",]
